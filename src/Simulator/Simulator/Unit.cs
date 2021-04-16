@@ -50,7 +50,7 @@ namespace Simulator
 
         public void Draw(RenderTarget target, RenderStates states)
         {
-            shape.Position = new Vector2f(position[1] * Unit_Size * Simulator.Scale, position[0] * Unit_Size * Simulator.Scale);
+            shape.Position = new Vector2f(position[1] * Unit_Size * Simulator.Scale + Program.LeftMapOffset, position[0] * Unit_Size * Simulator.Scale + Program.TopMapOffset);
             shape.FillColor = new Color(255, (byte)((Energy + .0) / Simulator.EnergyLimit * 255), 0);
 
             target.Draw(shape);
