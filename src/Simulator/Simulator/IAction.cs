@@ -7,5 +7,6 @@ namespace Simulator
     interface IAction
     {
         void Process(Unit unit);
+        int Value();
     }
 }

@@ -14,8 +14,11 @@ namespace Simulator
         public const int WorldWidth = 200;
         public const int EnergyLimit = 1000;
         public const int EnergyDegradation = -1;
-        public const int GroundPower = 20;
+        public const int GroundPower = 5;
+        public const int SunPower = 7;
         public const double EnvDensity = 0.80;
+        public const int WaitValue = 100;  // based point for other actions value
+        public const double DropChance = 0.05;
 
         private static int timer;
         private static byte[,] map;
@@ -23,6 +26,7 @@ namespace Simulator
         public static Random Random;
         private static Text year;
         private static Text count;
+        private static Text seed;
 
         static Simulator()
         {
@@ -34,7 +38,7 @@ namespace Simulator
 
             for (int i = 0; i < 500; i++)
             {
-                Unit unit = Creator.CreateUnit();
+                Unit unit = Creator.CreateUnit(2000);
                 units.Add(unit);
                 map[unit.position[0], unit.position[1]] = 1;
             }
@@ -43,6 +47,8 @@ namespace Simulator
             year.Position = new Vector2f((WorldWidth + 5) * Scale, 10);
             count = new Text($"Units: {units.Count}", Program.Font);
             count.Position = new Vector2f((WorldWidth + 5) * Scale, 40);
+            seed = new Text($"Seed: {Program.RandomSeed}", Program.Font);
+            seed.Position = new Vector2f((WorldWidth + 5) * Scale, 70);
         }
 
         internal static bool IsFree(int x, int y)
@@ -61,16 +67,38 @@ namespace Simulator
                 unit.Process();
             RecountEnergy();
             DeleteDeadCells();
+            AddNewCells();
+            DropCells();
+        }
+
+        private static void DropCells()
+        {
+            foreach (Unit unit in units)
+                if (Random.Next(101) / 100.0 < DropChance)
+                    unit.Move(1, 0);
+        }
+
+        private static void AddNewCells()
+        {
+            List<Unit> addList = new List<Unit>();
+            foreach (Unit unit in units)
+                if (unit.Status == UnitStatus.Divide)
+                    addList.Add(unit);
+            foreach (Unit unit in addList)
+                unit.Divide();
         }
 
         private static void DeleteDeadCells()
         {
             List<Unit> delList = new List<Unit>();
             foreach (Unit unit in units)
-                if (!unit.IsAlive)
+                if (unit.Status == UnitStatus.Dead)
                     delList.Add(unit);
             foreach (Unit unit in delList)
+            {
                 units.Remove(unit);
+                map[unit.position[0], unit.position[1]] = 0;
+            }
         }
 
         private static void RecountEnergy()
@@ -79,6 +107,25 @@ namespace Simulator
                 unit.TakeEnergy((int)(GroundPower * Math.Pow(EnvDensity, WorldHeight - unit.position[0])));
             foreach (Unit unit in units)
                 unit.TakeEnergy(EnergyDegradation);
+            //foreach (Unit unit in units)
+            //    if (!CheckOverpopulation(unit))
+            //        unit.TakeEnergy(-EnergyLimit / 20);
+        }
+
+        private static bool CheckOverpopulation(Unit unit)
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                if (IsFree(unit.position[0] + i / 3 - 1, unit.position[1] + i % 3 - 1))
+                    return true;
+            }
+            return false;
+        }
+
+        internal static void AddUnit(Unit child)
+        {
+            map[child.position[0], child.position[1]] = 1;
+            units.Add(child);
         }
 
         public static void Draw()
@@ -95,6 +142,7 @@ namespace Simulator
             count.DisplayedString = $"Units: {units.Count}";
             Program.Window.Draw(year);
             Program.Window.Draw(count);
+            Program.Window.Draw(seed);
         }
 
         private static void DrawBound()

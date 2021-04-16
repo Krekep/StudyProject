@@ -10,5 +10,10 @@ namespace Simulator
         {
             
         }
+
+        public int Value()
+        {
+            return Simulator.WaitValue;
+        }
     }
 }

@@ -6,27 +6,41 @@ using System.Text;
 
 namespace Simulator
 {
+    public enum UnitStatus : int
+    { 
+        Dead = -1,
+        Alive = 0,
+        Divide = 1
+    }
     class Unit : Transformable, Drawable
     {
-        const int UNIT_SIZE = 1;
+        const int Unit_Size = 1;
+        public int Capacity { get; private set; }
         RectangleShape shape;
         public int[] position { get; private set; }
-        private IAction[][] genes;
-        private int currentAction;
+        public IAction[][] Genes { get; private set; }
+        private int[] currentAction;
         public int LastDirection { get; private set; }
+        public int[] Directions { get; private set; }
         public int Energy { get; private set; }
-        public bool IsAlive { get; private set; }
+        public UnitStatus Status { get; private set; }
+        public int Chlorophyl { get; private set; }
 
-        public Unit(int energy, int[] position, IAction[][] genes)
+        public Unit(int energy, int[] position, int[] directions, IAction[][] genes, int capacity, int chlorophyl)
         {
             this.Energy = energy;
             this.position = position;
-            this.genes = genes;
-            LastDirection = 4;
-            currentAction = 0;
-            IsAlive = true;
+            this.Directions = directions;
+            this.Genes = genes;
+            this.Capacity = capacity;
+            this.Chlorophyl = chlorophyl;
 
-            shape = new RectangleShape(new Vector2f(UNIT_SIZE * Simulator.Scale, UNIT_SIZE * Simulator.Scale));
+            LastDirection = 4;
+            currentAction = new int[2] { 0, 0 };
+            Status = UnitStatus.Alive;
+
+
+            shape = new RectangleShape(new Vector2f(Unit_Size * Simulator.Scale, Unit_Size * Simulator.Scale));
         }
 
         private bool CheckCell(int x, int y)
@@ -36,7 +50,7 @@ namespace Simulator
 
         public void Draw(RenderTarget target, RenderStates states)
         {
-            shape.Position = new Vector2f(position[1] * UNIT_SIZE * Simulator.Scale, position[0] * UNIT_SIZE * Simulator.Scale);
+            shape.Position = new Vector2f(position[1] * Unit_Size * Simulator.Scale, position[0] * Unit_Size * Simulator.Scale);
             shape.FillColor = new Color(255, (byte)((Energy + .0) / Simulator.EnergyLimit * 255), 0);
 
             target.Draw(shape);
@@ -62,16 +76,39 @@ namespace Simulator
             if (Energy <= 0)
             {
                 Energy = 0;
-                IsAlive = false;
+                Status = UnitStatus.Dead;
             }
             if (Energy > Simulator.EnergyLimit)
+            {
+                Status = UnitStatus.Divide;
+            }
+        }
+
+        public void Divide()
+        {
+            Unit child = Creator.CreateChild(this);
+            if (child != null)
+            {
+                Simulator.AddUnit(child);
+                Energy /= 2;
+            }
+            else
                 Energy = Simulator.EnergyLimit;
+            Status = UnitStatus.Alive;
         }
 
         public void Process()
         {
-            var temp = genes[currentAction / genes.Length];
-            temp[currentAction % temp.Length].Process(this);
+            var temp = Genes[currentAction[0]];
+            temp[currentAction[1]].Process(this);
+            currentAction[1] += 1;
+            if (currentAction[1] >= temp.Length)
+            {
+                currentAction[0] += 1;
+                currentAction[1] = 0;
+                if (currentAction[0] >= Genes.Length)
+                    currentAction[0] = 0;
+            }
         }
     }
 }
