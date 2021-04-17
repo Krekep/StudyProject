@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SFML.Graphics;
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +8,11 @@ namespace Simulator
 {
     class Wait : IAction
     {
+        public Color ActionColor()
+        {
+            return new Color(128, 128, 128);
+        }
+
         public void Process(Unit unit)
         {
             

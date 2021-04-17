@@ -34,8 +34,8 @@ namespace Simulator
 
         public static Unit CreateUnit(int capacity)
         {
-            int x = Simulator.Random.Next(Simulator.WorldHeight);
-            int y = Simulator.Random.Next(Simulator.WorldWidth);
+            int x = Simulator.Random.Next(Simulator.WorldWidth);
+            int y = Simulator.Random.Next(Simulator.WorldHeight);
             int energy = Simulator.EnergyLimit / 2;
             int amountOfBlocks = Simulator.Random.Next(1, AmountBlocks);
             int[] dir = FillDirection(amountOfBlocks * Simulator.WaitValue, ref capacity);

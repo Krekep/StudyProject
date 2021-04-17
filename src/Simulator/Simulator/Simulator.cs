@@ -10,8 +10,8 @@ namespace Simulator
     public static class Simulator
     {
         public const int Scale = 4;
-        public const int WorldHeight = 50;
-        public const int WorldWidth = 100;
+        public const int WorldHeight = 100;
+        public const int WorldWidth = 200;
         public const int EnergyLimit = 1000;
         public const int EnergyDegradation = -1;
         public const int GroundPower = 5;
@@ -21,7 +21,7 @@ namespace Simulator
         public const double DropChance = 0.05;
 
         private static int timer;
-        private static byte[,] map;
+        private static Unit[,] map;
         private static List<Unit> units;
         public static Random Random;
         private static Text year;
@@ -37,31 +37,38 @@ namespace Simulator
             Random = new Random(Program.RandomSeed);
             timer = 0;
 
-            map = new byte[WorldHeight, WorldWidth];
+            map = new Unit[WorldWidth, WorldHeight];
             units = new List<Unit>();
 
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < 500; i++)
             {
                 Unit unit = Creator.CreateUnit(2000);
                 units.Add(unit);
-                map[unit.position[0], unit.position[1]] = 1;
+                map[unit.position[0], unit.position[1]] = unit;
             }
 
-            year = new Text($"Year: {timer}", Content.Font);
+            year = new Text($"Year: {timer}", Content.Font, Program.TextSize);
             year.Position = new Vector2f(Right + 20, Top + 10);
-            count = new Text($"Units: {units.Count}", Content.Font);
-            count.Position = new Vector2f(Right + 20, Top + 40);
-            seed = new Text($"Seed: {Program.RandomSeed}", Content.Font);
-            seed.Position = new Vector2f(Right + 20, Top + 70);
+            count = new Text($"Units: {units.Count}", Content.Font, Program.TextSize);
+            count.Position = new Vector2f(Right + 20, Top + Program.TextSize + 5 + 10);
+            seed = new Text($"Seed: {Program.RandomSeed}", Content.Font, Program.TextSize);
+            seed.Position = new Vector2f(Right + 20, Top + 2 * (Program.TextSize + 5) + 10);
         }
 
         internal static bool IsFree(int x, int y)
         {
-            if (x < 0 || y < 0 || x >= WorldHeight || y >= WorldWidth)
+            if (x < 0 || y < 0 || x >= WorldWidth || y >= WorldHeight)
                 return false;
-            if (map[x, y] == 0)
-                return true;
-            return false;
+            if (map[x, y] != null)
+                return false;
+            return true;
+        }
+
+        internal static Unit GetUnit(int x, int y)
+        {
+            if (x < 0 || y < 0 || x >= WorldWidth || y >= WorldHeight)
+                return null;
+            return map[x, y];
         }
 
         public static void Update()
@@ -79,7 +86,7 @@ namespace Simulator
         {
             foreach (Unit unit in units)
                 if (Random.Next(101) / 100.0 < DropChance)
-                    unit.Move(1, 0);
+                    unit.Move(0, 1);
         }
 
         private static void AddNewCells()
@@ -101,14 +108,14 @@ namespace Simulator
             foreach (Unit unit in delList)
             {
                 units.Remove(unit);
-                map[unit.position[0], unit.position[1]] = 0;
+                map[unit.position[0], unit.position[1]] = null;
             }
         }
 
         private static void RecountEnergy()
         {
             foreach (Unit unit in units)
-                unit.TakeEnergy((int)(GroundPower * Math.Pow(EnvDensity, WorldHeight - unit.position[0])));
+                unit.TakeEnergy((int)(GroundPower * Math.Pow(EnvDensity, WorldHeight - unit.position[1])));
             foreach (Unit unit in units)
                 unit.TakeEnergy(EnergyDegradation);
             //foreach (Unit unit in units)
@@ -128,7 +135,7 @@ namespace Simulator
 
         internal static void AddUnit(Unit child)
         {
-            map[child.position[0], child.position[1]] = 1;
+            map[child.position[0], child.position[1]] = child;
             units.Add(child);
         }
 
@@ -167,10 +174,10 @@ namespace Simulator
             Program.Window.Draw(rightLine, PrimitiveType.Lines);
         }
 
-        internal static void MoveUnit(int[] oldPosition, int[] newPosition)
+        internal static void MoveUnit(Unit unit, int[] oldPosition, int[] newPosition)
         {
-            map[oldPosition[0], oldPosition[1]] = 0;
-            map[newPosition[0], newPosition[1]] = 1;
+            map[oldPosition[0], oldPosition[1]] = null;
+            map[newPosition[0], newPosition[1]] = unit;
         }
     }
 }

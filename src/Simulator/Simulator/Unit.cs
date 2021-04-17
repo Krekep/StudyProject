@@ -50,10 +50,23 @@ namespace Simulator
 
         public void Draw(RenderTarget target, RenderStates states)
         {
-            shape.Position = new Vector2f(position[1] * Unit_Size * Simulator.Scale + Program.LeftMapOffset, position[0] * Unit_Size * Simulator.Scale + Program.TopMapOffset);
-            shape.FillColor = new Color(255, (byte)((Energy + .0) / Simulator.EnergyLimit * 255), 0);
+            shape.Position = new Vector2f(position[0] * Unit_Size * Simulator.Scale + Program.LeftMapOffset, position[1] * Unit_Size * Simulator.Scale + Program.TopMapOffset);
+            shape.FillColor = ChooseColor();
 
             target.Draw(shape);
+        }
+
+        private Color ChooseColor()
+        {
+            switch (Program.ChoosenMap)
+            {
+                case TypeOfMap.MapOfEnergy:
+                    return new Color(255, (byte)((Energy + .0) / Simulator.EnergyLimit * 255), 0);
+                case TypeOfMap.MapOfActions:
+                    return GetCurrentAction().ActionColor();
+                default:
+                    return Color.Black;
+            }
         }
 
         public bool Move(int x, int y)
@@ -62,7 +75,7 @@ namespace Simulator
             LastDirection = (x + 1) * 3 + (y + 1);
             if (CheckCell(newPosition[0], newPosition[1]))
             {
-                Simulator.MoveUnit(position, newPosition);
+                Simulator.MoveUnit(this, position, newPosition);
                 position[0] = newPosition[0];
                 position[1] = newPosition[1];
                 return true;
@@ -109,6 +122,12 @@ namespace Simulator
                 if (currentAction[0] >= Genes.Length)
                     currentAction[0] = 0;
             }
+        }
+
+        public IAction GetCurrentAction()
+        {
+            var temp = Genes[currentAction[0]];
+            return temp[currentAction[1]];
         }
     }
 }
