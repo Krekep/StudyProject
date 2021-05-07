@@ -13,9 +13,13 @@ namespace Simulator
             return Color.Green;
         }
 
+        public ActionType Type()
+        {
+            return ActionType.Photosyntesis;
+        }
         public void Process(Unit unit)
         {
-            int energy = (int)(Simulator.SunPower * Math.Pow(Simulator.EnvDensity, unit.position[1]) * unit.Chlorophyl);
+            int energy = (int)(Simulator.SunPower * Math.Pow(Simulator.EnvDensity, unit.Coords[1]) * unit.Chlorophyl);
             unit.TakeEnergy(energy);
         }
 

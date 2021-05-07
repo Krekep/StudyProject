@@ -14,37 +14,26 @@ namespace Simulator
         MapOfActions
     }
 
+    enum TextField: int
+    {
+        None = -1,
+        UnitText = 1,
+        WorldText = 2
+    }
+
     class Program
     {
         static RenderWindow win;
-        public static int RandomSeed { get; private set; }
+        public static int RandomSeed { get; set; }
         static bool isRunning = false;
+        private static bool isOpenMenu;
         static bool isTextEntered = false;
-        public const int LeftMapOffset = 20;
+        public const int LeftMapOffset = 10;
         public const int TopMapOffset = 50;
         public const int TextSize = 25;
 
-        static RectangleShape swordShape;
-        private const int swordSize = TopMapOffset - 10;
-        private const int swordLeftSide = LeftMapOffset + TopMapOffset;
-        private const int swordTopSide = 5;
+        public static TextField ChoosenField { get; private set; }
 
-        static RectangleShape lightningShape;
-        private const int lightningSize = TopMapOffset - 10;
-        private const int lightningLeftSide = LeftMapOffset;
-        private const int lightningTopSide = 5;
-
-        private const int unitTextLeftBound = LeftMapOffset + Simulator.WorldWidth * Simulator.Scale + 20;
-        private const int unitTextTopBound = TopMapOffset + (TextSize + 5) * 3 + 10;
-        private const int unitTextHeight = (TextSize + 20) * amountUnitInfo;
-        private const int unitTextWidth = 100;
-        static Dictionary<int, Text> unitDescription;
-        private const int amountUnitInfo = 1;
-        private static int choosenID;
-
-        private static RectangleShape fieldIllumination;
-
-        private static Unit choosenUnit;
 
         public static TypeOfMap ChoosenMap { get; private set; }
 
@@ -66,19 +55,22 @@ namespace Simulator
                 win.DispatchEvents();
                 if (isRunning)
                     Simulator.Update();
-                
-                choosenUnitUpdateInfo();
+
+                UnitTextConfigurator.ChoosenUnitUpdateInfo(isRunning);
 
                 win.Clear(Color.Black);
 
-                win.Draw(fieldIllumination);
-                DrawIcons();
-                foreach (var id in unitDescription.Keys)
+                if (isOpenMenu)
                 {
-                    win.Draw(unitDescription[id]);
+                    Menu.Draw();
                 }
-                Simulator.Draw();
-
+                else
+                {
+                    Icons.Draw();
+                    UnitTextConfigurator.Draw();
+                    WorldTextConfigurator.Draw();
+                    Simulator.Draw();
+                }
                 win.Display();
             }
         }
@@ -86,138 +78,86 @@ namespace Simulator
         private static void Initialize()
         {
             RandomSeed = DateTime.Now.Millisecond;
-            choosenID = -1;
-            choosenUnit = null;
-            unitDescription = new Dictionary<int, Text>();
-            LoadContent();
-            ConfigureIcons();
-            ConfigureUnitDescription();
-
-            fieldIllumination = new RectangleShape(new Vector2f(200, TextSize + 10));
-            fieldIllumination.FillColor = Color.Black;
+            ChoosenField = TextField.None;
 
             ChoosenMap = TypeOfMap.MapOfEnergy;
+
+            Simulator.Initialize(RandomSeed);
         }
 
-        private static void choosenUnitUpdateInfo()
-        {
-            if (isRunning)
-            {
-                if (choosenUnit != null)
-                {
-                    if (choosenUnit.Status == UnitStatus.Dead)
-                    {
-                        choosenUnit = null;
-                        return;
-                    }
-                    unitDescription[0].DisplayedString = $"Energy - {choosenUnit.Energy}";
-                }
-                else
-                {
-                    ClearUnitDescription();
-                }
-            }
-        }
-
-        private static void ConfigureUnitDescription()
-        {
-            unitDescription[0] = new Text("Energy - ", Content.Font, TextSize);
-            unitDescription[0].Position = new Vector2f(unitTextLeftBound, unitTextTopBound);
-        }
-
-        private static void ConfigureIcons()
-        {
-            swordShape = new RectangleShape(new Vector2f(swordSize, swordSize));
-            swordShape.Texture = Content.Sword;
-            swordShape.Position = new Vector2f(swordLeftSide, swordTopSide);
-
-            lightningShape = new RectangleShape(new Vector2f(lightningSize, lightningSize));
-            lightningShape.Texture = Content.PressedLightning;
-            lightningShape.Position = new Vector2f(lightningLeftSide, lightningTopSide);
-        }
-
-        private static void DrawIcons()
-        {
-            win.Draw(swordShape);
-            win.Draw(lightningShape);
-        }
-
-        private static void LoadContent()
-        {
-            Content.LoadFont("arial.ttf");
-            Content.LoadSword();
-            Content.LoadLightning();
-        }
-
-        private static int ChooseUnitTextField(int x, int y)
-        {
-            return (y - unitTextTopBound) / (TextSize + 20);
-        }
-
-        private static void ClearUnitDescription()
-        {
-            unitDescription[0].DisplayedString = "Energy - ";
-        }
-
-        private static void SetEnergyMap()
+        public static void SetEnergyMap()
         {
             ChoosenMap = TypeOfMap.MapOfEnergy;
-            lightningShape.Texture = Content.PressedLightning;
-            swordShape.Texture = Content.Sword;
+            Icons.SetMap(TypeOfMap.MapOfEnergy);
         }
 
-        private static void SetActionMap()
+        public static void SetActionMap()
         {
             ChoosenMap = TypeOfMap.MapOfActions;
-            lightningShape.Texture = Content.Lightning;
-            swordShape.Texture = Content.PressedSword;
+            Icons.SetMap(TypeOfMap.MapOfActions);
         }
 
         private static void Win_MouseButton(object sender, MouseButtonEventArgs e)
         {
-            if (new IntRect(swordLeftSide, swordTopSide, swordSize, swordSize).Contains(e.X, e.Y))
+            Icons.ButtonHandler(e.X, e.Y);
+            if (isOpenMenu)
             {
-                SetActionMap();
-            }
-            else if (new IntRect(lightningLeftSide, lightningTopSide, lightningSize, lightningSize).Contains(e.X, e.Y))
-            {
-                SetEnergyMap();
+                Menu.MouseHandle(e.X, e.Y);
             }
             else if (new IntRect(LeftMapOffset, TopMapOffset, Simulator.WorldWidth * Simulator.Scale, Simulator.WorldHeight * Simulator.Scale).Contains(e.X, e.Y))
             {
                 int x = (e.X - LeftMapOffset) / Simulator.Scale;
                 int y = (e.Y - TopMapOffset) / Simulator.Scale;
                 var unit = Simulator.GetUnit(x, y);
-                ClearUnitDescription();
+                UnitTextConfigurator.ClearUnitDescription();
                 if (unit != null)
                 {
-                    choosenUnit = unit;
-                    unitDescription[0].DisplayedString += unit.Energy.ToString();
+                    UnitTextConfigurator.ChooseUnit(unit);
                     isRunning = false;
                 }
                 else
                 {
-                    choosenUnit = null;
+                    UnitTextConfigurator.ResetUnit();
                 }
             }
-            else if (new IntRect(unitTextLeftBound, unitTextTopBound, unitTextWidth, unitTextHeight).Contains(e.X, e.Y))
+            else if (UnitTextConfigurator.MouseHandle(e.X, e.Y))
             {
-                choosenID = ChooseUnitTextField(e.X, e.Y);
-                
-                fieldIllumination.Position = new Vector2f(unitTextLeftBound, unitTextTopBound + choosenID * (TextSize + 5));
-                fieldIllumination.FillColor = Color.Cyan;
+                ChoosenField = TextField.UnitText;
             }
+            else if (WorldTextConfigurator.MouseHandle(e.X, e.Y))
+            {
+                ChoosenField = TextField.WorldText;
+            }
+        }
+
+        internal static void OpenMenu()
+        {
+            isRunning = false;
+            isOpenMenu = true;
+            Menu.Open();
+        }
+
+        internal static void Restart()
+        {
+            isRunning = false;
+            Simulator.Initialize(RandomSeed);
         }
 
         private static void Win_TextEntered(object sender, TextEventArgs e)
         {
             if (!isTextEntered)
                 return;
-            if (choosenID == -1)
-                return;
-            if (choosenID < amountUnitInfo)
+            if (ChoosenField == TextField.UnitText)
             {
-                unitDescription[choosenID].DisplayedString += e.Unicode;
+                UnitTextConfigurator.UpdateUnitInfo(e.Unicode);
+            }
+            if (ChoosenField == TextField.WorldText)
+            {
+                WorldTextConfigurator.UpdateWorldInfo(e.Unicode);
+            }
+            if (isOpenMenu)
+            {
+                Menu.UpdateExportName(e.Unicode);
             }
         }
 
@@ -226,41 +166,47 @@ namespace Simulator
             isTextEntered = false;
             if (e.Code == Keyboard.Key.Escape)
             {
-                fieldIllumination.FillColor = Color.Black;
-                choosenID = -1;
+                UnitTextConfigurator.EscapeHandle();
+                WorldTextConfigurator.EscapeHandle();
+                Menu.EscapeHandler();
+                ChoosenField = TextField.None;
             }
-            else if (e.Code == Keyboard.Key.Backspace && choosenID != -1)
+            else if (e.Code == Keyboard.Key.Backspace)
             {
-                if (choosenID < amountUnitInfo)
-                {
-                    string temp = unitDescription[choosenID].DisplayedString;
-                    temp = temp.Remove(temp.Length - 1);
-                    unitDescription[choosenID].DisplayedString = temp;
-                }
+                if (ChoosenField == TextField.UnitText)
+                    UnitTextConfigurator.BackspaceHandle();
+                if (ChoosenField == TextField.WorldText)
+                    WorldTextConfigurator.BackspaceHandle();
+                if (isOpenMenu)
+                    Menu.BackspaceHandle();
             }
-            else if (e.Code == Keyboard.Key.P)
+            else if (e.Code == Keyboard.Key.P && !isOpenMenu)
                 isRunning ^= true;
-            else if (e.Code == Keyboard.Key.Enter)
+            else if (e.Code == Keyboard.Key.Enter && ChoosenField != TextField.None)
             {
-                if (choosenID < amountUnitInfo && choosenUnit != null)
+                if (UnitTextConfigurator.ChoosenUnit != null)
                 {
-                    int energy = GetInt(unitDescription[0].DisplayedString);
-                    choosenUnit.TakeEnergy(energy - choosenUnit.Energy);
+                    int energy = UnitTextConfigurator.GetEnergyInfo();
+                    IAction[][] genes = UnitTextConfigurator.GetGenesArray();
+                    UnitTextConfigurator.ChoosenUnit.TakeEnergy(energy - UnitTextConfigurator.ChoosenUnit.Energy);
+                    UnitTextConfigurator.ChoosenUnit.SetGenes(genes);
                 }
+
+                int groundPower = WorldTextConfigurator.GetGroundPower();
+                int sunPower = WorldTextConfigurator.GetSunPower();
+                double dropChance = WorldTextConfigurator.GetDropChance();
+                double envDensity = WorldTextConfigurator.GetEnvDensity();
+
+                Simulator.UpdateParameters(groundPower, sunPower, dropChance, envDensity);
+                WorldTextConfigurator.WorldUpdateInfo();
             }
             else
                 isTextEntered = true;
         }
 
-        private static int GetInt(string input)
+        internal static void CloseMenu()
         {
-            int result = 0;
-            for (int i = 0; i < input.Length; i++)
-            {
-                if ('0' <= input[i] && input[i] <= '9')
-                    result = result * 10 + int.Parse(input[i].ToString());
-            }
-            return result;
+            isOpenMenu = false;
         }
 
         private static void Win_Resized(object sender, SizeEventArgs e)

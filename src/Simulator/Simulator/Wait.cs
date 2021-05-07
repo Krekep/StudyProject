@@ -18,6 +18,11 @@ namespace Simulator
             
         }
 
+        public ActionType Type()
+        {
+            return ActionType.Wait;
+        }
+
         public int Value()
         {
             return Simulator.WaitValue;

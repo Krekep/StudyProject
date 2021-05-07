@@ -12,25 +12,41 @@ namespace Simulator
         Alive = 0,
         Divide = 1
     }
-    class Unit : Transformable, Drawable
+
+    public class Unit : Transformable, Drawable
     {
-        const int Unit_Size = 1;
+        const int UnitSize = 1;
         public int Capacity { get; private set; }
         RectangleShape shape;
-        public int[] position { get; private set; }
+        public int[] Coords { get; private set; }
         public IAction[][] Genes { get; private set; }
         private int[] currentAction;
         public int LastDirection { get; private set; }
-        public int[] Directions { get; private set; }
+        public int[] Direction { get; private set; }  // unit's favorite direction (x, y) - (1, 0), (0, -1), (0, 1), (-1, 0)
         public int Energy { get; private set; }
         public UnitStatus Status { get; private set; }
         public int Chlorophyl { get; private set; }
+        public Unit(int energy, int lastDirection, int capacity, int chlorophyl, int status, int[] position, int[] directions, IAction[][] genes)
+        {
+            this.Energy = energy;
+            this.Coords = position;
+            this.Direction = directions;
+            this.Genes = genes;
+            this.Capacity = capacity;
+            this.Chlorophyl = chlorophyl;
 
+            LastDirection = lastDirection;
+            currentAction = new int[2] { 0, 0 };
+            Status = (UnitStatus)status;
+
+
+            shape = new RectangleShape(new Vector2f(UnitSize * Simulator.Scale, UnitSize * Simulator.Scale));
+        }
         public Unit(int energy, int[] position, int[] directions, IAction[][] genes, int capacity, int chlorophyl)
         {
             this.Energy = energy;
-            this.position = position;
-            this.Directions = directions;
+            this.Coords = position;
+            this.Direction = directions;
             this.Genes = genes;
             this.Capacity = capacity;
             this.Chlorophyl = chlorophyl;
@@ -40,7 +56,7 @@ namespace Simulator
             Status = UnitStatus.Alive;
 
 
-            shape = new RectangleShape(new Vector2f(Unit_Size * Simulator.Scale, Unit_Size * Simulator.Scale));
+            shape = new RectangleShape(new Vector2f(UnitSize * Simulator.Scale, UnitSize * Simulator.Scale));
         }
 
         private bool CheckCell(int x, int y)
@@ -50,7 +66,7 @@ namespace Simulator
 
         public void Draw(RenderTarget target, RenderStates states)
         {
-            shape.Position = new Vector2f(position[0] * Unit_Size * Simulator.Scale + Program.LeftMapOffset, position[1] * Unit_Size * Simulator.Scale + Program.TopMapOffset);
+            shape.Position = new Vector2f(Coords[0] * UnitSize * Simulator.Scale + Program.LeftMapOffset, Coords[1] * UnitSize * Simulator.Scale + Program.TopMapOffset);
             shape.FillColor = ChooseColor();
 
             target.Draw(shape);
@@ -71,13 +87,13 @@ namespace Simulator
 
         public bool Move(int x, int y)
         {
-            int[] newPosition = new int[] { position[0] + x, position[1] + y };
+            int[] newPosition = new int[] { Coords[0] + x, Coords[1] + y };
             LastDirection = (x + 1) * 3 + (y + 1);
             if (CheckCell(newPosition[0], newPosition[1]))
             {
-                Simulator.MoveUnit(this, position, newPosition);
-                position[0] = newPosition[0];
-                position[1] = newPosition[1];
+                Simulator.MoveUnit(this, Coords, newPosition);
+                Coords[0] = newPosition[0];
+                Coords[1] = newPosition[1];
                 return true;
             }
             return false;
@@ -128,6 +144,11 @@ namespace Simulator
         {
             var temp = Genes[currentAction[0]];
             return temp[currentAction[1]];
+        }
+
+        public void SetGenes(IAction[][] genes)
+        {
+            Genes = genes;
         }
     }
 }

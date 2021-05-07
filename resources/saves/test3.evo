@@ -1,0 +1,9252 @@
+#State:
+	Seed=536
+	Timer=997
+#Params:
+	GroundPower=5
+	SunPower=5
+	DropChance=0,05
+	EnvDensity=0,8
+#Units:
+	#0:
+	Energy=779
+	LastDirection=3
+	Chlorophyl=2
+	Capacity=825
+	Status=0
+	Position=198 3
+	Direction=1 -1
+	Genes=22|0|1
+	#1:
+	Energy=421
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=1 0
+	Direction=-1 -1
+	Genes=11|21|21
+	#2:
+	Energy=640
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=200
+	Status=0
+	Position=126 96
+	Direction=1 1
+	Genes=20|21|21|0
+	#3:
+	Energy=919
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1300
+	Status=0
+	Position=8 99
+	Direction=-1 1
+	Genes=20|1
+	#4:
+	Energy=1000
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=0 98
+	Direction=-1 1
+	Genes=20|11|22
+	#5:
+	Energy=367
+	LastDirection=7
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=198 87
+	Direction=1 0
+	Genes=20|22|11|0
+	#6:
+	Energy=557
+	LastDirection=2
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=88 99
+	Direction=-1 1
+	Genes=21|0
+	#7:
+	Energy=726
+	LastDirection=8
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=2 99
+	Direction=-1 1
+	Genes=22|20|0|21
+	#8:
+	Energy=570
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=170 99
+	Direction=0 1
+	Genes=22|22|0|0
+	#9:
+	Energy=702
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=104 99
+	Direction=1 1
+	Genes=0|22|20|1
+	#10:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=122 99
+	Direction=-1 0
+	Genes=22|0|22
+	#11:
+	Energy=874
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=525
+	Status=0
+	Position=4 2
+	Direction=-1 -1
+	Genes=11|20|20
+	#12:
+	Energy=671
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=0 95
+	Direction=-1 1
+	Genes=21|11|11|0|0
+	#13:
+	Energy=502
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=625
+	Status=0
+	Position=187 97
+	Direction=1 1
+	Genes=20|11|1|1
+	#14:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=500
+	Status=0
+	Position=118 99
+	Direction=1 1
+	Genes=1|22|20
+	#15:
+	Energy=1000
+	LastDirection=3
+	Chlorophyl=3
+	Capacity=375
+	Status=0
+	Position=198 99
+	Direction=0 1
+	Genes=20|11|20
+	#16:
+	Energy=104
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=180 27
+	Direction=1 -1
+	Genes=1|22|20|20
+	#17:
+	Energy=278
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=1400
+	Status=0
+	Position=143 94
+	Direction=0 0
+	Genes=21
+	#18:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=775
+	Status=0
+	Position=57 99
+	Direction=-1 -1
+	Genes=0|0|22
+	#19:
+	Energy=675
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=1675
+	Status=0
+	Position=83 99
+	Direction=1 1
+	Genes=0
+	#20:
+	Energy=467
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=168 1
+	Direction=1 -1
+	Genes=11|22|22|0|0
+	#21:
+	Energy=619
+	LastDirection=7
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=199 1
+	Direction=1 -1
+	Genes=1|11|21|21
+	#22:
+	Energy=615
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=1 93
+	Direction=-1 1
+	Genes=22|21|1|11
+	#23:
+	Energy=604
+	LastDirection=6
+	Chlorophyl=2
+	Capacity=825
+	Status=0
+	Position=2 91
+	Direction=-1 1
+	Genes=11|1|0|11
+	#24:
+	Energy=241
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=1100
+	Status=0
+	Position=6 3
+	Direction=-1 -1
+	Genes=11|20
+	#25:
+	Energy=1000
+	LastDirection=3
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=0 96
+	Direction=-1 1
+	Genes=22|11|11|0
+	#26:
+	Energy=928
+	LastDirection=3
+	Chlorophyl=4
+	Capacity=50
+	Status=0
+	Position=199 2
+	Direction=1 -1
+	Genes=0|1|21|1|11
+	#27:
+	Energy=983
+	LastDirection=2
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=140 98
+	Direction=-1 0
+	Genes=22|21|0|20|0
+	#28:
+	Energy=440
+	LastDirection=8
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=197 91
+	Direction=1 1
+	Genes=1|1|22|1|21
+	#29:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1125
+	Status=0
+	Position=0 99
+	Direction=-1 1
+	Genes=11|11
+	#30:
+	Energy=237
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=6 8
+	Direction=-1 -1
+	Genes=1|11|21|20
+	#31:
+	Energy=965
+	LastDirection=2
+	Chlorophyl=1
+	Capacity=600
+	Status=0
+	Position=10 99
+	Direction=-1 1
+	Genes=21|22
+	#32:
+	Energy=987
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=600
+	Status=0
+	Position=183 97
+	Direction=1 0
+	Genes=1|20|0|21
+	#33:
+	Energy=716
+	LastDirection=1
+	Chlorophyl=3
+	Capacity=375
+	Status=0
+	Position=6 98
+	Direction=-1 1
+	Genes=11|0|20|11
+	#34:
+	Energy=786
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1025
+	Status=0
+	Position=0 91
+	Direction=-1 1
+	Genes=20|11
+	#35:
+	Energy=773
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1225
+	Status=0
+	Position=126 3
+	Direction=0 -1
+	Genes=21|0
+	#36:
+	Energy=760
+	LastDirection=7
+	Chlorophyl=4
+	Capacity=250
+	Status=0
+	Position=195 94
+	Direction=1 1
+	Genes=20|11|11
+	#37:
+	Energy=613
+	LastDirection=1
+	Chlorophyl=3
+	Capacity=175
+	Status=0
+	Position=29 99
+	Direction=-1 1
+	Genes=20|20|1|11
+	#38:
+	Energy=852
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1300
+	Status=0
+	Position=1 95
+	Direction=-1 1
+	Genes=0|0|11|0
+	#39:
+	Energy=769
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=1400
+	Status=0
+	Position=45 96
+	Direction=0 0
+	Genes=21
+	#40:
+	Energy=970
+	LastDirection=6
+	Chlorophyl=2
+	Capacity=1725
+	Status=0
+	Position=185 97
+	Direction=0 1
+	Genes=1
+	#41:
+	Energy=343
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=900
+	Status=0
+	Position=199 91
+	Direction=1 0
+	Genes=0|1|1|0|20
+	#42:
+	Energy=671
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=0 90
+	Direction=-1 1
+	Genes=21|20|0|1|1
+	#43:
+	Energy=487
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=600
+	Status=0
+	Position=197 89
+	Direction=1 1
+	Genes=0|0|11|22
+	#44:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=625
+	Status=0
+	Position=97 99
+	Direction=-1 0
+	Genes=22|20
+	#45:
+	Energy=782
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=600
+	Status=0
+	Position=127 97
+	Direction=1 1
+	Genes=0|11|22|0
+	#46:
+	Energy=472
+	LastDirection=8
+	Chlorophyl=1
+	Capacity=1800
+	Status=0
+	Position=197 95
+	Direction=1 1
+	Genes=1
+	#47:
+	Energy=196
+	LastDirection=10
+	Chlorophyl=1
+	Capacity=1300
+	Status=0
+	Position=199 89
+	Direction=1 0
+	Genes=21|0
+	#48:
+	Energy=702
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=36 99
+	Direction=1 0
+	Genes=0|20|22|20|0
+	#49:
+	Energy=846
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=190 96
+	Direction=1 1
+	Genes=20|21|11|20
+	#50:
+	Energy=600
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=500
+	Status=0
+	Position=99 4
+	Direction=1 -1
+	Genes=22|21|0
+	#51:
+	Energy=40
+	LastDirection=6
+	Chlorophyl=2
+	Capacity=1725
+	Status=0
+	Position=198 70
+	Direction=1 0
+	Genes=1
+	#52:
+	Energy=642
+	LastDirection=4
+	Chlorophyl=3
+	Capacity=175
+	Status=0
+	Position=2 96
+	Direction=-1 1
+	Genes=20|1|21|1|0
+	#53:
+	Energy=527
+	LastDirection=8
+	Chlorophyl=3
+	Capacity=75
+	Status=0
+	Position=199 83
+	Direction=1 0
+	Genes=11|11|22|0
+	#54:
+	Energy=1000
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=600
+	Status=0
+	Position=198 96
+	Direction=1 1
+	Genes=21|1|21
+	#55:
+	Energy=921
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1900
+	Status=0
+	Position=128 99
+	Direction=0 -1
+	Genes=0
+	#56:
+	Energy=820
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1125
+	Status=0
+	Position=193 91
+	Direction=0 1
+	Genes=20|1|0
+	#57:
+	Energy=619
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1500
+	Status=0
+	Position=96 97
+	Direction=-1 1
+	Genes=20
+	#58:
+	Energy=884
+	LastDirection=0
+	Chlorophyl=2
+	Capacity=1125
+	Status=0
+	Position=186 95
+	Direction=0 1
+	Genes=20|0|1
+	#59:
+	Energy=458
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1600
+	Status=0
+	Position=194 93
+	Direction=1 1
+	Genes=11
+	#60:
+	Energy=882
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=126 99
+	Direction=0 1
+	Genes=22|1|11|21
+	#61:
+	Energy=800
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=200
+	Status=0
+	Position=190 95
+	Direction=0 1
+	Genes=20|11|1|21|0
+	#62:
+	Energy=924
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1700
+	Status=0
+	Position=133 99
+	Direction=1 1
+	Genes=0|1
+	#63:
+	Energy=636
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=-25
+	Status=0
+	Position=59 96
+	Direction=-1 1
+	Genes=21|0|20|21
+	#64:
+	Energy=906
+	LastDirection=2
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=76 98
+	Direction=-1 1
+	Genes=21|22|0|1
+	#65:
+	Energy=753
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1425
+	Status=0
+	Position=75 99
+	Direction=-1 -1
+	Genes=20
+	#66:
+	Energy=292
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1400
+	Status=0
+	Position=198 89
+	Direction=0 1
+	Genes=21
+	#67:
+	Energy=297
+	LastDirection=5
+	Chlorophyl=4
+	Capacity=250
+	Status=0
+	Position=199 87
+	Direction=1 0
+	Genes=21|20|1
+	#68:
+	Energy=130
+	LastDirection=2
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=3 5
+	Direction=0 -1
+	Genes=21|11|21|11|0
+	#69:
+	Energy=697
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=171 99
+	Direction=-1 1
+	Genes=21|20|20|0|0
+	#70:
+	Energy=794
+	LastDirection=0
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=29 15
+	Direction=-1 -1
+	Genes=22|11|20|0|0
+	#71:
+	Energy=992
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1500
+	Status=0
+	Position=187 99
+	Direction=0 -1
+	Genes=20
+	#72:
+	Energy=888
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=81 1
+	Direction=0 -1
+	Genes=22|11|20
+	#73:
+	Energy=908
+	LastDirection=8
+	Chlorophyl=2
+	Capacity=725
+	Status=0
+	Position=77 98
+	Direction=1 1
+	Genes=20|1|20
+	#74:
+	Energy=389
+	LastDirection=8
+	Chlorophyl=1
+	Capacity=1400
+	Status=0
+	Position=3 7
+	Direction=-1 -1
+	Genes=21
+	#75:
+	Energy=929
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=192 98
+	Direction=0 1
+	Genes=20|11|11|0|11
+	#76:
+	Energy=482
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=600
+	Status=0
+	Position=1 88
+	Direction=-1 1
+	Genes=11|20|11|0
+	#77:
+	Energy=451
+	LastDirection=3
+	Chlorophyl=2
+	Capacity=525
+	Status=0
+	Position=121 13
+	Direction=0 -1
+	Genes=1|20|0|21
+	#78:
+	Energy=415
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=200
+	Status=0
+	Position=198 81
+	Direction=1 0
+	Genes=11|1|21|21
+	#79:
+	Energy=837
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=1675
+	Status=0
+	Position=137 99
+	Direction=-1 0
+	Genes=0
+	#80:
+	Energy=714
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=186 99
+	Direction=1 1
+	Genes=20|22|11|1
+	#81:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=-25
+	Status=0
+	Position=107 99
+	Direction=0 1
+	Genes=20|20|22
+	#82:
+	Energy=851
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=118 98
+	Direction=1 1
+	Genes=22|22|0|0|1
+	#83:
+	Energy=910
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=475
+	Status=0
+	Position=77 99
+	Direction=-1 1
+	Genes=11|0|0|21|0
+	#84:
+	Energy=201
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=1000
+	Status=0
+	Position=0 1
+	Direction=-1 -1
+	Genes=21|1|1
+	#85:
+	Energy=937
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1600
+	Status=0
+	Position=4 94
+	Direction=-1 1
+	Genes=11
+	#86:
+	Energy=859
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=1275
+	Status=0
+	Position=2 98
+	Direction=1 1
+	Genes=20
+	#87:
+	Energy=779
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=1400
+	Status=0
+	Position=198 93
+	Direction=1 0
+	Genes=21
+	#88:
+	Energy=101
+	LastDirection=5
+	Chlorophyl=5
+	Capacity=-50
+	Status=0
+	Position=143 64
+	Direction=-1 0
+	Genes=20|22
+	#89:
+	Energy=838
+	LastDirection=2
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=7 96
+	Direction=-1 1
+	Genes=11|11|22|0
+	#90:
+	Energy=364
+	LastDirection=8
+	Chlorophyl=3
+	Capacity=1175
+	Status=0
+	Position=179 93
+	Direction=0 0
+	Genes=21
+	#91:
+	Energy=553
+	LastDirection=1
+	Chlorophyl=3
+	Capacity=575
+	Status=0
+	Position=3 95
+	Direction=-1 1
+	Genes=22|11
+	#92:
+	Energy=635
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1800
+	Status=0
+	Position=146 97
+	Direction=-1 1
+	Genes=0|0
+	#93:
+	Energy=354
+	LastDirection=7
+	Chlorophyl=4
+	Capacity=750
+	Status=0
+	Position=199 90
+	Direction=1 1
+	Genes=0|20|1
+	#94:
+	Energy=840
+	LastDirection=3
+	Chlorophyl=2
+	Capacity=325
+	Status=0
+	Position=182 10
+	Direction=0 -1
+	Genes=21|1|22
+	#95:
+	Energy=995
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=7 4
+	Direction=0 -1
+	Genes=21
+	#96:
+	Energy=445
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=197 93
+	Direction=1 1
+	Genes=21|0|22|0|11
+	#97:
+	Energy=789
+	LastDirection=3
+	Chlorophyl=2
+	Capacity=1325
+	Status=0
+	Position=2 1
+	Direction=-1 -1
+	Genes=21
+	#98:
+	Energy=762
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=600
+	Status=0
+	Position=16 99
+	Direction=-1 0
+	Genes=20|22|0
+	#99:
+	Energy=546
+	LastDirection=2
+	Chlorophyl=1
+	Capacity=600
+	Status=0
+	Position=2 5
+	Direction=0 -1
+	Genes=22|11|1
+	#100:
+	Energy=551
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=925
+	Status=0
+	Position=1 98
+	Direction=-1 1
+	Genes=21|11
+	#101:
+	Energy=807
+	LastDirection=2
+	Chlorophyl=3
+	Capacity=1275
+	Status=0
+	Position=87 96
+	Direction=-1 1
+	Genes=0|11
+	#102:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1725
+	Status=0
+	Position=191 99
+	Direction=1 1
+	Genes=1
+	#103:
+	Energy=586
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1500
+	Status=0
+	Position=193 97
+	Direction=0 0
+	Genes=20
+	#104:
+	Energy=198
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=600
+	Status=0
+	Position=115 1
+	Direction=0 -1
+	Genes=21|1|21
+	#105:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1900
+	Status=0
+	Position=197 99
+	Direction=1 0
+	Genes=0
+	#106:
+	Energy=598
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=182 89
+	Direction=0 0
+	Genes=0|22|21|11|0
+	#107:
+	Energy=674
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=122 97
+	Direction=1 -1
+	Genes=22
+	#108:
+	Energy=133
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=1000
+	Status=0
+	Position=199 7
+	Direction=1 -1
+	Genes=21|11
+	#109:
+	Energy=506
+	LastDirection=6
+	Chlorophyl=4
+	Capacity=1150
+	Status=0
+	Position=189 95
+	Direction=0 1
+	Genes=11
+	#110:
+	Energy=502
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=1400
+	Status=0
+	Position=199 9
+	Direction=1 -1
+	Genes=21
+	#111:
+	Energy=900
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=525
+	Status=0
+	Position=89 97
+	Direction=1 1
+	Genes=22|21
+	#112:
+	Energy=999
+	LastDirection=6
+	Chlorophyl=2
+	Capacity=1225
+	Status=0
+	Position=186 97
+	Direction=0 1
+	Genes=0|11|1
+	#113:
+	Energy=490
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=700
+	Status=0
+	Position=1 8
+	Direction=-1 -1
+	Genes=0|1|1|22
+	#114:
+	Energy=24
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=112 8
+	Direction=1 -1
+	Genes=20|0|1
+	#115:
+	Energy=341
+	LastDirection=2
+	Chlorophyl=4
+	Capacity=50
+	Status=0
+	Position=197 94
+	Direction=1 0
+	Genes=1|1|20|21
+	#116:
+	Energy=645
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=1600
+	Status=0
+	Position=197 88
+	Direction=0 1
+	Genes=1|1
+	#117:
+	Energy=825
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=1300
+	Status=0
+	Position=198 95
+	Direction=0 1
+	Genes=1|20
+	#118:
+	Energy=622
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=1100
+	Status=0
+	Position=152 95
+	Direction=0 1
+	Genes=1|0|0|20
+	#119:
+	Energy=930
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=500
+	Status=0
+	Position=125 99
+	Direction=1 1
+	Genes=1|22|20
+	#120:
+	Energy=501
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=185 95
+	Direction=1 1
+	Genes=11|0|0|20|21
+	#121:
+	Energy=763
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=925
+	Status=0
+	Position=188 96
+	Direction=0 1
+	Genes=1|11|1|1
+	#122:
+	Energy=749
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1400
+	Status=0
+	Position=97 94
+	Direction=0 1
+	Genes=21
+	#123:
+	Energy=817
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1500
+	Status=0
+	Position=137 96
+	Direction=0 1
+	Genes=11|0
+	#124:
+	Energy=842
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=80 99
+	Direction=0 0
+	Genes=22|20|20|0
+	#125:
+	Energy=681
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=199 95
+	Direction=1 1
+	Genes=11|11|20|20|1
+	#126:
+	Energy=841
+	LastDirection=1
+	Chlorophyl=4
+	Capacity=150
+	Status=0
+	Position=109 99
+	Direction=-1 1
+	Genes=22|11|0|0
+	#127:
+	Energy=524
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1400
+	Status=0
+	Position=83 98
+	Direction=-1 0
+	Genes=20|0
+	#128:
+	Energy=477
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=1725
+	Status=0
+	Position=2 94
+	Direction=-1 1
+	Genes=1
+	#129:
+	Energy=679
+	LastDirection=2
+	Chlorophyl=2
+	Capacity=525
+	Status=0
+	Position=114 96
+	Direction=-1 1
+	Genes=21|22
+	#130:
+	Energy=629
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=1 1
+	Direction=-1 -1
+	Genes=22|22|11|0
+	#131:
+	Energy=903
+	LastDirection=8
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=12 3
+	Direction=-1 -1
+	Genes=22|11|22
+	#132:
+	Energy=102
+	LastDirection=6
+	Chlorophyl=2
+	Capacity=1325
+	Status=0
+	Position=181 96
+	Direction=0 0
+	Genes=11|1
+	#133:
+	Energy=563
+	LastDirection=3
+	Chlorophyl=2
+	Capacity=325
+	Status=0
+	Position=111 2
+	Direction=0 -1
+	Genes=21|21|1|1
+	#134:
+	Energy=690
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=195 0
+	Direction=1 -1
+	Genes=0|21
+	#135:
+	Energy=556
+	LastDirection=4
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=7 97
+	Direction=-1 1
+	Genes=1|21
+	#136:
+	Energy=186
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=0 84
+	Direction=-1 0
+	Genes=0|0|11|20|21
+	#137:
+	Energy=914
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=1300
+	Status=0
+	Position=10 98
+	Direction=-1 1
+	Genes=0|21
+	#138:
+	Energy=749
+	LastDirection=1
+	Chlorophyl=3
+	Capacity=275
+	Status=0
+	Position=7 2
+	Direction=-1 -1
+	Genes=21|1|1|20
+	#139:
+	Energy=132
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=725
+	Status=0
+	Position=198 2
+	Direction=1 -1
+	Genes=0|11|20|1
+	#140:
+	Energy=708
+	LastDirection=1
+	Chlorophyl=3
+	Capacity=275
+	Status=0
+	Position=99 97
+	Direction=-1 1
+	Genes=22|20|1
+	#141:
+	Energy=563
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=1700
+	Status=0
+	Position=114 94
+	Direction=0 1
+	Genes=1|0
+	#142:
+	Energy=714
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=1400
+	Status=0
+	Position=5 95
+	Direction=-1 1
+	Genes=11|1
+	#143:
+	Energy=1000
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=800
+	Status=0
+	Position=199 96
+	Direction=1 1
+	Genes=1|20|20
+	#144:
+	Energy=698
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=800
+	Status=0
+	Position=88 2
+	Direction=0 -1
+	Genes=22|11
+	#145:
+	Energy=974
+	LastDirection=7
+	Chlorophyl=2
+	Capacity=825
+	Status=0
+	Position=109 98
+	Direction=1 1
+	Genes=1|22|0
+	#146:
+	Energy=848
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1400
+	Status=0
+	Position=84 99
+	Direction=-1 1
+	Genes=0|20
+	#147:
+	Energy=307
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=0 75
+	Direction=-1 0
+	Genes=21|21|21|0|0
+	#148:
+	Energy=1000
+	LastDirection=4
+	Chlorophyl=3
+	Capacity=1575
+	Status=0
+	Position=194 99
+	Direction=0 1
+	Genes=1
+	#149:
+	Energy=139
+	LastDirection=2
+	Chlorophyl=4
+	Capacity=750
+	Status=0
+	Position=109 70
+	Direction=0 0
+	Genes=21|1
+	#150:
+	Energy=600
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=92 96
+	Direction=0 1
+	Genes=22|0|11|20|0
+	#151:
+	Energy=518
+	LastDirection=7
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=199 0
+	Direction=1 -1
+	Genes=1|1|21|22
+	#152:
+	Energy=532
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=199 93
+	Direction=0 1
+	Genes=1|21|1|11|21
+	#153:
+	Energy=773
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=700
+	Status=0
+	Position=3 94
+	Direction=-1 1
+	Genes=22|1|1|0
+	#154:
+	Energy=100
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=191 95
+	Direction=1 1
+	Genes=22|21|21|0
+	#155:
+	Energy=719
+	LastDirection=4
+	Chlorophyl=2
+	Capacity=525
+	Status=0
+	Position=13 0
+	Direction=0 -1
+	Genes=21|1|11|1
+	#156:
+	Energy=726
+	LastDirection=7
+	Chlorophyl=2
+	Capacity=1125
+	Status=0
+	Position=197 0
+	Direction=1 -1
+	Genes=21|1
+	#157:
+	Energy=603
+	LastDirection=1
+	Chlorophyl=4
+	Capacity=450
+	Status=0
+	Position=79 93
+	Direction=0 0
+	Genes=21|20
+	#158:
+	Energy=384
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=200
+	Status=0
+	Position=2 90
+	Direction=-1 0
+	Genes=0|22|11|20
+	#159:
+	Energy=760
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=1025
+	Status=0
+	Position=195 88
+	Direction=1 1
+	Genes=20|11
+	#160:
+	Energy=815
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=925
+	Status=0
+	Position=194 95
+	Direction=0 1
+	Genes=21|11
+	#161:
+	Energy=647
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=143 99
+	Direction=1 1
+	Genes=0|21|0|21|20
+	#162:
+	Energy=822
+	LastDirection=4
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=190 97
+	Direction=1 0
+	Genes=21|21|21|0
+	#163:
+	Energy=591
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=600
+	Status=0
+	Position=195 96
+	Direction=1 1
+	Genes=21|1|20|0
+	#164:
+	Energy=1000
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=525
+	Status=0
+	Position=0 97
+	Direction=-1 1
+	Genes=1|11|21|1
+	#165:
+	Energy=999
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=8 0
+	Direction=-1 -1
+	Genes=21|22|0|1|1
+	#166:
+	Energy=795
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=192 93
+	Direction=0 1
+	Genes=1|21
+	#167:
+	Energy=787
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=61 98
+	Direction=-1 1
+	Genes=22|20|0|11|1
+	#168:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=725
+	Status=0
+	Position=199 98
+	Direction=1 1
+	Genes=0|11|21|0
+	#169:
+	Energy=623
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=132 99
+	Direction=-1 1
+	Genes=22|0|22|0|1
+	#170:
+	Energy=851
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1300
+	Status=0
+	Position=197 97
+	Direction=1 1
+	Genes=0|11|1
+	#171:
+	Energy=826
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1800
+	Status=0
+	Position=196 96
+	Direction=1 1
+	Genes=1
+	#172:
+	Energy=721
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=800
+	Status=0
+	Position=197 90
+	Direction=1 1
+	Genes=11|11|11
+	#173:
+	Energy=812
+	LastDirection=0
+	Chlorophyl=3
+	Capacity=1175
+	Status=0
+	Position=82 95
+	Direction=0 1
+	Genes=21
+	#174:
+	Energy=612
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=146 99
+	Direction=1 0
+	Genes=22
+	#175:
+	Energy=839
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=-25
+	Status=0
+	Position=1 94
+	Direction=-1 1
+	Genes=0|11|11
+	#176:
+	Energy=938
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=800
+	Status=0
+	Position=174 97
+	Direction=0 1
+	Genes=21|21
+	#177:
+	Energy=775
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=197 92
+	Direction=1 1
+	Genes=0|11|20|20|0
+	#178:
+	Energy=647
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=700
+	Status=0
+	Position=3 96
+	Direction=-1 1
+	Genes=1|20|20|0
+	#179:
+	Energy=995
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=8 98
+	Direction=-1 1
+	Genes=0|0|21|22
+	#180:
+	Energy=966
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=77 92
+	Direction=0 0
+	Genes=21|22|21
+	#181:
+	Energy=639
+	LastDirection=6
+	Chlorophyl=3
+	Capacity=775
+	Status=0
+	Position=7 6
+	Direction=0 -1
+	Genes=22|1
+	#182:
+	Energy=827
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=16 98
+	Direction=0 1
+	Genes=20|11|22|0|1
+	#183:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=105 99
+	Direction=1 1
+	Genes=0|0|21
+	#184:
+	Energy=449
+	LastDirection=6
+	Chlorophyl=2
+	Capacity=1725
+	Status=0
+	Position=125 94
+	Direction=0 0
+	Genes=1
+	#185:
+	Energy=842
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=136 95
+	Direction=0 1
+	Genes=21|21|22|0|0
+	#186:
+	Energy=771
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=200
+	Status=0
+	Position=194 97
+	Direction=0 1
+	Genes=0|11|0|11|22
+	#187:
+	Energy=653
+	LastDirection=2
+	Chlorophyl=1
+	Capacity=1100
+	Status=0
+	Position=196 94
+	Direction=1 0
+	Genes=11|20
+	#188:
+	Energy=867
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1425
+	Status=0
+	Position=25 99
+	Direction=0 1
+	Genes=20
+	#189:
+	Energy=995
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=200
+	Status=0
+	Position=130 99
+	Direction=-1 0
+	Genes=22|20|20|0|0
+	#190:
+	Energy=800
+	LastDirection=7
+	Chlorophyl=3
+	Capacity=875
+	Status=0
+	Position=122 93
+	Direction=1 1
+	Genes=0|0|0|21
+	#191:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=152 99
+	Direction=-1 1
+	Genes=22
+	#192:
+	Energy=531
+	LastDirection=4
+	Chlorophyl=2
+	Capacity=625
+	Status=0
+	Position=93 99
+	Direction=0 1
+	Genes=0|20|21|0
+	#193:
+	Energy=113
+	LastDirection=4
+	Chlorophyl=1
+	Capacity=200
+	Status=0
+	Position=1 82
+	Direction=-1 0
+	Genes=11|0|11|0|22
+	#194:
+	Energy=810
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=500
+	Status=0
+	Position=197 11
+	Direction=1 -1
+	Genes=22|20|1
+	#195:
+	Energy=1000
+	LastDirection=2
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=196 99
+	Direction=1 0
+	Genes=1|22|20|20|0
+	#196:
+	Energy=676
+	LastDirection=8
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=164 99
+	Direction=0 0
+	Genes=20|20|21|0
+	#197:
+	Energy=524
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=800
+	Status=0
+	Position=50 99
+	Direction=-1 1
+	Genes=20|0|21
+	#198:
+	Energy=854
+	LastDirection=0
+	Chlorophyl=2
+	Capacity=325
+	Status=0
+	Position=92 94
+	Direction=0 1
+	Genes=11|1|20|20
+	#199:
+	Energy=68
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=900
+	Status=0
+	Position=29 0
+	Direction=0 -1
+	Genes=20|1|11
+	#200:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1825
+	Status=0
+	Position=115 99
+	Direction=0 -1
+	Genes=0
+	#201:
+	Energy=585
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=108 97
+	Direction=1 1
+	Genes=21|21|22
+	#202:
+	Energy=6
+	LastDirection=8
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=3 81
+	Direction=-1 0
+	Genes=0|21|21|1|11
+	#203:
+	Energy=950
+	LastDirection=0
+	Chlorophyl=2
+	Capacity=1125
+	Status=0
+	Position=198 94
+	Direction=0 1
+	Genes=11|11
+	#204:
+	Energy=513
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=126 95
+	Direction=0 1
+	Genes=11|20|22|0
+	#205:
+	Energy=537
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=156 99
+	Direction=1 -1
+	Genes=22
+	#206:
+	Energy=599
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1100
+	Status=0
+	Position=194 94
+	Direction=0 1
+	Genes=11|20
+	#207:
+	Energy=314
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=600
+	Status=0
+	Position=198 5
+	Direction=1 -1
+	Genes=11|1|22
+	#208:
+	Energy=239
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=115 7
+	Direction=0 -1
+	Genes=1|22|11|11|0
+	#209:
+	Energy=696
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=75
+	Status=0
+	Position=112 99
+	Direction=-1 -1
+	Genes=0|22|22
+	#210:
+	Energy=640
+	LastDirection=2
+	Chlorophyl=1
+	Capacity=500
+	Status=0
+	Position=2 95
+	Direction=-1 1
+	Genes=0|1|22|11
+	#211:
+	Energy=269
+	LastDirection=4
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=12 0
+	Direction=0 -1
+	Genes=1|0|11|21|11
+	#212:
+	Energy=595
+	LastDirection=3
+	Chlorophyl=2
+	Capacity=1725
+	Status=0
+	Position=168 98
+	Direction=0 1
+	Genes=1
+	#213:
+	Energy=86
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=0 27
+	Direction=-1 -1
+	Genes=11|21|11|20
+	#214:
+	Energy=407
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=4 4
+	Direction=0 -1
+	Genes=22|11|21|0
+	#215:
+	Energy=833
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=196 92
+	Direction=0 1
+	Genes=22|11|22|0
+	#216:
+	Energy=331
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1400
+	Status=0
+	Position=0 7
+	Direction=-1 -1
+	Genes=21
+	#217:
+	Energy=614
+	LastDirection=7
+	Chlorophyl=3
+	Capacity=575
+	Status=0
+	Position=123 94
+	Direction=1 0
+	Genes=22|0|0|1
+	#218:
+	Energy=508
+	LastDirection=0
+	Chlorophyl=4
+	Capacity=-50
+	Status=0
+	Position=31 92
+	Direction=0 1
+	Genes=11|20|0|0|20
+	#219:
+	Energy=541
+	LastDirection=8
+	Chlorophyl=1
+	Capacity=600
+	Status=0
+	Position=193 95
+	Direction=1 1
+	Genes=21|22
+	#220:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1700
+	Status=0
+	Position=198 98
+	Direction=1 1
+	Genes=1|0
+	#221:
+	Energy=184
+	LastDirection=4
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=198 92
+	Direction=1 0
+	Genes=22|1|11|0|0
+	#222:
+	Energy=791
+	LastDirection=4
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=93 98
+	Direction=1 0
+	Genes=21|22|20|0
+	#223:
+	Energy=290
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=0 5
+	Direction=-1 -1
+	Genes=22|21|0|1
+	#224:
+	Energy=1000
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=199 99
+	Direction=1 1
+	Genes=0|20|20|11|0
+	#225:
+	Energy=637
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=1325
+	Status=0
+	Position=6 2
+	Direction=-1 -1
+	Genes=21
+	#226:
+	Energy=727
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=425
+	Status=0
+	Position=78 99
+	Direction=-1 1
+	Genes=1|20|21|0|0
+	#227:
+	Energy=692
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=800
+	Status=0
+	Position=1 96
+	Direction=-1 1
+	Genes=0|22|0|0|0
+	#228:
+	Energy=535
+	LastDirection=2
+	Chlorophyl=2
+	Capacity=525
+	Status=0
+	Position=195 5
+	Direction=1 -1
+	Genes=22|11|1
+	#229:
+	Energy=899
+	LastDirection=6
+	Chlorophyl=3
+	Capacity=275
+	Status=0
+	Position=145 97
+	Direction=0 1
+	Genes=11|0|20|20
+	#230:
+	Energy=658
+	LastDirection=8
+	Chlorophyl=2
+	Capacity=725
+	Status=0
+	Position=183 98
+	Direction=1 0
+	Genes=0|1|22|0
+	#231:
+	Energy=630
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=5 99
+	Direction=-1 1
+	Genes=11|22|11
+	#232:
+	Energy=604
+	LastDirection=6
+	Chlorophyl=2
+	Capacity=1225
+	Status=0
+	Position=192 95
+	Direction=0 1
+	Genes=1|20
+	#233:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=700
+	Status=0
+	Position=190 99
+	Direction=0 -1
+	Genes=22|20
+	#234:
+	Energy=923
+	LastDirection=7
+	Chlorophyl=2
+	Capacity=1525
+	Status=0
+	Position=197 96
+	Direction=1 1
+	Genes=11
+	#235:
+	Energy=648
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=600
+	Status=0
+	Position=86 99
+	Direction=-1 1
+	Genes=22|21
+	#236:
+	Energy=524
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=800
+	Status=0
+	Position=5 98
+	Direction=-1 1
+	Genes=11|22
+	#237:
+	Energy=891
+	LastDirection=8
+	Chlorophyl=1
+	Capacity=500
+	Status=0
+	Position=149 97
+	Direction=1 1
+	Genes=21|22|0
+	#238:
+	Energy=1000
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=192 99
+	Direction=0 1
+	Genes=21|11|1|22
+	#239:
+	Energy=959
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=7 98
+	Direction=-1 1
+	Genes=1|1|21|21|11
+	#240:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1425
+	Status=0
+	Position=25 98
+	Direction=0 1
+	Genes=20
+	#241:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=122 98
+	Direction=1 0
+	Genes=22|0|22
+	#242:
+	Energy=132
+	LastDirection=3
+	Chlorophyl=4
+	Capacity=150
+	Status=0
+	Position=199 39
+	Direction=1 -1
+	Genes=22|11|0|0
+	#243:
+	Energy=452
+	LastDirection=7
+	Chlorophyl=2
+	Capacity=725
+	Status=0
+	Position=90 94
+	Direction=0 -1
+	Genes=0|1|22|0
+	#244:
+	Energy=622
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=775
+	Status=0
+	Position=57 98
+	Direction=1 -1
+	Genes=0|0|22
+	#245:
+	Energy=630
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=500
+	Status=0
+	Position=189 96
+	Direction=1 0
+	Genes=21|22|0
+	#246:
+	Energy=940
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=1800
+	Status=0
+	Position=189 98
+	Direction=0 1
+	Genes=1
+	#247:
+	Energy=731
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=178 96
+	Direction=0 1
+	Genes=11|0|0|20|21
+	#248:
+	Energy=759
+	LastDirection=2
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=11 99
+	Direction=-1 1
+	Genes=21|22|20|0
+	#249:
+	Energy=866
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=525
+	Status=0
+	Position=111 96
+	Direction=-1 1
+	Genes=21|22
+	#250:
+	Energy=430
+	LastDirection=8
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=6 91
+	Direction=-1 0
+	Genes=1|1|22|1|21
+	#251:
+	Energy=907
+	LastDirection=7
+	Chlorophyl=2
+	Capacity=825
+	Status=0
+	Position=124 96
+	Direction=1 1
+	Genes=11|1|0|11
+	#252:
+	Energy=125
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=144 91
+	Direction=0 -1
+	Genes=22|0|22|0|1
+	#253:
+	Energy=510
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=152 98
+	Direction=1 -1
+	Genes=22
+	#254:
+	Energy=986
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=36 98
+	Direction=1 1
+	Genes=0|20|22|20|0
+	#255:
+	Energy=652
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=132 98
+	Direction=0 1
+	Genes=21|0
+	#256:
+	Energy=971
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=625
+	Status=0
+	Position=97 98
+	Direction=-1 1
+	Genes=22|20
+	#257:
+	Energy=974
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=75
+	Status=0
+	Position=112 98
+	Direction=0 -1
+	Genes=0|22|22
+	#258:
+	Energy=968
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1900
+	Status=0
+	Position=128 98
+	Direction=0 -1
+	Genes=0
+	#259:
+	Energy=948
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1800
+	Status=0
+	Position=41 99
+	Direction=-1 1
+	Genes=1
+	#260:
+	Energy=941
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=200
+	Status=0
+	Position=24 80
+	Direction=-1 0
+	Genes=0|11|0|11|22
+	#261:
+	Energy=660
+	LastDirection=3
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=6 99
+	Direction=-1 1
+	Genes=22|11|11|0
+	#262:
+	Energy=944
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=800
+	Status=0
+	Position=195 93
+	Direction=0 1
+	Genes=11|11|11
+	#263:
+	Energy=615
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=1300
+	Status=0
+	Position=191 92
+	Direction=0 0
+	Genes=1|20
+	#264:
+	Energy=489
+	LastDirection=10
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=199 94
+	Direction=1 0
+	Genes=1|22|20|20|0
+	#265:
+	Energy=392
+	LastDirection=4
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=0 92
+	Direction=0 -1
+	Genes=22|20|0|21
+	#266:
+	Energy=760
+	LastDirection=6
+	Chlorophyl=2
+	Capacity=1725
+	Status=0
+	Position=164 98
+	Direction=1 1
+	Genes=1
+	#267:
+	Energy=736
+	LastDirection=3
+	Chlorophyl=3
+	Capacity=875
+	Status=0
+	Position=125 96
+	Direction=0 1
+	Genes=0|0|0|21
+	#268:
+	Energy=980
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=108 99
+	Direction=-1 1
+	Genes=21|11|1|22
+	#269:
+	Energy=775
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=625
+	Status=0
+	Position=109 92
+	Direction=0 0
+	Genes=20|11|1|1
+	#270:
+	Energy=698
+	LastDirection=-2
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=0 88
+	Direction=-1 0
+	Genes=21|22|0|1
+	#271:
+	Energy=309
+	LastDirection=-2
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=0 39
+	Direction=-1 0
+	Genes=21
+	#272:
+	Energy=994
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=70 0
+	Direction=-1 -1
+	Genes=0|21
+	#273:
+	Energy=355
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=600
+	Status=0
+	Position=184 96
+	Direction=0 0
+	Genes=0|0|11|22
+	#274:
+	Energy=508
+	LastDirection=8
+	Chlorophyl=1
+	Capacity=1700
+	Status=0
+	Position=76 94
+	Direction=1 1
+	Genes=1|0
+	#275:
+	Energy=727
+	LastDirection=5
+	Chlorophyl=4
+	Capacity=1150
+	Status=0
+	Position=3 91
+	Direction=-1 1
+	Genes=11
+	#276:
+	Energy=544
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=111 97
+	Direction=1 1
+	Genes=21|21|22|0|0
+	#277:
+	Energy=271
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=199 88
+	Direction=1 0
+	Genes=22|1|11|21
+	#278:
+	Energy=753
+	LastDirection=2
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=119 96
+	Direction=-1 1
+	Genes=1|21|1|11|21
+	#279:
+	Energy=887
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=110 97
+	Direction=1 0
+	Genes=20|11|22
+	#280:
+	Energy=171
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=200
+	Status=0
+	Position=7 0
+	Direction=-1 -1
+	Genes=20|11|1|21|0
+	#281:
+	Energy=251
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=925
+	Status=0
+	Position=0 77
+	Direction=-1 0
+	Genes=21|11
+	#282:
+	Energy=819
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1825
+	Status=0
+	Position=115 98
+	Direction=-1 1
+	Genes=0
+	#283:
+	Energy=989
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=1400
+	Status=0
+	Position=194 91
+	Direction=1 0
+	Genes=21
+	#284:
+	Energy=567
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1900
+	Status=0
+	Position=196 98
+	Direction=-1 0
+	Genes=0
+	#285:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1425
+	Status=0
+	Position=26 99
+	Direction=1 -1
+	Genes=20
+	#286:
+	Energy=150
+	LastDirection=2
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=198 35
+	Direction=1 0
+	Genes=21
+	#287:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=121 99
+	Direction=0 0
+	Genes=22|0|22
+	#288:
+	Energy=519
+	LastDirection=0
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=141 93
+	Direction=-1 -1
+	Genes=21|20|20|0|0
+	#289:
+	Energy=950
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=525
+	Status=0
+	Position=96 98
+	Direction=1 1
+	Genes=22|21
+	#290:
+	Energy=762
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1325
+	Status=0
+	Position=52 99
+	Direction=0 1
+	Genes=21
+	#291:
+	Energy=185
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=198 46
+	Direction=1 0
+	Genes=0|21
+	#292:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=775
+	Status=0
+	Position=58 99
+	Direction=1 0
+	Genes=0|0|22
+	#293:
+	Energy=39
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=1600
+	Status=0
+	Position=6 77
+	Direction=-1 0
+	Genes=11
+	#294:
+	Energy=1000
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=195 99
+	Direction=0 1
+	Genes=0|11|20|20|0
+	#295:
+	Energy=852
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=109 97
+	Direction=-1 1
+	Genes=0|21
+	#296:
+	Energy=1000
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=500
+	Status=0
+	Position=114 99
+	Direction=-1 1
+	Genes=21|22|0
+	#297:
+	Energy=771
+	LastDirection=7
+	Chlorophyl=4
+	Capacity=150
+	Status=0
+	Position=142 95
+	Direction=0 0
+	Genes=22|11|0|0
+	#298:
+	Energy=418
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=93 92
+	Direction=1 -1
+	Genes=21|22|20|0
+	#299:
+	Energy=154
+	LastDirection=8
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=1 83
+	Direction=-1 -1
+	Genes=21|22|20|0
+	#300:
+	Energy=810
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=200
+	Status=0
+	Position=38 95
+	Direction=-1 1
+	Genes=20|21|21|0
+	#301:
+	Energy=499
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=1500
+	Status=0
+	Position=32 93
+	Direction=0 0
+	Genes=11|0
+	#302:
+	Energy=510
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=29 94
+	Direction=0 1
+	Genes=0|0|21|22
+	#303:
+	Energy=617
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=188 92
+	Direction=1 0
+	Genes=22|21|1|11
+	#304:
+	Energy=581
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=15 0
+	Direction=0 -1
+	Genes=21
+	#305:
+	Energy=673
+	LastDirection=3
+	Chlorophyl=3
+	Capacity=1175
+	Status=0
+	Position=198 0
+	Direction=1 -1
+	Genes=21
+	#306:
+	Energy=211
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=0 94
+	Direction=-1 0
+	Genes=21|11|11|0|0
+	#307:
+	Energy=163
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=500
+	Status=0
+	Position=123 67
+	Direction=0 -1
+	Genes=1|22|20
+	#308:
+	Energy=889
+	LastDirection=8
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=131 99
+	Direction=-1 1
+	Genes=1|21
+	#309:
+	Energy=162
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=500
+	Status=0
+	Position=128 82
+	Direction=0 -1
+	Genes=21|22|0
+	#310:
+	Energy=912
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=137 97
+	Direction=0 1
+	Genes=22|0|22|0|1
+	#311:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=153 99
+	Direction=-1 1
+	Genes=22
+	#312:
+	Energy=687
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=134 2
+	Direction=1 -1
+	Genes=21|22|0|1|1
+	#313:
+	Energy=685
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1125
+	Status=0
+	Position=141 99
+	Direction=-1 1
+	Genes=20|0|1
+	#314:
+	Energy=690
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=101 98
+	Direction=-1 1
+	Genes=0|21
+	#315:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=37 99
+	Direction=-1 0
+	Genes=0|20|22|20|0
+	#316:
+	Energy=447
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=12 93
+	Direction=-1 0
+	Genes=22|0|11|20|0
+	#317:
+	Energy=572
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1425
+	Status=0
+	Position=25 97
+	Direction=1 1
+	Genes=20
+	#318:
+	Energy=147
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=700
+	Status=0
+	Position=2 77
+	Direction=0 -1
+	Genes=1|20|20|0
+	#319:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=625
+	Status=0
+	Position=96 99
+	Direction=-1 1
+	Genes=22|20
+	#320:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=75
+	Status=0
+	Position=113 99
+	Direction=1 -1
+	Genes=0|22|22
+	#321:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=123 99
+	Direction=-1 1
+	Genes=22|0|22
+	#322:
+	Energy=873
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1900
+	Status=0
+	Position=127 99
+	Direction=-1 -1
+	Genes=0
+	#323:
+	Energy=630
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=-25
+	Status=0
+	Position=107 98
+	Direction=1 1
+	Genes=20|20|22
+	#324:
+	Energy=495
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=700
+	Status=0
+	Position=132 97
+	Direction=1 0
+	Genes=22|1|1|0
+	#325:
+	Energy=310
+	LastDirection=0
+	Chlorophyl=2
+	Capacity=525
+	Status=0
+	Position=4 3
+	Direction=0 -1
+	Genes=1|11|21|1
+	#326:
+	Energy=561
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=775
+	Status=0
+	Position=57 97
+	Direction=1 -1
+	Genes=0|0|22
+	#327:
+	Energy=47
+	LastDirection=0
+	Chlorophyl=2
+	Capacity=325
+	Status=0
+	Position=0 17
+	Direction=-1 -1
+	Genes=11|1|20|20
+	#328:
+	Energy=903
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=4 99
+	Direction=1 1
+	Genes=22|20|0|21
+	#329:
+	Energy=614
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=146 98
+	Direction=1 1
+	Genes=22
+	#330:
+	Energy=649
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=13 1
+	Direction=0 -1
+	Genes=21
+	#331:
+	Energy=477
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=275
+	Status=0
+	Position=69 86
+	Direction=-1 -1
+	Genes=22|20|1
+	#332:
+	Energy=869
+	LastDirection=7
+	Chlorophyl=3
+	Capacity=275
+	Status=0
+	Position=187 83
+	Direction=1 0
+	Genes=11|0|20|20
+	#333:
+	Energy=547
+	LastDirection=0
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=125 97
+	Direction=-1 1
+	Genes=0|21
+	#334:
+	Energy=169
+	LastDirection=3
+	Chlorophyl=3
+	Capacity=875
+	Status=0
+	Position=110 81
+	Direction=0 -1
+	Genes=0|0|0|21
+	#335:
+	Energy=945
+	LastDirection=1
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=90 97
+	Direction=0 1
+	Genes=21
+	#336:
+	Energy=837
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=525
+	Status=0
+	Position=120 97
+	Direction=-1 1
+	Genes=21|22
+	#337:
+	Energy=392
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=1275
+	Status=0
+	Position=0 82
+	Direction=-1 0
+	Genes=0|11
+	#338:
+	Energy=645
+	LastDirection=2
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=132 95
+	Direction=-1 1
+	Genes=11|20|22|0
+	#339:
+	Energy=504
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=825
+	Status=0
+	Position=3 99
+	Direction=-1 1
+	Genes=11|1|0|11
+	#340:
+	Energy=862
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=148 96
+	Direction=0 0
+	Genes=11|0|0|20|21
+	#341:
+	Energy=511
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=122 95
+	Direction=-1 1
+	Genes=20|11|11|0|11
+	#342:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=700
+	Status=0
+	Position=191 98
+	Direction=0 0
+	Genes=22|20
+	#343:
+	Energy=920
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=151 97
+	Direction=1 0
+	Genes=22|20|0|11|1
+	#344:
+	Energy=989
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=525
+	Status=0
+	Position=157 97
+	Direction=1 1
+	Genes=21|22
+	#345:
+	Energy=572
+	LastDirection=7
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=49 96
+	Direction=0 0
+	Genes=22|11|11|0
+	#346:
+	Energy=942
+	LastDirection=4
+	Chlorophyl=4
+	Capacity=250
+	Status=0
+	Position=150 99
+	Direction=0 1
+	Genes=20|11|11
+	#347:
+	Energy=955
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1125
+	Status=0
+	Position=76 99
+	Direction=-1 1
+	Genes=11|11
+	#348:
+	Energy=696
+	LastDirection=7
+	Chlorophyl=4
+	Capacity=-50
+	Status=0
+	Position=0 89
+	Direction=-1 0
+	Genes=11|20|0|0|20
+	#349:
+	Energy=101
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=3 85
+	Direction=-1 0
+	Genes=21|20|0|1|1
+	#350:
+	Energy=818
+	LastDirection=2
+	Chlorophyl=1
+	Capacity=1800
+	Status=0
+	Position=62 99
+	Direction=-1 1
+	Genes=1
+	#351:
+	Energy=677
+	LastDirection=2
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=196 95
+	Direction=1 1
+	Genes=1|22|20|20|0
+	#352:
+	Energy=4
+	LastDirection=2
+	Chlorophyl=1
+	Capacity=1800
+	Status=0
+	Position=84 3
+	Direction=0 -1
+	Genes=1
+	#353:
+	Energy=205
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=199 17
+	Direction=1 -1
+	Genes=1|1|21|21|11
+	#354:
+	Energy=505
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=153 97
+	Direction=1 1
+	Genes=22
+	#355:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1725
+	Status=0
+	Position=193 99
+	Direction=1 1
+	Genes=1
+	#356:
+	Energy=258
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=600
+	Status=0
+	Position=3 53
+	Direction=-1 -1
+	Genes=0|11|22|0
+	#357:
+	Energy=749
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=196 89
+	Direction=1 0
+	Genes=20|22|11|1
+	#358:
+	Energy=777
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=186 96
+	Direction=1 0
+	Genes=21|22|0|1
+	#359:
+	Energy=801
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1825
+	Status=0
+	Position=116 99
+	Direction=0 0
+	Genes=0
+	#360:
+	Energy=548
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=5 9
+	Direction=-1 -1
+	Genes=21
+	#361:
+	Energy=555
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=1700
+	Status=0
+	Position=159 97
+	Direction=1 1
+	Genes=0|1
+	#362:
+	Energy=153
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=1100
+	Status=0
+	Position=26 86
+	Direction=-1 0
+	Genes=11|20
+	#363:
+	Energy=993
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=36 97
+	Direction=1 -1
+	Genes=0|20|22|20|0
+	#364:
+	Energy=24
+	LastDirection=4
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=190 64
+	Direction=1 -1
+	Genes=0|21|0|21|20
+	#365:
+	Energy=511
+	LastDirection=3
+	Chlorophyl=3
+	Capacity=775
+	Status=0
+	Position=21 96
+	Direction=0 1
+	Genes=22|1
+	#366:
+	Energy=626
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=88 97
+	Direction=-1 1
+	Genes=21|21|22|0|0
+	#367:
+	Energy=976
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1425
+	Status=0
+	Position=26 98
+	Direction=-1 1
+	Genes=20
+	#368:
+	Energy=987
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=625
+	Status=0
+	Position=97 97
+	Direction=1 0
+	Genes=22|20
+	#369:
+	Energy=987
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=75
+	Status=0
+	Position=112 97
+	Direction=0 0
+	Genes=0|22|22
+	#370:
+	Energy=947
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1425
+	Status=0
+	Position=27 99
+	Direction=0 1
+	Genes=20
+	#371:
+	Energy=832
+	LastDirection=4
+	Chlorophyl=3
+	Capacity=1575
+	Status=0
+	Position=192 94
+	Direction=0 1
+	Genes=1
+	#372:
+	Energy=984
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1900
+	Status=0
+	Position=128 97
+	Direction=0 1
+	Genes=0
+	#373:
+	Energy=949
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=121 98
+	Direction=0 1
+	Genes=22|0|22
+	#374:
+	Energy=753
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1725
+	Status=0
+	Position=44 99
+	Direction=0 1
+	Genes=1
+	#375:
+	Energy=135
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=43 95
+	Direction=-1 0
+	Genes=20|21|11|20
+	#376:
+	Energy=823
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=94 97
+	Direction=1 1
+	Genes=1|21
+	#377:
+	Energy=999
+	LastDirection=7
+	Chlorophyl=3
+	Capacity=175
+	Status=0
+	Position=98 96
+	Direction=1 1
+	Genes=20|20|1|11
+	#378:
+	Energy=152
+	LastDirection=4
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=1 90
+	Direction=-1 0
+	Genes=11|11|22|0
+	#379:
+	Energy=729
+	LastDirection=6
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=48 96
+	Direction=0 1
+	Genes=22|11|11|0
+	#380:
+	Energy=954
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=775
+	Status=0
+	Position=58 98
+	Direction=-1 1
+	Genes=0|0|22
+	#381:
+	Energy=759
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=775
+	Status=0
+	Position=59 99
+	Direction=0 1
+	Genes=0|0|22
+	#382:
+	Energy=161
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=21 56
+	Direction=-1 -1
+	Genes=21|0
+	#383:
+	Energy=98
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=1400
+	Status=0
+	Position=0 6
+	Direction=-1 -1
+	Genes=21
+	#384:
+	Energy=375
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=197 80
+	Direction=1 1
+	Genes=0|21
+	#385:
+	Energy=93
+	LastDirection=3
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=195 91
+	Direction=1 1
+	Genes=1|1|21|22
+	#386:
+	Energy=941
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=120 98
+	Direction=-1 -1
+	Genes=22|0|22
+	#387:
+	Energy=186
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=93 70
+	Direction=0 -1
+	Genes=0|22|20|1
+	#388:
+	Energy=614
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=1100
+	Status=0
+	Position=144 97
+	Direction=1 1
+	Genes=1|0|0|20
+	#389:
+	Energy=216
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=70 57
+	Direction=0 -1
+	Genes=0|0|21
+	#390:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=375
+	Status=0
+	Position=198 97
+	Direction=0 0
+	Genes=20|11|20
+	#391:
+	Energy=71
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=0 9
+	Direction=-1 -1
+	Genes=11|22|11
+	#392:
+	Energy=370
+	LastDirection=0
+	Chlorophyl=2
+	Capacity=1025
+	Status=0
+	Position=78 86
+	Direction=-1 0
+	Genes=20|11
+	#393:
+	Energy=258
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=198 83
+	Direction=1 1
+	Genes=0|21
+	#394:
+	Energy=980
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=200
+	Status=0
+	Position=18 99
+	Direction=0 0
+	Genes=0|22|11|20
+	#395:
+	Energy=450
+	LastDirection=3
+	Chlorophyl=2
+	Capacity=625
+	Status=0
+	Position=135 97
+	Direction=0 0
+	Genes=20|11|1|1
+	#396:
+	Energy=603
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=158 98
+	Direction=0 1
+	Genes=21|11|1|22
+	#397:
+	Energy=999
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=0 0
+	Direction=-1 -1
+	Genes=21
+	#398:
+	Energy=788
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=1700
+	Status=0
+	Position=97 96
+	Direction=1 1
+	Genes=1|0
+	#399:
+	Energy=607
+	LastDirection=8
+	Chlorophyl=2
+	Capacity=325
+	Status=0
+	Position=22 5
+	Direction=-1 -1
+	Genes=21|21|1|1
+	#400:
+	Energy=279
+	LastDirection=4
+	Chlorophyl=4
+	Capacity=1150
+	Status=0
+	Position=198 91
+	Direction=1 0
+	Genes=11
+	#401:
+	Energy=852
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=525
+	Status=0
+	Position=14 96
+	Direction=-1 0
+	Genes=22|21
+	#402:
+	Energy=910
+	LastDirection=6
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=66 98
+	Direction=0 1
+	Genes=21|22|20|0
+	#403:
+	Energy=687
+	LastDirection=6
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=191 94
+	Direction=0 1
+	Genes=21|20|20|0|0
+	#404:
+	Energy=459
+	LastDirection=7
+	Chlorophyl=2
+	Capacity=1225
+	Status=0
+	Position=199 92
+	Direction=1 1
+	Genes=0|11|1
+	#405:
+	Energy=700
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=500
+	Status=0
+	Position=101 99
+	Direction=-1 1
+	Genes=21|22|0
+	#406:
+	Energy=752
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=108 96
+	Direction=1 1
+	Genes=21
+	#407:
+	Energy=108
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=200
+	Status=0
+	Position=196 1
+	Direction=1 -1
+	Genes=20|11|1|21|0
+	#408:
+	Energy=894
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=1675
+	Status=0
+	Position=137 98
+	Direction=-1 0
+	Genes=0
+	#409:
+	Energy=89
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=1725
+	Status=0
+	Position=2 75
+	Direction=-1 0
+	Genes=1
+	#410:
+	Energy=536
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=193 96
+	Direction=1 1
+	Genes=11|0|0|20|21
+	#411:
+	Energy=93
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=900
+	Status=0
+	Position=199 46
+	Direction=1 -1
+	Genes=0|1|1|0|20
+	#412:
+	Energy=1000
+	LastDirection=4
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=193 98
+	Direction=-1 1
+	Genes=0|11|20|20|0
+	#413:
+	Energy=124
+	LastDirection=3
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=196 33
+	Direction=0 0
+	Genes=1|11|21|21
+	#414:
+	Energy=940
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=1275
+	Status=0
+	Position=1 97
+	Direction=0 -1
+	Genes=20
+	#415:
+	Energy=80
+	LastDirection=3
+	Chlorophyl=4
+	Capacity=1150
+	Status=0
+	Position=76 0
+	Direction=0 -1
+	Genes=11
+	#416:
+	Energy=89
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=1 69
+	Direction=-1 -1
+	Genes=0|0|11|20|21
+	#417:
+	Energy=360
+	LastDirection=0
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=0 93
+	Direction=-1 1
+	Genes=21
+	#418:
+	Energy=509
+	LastDirection=4
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=23 99
+	Direction=0 1
+	Genes=0|0|21|22
+	#419:
+	Energy=569
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=192 96
+	Direction=1 1
+	Genes=1|21|1|11|21
+	#420:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=1 99
+	Direction=1 1
+	Genes=20|11|22
+	#421:
+	Energy=583
+	LastDirection=2
+	Chlorophyl=2
+	Capacity=1525
+	Status=0
+	Position=100 96
+	Direction=-1 1
+	Genes=11
+	#422:
+	Energy=358
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1300
+	Status=0
+	Position=0 73
+	Direction=-1 -1
+	Genes=20|1
+	#423:
+	Energy=820
+	LastDirection=1
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=185 99
+	Direction=1 1
+	Genes=21
+	#424:
+	Energy=939
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=89 90
+	Direction=0 0
+	Genes=21|21|22|0|0
+	#425:
+	Energy=838
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=153 98
+	Direction=-1 -1
+	Genes=22
+	#426:
+	Energy=674
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=154 99
+	Direction=-1 -1
+	Genes=22
+	#427:
+	Energy=964
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=0 10
+	Direction=-1 -1
+	Genes=21
+	#428:
+	Energy=560
+	LastDirection=6
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=127 3
+	Direction=1 -1
+	Genes=21
+	#429:
+	Energy=847
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=800
+	Status=0
+	Position=63 96
+	Direction=-1 1
+	Genes=20|0|21
+	#430:
+	Energy=960
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=110 96
+	Direction=1 0
+	Genes=20|11|22
+	#431:
+	Energy=914
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1825
+	Status=0
+	Position=115 97
+	Direction=-1 -1
+	Genes=0
+	#432:
+	Energy=818
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=37 98
+	Direction=1 1
+	Genes=0|20|22|20|0
+	#433:
+	Energy=513
+	LastDirection=4
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=0 83
+	Direction=-1 0
+	Genes=22|1|11|21
+	#434:
+	Energy=600
+	LastDirection=6
+	Chlorophyl=2
+	Capacity=1325
+	Status=0
+	Position=92 97
+	Direction=1 1
+	Genes=21
+	#435:
+	Energy=833
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=134 98
+	Direction=0 1
+	Genes=22|0|22|0|1
+	#436:
+	Energy=105
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=1600
+	Status=0
+	Position=132 1
+	Direction=0 -1
+	Genes=11
+	#437:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=75
+	Status=0
+	Position=113 98
+	Direction=0 0
+	Genes=0|22|22
+	#438:
+	Energy=612
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=625
+	Status=0
+	Position=95 99
+	Direction=-1 -1
+	Genes=22|20
+	#439:
+	Energy=694
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=121 96
+	Direction=1 1
+	Genes=21
+	#440:
+	Energy=678
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=625
+	Status=0
+	Position=98 99
+	Direction=-1 -1
+	Genes=22|20
+	#441:
+	Energy=800
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1900
+	Status=0
+	Position=129 98
+	Direction=-1 1
+	Genes=0
+	#442:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=-25
+	Status=0
+	Position=106 99
+	Direction=0 1
+	Genes=20|20|22
+	#443:
+	Energy=219
+	LastDirection=7
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=152 50
+	Direction=1 0
+	Genes=21|22|0|1|1
+	#444:
+	Energy=133
+	LastDirection=8
+	Chlorophyl=2
+	Capacity=525
+	Status=0
+	Position=51 83
+	Direction=-1 -1
+	Genes=22|21
+	#445:
+	Energy=736
+	LastDirection=6
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=107 1
+	Direction=1 -1
+	Genes=21
+	#446:
+	Energy=283
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=200
+	Status=0
+	Position=99 52
+	Direction=0 -1
+	Genes=20|21|21|0
+	#447:
+	Energy=156
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=199 3
+	Direction=1 -1
+	Genes=1|21
+	#448:
+	Energy=438
+	LastDirection=2
+	Chlorophyl=1
+	Capacity=500
+	Status=0
+	Position=95 91
+	Direction=-1 0
+	Genes=21|22|0
+	#449:
+	Energy=939
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=1400
+	Status=0
+	Position=39 96
+	Direction=1 1
+	Genes=11|1
+	#450:
+	Energy=653
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=147 99
+	Direction=0 1
+	Genes=22
+	#451:
+	Energy=239
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=199 26
+	Direction=1 -1
+	Genes=21|11|1|22
+	#452:
+	Energy=231
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=875
+	Status=0
+	Position=64 64
+	Direction=-1 -1
+	Genes=0|0|0|21
+	#453:
+	Energy=577
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=925
+	Status=0
+	Position=2 93
+	Direction=-1 1
+	Genes=21|11
+	#454:
+	Energy=648
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=38 99
+	Direction=-1 -1
+	Genes=0|20|22|20|0
+	#455:
+	Energy=648
+	LastDirection=6
+	Chlorophyl=3
+	Capacity=375
+	Status=0
+	Position=50 97
+	Direction=1 1
+	Genes=11|0|20|11
+	#456:
+	Energy=627
+	LastDirection=6
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=23 96
+	Direction=0 1
+	Genes=21
+	#457:
+	Energy=854
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=200
+	Status=0
+	Position=63 97
+	Direction=0 0
+	Genes=20|21|21|0
+	#458:
+	Energy=644
+	LastDirection=2
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=32 36
+	Direction=0 0
+	Genes=21
+	#459:
+	Energy=168
+	LastDirection=3
+	Chlorophyl=2
+	Capacity=825
+	Status=0
+	Position=199 56
+	Direction=1 1
+	Genes=22|0|1
+	#460:
+	Energy=792
+	LastDirection=6
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=2 6
+	Direction=-1 -1
+	Genes=21
+	#461:
+	Energy=218
+	LastDirection=2
+	Chlorophyl=2
+	Capacity=1725
+	Status=0
+	Position=4 78
+	Direction=-1 0
+	Genes=1
+	#462:
+	Energy=211
+	LastDirection=3
+	Chlorophyl=2
+	Capacity=425
+	Status=0
+	Position=35 70
+	Direction=-1 -1
+	Genes=1|20|21|0|0
+	#463:
+	Energy=477
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=141 98
+	Direction=1 1
+	Genes=21
+	#464:
+	Energy=577
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=1125
+	Status=0
+	Position=157 99
+	Direction=-1 1
+	Genes=20|0|1
+	#465:
+	Energy=209
+	LastDirection=8
+	Chlorophyl=3
+	Capacity=775
+	Status=0
+	Position=68 81
+	Direction=1 1
+	Genes=22|1
+	#466:
+	Energy=673
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=1300
+	Status=0
+	Position=129 92
+	Direction=-1 0
+	Genes=1|20
+	#467:
+	Energy=232
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=1100
+	Status=0
+	Position=187 33
+	Direction=0 -1
+	Genes=11|20
+	#468:
+	Energy=619
+	LastDirection=7
+	Chlorophyl=3
+	Capacity=175
+	Status=0
+	Position=47 99
+	Direction=1 1
+	Genes=20|1|21|1|0
+	#469:
+	Energy=489
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=145 50
+	Direction=1 0
+	Genes=21
+	#470:
+	Energy=724
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=700
+	Status=0
+	Position=190 98
+	Direction=0 -1
+	Genes=22|20
+	#471:
+	Energy=748
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=9 99
+	Direction=1 1
+	Genes=22|20|0|21
+	#472:
+	Energy=842
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=1700
+	Status=0
+	Position=62 97
+	Direction=-1 1
+	Genes=1|0
+	#473:
+	Energy=776
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=22 99
+	Direction=0 1
+	Genes=20|11|22|0|1
+	#474:
+	Energy=575
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=1 6
+	Direction=-1 -1
+	Genes=21
+	#475:
+	Energy=203
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=1800
+	Status=0
+	Position=179 64
+	Direction=0 0
+	Genes=1
+	#476:
+	Energy=495
+	LastDirection=6
+	Chlorophyl=2
+	Capacity=825
+	Status=0
+	Position=70 89
+	Direction=0 0
+	Genes=11|1|0|11
+	#477:
+	Energy=223
+	LastDirection=0
+	Chlorophyl=2
+	Capacity=525
+	Status=0
+	Position=113 62
+	Direction=0 -1
+	Genes=21|22
+	#478:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=75
+	Status=0
+	Position=114 98
+	Direction=1 1
+	Genes=0|22|22
+	#479:
+	Energy=892
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=600
+	Status=0
+	Position=45 97
+	Direction=-1 0
+	Genes=22|21
+	#480:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=124 99
+	Direction=1 -1
+	Genes=22|0|22
+	#481:
+	Energy=324
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=1325
+	Status=0
+	Position=23 51
+	Direction=0 0
+	Genes=21
+	#482:
+	Energy=546
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=500
+	Status=0
+	Position=166 96
+	Direction=0 0
+	Genes=21|22|0
+	#483:
+	Energy=520
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=500
+	Status=0
+	Position=117 95
+	Direction=0 0
+	Genes=1|22|20
+	#484:
+	Energy=848
+	LastDirection=2
+	Chlorophyl=2
+	Capacity=725
+	Status=0
+	Position=199 97
+	Direction=0 -1
+	Genes=0|11|21|0
+	#485:
+	Energy=963
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1125
+	Status=0
+	Position=139 98
+	Direction=-1 1
+	Genes=20|0|1
+	#486:
+	Energy=271
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=325
+	Status=0
+	Position=108 39
+	Direction=-1 0
+	Genes=21|1|22
+	#487:
+	Energy=828
+	LastDirection=8
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=123 95
+	Direction=1 0
+	Genes=22|20|0|11|1
+	#488:
+	Energy=1000
+	LastDirection=4
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=195 98
+	Direction=0 -1
+	Genes=1|22|20|20|0
+	#489:
+	Energy=989
+	LastDirection=6
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=92 0
+	Direction=1 -1
+	Genes=21
+	#490:
+	Energy=982
+	LastDirection=4
+	Chlorophyl=1
+	Capacity=1500
+	Status=0
+	Position=149 99
+	Direction=1 0
+	Genes=11|0
+	#491:
+	Energy=279
+	LastDirection=4
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=0 85
+	Direction=-1 0
+	Genes=21|20|0|1|1
+	#492:
+	Energy=240
+	LastDirection=3
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=114 82
+	Direction=1 1
+	Genes=22|11|20|0|0
+	#493:
+	Energy=750
+	LastDirection=6
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=104 1
+	Direction=1 -1
+	Genes=21
+	#494:
+	Energy=753
+	LastDirection=0
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=64 3
+	Direction=-1 -1
+	Genes=0|21
+	#495:
+	Energy=835
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1900
+	Status=0
+	Position=196 97
+	Direction=-1 -1
+	Genes=0
+	#496:
+	Energy=905
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=118 0
+	Direction=1 -1
+	Genes=21
+	#497:
+	Energy=393
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=44 85
+	Direction=-1 0
+	Genes=20|11|11|0|11
+	#498:
+	Energy=580
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=103 98
+	Direction=0 1
+	Genes=22|20|0|11|1
+	#499:
+	Energy=662
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1500
+	Status=0
+	Position=187 98
+	Direction=1 0
+	Genes=20
+	#500:
+	Energy=383
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=131 72
+	Direction=1 -1
+	Genes=22|0|11|20|0
+	#501:
+	Energy=660
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1825
+	Status=0
+	Position=116 98
+	Direction=1 1
+	Genes=0
+	#502:
+	Energy=410
+	LastDirection=4
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=199 85
+	Direction=1 0
+	Genes=11|0|0|20|21
+	#503:
+	Energy=245
+	LastDirection=3
+	Chlorophyl=3
+	Capacity=275
+	Status=0
+	Position=115 76
+	Direction=0 -1
+	Genes=22|20|1
+	#504:
+	Energy=922
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1125
+	Status=0
+	Position=95 97
+	Direction=-1 1
+	Genes=11|11
+	#505:
+	Energy=597
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=9 0
+	Direction=-1 -1
+	Genes=21
+	#506:
+	Energy=822
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1425
+	Status=0
+	Position=24 97
+	Direction=-1 -1
+	Genes=20
+	#507:
+	Energy=880
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=500
+	Status=0
+	Position=7 99
+	Direction=-1 1
+	Genes=0|1|22|11
+	#508:
+	Energy=839
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1225
+	Status=0
+	Position=194 96
+	Direction=1 1
+	Genes=1|20
+	#509:
+	Energy=820
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=123 97
+	Direction=0 0
+	Genes=22|0|22
+	#510:
+	Energy=725
+	LastDirection=4
+	Chlorophyl=1
+	Capacity=1700
+	Status=0
+	Position=188 95
+	Direction=1 0
+	Genes=0|1
+	#511:
+	Energy=638
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1425
+	Status=0
+	Position=27 98
+	Direction=0 1
+	Genes=20
+	#512:
+	Energy=628
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=106 0
+	Direction=1 -1
+	Genes=21
+	#513:
+	Energy=255
+	LastDirection=3
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=186 87
+	Direction=0 -1
+	Genes=20|22|11|0
+	#514:
+	Energy=636
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1425
+	Status=0
+	Position=24 98
+	Direction=0 -1
+	Genes=20
+	#515:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1825
+	Status=0
+	Position=117 99
+	Direction=0 -1
+	Genes=0
+	#516:
+	Energy=347
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=875
+	Status=0
+	Position=137 84
+	Direction=1 -1
+	Genes=0|0|0|21
+	#517:
+	Energy=527
+	LastDirection=2
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=5 4
+	Direction=-1 -1
+	Genes=21
+	#518:
+	Energy=866
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1425
+	Status=0
+	Position=28 99
+	Direction=1 0
+	Genes=20
+	#519:
+	Energy=346
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=1725
+	Status=0
+	Position=149 88
+	Direction=0 0
+	Genes=1
+	#520:
+	Energy=434
+	LastDirection=2
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=194 90
+	Direction=1 0
+	Genes=22|1|11|21
+	#521:
+	Energy=815
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=-25
+	Status=0
+	Position=107 97
+	Direction=-1 -1
+	Genes=20|20|22
+	#522:
+	Energy=537
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=4 97
+	Direction=-1 1
+	Genes=22|20|0|21
+	#523:
+	Energy=698
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=79 99
+	Direction=1 1
+	Genes=21|11|11|0|0
+	#524:
+	Energy=763
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=1700
+	Status=0
+	Position=181 94
+	Direction=-1 0
+	Genes=1|0
+	#525:
+	Energy=614
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=775
+	Status=0
+	Position=56 98
+	Direction=-1 1
+	Genes=0|0|22
+	#526:
+	Energy=622
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1900
+	Status=0
+	Position=127 98
+	Direction=-1 0
+	Genes=0
+	#527:
+	Energy=930
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=775
+	Status=0
+	Position=56 99
+	Direction=0 0
+	Genes=0|0|22
+	#528:
+	Energy=620
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=775
+	Status=0
+	Position=59 98
+	Direction=0 0
+	Genes=0|0|22
+	#529:
+	Energy=337
+	LastDirection=3
+	Chlorophyl=2
+	Capacity=525
+	Status=0
+	Position=127 88
+	Direction=0 -1
+	Genes=21|22
+	#530:
+	Energy=596
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=147 98
+	Direction=0 -1
+	Genes=22
+	#531:
+	Energy=504
+	LastDirection=0
+	Chlorophyl=2
+	Capacity=525
+	Status=0
+	Position=102 84
+	Direction=-1 -1
+	Genes=21|22
+	#532:
+	Energy=666
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=23 8
+	Direction=0 0
+	Genes=21
+	#533:
+	Energy=974
+	LastDirection=4
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=10 2
+	Direction=0 -1
+	Genes=21
+	#534:
+	Energy=706
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=166 98
+	Direction=1 0
+	Genes=21|21|22
+	#535:
+	Energy=432
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=90 99
+	Direction=1 1
+	Genes=21
+	#536:
+	Energy=726
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=121 0
+	Direction=1 -1
+	Genes=21
+	#537:
+	Energy=923
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=15 97
+	Direction=0 0
+	Genes=0|0|21|22
+	#538:
+	Energy=713
+	LastDirection=8
+	Chlorophyl=4
+	Capacity=150
+	Status=0
+	Position=42 97
+	Direction=-1 0
+	Genes=22|11|0|0
+	#539:
+	Energy=393
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=73 34
+	Direction=1 0
+	Genes=21
+	#540:
+	Energy=598
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=123 98
+	Direction=1 1
+	Genes=22|0|22
+	#541:
+	Energy=443
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=525
+	Status=0
+	Position=96 32
+	Direction=-1 0
+	Genes=22|11|1
+	#542:
+	Energy=281
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=78 81
+	Direction=-1 -1
+	Genes=21|21|22|0|0
+	#543:
+	Energy=351
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=198 90
+	Direction=1 0
+	Genes=20|22|11|1
+	#544:
+	Energy=900
+	LastDirection=8
+	Chlorophyl=1
+	Capacity=600
+	Status=0
+	Position=21 99
+	Direction=0 1
+	Genes=21|22
+	#545:
+	Energy=342
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=600
+	Status=0
+	Position=156 82
+	Direction=1 -1
+	Genes=0|11|22|0
+	#546:
+	Energy=425
+	LastDirection=-2
+	Chlorophyl=1
+	Capacity=700
+	Status=0
+	Position=6 95
+	Direction=-1 0
+	Genes=22|1|1|0
+	#547:
+	Energy=352
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=104 97
+	Direction=-1 1
+	Genes=1|1|21|22
+	#548:
+	Energy=816
+	LastDirection=1
+	Chlorophyl=4
+	Capacity=750
+	Status=0
+	Position=146 96
+	Direction=-1 0
+	Genes=0|20|1
+	#549:
+	Energy=361
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1100
+	Status=0
+	Position=93 90
+	Direction=-1 -1
+	Genes=1|0|0|20
+	#550:
+	Energy=670
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=86 0
+	Direction=1 -1
+	Genes=21
+	#551:
+	Energy=302
+	LastDirection=8
+	Chlorophyl=3
+	Capacity=775
+	Status=0
+	Position=46 83
+	Direction=1 1
+	Genes=22|1
+	#552:
+	Energy=747
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=775
+	Status=0
+	Position=60 99
+	Direction=-1 1
+	Genes=0|0|22
+	#553:
+	Energy=836
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=4 96
+	Direction=-1 1
+	Genes=22|11|11|0
+	#554:
+	Energy=566
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1400
+	Status=0
+	Position=84 98
+	Direction=0 1
+	Genes=0|20
+	#555:
+	Energy=940
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=87 1
+	Direction=1 -1
+	Genes=21
+	#556:
+	Energy=562
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=80 98
+	Direction=-1 1
+	Genes=22|20|20|0
+	#557:
+	Energy=816
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=1675
+	Status=0
+	Position=138 99
+	Direction=1 0
+	Genes=0
+	#558:
+	Energy=257
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=525
+	Status=0
+	Position=2 70
+	Direction=-1 1
+	Genes=11|20|20
+	#559:
+	Energy=779
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=700
+	Status=0
+	Position=192 97
+	Direction=1 0
+	Genes=22|20
+	#560:
+	Energy=638
+	LastDirection=3
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=30 89
+	Direction=1 -1
+	Genes=21|22|20|0
+	#561:
+	Energy=306
+	LastDirection=0
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=53 84
+	Direction=-1 -1
+	Genes=21|0
+	#562:
+	Energy=824
+	LastDirection=7
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=189 93
+	Direction=1 -1
+	Genes=21|20|20|0|0
+	#563:
+	Energy=658
+	LastDirection=6
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=86 1
+	Direction=1 -1
+	Genes=21
+	#564:
+	Energy=722
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=14 33
+	Direction=0 0
+	Genes=21
+	#565:
+	Energy=276
+	LastDirection=0
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=189 92
+	Direction=0 1
+	Genes=0|21
+	#566:
+	Energy=641
+	LastDirection=6
+	Chlorophyl=3
+	Capacity=1175
+	Status=0
+	Position=99 94
+	Direction=0 0
+	Genes=21
+	#567:
+	Energy=513
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1600
+	Status=0
+	Position=195 95
+	Direction=1 1
+	Genes=1|1
+	#568:
+	Energy=272
+	LastDirection=0
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=116 57
+	Direction=0 -1
+	Genes=21|0
+	#569:
+	Energy=576
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=14 1
+	Direction=0 -1
+	Genes=21
+	#570:
+	Energy=425
+	LastDirection=6
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=138 37
+	Direction=1 0
+	Genes=21
+	#571:
+	Energy=476
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=1400
+	Status=0
+	Position=101 90
+	Direction=-1 0
+	Genes=21
+	#572:
+	Energy=540
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=149 25
+	Direction=1 0
+	Genes=0|21
+	#573:
+	Energy=251
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=1700
+	Status=0
+	Position=67 28
+	Direction=0 -1
+	Genes=1|0
+	#574:
+	Energy=498
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=74 89
+	Direction=0 0
+	Genes=21|21|22|0|0
+	#575:
+	Energy=594
+	LastDirection=6
+	Chlorophyl=3
+	Capacity=275
+	Status=0
+	Position=174 77
+	Direction=1 -1
+	Genes=11|0|20|20
+	#576:
+	Energy=792
+	LastDirection=0
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=99 65
+	Direction=-1 -1
+	Genes=11|20|22|0
+	#577:
+	Energy=838
+	LastDirection=6
+	Chlorophyl=3
+	Capacity=175
+	Status=0
+	Position=110 92
+	Direction=0 1
+	Genes=20|20|1|11
+	#578:
+	Energy=367
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=79 98
+	Direction=1 1
+	Genes=21
+	#579:
+	Energy=559
+	LastDirection=2
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=3 2
+	Direction=0 -1
+	Genes=21
+	#580:
+	Energy=260
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=200
+	Status=0
+	Position=103 36
+	Direction=-1 -1
+	Genes=0|11|0|11|22
+	#581:
+	Energy=798
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=120 99
+	Direction=0 1
+	Genes=22|0|22
+	#582:
+	Energy=755
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=135 99
+	Direction=1 0
+	Genes=22|0|22|0|1
+	#583:
+	Energy=501
+	LastDirection=8
+	Chlorophyl=3
+	Capacity=275
+	Status=0
+	Position=23 7
+	Direction=0 0
+	Genes=21|1|1|20
+	#584:
+	Energy=554
+	LastDirection=6
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=0 19
+	Direction=-1 0
+	Genes=21
+	#585:
+	Energy=462
+	LastDirection=2
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=49 97
+	Direction=0 0
+	Genes=21|22|0|1
+	#586:
+	Energy=685
+	LastDirection=7
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=112 95
+	Direction=1 0
+	Genes=11|11|22|0
+	#587:
+	Energy=1000
+	LastDirection=8
+	Chlorophyl=3
+	Capacity=1575
+	Status=0
+	Position=188 99
+	Direction=1 1
+	Genes=1
+	#588:
+	Energy=628
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=1800
+	Status=0
+	Position=199 77
+	Direction=1 0
+	Genes=1
+	#589:
+	Energy=790
+	LastDirection=6
+	Chlorophyl=3
+	Capacity=475
+	Status=0
+	Position=139 96
+	Direction=1 1
+	Genes=11|0|0|21|0
+	#590:
+	Energy=636
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=74 99
+	Direction=1 0
+	Genes=21|22|20|0
+	#591:
+	Energy=998
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=40 1
+	Direction=0 -1
+	Genes=21
+	#592:
+	Energy=771
+	LastDirection=6
+	Chlorophyl=2
+	Capacity=825
+	Status=0
+	Position=98 94
+	Direction=0 1
+	Genes=1|22|0
+	#593:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=194 98
+	Direction=1 1
+	Genes=0|11|20|20|0
+	#594:
+	Energy=443
+	LastDirection=2
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=27 90
+	Direction=0 1
+	Genes=21
+	#595:
+	Energy=982
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=151 98
+	Direction=1 -1
+	Genes=22
+	#596:
+	Energy=576
+	LastDirection=6
+	Chlorophyl=2
+	Capacity=525
+	Status=0
+	Position=110 95
+	Direction=0 0
+	Genes=21|22
+	#597:
+	Energy=286
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=1325
+	Status=0
+	Position=1 89
+	Direction=-1 1
+	Genes=21
+	#598:
+	Energy=269
+	LastDirection=2
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=2 37
+	Direction=-1 -1
+	Genes=1|21
+	#599:
+	Energy=311
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=0 86
+	Direction=-1 -1
+	Genes=0|0|21|22
+	#600:
+	Energy=734
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=151 99
+	Direction=0 1
+	Genes=22
+	#601:
+	Energy=379
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=6 71
+	Direction=-1 1
+	Genes=21
+	#602:
+	Energy=705
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=168 96
+	Direction=0 0
+	Genes=20|21|11|20
+	#603:
+	Energy=541
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=625
+	Status=0
+	Position=66 90
+	Direction=-1 -1
+	Genes=0|20|21|0
+	#604:
+	Energy=634
+	LastDirection=4
+	Chlorophyl=4
+	Capacity=250
+	Status=0
+	Position=191 96
+	Direction=1 0
+	Genes=20|11|11
+	#605:
+	Energy=967
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=68 2
+	Direction=1 -1
+	Genes=21
+	#606:
+	Energy=475
+	LastDirection=6
+	Chlorophyl=2
+	Capacity=725
+	Status=0
+	Position=188 87
+	Direction=1 -1
+	Genes=0|1|22|0
+	#607:
+	Energy=993
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=154 98
+	Direction=0 -1
+	Genes=22
+	#608:
+	Energy=743
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=37 97
+	Direction=1 1
+	Genes=0|20|22|20|0
+	#609:
+	Energy=781
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=1 10
+	Direction=-1 0
+	Genes=21
+	#610:
+	Energy=585
+	LastDirection=-2
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=3 6
+	Direction=-1 0
+	Genes=21
+	#611:
+	Energy=731
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=5 1
+	Direction=-1 -1
+	Genes=21
+	#612:
+	Energy=840
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=46 1
+	Direction=0 0
+	Genes=21
+	#613:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=500
+	Status=0
+	Position=119 99
+	Direction=1 1
+	Genes=1|22|20
+	#614:
+	Energy=608
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=35 99
+	Direction=1 1
+	Genes=0|20|22|20|0
+	#615:
+	Energy=552
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=325
+	Status=0
+	Position=15 92
+	Direction=-1 0
+	Genes=11|1|20|20
+	#616:
+	Energy=365
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=80 90
+	Direction=1 1
+	Genes=21
+	#617:
+	Energy=738
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1425
+	Status=0
+	Position=26 97
+	Direction=-1 0
+	Genes=20
+	#618:
+	Energy=393
+	LastDirection=2
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=0 87
+	Direction=-1 1
+	Genes=21
+	#619:
+	Energy=906
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=20 0
+	Direction=0 -1
+	Genes=21
+	#620:
+	Energy=277
+	LastDirection=0
+	Chlorophyl=4
+	Capacity=250
+	Status=0
+	Position=106 38
+	Direction=-1 -1
+	Genes=20|11|11
+	#621:
+	Energy=737
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=75
+	Status=0
+	Position=113 97
+	Direction=-1 1
+	Genes=0|22|22
+	#622:
+	Energy=502
+	LastDirection=2
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=83 97
+	Direction=-1 0
+	Genes=0|22|20|1
+	#623:
+	Energy=356
+	LastDirection=3
+	Chlorophyl=3
+	Capacity=175
+	Status=0
+	Position=40 59
+	Direction=0 -1
+	Genes=20|20|1|11
+	#624:
+	Energy=736
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=625
+	Status=0
+	Position=98 97
+	Direction=-1 0
+	Genes=22|20
+	#625:
+	Energy=474
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=1800
+	Status=0
+	Position=185 98
+	Direction=1 0
+	Genes=1
+	#626:
+	Energy=660
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=160 99
+	Direction=0 0
+	Genes=0|21|0|21|20
+	#627:
+	Energy=734
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1900
+	Status=0
+	Position=129 97
+	Direction=0 0
+	Genes=0
+	#628:
+	Energy=287
+	LastDirection=2
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=59 68
+	Direction=-1 1
+	Genes=0|21
+	#629:
+	Energy=967
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=375
+	Status=0
+	Position=197 98
+	Direction=-1 -1
+	Genes=20|11|20
+	#630:
+	Energy=684
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=1125
+	Status=0
+	Position=130 93
+	Direction=-1 0
+	Genes=20|1|0
+	#631:
+	Energy=696
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=75
+	Status=0
+	Position=111 99
+	Direction=1 1
+	Genes=0|22|22
+	#632:
+	Energy=963
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=-25
+	Status=0
+	Position=108 98
+	Direction=0 0
+	Genes=20|20|22
+	#633:
+	Energy=410
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=800
+	Status=0
+	Position=38 94
+	Direction=-1 -1
+	Genes=20|0|21
+	#634:
+	Energy=500
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=154 0
+	Direction=1 -1
+	Genes=21
+	#635:
+	Energy=820
+	LastDirection=3
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=187 91
+	Direction=0 0
+	Genes=21|20|20|0|0
+	#636:
+	Energy=513
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=46 32
+	Direction=0 0
+	Genes=21
+	#637:
+	Energy=424
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=1 33
+	Direction=-1 0
+	Genes=21
+	#638:
+	Energy=998
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=800
+	Status=0
+	Position=80 97
+	Direction=1 1
+	Genes=20|0|21
+	#639:
+	Energy=593
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=625
+	Status=0
+	Position=99 99
+	Direction=1 -1
+	Genes=22|20
+	#640:
+	Energy=727
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=775
+	Status=0
+	Position=58 97
+	Direction=1 1
+	Genes=0|0|22
+	#641:
+	Energy=1000
+	LastDirection=2
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=3 0
+	Direction=0 -1
+	Genes=21
+	#642:
+	Energy=313
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=625
+	Status=0
+	Position=198 41
+	Direction=1 -1
+	Genes=20|11|1|1
+	#643:
+	Energy=675
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=1675
+	Status=0
+	Position=82 99
+	Direction=0 -1
+	Genes=0
+	#644:
+	Energy=479
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=145 82
+	Direction=1 -1
+	Genes=22|0|22|0|1
+	#645:
+	Energy=928
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=525
+	Status=0
+	Position=104 98
+	Direction=1 1
+	Genes=22|21
+	#646:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=155 99
+	Direction=0 -1
+	Genes=22
+	#647:
+	Energy=366
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1700
+	Status=0
+	Position=182 62
+	Direction=1 -1
+	Genes=0|1
+	#648:
+	Energy=338
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=54 72
+	Direction=-1 -1
+	Genes=21|22|0|1
+	#649:
+	Energy=725
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=121 97
+	Direction=0 1
+	Genes=22|0|22
+	#650:
+	Energy=564
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=186 98
+	Direction=1 1
+	Genes=21|21|21|0
+	#651:
+	Energy=503
+	LastDirection=5
+	Chlorophyl=4
+	Capacity=-50
+	Status=0
+	Position=32 89
+	Direction=0 0
+	Genes=11|20|0|0|20
+	#652:
+	Energy=960
+	LastDirection=2
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=47 98
+	Direction=-1 1
+	Genes=1|21
+	#653:
+	Energy=757
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=105 13
+	Direction=1 0
+	Genes=21
+	#654:
+	Energy=324
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=200
+	Status=0
+	Position=199 79
+	Direction=1 -1
+	Genes=20|11|1|21|0
+	#655:
+	Energy=609
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=145 99
+	Direction=1 -1
+	Genes=22
+	#656:
+	Energy=721
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=119 97
+	Direction=-1 0
+	Genes=22|0|22
+	#657:
+	Energy=453
+	LastDirection=6
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=83 72
+	Direction=1 1
+	Genes=21
+	#658:
+	Energy=918
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=800
+	Status=0
+	Position=178 97
+	Direction=0 1
+	Genes=21|21
+	#659:
+	Energy=609
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=148 99
+	Direction=-1 -1
+	Genes=22
+	#660:
+	Energy=934
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=38 98
+	Direction=0 0
+	Genes=0|20|22|20|0
+	#661:
+	Energy=536
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=39 99
+	Direction=0 -1
+	Genes=0|20|22|20|0
+	#662:
+	Energy=500
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=99 26
+	Direction=1 0
+	Genes=21
+	#663:
+	Energy=291
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=0 51
+	Direction=-1 -1
+	Genes=22|21|1|11
+	#664:
+	Energy=384
+	LastDirection=6
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=111 92
+	Direction=-1 0
+	Genes=20|11|11|0|11
+	#665:
+	Energy=416
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=500
+	Status=0
+	Position=136 80
+	Direction=0 -1
+	Genes=21|22|0
+	#666:
+	Energy=517
+	LastDirection=1
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=127 23
+	Direction=1 0
+	Genes=0|21
+	#667:
+	Energy=548
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=6 68
+	Direction=0 1
+	Genes=21
+	#668:
+	Energy=736
+	LastDirection=6
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=55 28
+	Direction=0 0
+	Genes=21
+	#669:
+	Energy=912
+	LastDirection=2
+	Chlorophyl=1
+	Capacity=1700
+	Status=0
+	Position=48 98
+	Direction=-1 1
+	Genes=1|0
+	#670:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=625
+	Status=0
+	Position=94 99
+	Direction=-1 -1
+	Genes=22|20
+	#671:
+	Energy=860
+	LastDirection=6
+	Chlorophyl=2
+	Capacity=1725
+	Status=0
+	Position=29 92
+	Direction=-1 1
+	Genes=1
+	#672:
+	Energy=913
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=625
+	Status=0
+	Position=98 98
+	Direction=-1 1
+	Genes=22|20
+	#673:
+	Energy=671
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=775
+	Status=0
+	Position=7 49
+	Direction=0 0
+	Genes=22|1
+	#674:
+	Energy=906
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=-25
+	Status=0
+	Position=105 98
+	Direction=-1 0
+	Genes=20|20|22
+	#675:
+	Energy=746
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=16 97
+	Direction=0 0
+	Genes=0|0|21|22
+	#676:
+	Energy=390
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=70 77
+	Direction=0 1
+	Genes=21
+	#677:
+	Energy=920
+	LastDirection=2
+	Chlorophyl=3
+	Capacity=1275
+	Status=0
+	Position=95 94
+	Direction=-1 1
+	Genes=0|11
+	#678:
+	Energy=419
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=43 86
+	Direction=0 1
+	Genes=21
+	#679:
+	Energy=948
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1400
+	Status=0
+	Position=54 99
+	Direction=0 1
+	Genes=21
+	#680:
+	Energy=860
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=1675
+	Status=0
+	Position=138 98
+	Direction=-1 1
+	Genes=0
+	#681:
+	Energy=589
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=132 4
+	Direction=1 0
+	Genes=21
+	#682:
+	Energy=893
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=625
+	Status=0
+	Position=95 98
+	Direction=0 1
+	Genes=22|20
+	#683:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=700
+	Status=0
+	Position=189 99
+	Direction=1 -1
+	Genes=22|20
+	#684:
+	Energy=502
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=46 36
+	Direction=1 0
+	Genes=21
+	#685:
+	Energy=971
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=90 0
+	Direction=0 -1
+	Genes=21
+	#686:
+	Energy=828
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=60 36
+	Direction=0 0
+	Genes=21
+	#687:
+	Energy=463
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=114 91
+	Direction=0 -1
+	Genes=0|0|21
+	#688:
+	Energy=820
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=123 1
+	Direction=1 -1
+	Genes=21
+	#689:
+	Energy=878
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=96 33
+	Direction=1 0
+	Genes=21
+	#690:
+	Energy=633
+	LastDirection=8
+	Chlorophyl=1
+	Capacity=200
+	Status=0
+	Position=120 96
+	Direction=1 1
+	Genes=20|21|21|0
+	#691:
+	Energy=881
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=170 98
+	Direction=-1 0
+	Genes=22|22|0|0
+	#692:
+	Energy=351
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=159 58
+	Direction=1 -1
+	Genes=21|11|1|22
+	#693:
+	Energy=729
+	LastDirection=8
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=127 96
+	Direction=-1 1
+	Genes=1|21
+	#694:
+	Energy=723
+	LastDirection=0
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=29 22
+	Direction=0 0
+	Genes=21
+	#695:
+	Energy=500
+	LastDirection=2
+	Chlorophyl=2
+	Capacity=825
+	Status=0
+	Position=0 76
+	Direction=-1 -1
+	Genes=11|1|0|11
+	#696:
+	Energy=842
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=43 27
+	Direction=1 0
+	Genes=21
+	#697:
+	Energy=460
+	LastDirection=2
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=13 84
+	Direction=-1 1
+	Genes=21
+	#698:
+	Energy=418
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=9 85
+	Direction=0 1
+	Genes=21
+	#699:
+	Energy=324
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=1400
+	Status=0
+	Position=44 19
+	Direction=0 -1
+	Genes=11|1
+	#700:
+	Energy=869
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=125 98
+	Direction=0 -1
+	Genes=22|0|22
+	#701:
+	Energy=541
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=0 64
+	Direction=-1 1
+	Genes=21
+	#702:
+	Energy=625
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=37 1
+	Direction=0 -1
+	Genes=21
+	#703:
+	Energy=421
+	LastDirection=0
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=7 83
+	Direction=0 1
+	Genes=21
+	#704:
+	Energy=394
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=115 41
+	Direction=1 1
+	Genes=21
+	#705:
+	Energy=541
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=49 52
+	Direction=1 1
+	Genes=21
+	#706:
+	Energy=434
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=0 24
+	Direction=-1 0
+	Genes=21
+	#707:
+	Energy=429
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=109 16
+	Direction=1 0
+	Genes=21
+	#708:
+	Energy=653
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=186 19
+	Direction=-1 0
+	Genes=0|21
+	#709:
+	Energy=551
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=116 67
+	Direction=1 1
+	Genes=21
+	#710:
+	Energy=680
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=1275
+	Status=0
+	Position=3 97
+	Direction=0 1
+	Genes=20
+	#711:
+	Energy=859
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=156 98
+	Direction=-1 0
+	Genes=22
+	#712:
+	Energy=403
+	LastDirection=6
+	Chlorophyl=2
+	Capacity=1125
+	Status=0
+	Position=170 85
+	Direction=1 -1
+	Genes=20|0|1
+	#713:
+	Energy=674
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=123 96
+	Direction=1 -1
+	Genes=22
+	#714:
+	Energy=922
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=23 98
+	Direction=1 1
+	Genes=20|11|22|0|1
+	#715:
+	Energy=931
+	LastDirection=2
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=140 99
+	Direction=-1 1
+	Genes=21|22|0|1
+	#716:
+	Energy=475
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=51 62
+	Direction=0 1
+	Genes=21
+	#717:
+	Energy=531
+	LastDirection=1
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=48 70
+	Direction=1 1
+	Genes=21
+	#718:
+	Energy=468
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=34 71
+	Direction=0 1
+	Genes=21
+	#719:
+	Energy=721
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=6 97
+	Direction=-1 1
+	Genes=21|20|0|1|1
+	#720:
+	Energy=845
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=124 98
+	Direction=-1 0
+	Genes=22|0|22
+	#721:
+	Energy=501
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=700
+	Status=0
+	Position=108 92
+	Direction=0 0
+	Genes=22|1|1|0
+	#722:
+	Energy=526
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=3 75
+	Direction=0 1
+	Genes=21
+	#723:
+	Energy=703
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=18 0
+	Direction=0 -1
+	Genes=21
+	#724:
+	Energy=915
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=200
+	Status=0
+	Position=40 99
+	Direction=-1 1
+	Genes=20|21|21|0
+	#725:
+	Energy=669
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=154 97
+	Direction=-1 -1
+	Genes=22
+	#726:
+	Energy=389
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=0 71
+	Direction=-1 -1
+	Genes=20|11|22|0|1
+	#727:
+	Energy=500
+	LastDirection=4
+	Chlorophyl=1
+	Capacity=600
+	Status=0
+	Position=196 93
+	Direction=1 1
+	Genes=21|22
+	#728:
+	Energy=352
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=195 40
+	Direction=1 -1
+	Genes=1|21|1|11|21
+	#729:
+	Energy=852
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=1300
+	Status=0
+	Position=18 93
+	Direction=1 0
+	Genes=20|1
+	#730:
+	Energy=828
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1500
+	Status=0
+	Position=188 98
+	Direction=-1 -1
+	Genes=20
+	#731:
+	Energy=528
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=6 65
+	Direction=0 1
+	Genes=21
+	#732:
+	Energy=506
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=127 73
+	Direction=1 1
+	Genes=21
+	#733:
+	Energy=588
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=1400
+	Status=0
+	Position=125 95
+	Direction=1 0
+	Genes=21
+	#734:
+	Energy=660
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1825
+	Status=0
+	Position=114 97
+	Direction=1 0
+	Genes=0
+	#735:
+	Energy=659
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=38 97
+	Direction=0 -1
+	Genes=0|20|22|20|0
+	#736:
+	Energy=855
+	LastDirection=6
+	Chlorophyl=2
+	Capacity=725
+	Status=0
+	Position=66 94
+	Direction=-1 1
+	Genes=20|1|20
+	#737:
+	Energy=392
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=1300
+	Status=0
+	Position=0 79
+	Direction=-1 -1
+	Genes=0|21
+	#738:
+	Energy=365
+	LastDirection=3
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=32 60
+	Direction=0 -1
+	Genes=22|11|11|0
+	#739:
+	Energy=684
+	LastDirection=6
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=5 2
+	Direction=-1 -1
+	Genes=21
+	#740:
+	Energy=564
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=88 35
+	Direction=0 1
+	Genes=0|21
+	#741:
+	Energy=410
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=1700
+	Status=0
+	Position=100 61
+	Direction=1 -1
+	Genes=1|0
+	#742:
+	Energy=530
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=74 13
+	Direction=1 0
+	Genes=21
+	#743:
+	Energy=943
+	LastDirection=1
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=69 17
+	Direction=-1 0
+	Genes=21
+	#744:
+	Energy=549
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=105 69
+	Direction=1 1
+	Genes=21
+	#745:
+	Energy=721
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=80 25
+	Direction=0 0
+	Genes=21
+	#746:
+	Energy=721
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1900
+	Status=0
+	Position=130 98
+	Direction=-1 -1
+	Genes=0
+	#747:
+	Energy=767
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=1 22
+	Direction=0 0
+	Genes=21
+	#748:
+	Energy=798
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1425
+	Status=0
+	Position=28 98
+	Direction=-1 1
+	Genes=20
+	#749:
+	Energy=596
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=700
+	Status=0
+	Position=7 95
+	Direction=0 0
+	Genes=1|20|20|0
+	#750:
+	Energy=663
+	LastDirection=4
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=2 7
+	Direction=0 -1
+	Genes=21
+	#751:
+	Energy=556
+	LastDirection=6
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=151 0
+	Direction=1 -1
+	Genes=21
+	#752:
+	Energy=601
+	LastDirection=6
+	Chlorophyl=2
+	Capacity=525
+	Status=0
+	Position=92 95
+	Direction=0 0
+	Genes=22|21
+	#753:
+	Energy=739
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=500
+	Status=0
+	Position=134 99
+	Direction=1 1
+	Genes=1|22|20
+	#754:
+	Energy=553
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=94 68
+	Direction=0 1
+	Genes=21
+	#755:
+	Energy=501
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=122 8
+	Direction=1 0
+	Genes=21
+	#756:
+	Energy=925
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=775
+	Status=0
+	Position=55 99
+	Direction=1 1
+	Genes=0|0|22
+	#757:
+	Energy=539
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=49 46
+	Direction=0 1
+	Genes=21
+	#758:
+	Energy=994
+	LastDirection=1
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=3 1
+	Direction=-1 -1
+	Genes=21
+	#759:
+	Energy=563
+	LastDirection=2
+	Chlorophyl=2
+	Capacity=1725
+	Status=0
+	Position=190 94
+	Direction=1 0
+	Genes=1
+	#760:
+	Energy=758
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=87 0
+	Direction=1 -1
+	Genes=21
+	#761:
+	Energy=921
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1900
+	Status=0
+	Position=129 99
+	Direction=-1 1
+	Genes=0
+	#762:
+	Energy=435
+	LastDirection=8
+	Chlorophyl=3
+	Capacity=575
+	Status=0
+	Position=13 98
+	Direction=0 0
+	Genes=22|11
+	#763:
+	Energy=678
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=131 98
+	Direction=-1 1
+	Genes=22|0|22|0|1
+	#764:
+	Energy=499
+	LastDirection=1
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=85 64
+	Direction=0 1
+	Genes=21
+	#765:
+	Energy=433
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=500
+	Status=0
+	Position=1 87
+	Direction=-1 -1
+	Genes=0|1|22|11
+	#766:
+	Energy=403
+	LastDirection=2
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=8 47
+	Direction=0 0
+	Genes=21
+	#767:
+	Energy=729
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1700
+	Status=0
+	Position=91 99
+	Direction=0 1
+	Genes=1|0
+	#768:
+	Energy=746
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=129 3
+	Direction=1 0
+	Genes=0|21
+	#769:
+	Energy=984
+	LastDirection=4
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=0 2
+	Direction=0 -1
+	Genes=21
+	#770:
+	Energy=573
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=1 5
+	Direction=0 -1
+	Genes=21
+	#771:
+	Energy=637
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=600
+	Status=0
+	Position=11 95
+	Direction=0 0
+	Genes=11|20|11|0
+	#772:
+	Energy=767
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=5 97
+	Direction=-1 1
+	Genes=22|20|0|21
+	#773:
+	Energy=562
+	LastDirection=1
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=25 13
+	Direction=0 0
+	Genes=21
+	#774:
+	Energy=417
+	LastDirection=0
+	Chlorophyl=3
+	Capacity=-25
+	Status=0
+	Position=52 72
+	Direction=-1 -1
+	Genes=21|0|20|21
+	#775:
+	Energy=469
+	LastDirection=10
+	Chlorophyl=2
+	Capacity=1125
+	Status=0
+	Position=199 16
+	Direction=1 0
+	Genes=21|1
+	#776:
+	Energy=647
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=27 55
+	Direction=1 1
+	Genes=21
+	#777:
+	Energy=536
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=1100
+	Status=0
+	Position=128 92
+	Direction=-1 -1
+	Genes=1|0|0|20
+	#778:
+	Energy=711
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=22 25
+	Direction=-1 0
+	Genes=21
+	#779:
+	Energy=535
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=76 47
+	Direction=0 1
+	Genes=21
+	#780:
+	Energy=966
+	LastDirection=2
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=8 2
+	Direction=0 -1
+	Genes=21
+	#781:
+	Energy=853
+	LastDirection=2
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=46 23
+	Direction=0 -1
+	Genes=21
+	#782:
+	Energy=519
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=115 17
+	Direction=1 0
+	Genes=21
+	#783:
+	Energy=880
+	LastDirection=0
+	Chlorophyl=2
+	Capacity=325
+	Status=0
+	Position=157 11
+	Direction=-1 -1
+	Genes=21|1|22
+	#784:
+	Energy=665
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=500
+	Status=0
+	Position=6 96
+	Direction=-1 1
+	Genes=0|1|22|11
+	#785:
+	Energy=579
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=101 97
+	Direction=-1 1
+	Genes=22|1|11|21
+	#786:
+	Energy=624
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=9 4
+	Direction=0 -1
+	Genes=21
+	#787:
+	Energy=868
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=42 11
+	Direction=1 0
+	Genes=21
+	#788:
+	Energy=749
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1900
+	Status=0
+	Position=126 98
+	Direction=-1 1
+	Genes=0
+	#789:
+	Energy=825
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=146 0
+	Direction=1 -1
+	Genes=0|21
+	#790:
+	Energy=941
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=185 10
+	Direction=-1 0
+	Genes=0|21
+	#791:
+	Energy=784
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=174 98
+	Direction=0 0
+	Genes=11|0|0|20|21
+	#792:
+	Energy=867
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1425
+	Status=0
+	Position=24 99
+	Direction=-1 0
+	Genes=20
+	#793:
+	Energy=744
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1425
+	Status=0
+	Position=29 98
+	Direction=-1 0
+	Genes=20
+	#794:
+	Energy=501
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=2 4
+	Direction=0 -1
+	Genes=21
+	#795:
+	Energy=498
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=64 60
+	Direction=0 1
+	Genes=21
+	#796:
+	Energy=490
+	LastDirection=5
+	Chlorophyl=4
+	Capacity=1150
+	Status=0
+	Position=189 91
+	Direction=0 1
+	Genes=11
+	#797:
+	Energy=649
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=1100
+	Status=0
+	Position=195 89
+	Direction=1 0
+	Genes=11|20
+	#798:
+	Energy=779
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=91 0
+	Direction=-1 -1
+	Genes=21|22|0|1|1
+	#799:
+	Energy=558
+	LastDirection=6
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=51 39
+	Direction=1 1
+	Genes=21
+	#800:
+	Energy=783
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1400
+	Status=0
+	Position=85 99
+	Direction=-1 0
+	Genes=0|20
+	#801:
+	Energy=544
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=500
+	Status=0
+	Position=188 93
+	Direction=1 -1
+	Genes=21|22|0
+	#802:
+	Energy=845
+	LastDirection=0
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=0 18
+	Direction=-1 0
+	Genes=21
+	#803:
+	Energy=835
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=81 99
+	Direction=0 0
+	Genes=22|20|20|0
+	#804:
+	Energy=708
+	LastDirection=7
+	Chlorophyl=4
+	Capacity=150
+	Status=0
+	Position=110 98
+	Direction=1 1
+	Genes=22|11|0|0
+	#805:
+	Energy=595
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=1525
+	Status=0
+	Position=86 98
+	Direction=-1 1
+	Genes=11
+	#806:
+	Energy=837
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=1675
+	Status=0
+	Position=136 99
+	Direction=0 0
+	Genes=0
+	#807:
+	Energy=612
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=700
+	Status=0
+	Position=189 97
+	Direction=0 -1
+	Genes=22|20
+	#808:
+	Energy=803
+	LastDirection=0
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=1 7
+	Direction=-1 -1
+	Genes=21
+	#809:
+	Energy=594
+	LastDirection=1
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=39 36
+	Direction=0 1
+	Genes=21
+	#810:
+	Energy=743
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=114 0
+	Direction=1 -1
+	Genes=21
+	#811:
+	Energy=569
+	LastDirection=8
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=117 97
+	Direction=-1 1
+	Genes=21|11|1|22
+	#812:
+	Energy=978
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=57 4
+	Direction=0 -1
+	Genes=21
+	#813:
+	Energy=747
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=1675
+	Status=0
+	Position=139 99
+	Direction=0 0
+	Genes=0
+	#814:
+	Energy=733
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=2 11
+	Direction=-1 0
+	Genes=21
+	#815:
+	Energy=680
+	LastDirection=7
+	Chlorophyl=3
+	Capacity=175
+	Status=0
+	Position=33 95
+	Direction=1 0
+	Genes=20|1|21|1|0
+	#816:
+	Energy=687
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=425
+	Status=0
+	Position=75 96
+	Direction=1 0
+	Genes=1|20|21|0|0
+	#817:
+	Energy=534
+	LastDirection=1
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=0 28
+	Direction=-1 1
+	Genes=21
+	#818:
+	Energy=540
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=13 94
+	Direction=1 -1
+	Genes=22|20|0|21
+	#819:
+	Energy=676
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=74 98
+	Direction=0 0
+	Genes=22|20|0|11|1
+	#820:
+	Energy=701
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1825
+	Status=0
+	Position=117 98
+	Direction=0 -1
+	Genes=0
+	#821:
+	Energy=932
+	LastDirection=0
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=64 5
+	Direction=-1 -1
+	Genes=21
+	#822:
+	Energy=534
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=85 36
+	Direction=1 1
+	Genes=21
+	#823:
+	Energy=543
+	LastDirection=8
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=0 3
+	Direction=0 0
+	Genes=22|22|11|0
+	#824:
+	Energy=699
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=119 98
+	Direction=-1 -1
+	Genes=22|0|22
+	#825:
+	Energy=781
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=275
+	Status=0
+	Position=102 99
+	Direction=-1 1
+	Genes=22|20|1
+	#826:
+	Energy=553
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=172 99
+	Direction=1 -1
+	Genes=20|20|21|0
+	#827:
+	Energy=806
+	LastDirection=0
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=68 0
+	Direction=-1 -1
+	Genes=21
+	#828:
+	Energy=538
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=32 44
+	Direction=0 1
+	Genes=21
+	#829:
+	Energy=576
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=121 35
+	Direction=1 1
+	Genes=21
+	#830:
+	Energy=597
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=775
+	Status=0
+	Position=10 11
+	Direction=0 0
+	Genes=22|1
+	#831:
+	Energy=699
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=500
+	Status=0
+	Position=103 99
+	Direction=1 1
+	Genes=21|22|0
+	#832:
+	Energy=709
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=325
+	Status=0
+	Position=79 3
+	Direction=1 -1
+	Genes=21|21|1|1
+	#833:
+	Energy=747
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=15 99
+	Direction=1 1
+	Genes=21|22|20|0
+	#834:
+	Energy=549
+	LastDirection=4
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=57 0
+	Direction=1 -1
+	Genes=21
+	#835:
+	Energy=608
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=136 41
+	Direction=1 1
+	Genes=21
+	#836:
+	Energy=520
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=1325
+	Status=0
+	Position=7 17
+	Direction=-1 0
+	Genes=21
+	#837:
+	Energy=885
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=105 9
+	Direction=1 0
+	Genes=21
+	#838:
+	Energy=643
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=91 27
+	Direction=0 1
+	Genes=21
+	#839:
+	Energy=981
+	LastDirection=0
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=88 4
+	Direction=1 -1
+	Genes=0|21
+	#840:
+	Energy=546
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=100 35
+	Direction=1 1
+	Genes=21
+	#841:
+	Energy=866
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=25 1
+	Direction=1 -1
+	Genes=21
+	#842:
+	Energy=427
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=31 69
+	Direction=-1 -1
+	Genes=21|11|11|0|0
+	#843:
+	Energy=754
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=600
+	Status=0
+	Position=17 99
+	Direction=1 1
+	Genes=20|22|0
+	#844:
+	Energy=822
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=19 9
+	Direction=1 0
+	Genes=21
+	#845:
+	Energy=584
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=140 95
+	Direction=1 0
+	Genes=22|0|22|0|1
+	#846:
+	Energy=673
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=775
+	Status=0
+	Position=60 98
+	Direction=-1 1
+	Genes=0|0|22
+	#847:
+	Energy=740
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=132 6
+	Direction=0 -1
+	Genes=21
+	#848:
+	Energy=455
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=16 40
+	Direction=1 1
+	Genes=21
+	#849:
+	Energy=634
+	LastDirection=4
+	Chlorophyl=2
+	Capacity=1325
+	Status=0
+	Position=1 4
+	Direction=-1 0
+	Genes=21
+	#850:
+	Energy=766
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=4 0
+	Direction=-1 0
+	Genes=21
+	#851:
+	Energy=431
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=132 87
+	Direction=0 -1
+	Genes=11|20|22|0
+	#852:
+	Energy=669
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1425
+	Status=0
+	Position=75 98
+	Direction=-1 0
+	Genes=20
+	#853:
+	Energy=703
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=145 0
+	Direction=1 -1
+	Genes=21
+	#854:
+	Energy=747
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=775
+	Status=0
+	Position=61 99
+	Direction=0 0
+	Genes=0|0|22
+	#855:
+	Energy=930
+	LastDirection=1
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=38 2
+	Direction=-1 0
+	Genes=21
+	#856:
+	Energy=772
+	LastDirection=3
+	Chlorophyl=3
+	Capacity=275
+	Status=0
+	Position=5 0
+	Direction=-1 -1
+	Genes=21|1|1|20
+	#857:
+	Energy=581
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1500
+	Status=0
+	Position=188 97
+	Direction=-1 1
+	Genes=20
+	#858:
+	Energy=692
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1100
+	Status=0
+	Position=141 97
+	Direction=1 1
+	Genes=1|0|0|20
+	#859:
+	Energy=511
+	LastDirection=6
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=74 37
+	Direction=-1 1
+	Genes=21
+	#860:
+	Energy=580
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1825
+	Status=0
+	Position=116 97
+	Direction=0 1
+	Genes=0
+	#861:
+	Energy=450
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=31 41
+	Direction=0 1
+	Genes=21
+	#862:
+	Energy=606
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=110 39
+	Direction=1 1
+	Genes=21
+	#863:
+	Energy=1000
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=2 0
+	Direction=-1 0
+	Genes=21
+	#864:
+	Energy=795
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=3 4
+	Direction=-1 -1
+	Genes=21
+	#865:
+	Energy=532
+	LastDirection=1
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=66 10
+	Direction=1 0
+	Genes=21
+	#866:
+	Energy=954
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=25 0
+	Direction=1 -1
+	Genes=21
+	#867:
+	Energy=656
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=150 98
+	Direction=1 -1
+	Genes=22
+	#868:
+	Energy=644
+	LastDirection=1
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=0 8
+	Direction=-1 0
+	Genes=21
+	#869:
+	Energy=761
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=0 16
+	Direction=-1 1
+	Genes=21
+	#870:
+	Energy=651
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=3 98
+	Direction=1 0
+	Genes=22|20|0|21
+	#871:
+	Energy=592
+	LastDirection=6
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=1 2
+	Direction=-1 0
+	Genes=21
+	#872:
+	Energy=459
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=194 32
+	Direction=0 1
+	Genes=1|11|21|21
+	#873:
+	Energy=655
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=1125
+	Status=0
+	Position=158 99
+	Direction=1 1
+	Genes=20|0|1
+	#874:
+	Energy=584
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=48 4
+	Direction=1 0
+	Genes=21
+	#875:
+	Energy=572
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1425
+	Status=0
+	Position=25 96
+	Direction=1 0
+	Genes=20
+	#876:
+	Energy=641
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=180 96
+	Direction=0 0
+	Genes=20|22|11|1
+	#877:
+	Energy=700
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=375
+	Status=0
+	Position=49 99
+	Direction=1 1
+	Genes=11|0|20|11
+	#878:
+	Energy=670
+	LastDirection=3
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=175 97
+	Direction=0 0
+	Genes=21|20|20|0|0
+	#879:
+	Energy=562
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=103 96
+	Direction=0 -1
+	Genes=0|22|20|1
+	#880:
+	Energy=569
+	LastDirection=10
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=191 97
+	Direction=1 0
+	Genes=1|21|1|11|21
+	#881:
+	Energy=569
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1425
+	Status=0
+	Position=28 97
+	Direction=-1 1
+	Genes=20
+	#882:
+	Energy=568
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=1425
+	Status=0
+	Position=23 97
+	Direction=1 0
+	Genes=20
+	#883:
+	Energy=635
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=35 98
+	Direction=1 0
+	Genes=0|20|22|20|0
+	#884:
+	Energy=842
+	LastDirection=0
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=72 7
+	Direction=-1 -1
+	Genes=0|21
+	#885:
+	Energy=654
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=87 99
+	Direction=-1 1
+	Genes=21|21|22|0|0
+	#886:
+	Energy=725
+	LastDirection=0
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=64 0
+	Direction=-1 -1
+	Genes=21
+	#887:
+	Energy=557
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=38 22
+	Direction=0 1
+	Genes=21
+	#888:
+	Energy=631
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=75
+	Status=0
+	Position=111 98
+	Direction=-1 0
+	Genes=0|22|22
+	#889:
+	Energy=630
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=-25
+	Status=0
+	Position=106 98
+	Direction=-1 -1
+	Genes=20|20|22
+	#890:
+	Energy=696
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=75
+	Status=0
+	Position=110 99
+	Direction=1 0
+	Genes=0|22|22
+	#891:
+	Energy=527
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=34 40
+	Direction=1 1
+	Genes=21
+	#892:
+	Energy=864
+	LastDirection=1
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=6 0
+	Direction=-1 -1
+	Genes=21
+	#893:
+	Energy=480
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=1125
+	Status=0
+	Position=129 89
+	Direction=-1 0
+	Genes=20|0|1
+	#894:
+	Energy=561
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=775
+	Status=0
+	Position=56 97
+	Direction=1 0
+	Genes=0|0|22
+	#895:
+	Energy=561
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=775
+	Status=0
+	Position=57 96
+	Direction=1 -1
+	Genes=0|0|22
+	#896:
+	Energy=561
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1900
+	Status=0
+	Position=126 97
+	Direction=-1 0
+	Genes=0
+	#897:
+	Energy=560
+	LastDirection=4
+	Chlorophyl=3
+	Capacity=775
+	Status=0
+	Position=59 97
+	Direction=0 0
+	Genes=0|0|22
+	#898:
+	Energy=619
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=625
+	Status=0
+	Position=99 98
+	Direction=0 1
+	Genes=22|20
+	#899:
+	Energy=893
+	LastDirection=6
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=2 2
+	Direction=0 0
+	Genes=21
+	#900:
+	Energy=617
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=1675
+	Status=0
+	Position=82 98
+	Direction=-1 -1
+	Genes=0
+	#901:
+	Energy=616
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=155 98
+	Direction=0 0
+	Genes=22
+	#902:
+	Energy=607
+	LastDirection=1
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=86 10
+	Direction=-1 0
+	Genes=21
+	#903:
+	Energy=617
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=1675
+	Status=0
+	Position=81 98
+	Direction=0 -1
+	Genes=0
+	#904:
+	Energy=720
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=21 8
+	Direction=1 0
+	Genes=21
+	#905:
+	Energy=557
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=147 97
+	Direction=0 0
+	Genes=22
+	#906:
+	Energy=577
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=775
+	Status=0
+	Position=55 98
+	Direction=1 1
+	Genes=0|0|22
+	#907:
+	Energy=510
+	LastDirection=8
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=15 91
+	Direction=0 0
+	Genes=1|21
+	#908:
+	Energy=502
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=114 90
+	Direction=1 -1
+	Genes=21|21|22
+	#909:
+	Energy=464
+	LastDirection=3
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=4 90
+	Direction=-1 -1
+	Genes=22|11|11|0
+	#910:
+	Energy=803
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=144 3
+	Direction=1 0
+	Genes=0|21
+	#911:
+	Energy=599
+	LastDirection=10
+	Chlorophyl=2
+	Capacity=725
+	Status=0
+	Position=183 99
+	Direction=1 0
+	Genes=0|1|22|0
+	#912:
+	Energy=735
+	LastDirection=1
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=57 9
+	Direction=-1 0
+	Genes=21
+	#913:
+	Energy=571
+	LastDirection=2
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=26 24
+	Direction=0 1
+	Genes=21
+	#914:
+	Energy=675
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=78 3
+	Direction=-1 -1
+	Genes=21
+	#915:
+	Energy=859
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=113 0
+	Direction=0 -1
+	Genes=0|21
+	#916:
+	Energy=570
+	LastDirection=6
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=19 2
+	Direction=1 -1
+	Genes=21
+	#917:
+	Energy=485
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=32 27
+	Direction=0 1
+	Genes=21
+	#918:
+	Energy=578
+	LastDirection=1
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=77 13
+	Direction=1 1
+	Genes=21
+	#919:
+	Energy=617
+	LastDirection=2
+	Chlorophyl=2
+	Capacity=1725
+	Status=0
+	Position=166 95
+	Direction=1 1
+	Genes=1
+	#920:
+	Energy=516
+	LastDirection=2
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=71 28
+	Direction=-1 1
+	Genes=21
+	#921:
+	Energy=602
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=148 98
+	Direction=0 -1
+	Genes=22
+	#922:
+	Energy=542
+	LastDirection=3
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=146 93
+	Direction=0 0
+	Genes=0|21|0|21|20
+	#923:
+	Energy=591
+	LastDirection=2
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=54 23
+	Direction=-1 1
+	Genes=21
+	#924:
+	Energy=492
+	LastDirection=7
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=92 88
+	Direction=0 -1
+	Genes=22|0|11|20|0
+	#925:
+	Energy=553
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=600
+	Status=0
+	Position=80 96
+	Direction=-1 0
+	Genes=22|21
+	#926:
+	Energy=599
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=39 98
+	Direction=-1 -1
+	Genes=0|20|22|20|0
+	#927:
+	Energy=549
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=225
+	Status=0
+	Position=124 97
+	Direction=-1 0
+	Genes=22|0|22
+	#928:
+	Energy=907
+	LastDirection=4
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=8 1
+	Direction=0 -1
+	Genes=21
+	#929:
+	Energy=548
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=148 97
+	Direction=0 1
+	Genes=22
+	#930:
+	Energy=713
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=18 7
+	Direction=0 0
+	Genes=21
+	#931:
+	Energy=540
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=20 26
+	Direction=0 1
+	Genes=21
+	#932:
+	Energy=565
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=67 99
+	Direction=-1 -1
+	Genes=21|22|20|0
+	#933:
+	Energy=895
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=2 3
+	Direction=1 1
+	Genes=21
+	#934:
+	Energy=809
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=71 8
+	Direction=0 0
+	Genes=21
+	#935:
+	Energy=523
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=113 94
+	Direction=0 0
+	Genes=21|21|22|0|0
+	#936:
+	Energy=557
+	LastDirection=0
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=130 2
+	Direction=-1 -1
+	Genes=21
+	#937:
+	Energy=554
+	LastDirection=2
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=4 95
+	Direction=-1 -1
+	Genes=11|22|11
+	#938:
+	Energy=672
+	LastDirection=6
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=12 1
+	Direction=1 -1
+	Genes=21
+	#939:
+	Energy=467
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=102 91
+	Direction=0 -1
+	Genes=22|20|0|11|1
+	#940:
+	Energy=635
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=132 13
+	Direction=-1 1
+	Genes=21
+	#941:
+	Energy=546
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=130 96
+	Direction=-1 -1
+	Genes=22|0|22|0|1
+	#942:
+	Energy=806
+	LastDirection=1
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=7 3
+	Direction=-1 0
+	Genes=21
+	#943:
+	Energy=620
+	LastDirection=1
+	Chlorophyl=1
+	Capacity=500
+	Status=0
+	Position=165 99
+	Direction=-1 1
+	Genes=21|22|0
+	#944:
+	Energy=578
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=54 8
+	Direction=-1 0
+	Genes=21
+	#945:
+	Energy=856
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=91 7
+	Direction=1 0
+	Genes=21
+	#946:
+	Energy=516
+	LastDirection=5
+	Chlorophyl=3
+	Capacity=175
+	Status=0
+	Position=30 94
+	Direction=0 -1
+	Genes=20|20|1|11
+	#947:
+	Energy=556
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=325
+	Status=0
+	Position=125 5
+	Direction=1 0
+	Genes=21|21|1|1
+	#948:
+	Energy=575
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=145 98
+	Direction=0 0
+	Genes=22
+	#949:
+	Energy=575
+	LastDirection=4
+	Chlorophyl=2
+	Capacity=625
+	Status=0
+	Position=94 98
+	Direction=0 0
+	Genes=22|20
+	#950:
+	Energy=503
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=0
+	Status=0
+	Position=2 92
+	Direction=-1 -1
+	Genes=22|20|0|21
+	#951:
+	Energy=586
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=65 19
+	Direction=1 1
+	Genes=21
+	#952:
+	Energy=500
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=193 94
+	Direction=-1 1
+	Genes=11|0|0|20|21
+	#953:
+	Energy=585
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=34 99
+	Direction=-1 0
+	Genes=0|20|22|20|0
+	#954:
+	Energy=573
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=144 98
+	Direction=-1 1
+	Genes=22
+	#955:
+	Energy=573
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=149 98
+	Direction=0 -1
+	Genes=22
+	#956:
+	Energy=567
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=71 11
+	Direction=-1 -1
+	Genes=21
+	#957:
+	Energy=534
+	LastDirection=1
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=122 96
+	Direction=-1 1
+	Genes=11|20|22|0
+	#958:
+	Energy=671
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=21 11
+	Direction=1 1
+	Genes=21
+	#959:
+	Energy=534
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1900
+	Status=0
+	Position=195 97
+	Direction=0 0
+	Genes=0
+	#960:
+	Energy=524
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=30 95
+	Direction=0 0
+	Genes=0|0|21|22
+	#961:
+	Energy=533
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1400
+	Status=0
+	Position=84 97
+	Direction=0 1
+	Genes=0|20
+	#962:
+	Energy=920
+	LastDirection=0
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=102 0
+	Direction=-1 -1
+	Genes=21
+	#963:
+	Energy=562
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=184 98
+	Direction=0 1
+	Genes=21|21|21|0
+	#964:
+	Energy=913
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=132 0
+	Direction=1 -1
+	Genes=21
+	#965:
+	Energy=531
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=25
+	Status=0
+	Position=81 97
+	Direction=-1 0
+	Genes=22|20|20|0
+	#966:
+	Energy=593
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=625
+	Status=0
+	Position=100 99
+	Direction=1 -1
+	Genes=22|20
+	#967:
+	Energy=611
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=109 15
+	Direction=0 1
+	Genes=21
+	#968:
+	Energy=553
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=7 10
+	Direction=0 0
+	Genes=21
+	#969:
+	Energy=830
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=131 1
+	Direction=1 -1
+	Genes=21
+	#970:
+	Energy=509
+	LastDirection=8
+	Chlorophyl=1
+	Capacity=1700
+	Status=0
+	Position=155 97
+	Direction=0 1
+	Genes=0|1
+	#971:
+	Energy=632
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=103 5
+	Direction=1 0
+	Genes=21
+	#972:
+	Energy=797
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=4 1
+	Direction=-1 1
+	Genes=21
+	#973:
+	Energy=516
+	LastDirection=2
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=113 13
+	Direction=-1 1
+	Genes=21
+	#974:
+	Energy=576
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=22 13
+	Direction=0 1
+	Genes=21
+	#975:
+	Energy=526
+	LastDirection=3
+	Chlorophyl=2
+	Capacity=925
+	Status=0
+	Position=2 97
+	Direction=1 -1
+	Genes=21|11
+	#976:
+	Energy=550
+	LastDirection=2
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=0 12
+	Direction=-1 1
+	Genes=21
+	#977:
+	Energy=726
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=66 0
+	Direction=1 -1
+	Genes=21
+	#978:
+	Energy=547
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=171 98
+	Direction=0 -1
+	Genes=22|22|0|0
+	#979:
+	Energy=487
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=136 92
+	Direction=1 -1
+	Genes=20|11|11|0|11
+	#980:
+	Energy=758
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=138 4
+	Direction=0 -1
+	Genes=21
+	#981:
+	Energy=536
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=90 98
+	Direction=0 1
+	Genes=21|0
+	#982:
+	Energy=596
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=175
+	Status=0
+	Position=198 7
+	Direction=1 1
+	Genes=0|21
+	#983:
+	Energy=529
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=525
+	Status=0
+	Position=197 7
+	Direction=0 0
+	Genes=22|11|1
+	#984:
+	Energy=615
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=75 10
+	Direction=1 1
+	Genes=21
+	#985:
+	Energy=731
+	LastDirection=2
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=7 1
+	Direction=1 -1
+	Genes=21
+	#986:
+	Energy=732
+	LastDirection=2
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=43 0
+	Direction=0 -1
+	Genes=21
+	#987:
+	Energy=518
+	LastDirection=0
+	Chlorophyl=4
+	Capacity=-50
+	Status=0
+	Position=39 97
+	Direction=1 1
+	Genes=11|20|0|0|20
+	#988:
+	Energy=579
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=109 12
+	Direction=1 1
+	Genes=21
+	#989:
+	Energy=712
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=6 1
+	Direction=0 -1
+	Genes=21
+	#990:
+	Energy=675
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=19 5
+	Direction=1 1
+	Genes=21
+	#991:
+	Energy=655
+	LastDirection=1
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=118 5
+	Direction=1 1
+	Genes=21
+	#992:
+	Energy=527
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=9 11
+	Direction=1 1
+	Genes=21
+	#993:
+	Energy=650
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=85 6
+	Direction=1 -1
+	Genes=21
+	#994:
+	Energy=529
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=1700
+	Status=0
+	Position=72 96
+	Direction=0 -1
+	Genes=1|0
+	#995:
+	Energy=699
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=89 2
+	Direction=1 1
+	Genes=21
+	#996:
+	Energy=688
+	LastDirection=8
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=11 2
+	Direction=1 -1
+	Genes=21
+	#997:
+	Energy=567
+	LastDirection=6
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=8 3
+	Direction=0 0
+	Genes=21
+	#998:
+	Energy=508
+	LastDirection=6
+	Chlorophyl=1
+	Capacity=300
+	Status=0
+	Position=184 95
+	Direction=1 -1
+	Genes=11|0|0|20|21
+	#999:
+	Energy=512
+	LastDirection=4
+	Chlorophyl=1
+	Capacity=1400
+	Status=0
+	Position=82 97
+	Direction=0 -1
+	Genes=20|0
+	#1000:
+	Energy=525
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=157 98
+	Direction=0 -1
+	Genes=22
+	#1001:
+	Energy=512
+	LastDirection=3
+	Chlorophyl=1
+	Capacity=800
+	Status=0
+	Position=5 96
+	Direction=1 -1
+	Genes=11|22
+	#1002:
+	Energy=571
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=79 7
+	Direction=0 1
+	Genes=21
+	#1003:
+	Energy=524
+	LastDirection=5
+	Chlorophyl=1
+	Capacity=100
+	Status=0
+	Position=40 98
+	Direction=1 0
+	Genes=0|20|22|20|0
+	#1004:
+	Energy=637
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=11 0
+	Direction=-1 -1
+	Genes=21
+	#1005:
+	Energy=578
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=0 4
+	Direction=1 1
+	Genes=21
+	#1006:
+	Energy=531
+	LastDirection=-2
+	Chlorophyl=2
+	Capacity=625
+	Status=0
+	Position=92 99
+	Direction=-1 0
+	Genes=0|20|21|0
+	#1007:
+	Energy=590
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=101 5
+	Direction=0 1
+	Genes=21
+	#1008:
+	Energy=582
+	LastDirection=2
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=14 5
+	Direction=-1 1
+	Genes=21
+	#1009:
+	Energy=520
+	LastDirection=0
+	Chlorophyl=1
+	Capacity=800
+	Status=0
+	Position=50 98
+	Direction=-1 -1
+	Genes=20|0|21
+	#1010:
+	Energy=587
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=44 3
+	Direction=1 0
+	Genes=21
+	#1011:
+	Energy=609
+	LastDirection=0
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=131 0
+	Direction=-1 -1
+	Genes=21
+	#1012:
+	Energy=597
+	LastDirection=7
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=10 0
+	Direction=1 1
+	Genes=21
+	#1013:
+	Energy=556
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=14 4
+	Direction=0 1
+	Genes=21
+	#1014:
+	Energy=547
+	LastDirection=1
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=3 3
+	Direction=1 -1
+	Genes=21
+	#1015:
+	Energy=509
+	LastDirection=2
+	Chlorophyl=2
+	Capacity=125
+	Status=0
+	Position=197 3
+	Direction=1 0
+	Genes=1|1|21|22
+	#1016:
+	Energy=505
+	LastDirection=4
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=152 97
+	Direction=1 -1
+	Genes=22
+	#1017:
+	Energy=505
+	LastDirection=4
+	Chlorophyl=1
+	Capacity=1200
+	Status=0
+	Position=153 96
+	Direction=0 1
+	Genes=22
+	#1018:
+	Energy=553
+	LastDirection=3
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=54 1
+	Direction=0 -1
+	Genes=21
+	#1019:
+	Energy=521
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=4 6
+	Direction=-1 1
+	Genes=21
+	#1020:
+	Energy=526
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=148 6
+	Direction=0 1
+	Genes=21
+	#1021:
+	Energy=506
+	LastDirection=4
+	Chlorophyl=1
+	Capacity=400
+	Status=0
+	Position=22 98
+	Direction=0 -1
+	Genes=0|0|21|22
+	#1022:
+	Energy=502
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=625
+	Status=0
+	Position=187 96
+	Direction=1 0
+	Genes=20|11|1|1
+	#1023:
+	Energy=503
+	LastDirection=5
+	Chlorophyl=2
+	Capacity=825
+	Status=0
+	Position=4 98
+	Direction=1 1
+	Genes=11|1|0|11
+	#1024:
+	Energy=516
+	LastDirection=5
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=1 3
+	Direction=0 -1
+	Genes=21
+	#1025:
+	Energy=500
+	LastDirection=4
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=153 0
+	Direction=-1 1
+	Genes=21
+	#1026:
+	Energy=501
+	LastDirection=4
+	Chlorophyl=6
+	Capacity=275
+	Status=0
+	Position=121 8
+	Direction=-1 -1
+	Genes=21
