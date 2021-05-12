@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 
 namespace Simulator
 {
@@ -28,7 +29,7 @@ namespace Simulator
                 files[i] = files[i].Substring(Content.PathToSaves.Length, files[i].Length - Content.PathToSaves.Length - Content.FileExtension.Length);
             }
         }
-        public static void Import(string fileName)
+        public static void Import(string fileName, Simulator world)
         {
             using (StreamReader input = new StreamReader(Content.PathToSaves + fileName + Content.FileExtension))
             {
@@ -58,7 +59,7 @@ namespace Simulator
                     return;
             }
 
-            Simulator.Import(seed, timer, groundPower, sunPower, envDensity, dropChance, units);
+            world.Import(seed, timer, groundPower, sunPower, envDensity, dropChance, units);
         }
 
         private static bool ReadUnits(StreamReader input)
@@ -76,7 +77,7 @@ namespace Simulator
             int[] direction = new int[2];
             IAction[][] genes = new IAction[2][];
 
-            
+
             while (line != null && line[1] == '#' && fl)
             {
                 fl = false;

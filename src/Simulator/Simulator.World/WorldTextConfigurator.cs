@@ -1,5 +1,7 @@
 ﻿using SFML.Graphics;
 
+using Simulator.World;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,9 +10,9 @@ namespace Simulator
 {
     public static class WorldTextConfigurator
     {
-        public const int WorldTextLeftBound = Program.LeftMapOffset + 20;
-        public const int WorldTextTopBound = Program.TopMapOffset + Simulator.WorldHeight * Simulator.Scale + + 10;
-        public const int WorldTextHeight = (Program.TextSize + 5) * AmountWorldInfo;
+        public const int WorldTextLeftBound = Simulator.LeftMapOffset + 20;
+        public const int WorldTextTopBound = Simulator.TopMapOffset + Simulator.WorldHeight * Simulator.ViewScale + + 10;
+        public const int WorldTextHeight = (Content.TextSize + 5) * AmountWorldInfo;
         public const int WorldTextWidth = 100;
         private static int choosenID;
 
@@ -30,15 +32,15 @@ namespace Simulator
 
         private static void ConfigureWorldDescription()
         {
-            worldDescription[0] = new TextBox(WorldTextLeftBound, WorldTextTopBound + (Program.TextSize + 5) * 0, $"Ground heat - ");
-            worldDescription[1] = new TextBox(WorldTextLeftBound, WorldTextTopBound + (Program.TextSize + 5) * 1, $"Sun heat - ");
-            worldDescription[2] = new TextBox(WorldTextLeftBound, WorldTextTopBound + (Program.TextSize + 5) * 2, $"Cell fall chance - ");
-            worldDescription[3] = new TextBox(WorldTextLeftBound, WorldTextTopBound + (Program.TextSize + 5) * 3, $"Environment density - ");
+            worldDescription[0] = new TextBox(WorldTextLeftBound, WorldTextTopBound + (Content.TextSize + 5) * 0, $"Ground heat - ");
+            worldDescription[1] = new TextBox(WorldTextLeftBound, WorldTextTopBound + (Content.TextSize + 5) * 1, $"Sun heat - ");
+            worldDescription[2] = new TextBox(WorldTextLeftBound, WorldTextTopBound + (Content.TextSize + 5) * 2, $"Cell fall chance - ");
+            worldDescription[3] = new TextBox(WorldTextLeftBound, WorldTextTopBound + (Content.TextSize + 5) * 3, $"Environment density - ");
 
-            worldDescription[0].SetText($"{Simulator.GroundPower}");
-            worldDescription[1].SetText($"{Simulator.SunPower}");
-            worldDescription[2].SetText($"{(int)(Simulator.DropChance * 100)}");
-            worldDescription[3].SetText($"{(int)(Simulator.EnvDensity * 100)}");
+            worldDescription[0].SetText($"{Storage.CurrentWorld.GroundPower}");
+            worldDescription[1].SetText($"{Storage.CurrentWorld.SunPower}");
+            worldDescription[2].SetText($"{(int)(Storage.CurrentWorld.DropChance * 100)}");
+            worldDescription[3].SetText($"{(int)(Storage.CurrentWorld.EnvDensity * 100)}");
         }
 
         /// <summary>
@@ -60,15 +62,15 @@ namespace Simulator
 
         public static void WorldUpdateInfo()
         {
-            worldDescription[0].SetText($"{Simulator.GroundPower}");
-            worldDescription[1].SetText($"{Simulator.SunPower}");
-            worldDescription[2].SetText($"{(int)(Simulator.DropChance * 100)}");
-            worldDescription[3].SetText($"{(int)(Simulator.EnvDensity * 100)}");
+            worldDescription[0].SetText($"{Storage.CurrentWorld.GroundPower}");
+            worldDescription[1].SetText($"{Storage.CurrentWorld.SunPower}");
+            worldDescription[2].SetText($"{(int)(Storage.CurrentWorld.DropChance * 100)}");
+            worldDescription[3].SetText($"{(int)(Storage.CurrentWorld.EnvDensity * 100)}");
         }
 
         public static void ChooseWorldTextField(int x, int y)
         {
-            int result = (y - WorldTextTopBound) / (Program.TextSize + 5);
+            int result = (y - WorldTextTopBound) / (Content.TextSize + 5);
             for (int id = 0; id < AmountWorldInfo; id++)
             {
                 worldDescription[id].Unchoose();
@@ -95,11 +97,11 @@ namespace Simulator
             return false;
         }
 
-        public static void Draw()
+        public static void Draw(RenderWindow win)
         {
             for (int id = 0; id < AmountWorldInfo; id++)
             {
-                Program.Window.Draw(worldDescription[id]);
+                win.Draw(worldDescription[id]);
             }
         }
 
@@ -118,7 +120,7 @@ namespace Simulator
             if (GetInt(temp, out result))
                 return result;
             else
-                return Simulator.GroundPower;
+                return Storage.CurrentWorld.GroundPower;
         }
 
         public static int GetSunPower()
@@ -128,7 +130,7 @@ namespace Simulator
             if (GetInt(temp, out result))
                 return result;
             else
-                return Simulator.SunPower;
+                return Storage.CurrentWorld.SunPower;
         }
 
         public static double GetDropChance()
@@ -138,7 +140,7 @@ namespace Simulator
             if (GetInt(temp, out result))
                 return result / 100.0;
             else
-                return Simulator.DropChance;
+                return Storage.CurrentWorld.DropChance;
         }
 
         public static double GetEnvDensity()
@@ -148,7 +150,7 @@ namespace Simulator
             if (GetInt(temp, out result))
                 return result / 100.0;
             else
-                return Simulator.EnvDensity;
+                return Storage.CurrentWorld.EnvDensity;
         }
 
         private static bool GetInt(string input, out int result)

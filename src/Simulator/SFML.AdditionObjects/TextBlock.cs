@@ -36,7 +36,7 @@ namespace Simulator
         public TextBlock(int x, int y, string text, Color color)
         {
             IsChoosen = false;
-            textBlock = new Text(text, Content.Font, Program.TextSize);
+            textBlock = new Text(text, Content.Font, Content.TextSize);
             backlight = new RectangleShape(new Vector2f(textBlock.GetLocalBounds().Width + 10, textBlock.GetLocalBounds().Height + 10));
 
             this.Text = text;

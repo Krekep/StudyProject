@@ -8,11 +8,6 @@ using SFML.Window;
 
 namespace Simulator
 {
-    enum TypeOfMap
-    {
-        MapOfEnergy,
-        MapOfActions
-    }
 
     enum TextField: int
     {
@@ -28,16 +23,13 @@ namespace Simulator
         static bool isRunning = false;
         private static bool isOpenMenu;
         static bool isTextEntered = false;
-        public const int LeftMapOffset = 10;
-        public const int TopMapOffset = 50;
-        public const int TextSize = 25;
 
         public static TextField ChoosenField { get; private set; }
 
-
-        public static TypeOfMap ChoosenMap { get; private set; }
-
         public static RenderWindow Window { get { return win; } }
+
+        public static Simulator World { get; set; }
+
         static void Main(string[] args)
         {
             Initialize();
@@ -54,7 +46,7 @@ namespace Simulator
             {
                 win.DispatchEvents();
                 if (isRunning)
-                    Simulator.Update();
+                    World.Update();
 
                 UnitTextConfigurator.ChoosenUnitUpdateInfo(isRunning);
 
@@ -67,9 +59,10 @@ namespace Simulator
                 else
                 {
                     Icons.Draw();
-                    UnitTextConfigurator.Draw();
-                    WorldTextConfigurator.Draw();
-                    Simulator.Draw();
+                    UnitTextConfigurator.Draw(win);
+                    WorldTextConfigurator.Draw(win);
+                    World.Position = new Vector2f(Simulator.LeftMapOffset, Simulator.TopMapOffset);
+                    win.Draw(World);
                 }
                 win.Display();
             }
@@ -77,48 +70,33 @@ namespace Simulator
 
         private static void Initialize()
         {
+
             RandomSeed = DateTime.Now.Millisecond;
             ChoosenField = TextField.None;
 
-            ChoosenMap = TypeOfMap.MapOfEnergy;
-
-            Simulator.Initialize(RandomSeed);
+            World = new Simulator();
+            World.Initialize(RandomSeed);
         }
 
         public static void SetEnergyMap()
         {
-            ChoosenMap = TypeOfMap.MapOfEnergy;
+            World.ChoosenMap = TypeOfMap.MapOfEnergy;
             Icons.SetMap(TypeOfMap.MapOfEnergy);
         }
 
         public static void SetActionMap()
         {
-            ChoosenMap = TypeOfMap.MapOfActions;
+            World.ChoosenMap = TypeOfMap.MapOfActions;
             Icons.SetMap(TypeOfMap.MapOfActions);
         }
 
         private static void Win_MouseButton(object sender, MouseButtonEventArgs e)
         {
             Icons.ButtonHandler(e.X, e.Y);
+            var unit = World.MouseHandle(e.X, e.Y);
             if (isOpenMenu)
             {
                 Menu.MouseHandle(e.X, e.Y);
-            }
-            else if (new IntRect(LeftMapOffset, TopMapOffset, Simulator.WorldWidth * Simulator.Scale, Simulator.WorldHeight * Simulator.Scale).Contains(e.X, e.Y))
-            {
-                int x = (e.X - LeftMapOffset) / Simulator.Scale;
-                int y = (e.Y - TopMapOffset) / Simulator.Scale;
-                var unit = Simulator.GetUnit(x, y);
-                UnitTextConfigurator.ClearUnitDescription();
-                if (unit != null)
-                {
-                    UnitTextConfigurator.ChooseUnit(unit);
-                    isRunning = false;
-                }
-                else
-                {
-                    UnitTextConfigurator.ResetUnit();
-                }
             }
             else if (UnitTextConfigurator.MouseHandle(e.X, e.Y))
             {
@@ -127,6 +105,16 @@ namespace Simulator
             else if (WorldTextConfigurator.MouseHandle(e.X, e.Y))
             {
                 ChoosenField = TextField.WorldText;
+            }
+            else if (unit != null)
+            {
+                UnitTextConfigurator.ChooseUnit(unit);
+                isRunning = false;
+            }
+            else if (unit == null)
+            {
+                UnitTextConfigurator.ClearUnitDescription();
+                UnitTextConfigurator.ResetUnit();
             }
         }
 
@@ -140,7 +128,7 @@ namespace Simulator
         internal static void Restart()
         {
             isRunning = false;
-            Simulator.Initialize(RandomSeed);
+            World.Initialize(RandomSeed);
         }
 
         private static void Win_TextEntered(object sender, TextEventArgs e)
@@ -197,7 +185,7 @@ namespace Simulator
                 double dropChance = WorldTextConfigurator.GetDropChance();
                 double envDensity = WorldTextConfigurator.GetEnvDensity();
 
-                Simulator.UpdateParameters(groundPower, sunPower, dropChance, envDensity);
+                World.UpdateParameters(groundPower, sunPower, dropChance, envDensity);
                 WorldTextConfigurator.WorldUpdateInfo();
             }
             else

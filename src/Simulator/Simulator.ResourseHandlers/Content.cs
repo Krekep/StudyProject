@@ -5,13 +5,14 @@ using System;
 
 namespace Simulator
 {
-    static class Content
+    public static class Content
     {
         public const string ResourcesPath = "../" + "../" + "../" + "../" + "../" + "../" + "resources";
         public const string PathToSaves = ResourcesPath + "/saves/";
         public const string PathToPictures = ResourcesPath + "/pictures/";
         public const string PathToFonts = ResourcesPath + "/fonts/";
         public const string FileExtension = ".evo";
+        public const int TextSize = 25;
 
         static Content()
         {

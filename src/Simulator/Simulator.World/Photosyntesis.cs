@@ -1,12 +1,14 @@
 ﻿using SFML.Graphics;
 
+using Simulator.World;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Simulator
 {
-    class Photosyntesis : IAction
+    public class Photosyntesis : IAction
     {
         public Color ActionColor()
         {
@@ -19,7 +21,7 @@ namespace Simulator
         }
         public void Process(Unit unit)
         {
-            int energy = (int)(Simulator.SunPower * Math.Pow(Simulator.EnvDensity, unit.Coords[1]) * unit.Chlorophyl);
+            int energy = (int)(Storage.CurrentWorld.SunPower * Math.Pow(Storage.CurrentWorld.EnvDensity, unit.Coords[1]) * unit.Chlorophyl);
             unit.TakeEnergy(energy);
         }
 

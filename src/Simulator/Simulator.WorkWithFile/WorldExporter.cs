@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Xml;
 
 namespace Simulator
 {
@@ -13,40 +15,40 @@ namespace Simulator
             
         }
 
-        public static void Export(string name)
+        public static void Export(string name, Simulator world)
         {
             using (StreamWriter output = new StreamWriter(Content.PathToSaves + name + Content.FileExtension))
             {
-                output.Write(PackState());
-                output.Write(PackParams());
-                output.Write(PackUnits());
+                output.Write(PackState(world));
+                output.Write(PackParams(world));
+                output.Write(PackUnits(world));
             }
             WorldImporter.UpdateFiles();
         }
 
-        private static string PackState()
+        private static string PackState(Simulator world)
         {
             string result = $"#State:\n" +
-                $"\tSeed={Simulator.Seed}\n" +
-                $"\tTimer={Simulator.Timer}\n";
+                $"\tSeed={world.Seed}\n" +
+                $"\tTimer={world.Timer}\n";
             return result;
         }
 
-        private static string PackParams()
+        private static string PackParams(Simulator world)
         {
             string result = $"#Params:\n" +
-                $"\tGroundPower={Simulator.GroundPower}\n" +
-                $"\tSunPower={Simulator.SunPower}\n" +
-                $"\tDropChance={Simulator.DropChance}\n" +
-                $"\tEnvDensity={Simulator.EnvDensity}\n";
+                $"\tGroundPower={world.GroundPower}\n" +
+                $"\tSunPower={world.SunPower}\n" +
+                $"\tDropChance={world.DropChance}\n" +
+                $"\tEnvDensity={world.EnvDensity}\n";
             return result;
         }
 
-        private static string PackUnits()
+        private static string PackUnits(Simulator world)
         {
             StringBuilder result = new StringBuilder($"#Units:\n", 10000);
             int i = 0;
-            foreach (Unit unit in Simulator.Units)
+            foreach (Unit unit in world.Units)
             {
                 result.Append($"\t#{i}:\n");
                 string temp = $"\tEnergy={unit.Energy}\n" +

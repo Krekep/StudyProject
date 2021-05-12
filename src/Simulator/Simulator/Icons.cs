@@ -10,23 +10,23 @@ namespace Simulator
     static class Icons
     {
         private static Button sword;
-        private const int swordSize = Program.TopMapOffset - 10;
-        private const int swordLeftSide = Program.LeftMapOffset + Program.TopMapOffset;
+        private const int swordSize = Simulator.TopMapOffset - 10;
+        private const int swordLeftSide = Simulator.LeftMapOffset + Simulator.TopMapOffset;
         private const int swordTopSide = 5;
 
         private static Button lightning;
-        private const int lightningSize = Program.TopMapOffset - 10;
-        private const int lightningLeftSide = Program.LeftMapOffset;
+        private const int lightningSize = Simulator.TopMapOffset - 10;
+        private const int lightningLeftSide = Simulator.LeftMapOffset;
         private const int lightningTopSide = 5;
 
         private static Button restart;
-        private const int restartSize = Program.TopMapOffset - 10;
-        private const int restartLeftSide = Program.LeftMapOffset + Simulator.WorldWidth * Simulator.Scale + 10;
+        private const int restartSize = Simulator.TopMapOffset - 10;
+        private const int restartLeftSide = Simulator.LeftMapOffset + Simulator.WorldWidth * Simulator.ViewScale + 10;
         private const int restartTopSide = 5;
 
         private static Button menu;
-        private const int menuSize = Program.TopMapOffset - 10;
-        private const int menuLeftSide = Program.LeftMapOffset + Simulator.WorldWidth * Simulator.Scale + Program.TopMapOffset + 10;
+        private const int menuSize = Simulator.TopMapOffset - 10;
+        private const int menuLeftSide = Simulator.LeftMapOffset + Simulator.WorldWidth * Simulator.ViewScale + Simulator.TopMapOffset + 10;
         private const int menuTopSide = 5;
 
         static Icons()

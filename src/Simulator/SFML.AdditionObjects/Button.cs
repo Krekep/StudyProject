@@ -67,7 +67,7 @@ namespace Simulator
         }
         public void Draw(RenderTarget target, RenderStates states)
         {
-            Program.Window.Draw(shape);
+            target.Draw(shape);
         }
     }
 }

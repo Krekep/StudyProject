@@ -1,5 +1,8 @@
 ﻿using SFML.Graphics;
 using SFML.System;
+
+using Simulator.World;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,6 +19,7 @@ namespace Simulator
     public class Unit : Transformable, Drawable
     {
         const int UnitSize = 1;
+
         public int Capacity { get; private set; }
         RectangleShape shape;
         public int[] Coords { get; private set; }
@@ -40,7 +44,7 @@ namespace Simulator
             Status = (UnitStatus)status;
 
 
-            shape = new RectangleShape(new Vector2f(UnitSize * Simulator.Scale, UnitSize * Simulator.Scale));
+            shape = new RectangleShape(new Vector2f(UnitSize * Simulator.ViewScale, UnitSize * Simulator.ViewScale));
         }
         public Unit(int energy, int[] position, int[] directions, IAction[][] genes, int capacity, int chlorophyl)
         {
@@ -56,25 +60,27 @@ namespace Simulator
             Status = UnitStatus.Alive;
 
 
-            shape = new RectangleShape(new Vector2f(UnitSize * Simulator.Scale, UnitSize * Simulator.Scale));
+            shape = new RectangleShape(new Vector2f(UnitSize * Simulator.ViewScale, UnitSize * Simulator.ViewScale));
         }
 
         private bool CheckCell(int x, int y)
         {
-            return Simulator.IsFree(x, y);
+            return Storage.CurrentWorld.IsFree(x, y);
         }
 
         public void Draw(RenderTarget target, RenderStates states)
         {
-            shape.Position = new Vector2f(Coords[0] * UnitSize * Simulator.Scale + Program.LeftMapOffset, Coords[1] * UnitSize * Simulator.Scale + Program.TopMapOffset);
+            states.Transform *= Transform;
+
+            shape.Position = new Vector2f(Coords[0] * UnitSize * Simulator.ViewScale, Coords[1] * UnitSize * Simulator.ViewScale);
             shape.FillColor = ChooseColor();
 
-            target.Draw(shape);
+            target.Draw(shape, states);
         }
 
         private Color ChooseColor()
         {
-            switch (Program.ChoosenMap)
+            switch (Storage.CurrentWorld.ChoosenMap)
             {
                 case TypeOfMap.MapOfEnergy:
                     return new Color(255, (byte)((Energy + .0) / Simulator.EnergyLimit * 255), 0);
@@ -91,7 +97,7 @@ namespace Simulator
             LastDirection = (x + 1) * 3 + (y + 1);
             if (CheckCell(newPosition[0], newPosition[1]))
             {
-                Simulator.MoveUnit(this, Coords, newPosition);
+                Storage.CurrentWorld.MoveUnit(this, Coords, newPosition);
                 Coords[0] = newPosition[0];
                 Coords[1] = newPosition[1];
                 return true;
@@ -99,7 +105,7 @@ namespace Simulator
             return false;
         }
 
-        internal void TakeEnergy(int energy)
+        public void TakeEnergy(int energy)
         {
             Energy += energy;
             if (Energy <= 0)
@@ -118,7 +124,7 @@ namespace Simulator
             Unit child = Creator.CreateChild(this);
             if (child != null)
             {
-                Simulator.AddUnit(child);
+                Storage.CurrentWorld.AddUnit(child);
                 Energy /= 2;
             }
             else

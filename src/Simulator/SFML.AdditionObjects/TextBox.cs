@@ -49,7 +49,7 @@ namespace Simulator
             this.unpressedColor = unpressedColor;
             IsChoosen = false;
             this.fixedText = fixedText;
-            textBlock = new Text(fixedText, Content.Font, Program.TextSize);
+            textBlock = new Text(fixedText, Content.Font, Content.TextSize);
             backlight = new RectangleShape(new Vector2f(textBlock.GetLocalBounds().Width + 10, textBlock.GetLocalBounds().Height + 10));
             backlight.FillColor = this.unpressedColor;
             len = 0;
@@ -110,7 +110,7 @@ namespace Simulator
             target.Draw(textBlock);
         }
 
-        internal void Clear()
+        public void Clear()
         {
             textBlock.DisplayedString = "";
         }

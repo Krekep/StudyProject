@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Simulator
 {
-    class Move : IAction
+    public class Move : IAction
     {
         public Color ActionColor()
         {

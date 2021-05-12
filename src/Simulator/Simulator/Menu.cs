@@ -84,7 +84,7 @@ namespace Simulator
 
             menuLeftBound = (int)(Program.Window.Size.X / 2 - 100.0 * Program.Window.Size.X / Program.Window.Size.Y);
             menuTopBound = (int)(Program.Window.Size.Y / 2 - 190.0 * Program.Window.Size.Y / Program.Window.Size.X);
-            menuHeight = Math.Max((int)(Program.Window.Size.Y / 2 + 190.0 * Program.Window.Size.Y / Program.Window.Size.X) - menuTopBound + 10, (Program.TopMapOffset - 10) * 7);
+            menuHeight = Math.Max((int)(Program.Window.Size.Y / 2 + 190.0 * Program.Window.Size.Y / Program.Window.Size.X) - menuTopBound + 10, (Simulator.TopMapOffset - 10) * 7);
             menuWidth = (int)(Program.Window.Size.X / 2 + 100.0 * Program.Window.Size.X / Program.Window.Size.Y) - menuLeftBound;
             menuForm.Position = new Vector2f(menuLeftBound, menuTopBound);
             menuForm.Size = new Vector2f(menuWidth, menuHeight);
@@ -95,7 +95,7 @@ namespace Simulator
             close.Coords = new Vector2f(closeLeftSide, closeTopSide);
             close.Size = new Vector2f(closeSize, closeSize);
 
-            exportSize = (int)(Program.TopMapOffset - 10);
+            exportSize = (int)(Simulator.TopMapOffset - 10);
             exportLeftSide = menuLeftBound + menuWidth - closeSize - exportSize;
             exportTopSide = menuTopBound + closeSize;
             export.Coords = new Vector2f(exportLeftSide, exportTopSide);
@@ -184,13 +184,13 @@ namespace Simulator
         private static void ExportButtonClick()
         {
             string fileName = exportName.GetText();
-            WorldExporter.Export(fileName);
+            WorldExporter.Export(fileName, Program.World);
         }
 
         private static void ImportButtonClick(int id)
         {
             string fileName = importName[id].Text;
-            WorldImporter.Import(fileName);
+            WorldImporter.Import(fileName, Program.World);
         }
 
         public static void BackspaceHandle()

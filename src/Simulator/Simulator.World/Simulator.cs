@@ -1,15 +1,24 @@
 ﻿using SFML.Graphics;
 using SFML.System;
 
+using Simulator.World;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json;
 
 namespace Simulator
 {
-    public static class Simulator
+    public enum TypeOfMap
     {
-        public const int Scale = 4;
+        MapOfEnergy,
+        MapOfActions
+    }
+
+    public class Simulator : Transformable, Drawable
+    {
+        public const int ViewScale = 4;
         public const int WorldHeight = 100;
         public const int WorldWidth = 200;
         public const int EnergyLimit = 1000;
@@ -17,29 +26,34 @@ namespace Simulator
         public const int WaitValue = 100;  // based point for other actions value
 
         // Changeable parameters
-        public static int GroundPower;
-        public static int SunPower;
-        public static double EnvDensity;
-        public static double DropChance;
+        public int GroundPower;
+        public int SunPower;
+        public double EnvDensity;
+        public double DropChance;
 
         // World addition info
-        public static int Seed { get; private set; }
-        public static int Timer { get; private set; }
+        public int Seed { get; private set; }
+        public int Timer { get; private set; }
 
         // List of available units
-        public static List<Unit> Units { get; private set; }
+        public List<Unit> Units { get; private set; }
+        public TypeOfMap ChoosenMap { get; set; }
 
-        private static Unit[,] map;
+        private Unit[,] map;
         public static Random Random;
-        private static Text yearText;
-        private static Text countText;
-        private static Text seedText;
-        private const int Left = 0 * Scale + Program.LeftMapOffset;
-        private const int Top = 0 * Scale + Program.TopMapOffset;
-        private const int Bottom = WorldHeight * Scale + 1 + Program.TopMapOffset;
-        private const int Right = WorldWidth * Scale + 1 + Program.LeftMapOffset;
+        private Text yearText;
+        private Text countText;
+        private Text seedText;
 
-        public static void Initialize(int seed)
+        // For display
+        public const int LeftMapOffset = 10;
+        public const int TopMapOffset = 50;
+        private const int Left = 0 * ViewScale + LeftMapOffset;
+        private const int Top = 0 * ViewScale + TopMapOffset;
+        private const int Bottom = WorldHeight * ViewScale + 1 + TopMapOffset;
+        private const int Right = WorldWidth * ViewScale + 1 + LeftMapOffset;
+
+        public void Initialize(int seed)
         {
             GroundPower = 5;
             SunPower = 5;
@@ -55,23 +69,24 @@ namespace Simulator
 
             for (int i = 0; i < 500; i++)
             {
-                Unit unit = Creator.CreateUnit(2000);
+                Unit unit = Creator.CreateUnit(2000, this);
                 Units.Add(unit);
                 map[unit.Coords[0], unit.Coords[1]] = unit;
             }
 
-            yearText = new Text($"Year: {Timer}", Content.Font, Program.TextSize);
+            yearText = new Text($"Year: {Timer}", Content.Font, Content.TextSize);
             yearText.Position = new Vector2f(Right + 20, Top + 10);
-            countText = new Text($"Units: {Units.Count}", Content.Font, Program.TextSize);
-            countText.Position = new Vector2f(Right + 20, Top + Program.TextSize + 5 + 10);
-            seedText = new Text($"Seed: {seed}", Content.Font, Program.TextSize);
-            seedText.Position = new Vector2f(Right + 20, Top + 2 * (Program.TextSize + 5) + 10);
+            countText = new Text($"Units: {Units.Count}", Content.Font, Content.TextSize);
+            countText.Position = new Vector2f(Right + 20, Top + Content.TextSize + 5 + 10);
+            seedText = new Text($"Seed: {seed}", Content.Font, Content.TextSize);
+            seedText.Position = new Vector2f(Right + 20, Top + 2 * (Content.TextSize + 5) + 10);
+
+            Storage.CurrentWorld = this;
         }
 
-        public static void Import(int seed, int timer, int groundPower, int sunPower, double envDensity, double dropChance, List<Unit> units)
+        public void Import(int seed, int timer, int groundPower, int sunPower, double envDensity, double dropChance, List<Unit> units)
         {
             Seed = seed;
-            Program.RandomSeed = seed;
             seedText.DisplayedString = $"Seed: {seed}";
             Timer = timer;
             Random = new Random(seed);
@@ -87,10 +102,11 @@ namespace Simulator
             {
                 map[unit.Coords[0], unit.Coords[1]] = unit;
             }
-            Draw();
+
+            //Storage.CurrentWorld = this;
         }
 
-        internal static bool IsFree(int x, int y)
+        internal bool IsFree(int x, int y)
         {
             if (x < 0 || y < 0 || x >= WorldWidth || y >= WorldHeight)
                 return false;
@@ -99,14 +115,14 @@ namespace Simulator
             return true;
         }
 
-        internal static Unit GetUnit(int x, int y)
+        internal Unit GetUnit(int x, int y)
         {
             if (x < 0 || y < 0 || x >= WorldWidth || y >= WorldHeight)
                 return null;
             return map[x, y];
         }
 
-        public static void Update()
+        public void Update()
         {
             Timer += 1;
             foreach (Unit unit in Units)
@@ -117,14 +133,14 @@ namespace Simulator
             DropCells();
         }
 
-        private static void DropCells()
+        private void DropCells()
         {
             foreach (Unit unit in Units)
                 if (Random.Next(101) / 100.0 < DropChance)
                     unit.Move(0, 1);
         }
 
-        private static void AddNewCells()
+        private void AddNewCells()
         {
             List<Unit> addList = new List<Unit>();
             foreach (Unit unit in Units)
@@ -134,7 +150,7 @@ namespace Simulator
                 unit.Divide();
         }
 
-        private static void DeleteDeadCells()
+        private void DeleteDeadCells()
         {
             List<Unit> delList = new List<Unit>();
             foreach (Unit unit in Units)
@@ -147,7 +163,7 @@ namespace Simulator
             }
         }
 
-        private static void RecountEnergy()
+        private void RecountEnergy()
         {
             foreach (Unit unit in Units)
                 unit.TakeEnergy((int)(GroundPower * Math.Pow(EnvDensity, WorldHeight - unit.Coords[1])));
@@ -158,7 +174,7 @@ namespace Simulator
             //        unit.TakeEnergy(-EnergyLimit / 20);
         }
 
-        private static bool CheckOverpopulation(Unit unit)
+        private bool CheckOverpopulation(Unit unit)
         {
             for (int i = 0; i < 9; i++)
             {
@@ -168,48 +184,49 @@ namespace Simulator
             return false;
         }
 
-        internal static void AddUnit(Unit child)
+        internal void AddUnit(Unit child)
         {
             map[child.Coords[0], child.Coords[1]] = child;
             Units.Add(child);
         }
 
-        public static void Draw()
+        public void Draw(RenderTarget target, RenderStates states)
         {
-            DrawBound();
+            states.Transform *= Transform; 
+            DrawBound(target);
             foreach (Drawable unit in Units)
-                Program.Window.Draw(unit);
-            DrawText();
+                target.Draw(unit, states);
+            DrawText(target);
         }
 
-        private static void DrawText()
+        private void DrawText(RenderTarget target)
         {
             yearText.DisplayedString = $"Year: {Timer}";
             countText.DisplayedString = $"Units: {Units.Count}";
-            Program.Window.Draw(yearText);
-            Program.Window.Draw(countText);
-            Program.Window.Draw(seedText);
+            target.Draw(yearText);
+            target.Draw(countText);
+            target.Draw(seedText);
         }
 
 
 
-        private static Vertex[] bottomLine = new Vertex[2] { new Vertex(new Vector2f(Left, Bottom)),
-                                                             new Vertex(new Vector2f(Right, Bottom))};
-        private static Vertex[] topLine = new Vertex[2] { new Vertex(new Vector2f(Left, Top)),
-                                                          new Vertex(new Vector2f(Right, Top))};
-        private static Vertex[] leftLine = new Vertex[2] { new Vertex(new Vector2f(Left, Top)),
-                                                           new Vertex(new Vector2f(Left, Bottom))};
-        private static Vertex[] rightLine = new Vertex[2] { new Vertex(new Vector2f(Right, Top)),
-                                                            new Vertex(new Vector2f(Right, Bottom))};
-        private static void DrawBound()
+        private Vertex[] bottomLine = new Vertex[2] { new Vertex(new Vector2f(Left, Bottom)),
+                                                      new Vertex(new Vector2f(Right, Bottom))};
+        private Vertex[] topLine = new Vertex[2] { new Vertex(new Vector2f(Left, Top)),
+                                                   new Vertex(new Vector2f(Right, Top))};
+        private Vertex[] leftLine = new Vertex[2] { new Vertex(new Vector2f(Left, Top)),
+                                                    new Vertex(new Vector2f(Left, Bottom))};
+        private Vertex[] rightLine = new Vertex[2] { new Vertex(new Vector2f(Right, Top)),
+                                                     new Vertex(new Vector2f(Right, Bottom))};
+        private void DrawBound(RenderTarget target)
         {
-            Program.Window.Draw(topLine, PrimitiveType.Lines);
-            Program.Window.Draw(bottomLine, PrimitiveType.Lines);
-            Program.Window.Draw(leftLine, PrimitiveType.Lines);
-            Program.Window.Draw(rightLine, PrimitiveType.Lines);
+            target.Draw(topLine, PrimitiveType.Lines);
+            target.Draw(bottomLine, PrimitiveType.Lines);
+            target.Draw(leftLine, PrimitiveType.Lines);
+            target.Draw(rightLine, PrimitiveType.Lines);
         }
 
-        internal static void UpdateParameters(int groundPower, int sunPower, double dropChance, double envDensity)
+        public void UpdateParameters(int groundPower, int sunPower, double dropChance, double envDensity)
         {
             GroundPower = groundPower;
             SunPower = sunPower;
@@ -217,10 +234,20 @@ namespace Simulator
             EnvDensity = envDensity;
         }
 
-        internal static void MoveUnit(Unit unit, int[] oldPosition, int[] newPosition)
+        internal void MoveUnit(Unit unit, int[] oldPosition, int[] newPosition)
         {
             map[oldPosition[0], oldPosition[1]] = null;
             map[newPosition[0], newPosition[1]] = unit;
+        }
+
+        public Unit MouseHandle(int x, int y)
+        {
+            if (new IntRect(LeftMapOffset, TopMapOffset, WorldWidth * ViewScale, WorldHeight * ViewScale).Contains(x, y))
+            {
+                var unit = GetUnit((x - LeftMapOffset) / ViewScale, (y - TopMapOffset) / ViewScale);
+                return unit;
+            }
+            return null;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Simulator
 {
-    class Wait : IAction
+    public class Wait : IAction
     {
         public Color ActionColor()
         {

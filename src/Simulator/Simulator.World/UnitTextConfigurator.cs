@@ -10,9 +10,9 @@ namespace Simulator
 {
     public static class UnitTextConfigurator
     {
-        public const int UnitTextLeftBound = Program.LeftMapOffset + Simulator.WorldWidth * Simulator.Scale + 20;
-        public const int UnitTextTopBound = Program.TopMapOffset + (Program.TextSize + 5) * 3 + 10;
-        public const int UnitTextHeight = (Program.TextSize + 20) * AmountUnitInfo;
+        public const int UnitTextLeftBound = Simulator.LeftMapOffset + Simulator.WorldWidth * Simulator.ViewScale + 20;
+        public const int UnitTextTopBound = Simulator.TopMapOffset + (Content.TextSize + 5) * 3 + 10;
+        public const int UnitTextHeight = (Content.TextSize + 20) * AmountUnitInfo;
         public const int UnitTextWidth = 100;
 
         private static int choosenID;
@@ -34,8 +34,8 @@ namespace Simulator
 
         private static void ConfigureUnitDescription()
         {
-            unitDescription[0] = new TextBox(UnitTextLeftBound, UnitTextTopBound + (Program.TextSize + 7) * 0, "Energy - ");
-            unitDescription[1] = new TextBox(UnitTextLeftBound, UnitTextTopBound + (Program.TextSize + 7) * 1, "Genes - ");
+            unitDescription[0] = new TextBox(UnitTextLeftBound, UnitTextTopBound + (Content.TextSize + 7) * 0, "Energy - ");
+            unitDescription[1] = new TextBox(UnitTextLeftBound, UnitTextTopBound + (Content.TextSize + 7) * 1, "Genes - ");
         }
 
         public static void ChooseUnit(Unit unit)
@@ -140,7 +140,7 @@ namespace Simulator
 
         public static void ChooseUnitTextField(int x, int y)
         {
-            int result = (y - UnitTextTopBound) / (Program.TextSize + 7);
+            int result = (y - UnitTextTopBound) / (Content.TextSize + 7);
             for (int id = 0; id < AmountUnitInfo; id++)
             {
                 unitDescription[id].Unchoose();
@@ -175,11 +175,11 @@ namespace Simulator
             return false;
         }
 
-        public static void Draw()
+        public static void Draw(RenderWindow win)
         {
             for (int id = 0; id < AmountUnitInfo; id++)
             {
-                Program.Window.Draw(unitDescription[id]);
+                win.Draw(unitDescription[id]);
             }
         }
 
