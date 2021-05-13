@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Simulator.ResourseHandlers\Simulator.ResourseHandlers.csproj" />
+    <ProjectReference Include="..\Simulator.ResourseHandlers\Simulator.ResourseLoaders.csproj" />
     <ProjectReference Include="..\Simulator.World\Simulator.World.csproj" />
   </ItemGroup>
 

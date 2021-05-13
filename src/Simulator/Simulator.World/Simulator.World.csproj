@@ -10,7 +10,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SFML.AdditionObjects\SFML.AdditionObjects.csproj" />
-    <ProjectReference Include="..\Simulator.ResourseHandlers\Simulator.ResourseHandlers.csproj" />
+    <ProjectReference Include="..\Simulator.Events\Simulator.Events.csproj" />
+    <ProjectReference Include="..\Simulator.ResourseHandlers\Simulator.ResourseLoaders.csproj" />
   </ItemGroup>
 
 </Project>

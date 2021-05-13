@@ -11,7 +11,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SFML.AdditionObjects\SFML.AdditionObjects.csproj" />
-    <ProjectReference Include="..\Simulator.ResourseHandlers\Simulator.ResourseHandlers.csproj" />
+    <ProjectReference Include="..\Simulator.Events\Simulator.Events.csproj" />
+    <ProjectReference Include="..\Simulator.ResourseHandlers\Simulator.ResourseLoaders.csproj" />
     <ProjectReference Include="..\Simulator.WorkWithFile\Simulator.WorkWithFile.csproj" />
     <ProjectReference Include="..\Simulator.World\Simulator.World.csproj" />
   </ItemGroup>

@@ -1,6 +1,8 @@
 ﻿using SFML.Graphics;
 using SFML.System;
 
+using Simulator.World;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -71,7 +73,13 @@ namespace Simulator
             for (int i = 0; i < temp.Length; i++)
             {
                 result[i] = new IAction[temp[i].Length];
-                int seq = int.Parse(Reverse(temp[i]));
+                int seq = 0;
+                bool isParsed = int.TryParse(Reverse(temp[i]), out seq);
+                if (!isParsed)
+                {
+                    Events.ErrorHandler.KnockKnock(null, "Error in applying unit genes. Invalid number.", false);
+                    return null;
+                }
                 for (int j = 0; j < temp[i].Length; j++)
                 {
                     switch (seq % 10)
@@ -85,6 +93,9 @@ namespace Simulator
                         case (int)ActionType.Photosyntesis:
                             result[i][j] = new Photosyntesis();
                             break;
+                        case (int)ActionType.Attack:
+                            result[i][j] = new Attack();
+                            break;
                         default:
                             result[i][j] = new Wait();
                             break;
@@ -92,7 +103,46 @@ namespace Simulator
                     seq /= 10;
                 }
             }
+            Events.ErrorHandler.KnockKnock(null, "Successful applying of unit parameters.", true);
             return result;
+        }
+
+        public static string ShowDescription(int x, int y)
+        {
+            if (unitDescription[1].IsHit(x, y))
+            {
+                int left = (int)unitDescription[1].Coords.X;
+                int top = (int)unitDescription[1].Coords.Y;
+                char temp = unitDescription[1].GetSymbol(x - left, y - top);
+                if (temp == '\0')
+                    return null;
+                if (temp == '|')
+                    return "Gene block separator";
+                if (temp < '0' || temp > '9')
+                    return null;
+                int gene = temp - '0';
+                string result;
+                switch (gene)
+                {
+                    case (int)ActionType.Wait:
+                        result = "Wait action. Unit does nothing.";
+                        break;
+                    case (int)ActionType.Move:
+                        result = "Move action. Unit is moving somewhere.";
+                        break;
+                    case (int)ActionType.Photosyntesis:
+                        result = "Photosyntesis action. Unit photosynthesizes energy.";
+                        break;
+                    case (int)ActionType.Attack:
+                        result = "Attack action. Unit try to attack another unit.";
+                        break;
+                    default:
+                        result = "Wait action. Unit does nothing.";
+                        break;
+                }
+                return result;
+            }
+            return null;
         }
 
         private static string Reverse(string s)
@@ -157,7 +207,7 @@ namespace Simulator
             }
         }
 
-        public static bool MouseHandle(int x, int y)
+        public static bool MouseButtonHandle(int x, int y)
         {
             for (int id = 0; id < AmountUnitInfo; id++)
             {
@@ -186,7 +236,7 @@ namespace Simulator
 
         public static int GetEnergyInfo()
         {
-            return GetInt(unitDescription[0].GetText());
+            return GetInt(unitDescription[0].GetText().Substring("Energy - ".Length));
         }
 
         private static int GetInt(string input)
@@ -197,8 +247,12 @@ namespace Simulator
                 if ('0' <= input[i] && input[i] <= '9')
                     result = result * 10 + int.Parse(input[i].ToString());
                 else
+                {
+                    Events.ErrorHandler.KnockKnock(null, "Error in applying unit parameters. Invalid number.", false);
                     return ChoosenUnit.Energy;
+                }
             }
+            Events.ErrorHandler.KnockKnock(null, "Successful applying of unit parameters.", true);
             return result;
         }
 

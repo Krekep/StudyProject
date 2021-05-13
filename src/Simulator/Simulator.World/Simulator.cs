@@ -21,7 +21,7 @@ namespace Simulator
         public const int ViewScale = 4;
         public const int WorldHeight = 100;
         public const int WorldWidth = 200;
-        public const int EnergyLimit = 1000;
+        public const int EnergyLimit = 1500;
         public const int EnergyDegradation = -1;
         public const int WaitValue = 100;  // based point for other actions value
 
@@ -55,10 +55,10 @@ namespace Simulator
 
         public void Initialize(int seed)
         {
-            GroundPower = 5;
+            GroundPower = 7;
             SunPower = 5;
-            EnvDensity = 0.80;
-            DropChance = 0.05;
+            EnvDensity = 0.85;
+            DropChance = 0.1;
 
             Seed = seed;
             Random = new Random(Seed);
@@ -82,6 +82,8 @@ namespace Simulator
             seedText.Position = new Vector2f(Right + 20, Top + 2 * (Content.TextSize + 5) + 10);
 
             Storage.CurrentWorld = this;
+
+            WorldTextConfigurator.WorldResetText();
         }
 
         public void Import(int seed, int timer, int groundPower, int sunPower, double envDensity, double dropChance, List<Unit> units)

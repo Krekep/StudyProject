@@ -21,7 +21,7 @@ namespace Simulator
         private Color unpressedColor;
 
         public Vector2f Size { get { return backlight.Size; } set { backlight.Size = value; } }
-        public Vector2f Coords { get { return backlight.Position; } set { backlight.Position = value; textBlock.Position = value; } }
+        public Vector2f Coords { get { return textBlock.Position; } set { backlight.Position = new Vector2f(value.X - 3, value.Y - 3); textBlock.Position = value; } }
         private Text textBlock;
         public bool IsFixedSize { get; set; }
 
@@ -113,6 +113,15 @@ namespace Simulator
         public void Clear()
         {
             textBlock.DisplayedString = "";
+        }
+
+        public char GetSymbol(int x, int y)
+        {
+            var rect = textBlock.GetLocalBounds();
+            if (x < 0 || x > rect.Width || y < 0 || y > rect.Height)
+                return '\0';
+            int charWidth = (int)rect.Width / textBlock.DisplayedString.Length;
+            return textBlock.DisplayedString[Math.Min(Math.Max(0, x / charWidth - 1), textBlock.DisplayedString.Length - 1)];
         }
     }
 }

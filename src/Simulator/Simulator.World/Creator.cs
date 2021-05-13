@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Simulator
@@ -42,17 +43,87 @@ namespace Simulator
             if (!fl)
                 return null;
             int energy = parent.Energy / 2;
-            int[] dir = FillDirection();
-            IAction[][] genes = parent.Genes;
+            int[] dir = parent.Direction.Clone() as int[];
+            if (Simulator.Random.Next(10) < 2)
+                dir = MutateDirection(dir);
             int capacity = parent.Capacity;
+            IAction[][] genes = parent.Genes.Select(t => t.ToArray()).ToArray();
+            if (Simulator.Random.Next(10) < 3)
+                genes = MutateGenes(genes, ref capacity);
             int chlorophyl = parent.Chlorophyl;
+            if (Simulator.Random.Next(10) < 2)
+                MutateChlorophyl(ref chlorophyl, ref capacity);
             Unit child = new Unit(energy, new int[] { x, y }, dir, genes, capacity, chlorophyl);
             return child;
         }
+
+        private static IAction[][] MutateGenes(IAction[][] genes, ref int capacity)
+        {
+            if (Simulator.Random.Next(2) == 0)
+            {
+                int oldBlock = Simulator.Random.Next(genes.Length);
+                int newBlock = Simulator.Random.Next(Storage.AmountBlocks);
+                capacity += Storage.CalculateValue(genes[oldBlock]);
+                if (capacity - Storage.ValuesOfBlocks[newBlock] >= 0)
+                {
+                    capacity -= Storage.ValuesOfBlocks[newBlock];
+                    genes[oldBlock] = Storage.GenesBlocks[newBlock];
+                }
+            }
+            else
+            {
+                int newBlock = Simulator.Random.Next(Storage.AmountBlocks);
+                if (capacity - Storage.ValuesOfBlocks[newBlock] >= 0)
+                {
+                    capacity -= Storage.ValuesOfBlocks[newBlock];
+                    IAction[][] temp = new IAction[genes.Length + 1][];
+                    for (int i = 0; i < genes.Length; i++)
+                        temp[i] = genes[i];
+                    temp[genes.Length] = Storage.GenesBlocks[newBlock];
+                    genes = temp;
+                }
+            }
+            return genes;
+        }
+
+        private static void MutateChlorophyl(ref int chlorophyl, ref int capacity)
+        {
+            if (Simulator.Random.Next(2) == 0 && capacity >= 75)
+            {
+                capacity -= 75;
+                chlorophyl += 1;
+            }
+            else if (chlorophyl > 1)
+            {
+                capacity += 75;
+                chlorophyl -= 1;
+            }
+        }
+
+        private static int[] MutateDirection(int[] direction)
+        {
+            int[] delta = new int[2];
+            delta[0] = Simulator.Random.Next(0, 2);
+            delta[1] = Simulator.Random.Next(0, 2);
+            if (direction[0] > 0)
+                direction[0] -= delta[0];
+            else if (direction[0] < 0)
+                direction[0] += delta[0];
+            else
+                direction[0] = Simulator.Random.Next(0, 2) == 0 ? -1 : 1;
+            if (direction[1] > 0)
+                direction[1] -= delta[1];
+            else if (direction[1] < 0)
+                direction[1] += delta[1];
+            else
+                direction[1] = Simulator.Random.Next(0, 2) == 0 ? -1 : 1;
+            return direction;
+        }
+
         private static int FillChlorophyl(ref int capacity)
         {
             int i = 1;
-            while (Simulator.Random.Next(2) < 1 && capacity > 50 * i)
+            while (Simulator.Random.Next(2) < 1 && capacity > 75 * i)
             {
                 capacity -= (75 * i);
                 i += 1;
@@ -75,20 +146,20 @@ namespace Simulator
             while (i < amountOfBlocks && capacity > (amountOfBlocks - i) * Simulator.WaitValue && capacity > 0)
             {
                 int t = Simulator.Random.Next(Storage.AmountBlocks);
-                if (capacity - Storage.valuesOfBlocks[t] < 0)
+                if (capacity - Storage.ValuesOfBlocks[t] < 0)
                 {
-                    result[i] = Storage.genesBlocks[0];
-                    capacity -= Storage.valuesOfBlocks[0];
+                    result[i] = Storage.GenesBlocks[0];
+                    capacity -= Storage.ValuesOfBlocks[0];
                 }
                 else
                 {
-                    result[i] = Storage.genesBlocks[t];
-                    capacity -= Storage.valuesOfBlocks[t];
+                    result[i] = Storage.GenesBlocks[t];
+                    capacity -= Storage.ValuesOfBlocks[t];
                 }
                 i += 1;
             }
             for (; i < amountOfBlocks; i++)
-                result[i] = Storage.genesBlocks[0];
+                result[i] = Storage.GenesBlocks[0];
             return result;
         }        
     }

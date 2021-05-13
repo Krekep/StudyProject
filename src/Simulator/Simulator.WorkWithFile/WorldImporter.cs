@@ -37,29 +37,48 @@ namespace Simulator
                 if (line.Equals("#State:"))
                 {
                     if (!ReadState(input))
+                    {
+                        Events.ErrorHandler.KnockKnock(null, "World loading error. Invalid save.", false);
                         return;
+                    }
                 }
                 else
+                {
+                    Events.ErrorHandler.KnockKnock(null, "World loading error. Invalid save.", false);
                     return;
+                }
                 line = input.ReadLine();
                 if (line.Equals("#Params:"))
                 {
                     if (!ReadParams(input))
+                    {
+                        Events.ErrorHandler.KnockKnock(null, "World loading error. Invalid save.", false);
                         return;
+                    }
                 }
                 else
+                {
+                    Events.ErrorHandler.KnockKnock(null, "World loading error. Invalid save.", false);
                     return;
+                }
                 line = input.ReadLine();
                 if (line.Equals("#Units:"))
                 {
                     if (!ReadUnits(input))
+                    {
+                        Events.ErrorHandler.KnockKnock(null, "World loading error. Invalid save.", false);
                         return;
+                    }
                 }
                 else
+                {
+                    Events.ErrorHandler.KnockKnock(null, "World loading error. Invalid save.", false);
                     return;
+                }
             }
 
             world.Import(seed, timer, groundPower, sunPower, envDensity, dropChance, units);
+            WorldTextConfigurator.WorldResetText();
         }
 
         private static bool ReadUnits(StreamReader input)

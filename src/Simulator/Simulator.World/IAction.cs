@@ -10,7 +10,8 @@ namespace Simulator
     {
         Wait = 0,
         Move = 1,
-        Photosyntesis = 2
+        Photosyntesis = 2,
+        Attack = 3
     }
     public interface IAction
     {

@@ -26,7 +26,7 @@ namespace Simulator
         public IAction[][] Genes { get; private set; }
         private int[] currentAction;
         public int LastDirection { get; private set; }
-        public int[] Direction { get; private set; }  // unit's favorite direction (x, y) - (1, 0), (0, -1), (0, 1), (-1, 0)
+        public int[] Direction { get; private set; }  // unit's favorite direction (x, y) - (+/-1, +/-1)
         public int Energy { get; private set; }
         public UnitStatus Status { get; private set; }
         public int Chlorophyl { get; private set; }
@@ -104,6 +104,20 @@ namespace Simulator
             }
             return false;
         }
+        public bool Attack(int x, int y)
+        {
+            int[] targetPosition = new int[] { Coords[0] + x, Coords[1] + y };
+            LastDirection = (x + 1) * 3 + (y + 1);
+            var unit = Storage.CurrentWorld.GetUnit(targetPosition[0], targetPosition[1]);
+            if (unit != null && LastDirection != 4)
+            {
+                int temp = -Math.Min(this.Energy / 6, unit.Energy);
+                unit.TakeEnergy(temp);
+                this.TakeEnergy(-temp);
+                return true;
+            }
+            return false;
+        }
 
         public void TakeEnergy(int energy)
         {
@@ -135,8 +149,6 @@ namespace Simulator
         public void Process()
         {
             var temp = Genes[currentAction[0]];
-            temp[currentAction[1]].Process(this);
-            currentAction[1] += 1;
             if (currentAction[1] >= temp.Length)
             {
                 currentAction[0] += 1;
@@ -144,11 +156,21 @@ namespace Simulator
                 if (currentAction[0] >= Genes.Length)
                     currentAction[0] = 0;
             }
+
+            temp[currentAction[1]].Process(this);
+            currentAction[1] += 1;
         }
 
         public IAction GetCurrentAction()
         {
             var temp = Genes[currentAction[0]];
+            if (currentAction[1] >= temp.Length)
+            {
+                currentAction[0] += 1;
+                currentAction[1] = 0;
+                if (currentAction[0] >= Genes.Length)
+                    currentAction[0] = 0;
+            }
             return temp[currentAction[1]];
         }
 

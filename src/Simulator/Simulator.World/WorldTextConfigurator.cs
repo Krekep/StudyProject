@@ -60,7 +60,7 @@ namespace Simulator
             worldDescription[choosenID].BackspaceHandle();
         }
 
-        public static void WorldUpdateInfo()
+        public static void WorldResetText()
         {
             worldDescription[0].SetText($"{Storage.CurrentWorld.GroundPower}");
             worldDescription[1].SetText($"{Storage.CurrentWorld.SunPower}");
@@ -113,44 +113,61 @@ namespace Simulator
             }
         }
 
-        public static int GetGroundPower()
-        {
-            int result = 0;
-            string temp = worldDescription[0].GetText().Substring("Ground heat - ".Length);
-            if (GetInt(temp, out result))
-                return result;
-            else
-                return Storage.CurrentWorld.GroundPower;
-        }
 
-        public static int GetSunPower()
+        public static (bool, int, int, double, double) GetParameters()
         {
-            int result = 0;
-            string temp = worldDescription[1].GetText().Substring("Sun heat - ".Length);
-            if (GetInt(temp, out result))
-                return result;
-            else
-                return Storage.CurrentWorld.SunPower;
-        }
+            var result = (false, 0, 0, 0.0, 0.0);
+            bool success = true;
+            int value = 0;
+            string temp;
 
-        public static double GetDropChance()
-        {
-            int result = 0;
-            string temp = worldDescription[2].GetText().Substring("Cell fall chance - ".Length);
-            if (GetInt(temp, out result))
-                return result / 100.0;
+            temp = worldDescription[0].GetText().Substring("Ground heat - ".Length);
+            if (GetInt(temp, out value))
+            {
+                success &= true;
+                result.Item2 = value;
+            }
             else
-                return Storage.CurrentWorld.DropChance;
-        }
+                success = false;
 
-        public static double GetEnvDensity()
-        {
-            int result = 0;
-            string temp = worldDescription[3].GetText().Substring("Environment density - ".Length);
-            if (GetInt(temp, out result))
-                return result / 100.0;
+            temp = worldDescription[1].GetText().Substring("Sun heat - ".Length);
+            if (GetInt(temp, out value))
+            {
+                success &= true;
+                result.Item3 = value;
+            }
             else
-                return Storage.CurrentWorld.EnvDensity;
+                success = false;
+
+            temp = worldDescription[2].GetText().Substring("Cell fall chance - ".Length);
+            if (GetInt(temp, out value))
+            {
+                success &= true;
+                result.Item4 = value / 100.0;
+            }
+            else
+                success = false;
+
+            temp = worldDescription[3].GetText().Substring("Environment density - ".Length);
+            if (GetInt(temp, out value))
+            {
+                success &= true;
+                result.Item5 = value / 100.0;
+            }
+            else
+                success = false;
+
+            if (success)
+            {
+                result.Item1 = true;
+                Events.ErrorHandler.KnockKnock(null, "Successful applying of world parameters.", true);
+            }
+            else
+            {
+                result.Item1 = false;
+                Events.ErrorHandler.KnockKnock(null, "Error in applying world parameters. Invalid number.", false);
+            }
+            return result;
         }
 
         private static bool GetInt(string input, out int result)

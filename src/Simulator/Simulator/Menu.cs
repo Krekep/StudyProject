@@ -39,6 +39,8 @@ namespace Simulator
         private static string[] files;
         private static int firstShowing = 0;
 
+        private const int ScrollPerString = 1;
+
         static Menu()
         {
             menuForm = new RectangleShape();
@@ -122,8 +124,29 @@ namespace Simulator
             for (int i = 0; i < AmountOfButtons; i++)
             {
                 importName[i].Coords = new Vector2f(menuLeftBound + 10, exportTopSide + exportSize + 5 + 1 + 10 + (15 + importSize) * i);
-                importName[i].Size = new Vector2f(menuWidth * 3 / 4, exportSize);
                 importName[i].Text = files[firstShowing + i];
+                importName[i].Size = new Vector2f(menuWidth * 3 / 4, exportSize);
+            }
+        }
+
+        internal static void Scroll(float delta)
+        {
+            int temp = -(int)delta / ScrollPerString;
+            if (firstShowing + temp + AmountOfButtons >= files.Length)
+                firstShowing = files.Length - AmountOfButtons;
+            else if (firstShowing + temp < 0)
+                firstShowing = 0;
+            else
+                firstShowing += temp;
+            UpdateDisplayed();
+        }
+
+        private static void UpdateDisplayed()
+        {
+            for (int i = 0; i < AmountOfButtons; i++)
+            {
+                importName[i].Text = files[firstShowing + i];
+                importName[i].Size = new Vector2f(menuWidth * 3 / 4, exportSize);
             }
         }
 
@@ -138,6 +161,7 @@ namespace Simulator
             {
                 files[i] = temp[i];
             }
+            UpdateDisplayed();
         }
 
         public static void Draw()
