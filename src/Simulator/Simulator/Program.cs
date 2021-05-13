@@ -46,7 +46,7 @@ namespace Simulator
         {
             Initialize();
 
-            win = new RenderWindow(new VideoMode(1024, 728), "Evolution Simulator");
+            win = new RenderWindow(new VideoMode(1280, 720), "Evolution Simulator");
     
             win.Closed += Win_Closed;
             win.Resized += Win_Resized;
@@ -99,7 +99,7 @@ namespace Simulator
         private static void Initialize()
         {
             dropDownWindow = new TextBlock(Color.Black);
-            dropDownWindow.CharacterSize = Content.TextSize * 3 / 4;
+            dropDownWindow.CharacterSize = Content.TextSize * 3 / 5;
 
             mapName = new TextBlock(Simulator.LeftMapOffset + Simulator.WorldWidth * 2 / 5 * Simulator.ViewScale, Simulator.TopMapOffset / 2, Color.Black);
             mapName.CharacterSize = Content.TextSize * 3 / 4;

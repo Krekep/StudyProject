@@ -125,19 +125,19 @@ namespace Simulator
                 switch (gene)
                 {
                     case (int)ActionType.Wait:
-                        result = "Wait action. Unit does nothing.";
+                        result = "Wait action. Unit does nothing. Gray color.";
                         break;
                     case (int)ActionType.Move:
-                        result = "Move action. Unit is moving somewhere.";
+                        result = "Move action. Unit is moving somewhere. Blue color.";
                         break;
                     case (int)ActionType.Photosyntesis:
-                        result = "Photosyntesis action. Unit photosynthesizes energy.";
+                        result = "Photosyntesis action. Unit photosynthesizes energy. Green color.";
                         break;
                     case (int)ActionType.Attack:
-                        result = "Attack action. Unit try to attack another unit.";
+                        result = "Attack action. Unit try to attack another unit. Red color.";
                         break;
                     default:
-                        result = "Wait action. Unit does nothing.";
+                        result = "Wait action. Unit does nothing. Gray color.";
                         break;
                 }
                 return result;

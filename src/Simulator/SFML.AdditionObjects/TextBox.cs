@@ -21,7 +21,7 @@ namespace Simulator
         private Color unpressedColor;
 
         public Vector2f Size { get { return backlight.Size; } set { backlight.Size = value; } }
-        public Vector2f Coords { get { return textBlock.Position; } set { backlight.Position = new Vector2f(value.X - 3, value.Y - 3); textBlock.Position = value; } }
+        public Vector2f Coords { get { return textBlock.Position; } set { backlight.Position = new Vector2f(value.X - 2, value.Y + 1); textBlock.Position = value; } }
         private Text textBlock;
         public bool IsFixedSize { get; set; }
 
