@@ -11,11 +11,12 @@ using Simulator.Events;
 namespace Simulator
 {
 
-    enum TextField: int
+    enum TextField : int
     {
         None = -1,
         UnitText = 1,
-        WorldText = 2
+        WorldText = 2,
+        Seed = 3
     }
 
     class Program
@@ -34,6 +35,8 @@ namespace Simulator
 
         static TextBlock mapName;
         static TextBlock errorField;
+        static TextBox seedText;
+        static Button createButton;
 
         public static TextField ChoosenField { get; private set; }
 
@@ -47,7 +50,7 @@ namespace Simulator
             Initialize();
 
             win = new RenderWindow(new VideoMode(1280, 720), "Evolution Simulator");
-    
+
             win.Closed += Win_Closed;
             win.Resized += Win_Resized;
             win.KeyPressed += Win_KeyPressed;
@@ -75,8 +78,10 @@ namespace Simulator
                 {
                     win.Draw(mapName);
                     win.Draw(errorField);
+                    win.Draw(createButton);
 
                     Icons.Draw();
+                    win.Draw(seedText);
                     UnitTextConfigurator.Draw(win);
                     WorldTextConfigurator.Draw(win);
                     win.Draw(dropDownWindow);
@@ -99,18 +104,28 @@ namespace Simulator
         private static void Initialize()
         {
             dropDownWindow = new TextBlock(Color.Black);
-            dropDownWindow.CharacterSize = Content.TextSize * 3 / 5;
+            dropDownWindow.CharacterSize = Content.CharacterSize * 3 / 5;
 
             mapName = new TextBlock(Simulator.LeftMapOffset + Simulator.WorldWidth * 2 / 5 * Simulator.ViewScale, Simulator.TopMapOffset / 2, Color.Black);
-            mapName.CharacterSize = Content.TextSize * 3 / 4;
+            mapName.CharacterSize = Content.CharacterSize * 3 / 4;
             mapName.Text = "Map of energy.";
 
             errorField = new TextBlock(Simulator.LeftMapOffset + Simulator.WorldWidth * 2 / 5 * Simulator.ViewScale, Simulator.TopMapOffset + Simulator.WorldHeight * Simulator.ViewScale + 10, darkGreen);
-            errorField.CharacterSize = Content.TextSize * 3 / 4;
+            errorField.CharacterSize = Content.CharacterSize * 3 / 4;
             errorField.Text = "Everything OK.";
 
             RandomSeed = DateTime.Now.Millisecond;
             ChoosenField = TextField.None;
+
+            seedText = new TextBox(Simulator.WorldWidth * Simulator.ViewScale + 1 + Simulator.LeftMapOffset + 20, Simulator.TopMapOffset + 2 * (Content.CharacterSize + 5) + 10, "Seed: ");
+            seedText.SetText($"{RandomSeed}");
+
+            int widthCreateButton = (Simulator.TopMapOffset - 10) * 2;
+            int heightCreateButton = Simulator.TopMapOffset - 10;
+            int leftCreateButton = Simulator.LeftMapOffset + Simulator.WorldWidth * Simulator.ViewScale - widthCreateButton - 10;
+            int topCreateButton = 5;
+            createButton = new Button(leftCreateButton, topCreateButton, widthCreateButton, heightCreateButton, "Create", Content.CharacterSize);
+            createButton.FillColor = new Color(64, 64, 64);
 
             World = new Simulator();
             World.Initialize(RandomSeed);
@@ -143,11 +158,24 @@ namespace Simulator
             {
                 ChoosenField = TextField.UnitText;
                 WorldTextConfigurator.EscapeHandle();
+                seedText.Unchoose();
             }
             else if (WorldTextConfigurator.MouseHandle(e.X, e.Y))
             {
                 ChoosenField = TextField.WorldText;
                 UnitTextConfigurator.EscapeHandle();
+                seedText.Unchoose();
+            }
+            else if (seedText.IsHit(e.X, e.Y))
+            {
+                seedText.Choose();
+                ChoosenField = TextField.Seed;
+                UnitTextConfigurator.EscapeHandle();
+                WorldTextConfigurator.EscapeHandle();
+            }
+            else if (createButton.IsHit(e.X, e.Y))
+            {
+                CreateWorld();
             }
             else if (unit != null)
             {
@@ -159,6 +187,37 @@ namespace Simulator
                 UnitTextConfigurator.ClearUnitDescription();
                 UnitTextConfigurator.ResetUnit();
             }
+        }
+
+        private static void CreateWorld()
+        {
+            int temp;
+            bool fl = GetInt(seedText.GetEnteredText(), out temp);
+            RandomSeed = temp;
+            var parameters = WorldTextConfigurator.GetParameters();
+            if (parameters.Item1 && fl)
+            {
+                World.UpdateParameters(parameters.Item2, parameters.Item3, parameters.Item4, parameters.Item5);
+                World.Initialize(RandomSeed);
+            }
+            WorldTextConfigurator.WorldResetText();
+        }
+        private static bool GetInt(string input, out int seed)
+        {
+            seed = 0;
+            for (int i = 0; i < input.Length; i++)
+            {
+                if ('0' <= input[i] && input[i] <= '9')
+                    seed = seed * 10 + int.Parse(input[i].ToString());
+                else
+                {
+                    ErrorHandler.KnockKnock(null, "Error in receiving seed of world. Invalid number.", false);
+                    seed = RandomSeed;
+                    return false;
+                }
+            }
+            ErrorHandler.KnockKnock(null, "Successful receiving seed of world.", true);
+            return true;
         }
 
         private static void Win_MouseMoved(object sender, MouseMoveEventArgs e)
@@ -210,6 +269,10 @@ namespace Simulator
             {
                 WorldTextConfigurator.UpdateWorldInfo(e.Unicode);
             }
+            if (ChoosenField == TextField.Seed)
+            {
+                seedText.UpdateText(e.Unicode);
+            }
             if (isOpenMenu)
             {
                 Menu.UpdateExportName(e.Unicode);
@@ -224,6 +287,7 @@ namespace Simulator
                 UnitTextConfigurator.EscapeHandle();
                 WorldTextConfigurator.EscapeHandle();
                 Menu.EscapeHandler();
+                seedText.Unchoose();
                 ChoosenField = TextField.None;
             }
             else if (e.Code == Keyboard.Key.Backspace)
@@ -232,6 +296,8 @@ namespace Simulator
                     UnitTextConfigurator.BackspaceHandle();
                 if (ChoosenField == TextField.WorldText)
                     WorldTextConfigurator.BackspaceHandle();
+                if (ChoosenField == TextField.Seed)
+                    seedText.BackspaceHandle();
                 if (isOpenMenu)
                     Menu.BackspaceHandle();
             }

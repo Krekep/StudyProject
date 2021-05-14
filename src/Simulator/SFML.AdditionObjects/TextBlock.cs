@@ -37,6 +37,7 @@ namespace Simulator
 
         public Color FillColor { get { return backlight.FillColor; } set { backlight.FillColor = value; } }
         public Color OutlineColor { get { return backlight.OutlineColor; } set { backlight.OutlineColor = value; } }
+        public float OutlineThickness { get { return backlight.OutlineThickness; } set { backlight.OutlineThickness = value; } }
 
         public TextBlock(int x, int y) : this(x, y, "", DefaultColor)
         {
@@ -53,7 +54,7 @@ namespace Simulator
         public TextBlock(int x, int y, string text, Color color)
         {
             IsChoosen = false;
-            textBlock = new Text(text, Content.Font, Content.TextSize);
+            textBlock = new Text(text, Content.Font, Content.CharacterSize);
             backlight = new RectangleShape(new Vector2f(textBlock.GetLocalBounds().Width + 10, textBlock.GetLocalBounds().Height + 10));
 
             this.Text = text;

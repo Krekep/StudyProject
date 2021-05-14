@@ -68,12 +68,15 @@ namespace Simulator
 
             exportName = new TextBox(new Color(100, 75, 0), new Color(100, 75, 0));
             exportName.IsFixedSize = true;
+            exportName.OutlineColor = Color.White;
+            exportName.OutlineThickness = 1;
 
             importName = new TextBlock[AmountOfButtons];
             for (int i = 0; i < AmountOfButtons; i++)
             {
                 importName[i] = new TextBlock(Color.Red);
                 importName[i].OutlineColor = Color.White;
+                importName[i].OutlineThickness = 1;
             }
         }
 

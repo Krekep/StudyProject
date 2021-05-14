@@ -22,6 +22,8 @@ namespace Simulator
 
         public Vector2f Size { get { return backlight.Size; } set { backlight.Size = value; } }
         public Vector2f Coords { get { return textBlock.Position; } set { backlight.Position = new Vector2f(value.X - 2, value.Y + 1); textBlock.Position = value; } }
+        public Color OutlineColor { get { return backlight.OutlineColor; } set { backlight.OutlineColor = value; } }
+        public float OutlineThickness { get { return backlight.OutlineThickness; } set { backlight.OutlineThickness = value; } }
         private Text textBlock;
         public bool IsFixedSize { get; set; }
 
@@ -49,7 +51,7 @@ namespace Simulator
             this.unpressedColor = unpressedColor;
             IsChoosen = false;
             this.fixedText = fixedText;
-            textBlock = new Text(fixedText, Content.Font, Content.TextSize);
+            textBlock = new Text(fixedText, Content.Font, Content.CharacterSize);
             backlight = new RectangleShape(new Vector2f(textBlock.GetLocalBounds().Width + 10, textBlock.GetLocalBounds().Height + 10));
             backlight.FillColor = this.unpressedColor;
             len = 0;
@@ -67,6 +69,10 @@ namespace Simulator
         public string GetText()
         {
             return textBlock.DisplayedString;
+        }
+        public string GetEnteredText()
+        {
+            return textBlock.DisplayedString.Substring(fixedText.Length);
         }
 
         public void BackspaceHandle()

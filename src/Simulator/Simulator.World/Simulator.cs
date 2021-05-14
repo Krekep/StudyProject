@@ -43,7 +43,6 @@ namespace Simulator
         public static Random Random;
         private Text yearText;
         private Text countText;
-        private Text seedText;
 
         // For display
         public const int LeftMapOffset = 10;
@@ -74,12 +73,10 @@ namespace Simulator
                 map[unit.Coords[0], unit.Coords[1]] = unit;
             }
 
-            yearText = new Text($"Year: {Timer}", Content.Font, Content.TextSize);
+            yearText = new Text($"Year: {Timer}", Content.Font, Content.CharacterSize);
             yearText.Position = new Vector2f(Right + 20, Top + 10);
-            countText = new Text($"Units: {Units.Count}", Content.Font, Content.TextSize);
-            countText.Position = new Vector2f(Right + 20, Top + Content.TextSize + 5 + 10);
-            seedText = new Text($"Seed: {seed}", Content.Font, Content.TextSize);
-            seedText.Position = new Vector2f(Right + 20, Top + 2 * (Content.TextSize + 5) + 10);
+            countText = new Text($"Units: {Units.Count}", Content.Font, Content.CharacterSize);
+            countText.Position = new Vector2f(Right + 20, Top + Content.CharacterSize + 5 + 10);
 
             Storage.CurrentWorld = this;
 
@@ -89,7 +86,6 @@ namespace Simulator
         public void Import(int seed, int timer, int groundPower, int sunPower, double envDensity, double dropChance, List<Unit> units)
         {
             Seed = seed;
-            seedText.DisplayedString = $"Seed: {seed}";
             Timer = timer;
             Random = new Random(seed);
 
@@ -207,7 +203,6 @@ namespace Simulator
             countText.DisplayedString = $"Units: {Units.Count}";
             target.Draw(yearText);
             target.Draw(countText);
-            target.Draw(seedText);
         }
 
 

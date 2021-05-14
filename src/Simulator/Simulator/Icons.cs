@@ -35,12 +35,11 @@ namespace Simulator
             sword.SetTexture(Content.Sword, Content.PressedSword);
             sword.Unpress();
 
-            //swordShape = new RectangleShape(new Vector2f(swordSize, swordSize));
-            //swordShape.Texture = Content.Sword;
-            //swordShape.Position = new Vector2f(swordLeftSide, swordTopSide);
-
             lightning = new Button(lightningLeftSide, lightningTopSide, lightningSize, lightningSize);
             lightning.SetTexture(Content.Lightning, Content.PressedLightning);
+            //lightning.FillColor = Color.Yellow;
+            //lightning.OutlineThickness = 1;
+            //lightning.OutlineColor = Color.Blue;
             lightning.Press();
 
             restart = new Button(restartLeftSide, restartTopSide, restartSize, restartSize);

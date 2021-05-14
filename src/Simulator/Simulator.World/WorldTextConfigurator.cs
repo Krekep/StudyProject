@@ -12,7 +12,7 @@ namespace Simulator
     {
         public const int WorldTextLeftBound = Simulator.LeftMapOffset + 20;
         public const int WorldTextTopBound = Simulator.TopMapOffset + Simulator.WorldHeight * Simulator.ViewScale + + 10;
-        public const int WorldTextHeight = (Content.TextSize + 5) * AmountWorldInfo;
+        public const int WorldTextHeight = (Content.CharacterSize + 5) * AmountWorldInfo;
         public const int WorldTextWidth = 100;
         private static int choosenID;
 
@@ -32,10 +32,10 @@ namespace Simulator
 
         private static void ConfigureWorldDescription()
         {
-            worldDescription[0] = new TextBox(WorldTextLeftBound, WorldTextTopBound + (Content.TextSize + 5) * 0, $"Ground heat - ");
-            worldDescription[1] = new TextBox(WorldTextLeftBound, WorldTextTopBound + (Content.TextSize + 5) * 1, $"Sun heat - ");
-            worldDescription[2] = new TextBox(WorldTextLeftBound, WorldTextTopBound + (Content.TextSize + 5) * 2, $"Cell fall chance - ");
-            worldDescription[3] = new TextBox(WorldTextLeftBound, WorldTextTopBound + (Content.TextSize + 5) * 3, $"Environment density - ");
+            worldDescription[0] = new TextBox(WorldTextLeftBound, WorldTextTopBound + (Content.CharacterSize + 5) * 0, $"Ground heat - ");
+            worldDescription[1] = new TextBox(WorldTextLeftBound, WorldTextTopBound + (Content.CharacterSize + 5) * 1, $"Sun heat - ");
+            worldDescription[2] = new TextBox(WorldTextLeftBound, WorldTextTopBound + (Content.CharacterSize + 5) * 2, $"Cell fall chance - ");
+            worldDescription[3] = new TextBox(WorldTextLeftBound, WorldTextTopBound + (Content.CharacterSize + 5) * 3, $"Environment density - ");
 
             worldDescription[0].SetText($"{Storage.CurrentWorld.GroundPower}");
             worldDescription[1].SetText($"{Storage.CurrentWorld.SunPower}");
@@ -70,7 +70,7 @@ namespace Simulator
 
         public static void ChooseWorldTextField(int x, int y)
         {
-            int result = (y - WorldTextTopBound) / (Content.TextSize + 5);
+            int result = (y - WorldTextTopBound) / (Content.CharacterSize + 5);
             for (int id = 0; id < AmountWorldInfo; id++)
             {
                 worldDescription[id].Unchoose();
@@ -121,7 +121,7 @@ namespace Simulator
             int value = 0;
             string temp;
 
-            temp = worldDescription[0].GetText().Substring("Ground heat - ".Length);
+            temp = worldDescription[0].GetEnteredText();
             if (GetInt(temp, out value))
             {
                 success &= true;
@@ -130,7 +130,7 @@ namespace Simulator
             else
                 success = false;
 
-            temp = worldDescription[1].GetText().Substring("Sun heat - ".Length);
+            temp = worldDescription[1].GetEnteredText();
             if (GetInt(temp, out value))
             {
                 success &= true;
@@ -139,7 +139,7 @@ namespace Simulator
             else
                 success = false;
 
-            temp = worldDescription[2].GetText().Substring("Cell fall chance - ".Length);
+            temp = worldDescription[2].GetEnteredText();
             if (GetInt(temp, out value))
             {
                 success &= true;
@@ -148,7 +148,7 @@ namespace Simulator
             else
                 success = false;
 
-            temp = worldDescription[3].GetText().Substring("Environment density - ".Length);
+            temp = worldDescription[3].GetEnteredText();
             if (GetInt(temp, out value))
             {
                 success &= true;

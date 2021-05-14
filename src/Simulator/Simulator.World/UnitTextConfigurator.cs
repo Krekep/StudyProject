@@ -13,8 +13,8 @@ namespace Simulator
     public static class UnitTextConfigurator
     {
         public const int UnitTextLeftBound = Simulator.LeftMapOffset + Simulator.WorldWidth * Simulator.ViewScale + 20;
-        public const int UnitTextTopBound = Simulator.TopMapOffset + (Content.TextSize + 5) * 3 + 10;
-        public const int UnitTextHeight = (Content.TextSize + 20) * AmountUnitInfo;
+        public const int UnitTextTopBound = Simulator.TopMapOffset + (Content.CharacterSize + 5) * 3 + 10;
+        public const int UnitTextHeight = (Content.CharacterSize + 20) * AmountUnitInfo;
         public const int UnitTextWidth = 100;
 
         private static int choosenID;
@@ -36,8 +36,8 @@ namespace Simulator
 
         private static void ConfigureUnitDescription()
         {
-            unitDescription[0] = new TextBox(UnitTextLeftBound, UnitTextTopBound + (Content.TextSize + 7) * 0, "Energy - ");
-            unitDescription[1] = new TextBox(UnitTextLeftBound, UnitTextTopBound + (Content.TextSize + 7) * 1, "Genes - ");
+            unitDescription[0] = new TextBox(UnitTextLeftBound, UnitTextTopBound + (Content.CharacterSize + 7) * 0, "Energy - ");
+            unitDescription[1] = new TextBox(UnitTextLeftBound, UnitTextTopBound + (Content.CharacterSize + 7) * 1, "Genes - ");
         }
 
         public static void ChooseUnit(Unit unit)
@@ -63,7 +63,7 @@ namespace Simulator
         }
         public static IAction[][] GetGenesArray()
         {
-            return StringToGenesArray(unitDescription[1].GetText().Substring("Genes - ".Length), '|');
+            return StringToGenesArray(unitDescription[1].GetEnteredText(), '|');
         }
 
         public static IAction[][] StringToGenesArray(string input, char separator)
@@ -190,7 +190,7 @@ namespace Simulator
 
         public static void ChooseUnitTextField(int x, int y)
         {
-            int result = (y - UnitTextTopBound) / (Content.TextSize + 7);
+            int result = (y - UnitTextTopBound) / (Content.CharacterSize + 7);
             for (int id = 0; id < AmountUnitInfo; id++)
             {
                 unitDescription[id].Unchoose();
@@ -236,7 +236,7 @@ namespace Simulator
 
         public static int GetEnergyInfo()
         {
-            return GetInt(unitDescription[0].GetText().Substring("Energy - ".Length));
+            return GetInt(unitDescription[0].GetEnteredText());
         }
 
         private static int GetInt(string input)

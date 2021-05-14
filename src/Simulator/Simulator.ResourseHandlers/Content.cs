@@ -12,7 +12,7 @@ namespace Simulator
         public const string PathToPictures = ResourcesPath + "/pictures/";
         public const string PathToFonts = ResourcesPath + "/fonts/";
         public const string FileExtension = ".evo";
-        public const int TextSize = 25;
+        public const int CharacterSize = 25;
 
         static Content()
         {
