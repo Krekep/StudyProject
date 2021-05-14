@@ -26,10 +26,10 @@ namespace Simulator
         public const int WaitValue = 100;  // based point for other actions value
 
         // Changeable parameters
-        public int GroundPower;
-        public int SunPower;
-        public double EnvDensity;
-        public double DropChance;
+        public int GroundPower { get; private set; }
+        public int SunPower { get; private set; }
+        public double EnvDensity { get; private set; }
+        public double DropChance { get; private set; }
 
         // World addition info
         public int Seed { get; private set; }

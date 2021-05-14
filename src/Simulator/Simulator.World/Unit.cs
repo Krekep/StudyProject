@@ -140,6 +140,7 @@ namespace Simulator
             {
                 Storage.CurrentWorld.AddUnit(child);
                 Energy /= 2;
+                Energy -= Simulator.EnergyLimit / 100;
             }
             else
                 Energy = Simulator.EnergyLimit;
@@ -149,6 +150,8 @@ namespace Simulator
         public void Process()
         {
             var temp = Genes[currentAction[0]];
+            temp[currentAction[1]].Process(this);
+            currentAction[1] += 1;
             if (currentAction[1] >= temp.Length)
             {
                 currentAction[0] += 1;
@@ -156,21 +159,11 @@ namespace Simulator
                 if (currentAction[0] >= Genes.Length)
                     currentAction[0] = 0;
             }
-
-            temp[currentAction[1]].Process(this);
-            currentAction[1] += 1;
         }
 
         public IAction GetCurrentAction()
         {
             var temp = Genes[currentAction[0]];
-            if (currentAction[1] >= temp.Length)
-            {
-                currentAction[0] += 1;
-                currentAction[1] = 0;
-                if (currentAction[0] >= Genes.Length)
-                    currentAction[0] = 0;
-            }
             return temp[currentAction[1]];
         }
 
