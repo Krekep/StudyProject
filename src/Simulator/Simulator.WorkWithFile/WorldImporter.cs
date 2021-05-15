@@ -78,7 +78,6 @@ namespace Simulator
             }
 
             world.Import(seed, timer, groundPower, sunPower, envDensity, dropChance, units);
-            WorldTextConfigurator.WorldResetText();
         }
 
         private static bool ReadUnits(StreamReader input)
