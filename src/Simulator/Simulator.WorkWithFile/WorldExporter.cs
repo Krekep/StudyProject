@@ -17,6 +17,11 @@ namespace Simulator
 
         public static void Export(string name, Simulator world)
         {
+            if (name.Equals(""))
+            {
+                Events.ErrorHandler.KnockKnock(null, "World saving error. Empty name.", false);
+                return;
+            }
             using (StreamWriter output = new StreamWriter(Content.PathToSaves + name + Content.FileExtension))
             {
                 output.Write(PackState(world));
@@ -24,6 +29,7 @@ namespace Simulator
                 output.Write(PackUnits(world));
             }
             WorldImporter.UpdateFiles();
+            Events.ErrorHandler.KnockKnock(null, "Success world saving.", true);
         }
 
         private static string PackState(Simulator world)
