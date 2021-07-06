@@ -1,24 +1,12 @@
-﻿using SFML.Graphics;
-using SFML.System;
-
-using Simulator.World;
+﻿using Simulator.World;
 
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Text.Json;
 
 namespace Simulator
 {
-    public enum TypeOfMap
+    public class Simulator
     {
-        MapOfEnergy,
-        MapOfActions
-    }
-
-    public class Simulator : Transformable, Drawable
-    {
-        public const int ViewScale = 4;
         public const int WorldHeight = 100;
         public const int WorldWidth = 200;
         public const int EnergyLimit = 1500;
@@ -35,22 +23,13 @@ namespace Simulator
         public int Seed { get; private set; }
         public int Timer { get; private set; }
 
-        // List of available units
+        /// <summary>
+        /// List of available units
+        /// </summary>
         public List<Unit> Units { get; private set; }
-        public TypeOfMap ChoosenMap { get; set; }
 
         private Unit[,] map;
         public static Random Random;
-        private Text yearText;
-        private Text countText;
-
-        // For display
-        public const int LeftMapOffset = 10;
-        public const int TopMapOffset = 50;
-        private const int Left = 0 * ViewScale + LeftMapOffset;
-        private const int Top = 0 * ViewScale + TopMapOffset;
-        private const int Bottom = WorldHeight * ViewScale + 1 + TopMapOffset;
-        private const int Right = WorldWidth * ViewScale + 1 + LeftMapOffset;
 
         public void Initialize(int seed)
         {
@@ -73,14 +52,7 @@ namespace Simulator
                 map[unit.Coords[0], unit.Coords[1]] = unit;
             }
 
-            yearText = new Text($"Year: {Timer}", Content.Font, Content.CharacterSize);
-            yearText.Position = new Vector2f(Right + 20, Top + 10);
-            countText = new Text($"Units: {Units.Count}", Content.Font, Content.CharacterSize);
-            countText.Position = new Vector2f(Right + 20, Top + Content.CharacterSize + 5 + 10);
-
             Storage.CurrentWorld = this;
-
-            WorldTextConfigurator.WorldResetText();
         }
 
         public void Import(int seed, int timer, int groundPower, int sunPower, double envDensity, double dropChance, List<Unit> units)
@@ -113,7 +85,7 @@ namespace Simulator
             return true;
         }
 
-        internal Unit GetUnit(int x, int y)
+        public Unit GetUnit(int x, int y)
         {
             if (x < 0 || y < 0 || x >= WorldWidth || y >= WorldHeight)
                 return null;
@@ -188,40 +160,6 @@ namespace Simulator
             Units.Add(child);
         }
 
-        public void Draw(RenderTarget target, RenderStates states)
-        {
-            states.Transform *= Transform; 
-            DrawBound(target);
-            foreach (Drawable unit in Units)
-                target.Draw(unit, states);
-            DrawText(target);
-        }
-
-        private void DrawText(RenderTarget target)
-        {
-            yearText.DisplayedString = $"Year: {Timer}";
-            countText.DisplayedString = $"Units: {Units.Count}";
-            target.Draw(yearText);
-            target.Draw(countText);
-        }
-
-
-
-        private Vertex[] bottomLine = new Vertex[2] { new Vertex(new Vector2f(Left, Bottom)),
-                                                      new Vertex(new Vector2f(Right, Bottom))};
-        private Vertex[] topLine = new Vertex[2] { new Vertex(new Vector2f(Left, Top)),
-                                                   new Vertex(new Vector2f(Right, Top))};
-        private Vertex[] leftLine = new Vertex[2] { new Vertex(new Vector2f(Left, Top)),
-                                                    new Vertex(new Vector2f(Left, Bottom))};
-        private Vertex[] rightLine = new Vertex[2] { new Vertex(new Vector2f(Right, Top)),
-                                                     new Vertex(new Vector2f(Right, Bottom))};
-        private void DrawBound(RenderTarget target)
-        {
-            target.Draw(topLine, PrimitiveType.Lines);
-            target.Draw(bottomLine, PrimitiveType.Lines);
-            target.Draw(leftLine, PrimitiveType.Lines);
-            target.Draw(rightLine, PrimitiveType.Lines);
-        }
 
         public void UpdateParameters(int groundPower, int sunPower, double dropChance, double envDensity)
         {
@@ -235,16 +173,6 @@ namespace Simulator
         {
             map[oldPosition[0], oldPosition[1]] = null;
             map[newPosition[0], newPosition[1]] = unit;
-        }
-
-        public Unit MouseHandle(int x, int y)
-        {
-            if (new IntRect(LeftMapOffset, TopMapOffset, WorldWidth * ViewScale, WorldHeight * ViewScale).Contains(x, y))
-            {
-                var unit = GetUnit((x - LeftMapOffset) / ViewScale, (y - TopMapOffset) / ViewScale);
-                return unit;
-            }
-            return null;
         }
     }
 }

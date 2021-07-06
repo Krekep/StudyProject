@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Simulator
+namespace Simulator.World
 {
     public class Photosyntesis : IAction
     {

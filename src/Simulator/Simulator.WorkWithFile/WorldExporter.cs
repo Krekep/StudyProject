@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Xml;
 
 namespace Simulator
 {
@@ -64,11 +59,26 @@ namespace Simulator
                     $"\tStatus={(int)unit.Status}\n" +
                     $"\tPosition={unit.Coords[0]} {unit.Coords[1]}\n" +
                     $"\tDirection={unit.Direction[0]} {unit.Direction[1]}\n" +
-                    $"\tGenes={UnitTextConfigurator.GetStringGenes(unit)}\n";
+                    $"\tGenes={GetStringGenes(unit)}\n";
                 result.Append(temp);
                 i++;
             }
             return result.ToString();
+        }
+
+        public static string GetStringGenes(Unit unit)
+        {
+            StringBuilder genes = new StringBuilder(10);
+            IAction[][] temp = unit.Genes;
+            for (int i = 0; i < temp.Length - 1; i++)
+            {
+                for (int j = 0; j < temp[i].Length; j++)
+                    genes.Append((int)temp[i][j].Type());
+                genes.Append("|");
+            }
+            for (int j = 0; j < temp[temp.Length - 1].Length; j++)
+                genes.Append((int)temp[temp.Length - 1][j].Type());
+            return genes.ToString();
         }
     }
 }

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 
 using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
+using TGUI;
 
 using Simulator.Events;
 
@@ -19,180 +21,261 @@ namespace Simulator
         Seed = 3
     }
 
+    public enum TypeOfMap
+    {
+        MapOfEnergy,
+        MapOfActions,
+    }
+
     class Program
     {
         static RenderWindow win;
+        static Gui gui;
         public static int RandomSeed { get; set; }
         static bool isRunning = false;
         private static bool isOpenMenu;
-        static bool isTextEntered = false;
 
-        static Color orange = new Color(255, 128, 0);
-        static Color darkGreen = new Color(0, 47, 31);
-        static Color darkRed = new Color(104, 28, 35);
+        /// <summary>
+        /// Buttons: 0 - energy map, 1 - action map, 2 - create, 3 - restart, 4 - menu, 5 - apply
+        /// </summary>
+        static Button[] buttons = new Button[6];
+        /// <summary>
+        /// Text blocks: 0 - seed, 1 - dropdownText, 2 - map name, 3 - error field, 4 - fps counter, 5 - year, 6 - unit count
+        /// </summary>
+        static Label[] labels = new Label[7];
 
-        static TextBlock dropDownWindow;
+        public static Color Orange = new Color(255, 128, 0);
+        public static Color DarkGreen = new Color(0, 47, 31);
+        public static Color DarkRed = new Color(104, 28, 35);
+        public static Color Gray = new Color(64, 64, 64);
 
-        static TextBlock mapName;
-        static TextBlock errorField;
+        public const int ViewScale = 5;
+        public const int LeftMapOffset = 10;
+        public const int TopMapOffset = 70;
+        public const int CharacterSize = 25;
+        private const int width = 1366;
+        private const int height = 768;
+
         static TextBox seedText;
-        static Button createButton;
 
+        public static TypeOfMap ChoosenMap { get; private set; }
         public static TextField ChoosenField { get; private set; }
 
         public static RenderWindow Window { get { return win; } }
+        public static Gui MainGui { get { return gui; } }
 
         public static Simulator World { get; set; }
 
-
         static void Main(string[] args)
         {
-            Initialize();
+            win = new RenderWindow(new VideoMode(width, height), "Evolution Simulator");
+            gui = new Gui(win);
 
-            win = new RenderWindow(new VideoMode(1280, 720), "Evolution Simulator");
+            Initialize();
 
             win.Closed += Win_Closed;
             win.Resized += Win_Resized;
             win.KeyPressed += Win_KeyPressed;
             win.MouseButtonPressed += Win_MouseButton;
-            win.TextEntered += Win_TextEntered;
             win.MouseMoved += Win_MouseMoved;
             win.MouseWheelScrolled += Win_MouseWheelScrolled;
             ErrorHandler.Notify += DisplayMessage;
+            Stopwatch stopwatch = new Stopwatch();
+            double fps;
 
             while (win.IsOpen)
             {
+                stopwatch.Restart();
                 win.DispatchEvents();
                 if (isRunning)
+                {
                     World.Update();
+                    labels[5].Text = $"Year: {World.Timer}";
+                    labels[6].Text = $"Units: {World.Units.Count}";
+                }
 
                 UnitTextConfigurator.ChoosenUnitUpdateInfo(isRunning);
 
                 win.Clear(Color.Black);
+                fps = 1000 / stopwatch.Elapsed.TotalMilliseconds;
+                labels[4].Text = $"FPS: {(int)fps}";
 
-                if (isOpenMenu)
-                {
-                    Menu.Draw();
-                }
-                else
-                {
-                    win.Draw(mapName);
-                    win.Draw(errorField);
-                    win.Draw(createButton);
-
-                    Icons.Draw();
-                    win.Draw(seedText);
-                    UnitTextConfigurator.Draw(win);
-                    WorldTextConfigurator.Draw(win);
-                    win.Draw(dropDownWindow);
-
-                    win.Draw(World);
-                }
+                WorldRenderer.Draw();
+                gui.Draw();
                 win.Display();
             }
         }
 
         private static void DisplayMessage(object sender, Events.ErrorEventArgs e)
         {
-            errorField.Text = e.Message;
+            labels[3].Text = e.Message;
             if (e.IsSuccess)
-                errorField.FillColor = darkGreen;
+                labels[3].Renderer.BackgroundColor = DarkGreen;
             else
-                errorField.FillColor = darkRed;
+                labels[3].Renderer.BackgroundColor = DarkRed;
         }
 
         private static void Initialize()
         {
-            dropDownWindow = new TextBlock(Color.Black);
-            dropDownWindow.CharacterSize = Content.CharacterSize * 3 / 5;
-
-            mapName = new TextBlock(Simulator.LeftMapOffset + Simulator.WorldWidth * 2 / 5 * Simulator.ViewScale, Simulator.TopMapOffset / 2, Color.Black);
-            mapName.CharacterSize = Content.CharacterSize * 3 / 4;
-            mapName.Text = "Map of energy.";
-
-            errorField = new TextBlock(Simulator.LeftMapOffset + Simulator.WorldWidth * 2 / 5 * Simulator.ViewScale, Simulator.TopMapOffset + Simulator.WorldHeight * Simulator.ViewScale + 10, darkGreen);
-            errorField.CharacterSize = Content.CharacterSize * 3 / 4;
-            errorField.Text = "Everything OK.";
-
             RandomSeed = DateTime.Now.Millisecond;
             ChoosenField = TextField.None;
+            ChoosenMap = TypeOfMap.MapOfEnergy;
+            ButtonInitalizer();
+            TextInitializer();
 
-            seedText = new TextBox(Simulator.WorldWidth * Simulator.ViewScale + 1 + Simulator.LeftMapOffset + 20, Simulator.TopMapOffset + 2 * (Content.CharacterSize + 5) + 10, "Seed: ");
-            seedText.SetText($"{RandomSeed}");
-
-            int widthCreateButton = (Simulator.TopMapOffset - 10) * 2;
-            int heightCreateButton = Simulator.TopMapOffset - 10;
-            int leftCreateButton = Simulator.LeftMapOffset + Simulator.WorldWidth * Simulator.ViewScale - widthCreateButton - 10;
-            int topCreateButton = 5;
-            createButton = new Button(leftCreateButton, topCreateButton, widthCreateButton, heightCreateButton, "Create", Content.CharacterSize);
-            createButton.FillColor = new Color(64, 64, 64);
 
             World = new Simulator();
             World.Initialize(RandomSeed);
-            World.Position = new Vector2f(Simulator.LeftMapOffset, Simulator.TopMapOffset);
+            WorldTextConfigurator.WorldResetText();
         }
 
-        public static void SetEnergyMap()
+        private static void ButtonInitalizer()
         {
-            mapName.Text = "Map of energy.";
-            World.ChoosenMap = TypeOfMap.MapOfEnergy;
-            Icons.SetMap(TypeOfMap.MapOfEnergy);
+            buttons[0] = new Button();
+            Console.WriteLine(buttons[0].Renderer);
+            buttons[0].Position = new Vector2f(LeftMapOffset, 10);
+            buttons[0].Size = new Vector2f(TopMapOffset - 15, TopMapOffset - 15);
+            buttons[0].Renderer.Texture = Content.PressedLightning;
+            buttons[0].Clicked += EnergyMap_Click;
+            gui.Add(buttons[0]);
+
+            buttons[1] = new Button();
+            buttons[1].Position = new Vector2f(LeftMapOffset + TopMapOffset, 10);
+            buttons[1].Size = new Vector2f(TopMapOffset - 15, TopMapOffset - 15);
+            buttons[1].Renderer.Texture = Content.Sword;
+            buttons[1].Clicked += ActionMap_Click;
+            gui.Add(buttons[1]);
+
+            int widthCreateButton = (TopMapOffset - 10) * 2;
+            int heightCreateButton = TopMapOffset - 15;
+            int leftCreateButton = LeftMapOffset + Simulator.WorldWidth * ViewScale - widthCreateButton - 10;
+            int topCreateButton = 10;
+            buttons[2] = new Button();
+            buttons[2].Position = new Vector2f(leftCreateButton, topCreateButton);
+            buttons[2].Size = new Vector2f(widthCreateButton, heightCreateButton);
+            buttons[2].Text = "Create";
+            buttons[2].Renderer.BackgroundColor = Gray;
+            buttons[2].Renderer.TextColor = Color.White;
+            buttons[2].Clicked += Create_Click;
+            gui.Add(buttons[2]);
+
+            buttons[3] = new Button();
+            buttons[3].Position = new Vector2f(LeftMapOffset + Simulator.WorldWidth * ViewScale + 10, 10);
+            buttons[3].Size = new Vector2f(TopMapOffset - 15, TopMapOffset - 15);
+            buttons[3].Renderer.Texture = Content.RestartButton;
+            buttons[3].Clicked += Restart_Click;
+            gui.Add(buttons[3]);
+
+            buttons[4] = new Button();
+            buttons[4].Position = new Vector2f(LeftMapOffset + Simulator.WorldWidth * ViewScale + TopMapOffset + 10, 10);
+            buttons[4].Size = new Vector2f(TopMapOffset - 15, TopMapOffset - 15);
+            buttons[4].Renderer.Texture = Content.MenuButton;
+            buttons[4].Clicked += Menu_Click;
+            gui.Add(buttons[4]);
+
+            int widthApplyButton = (TopMapOffset - 10) * 2;
+            int heightApplyButton = TopMapOffset - 15;
+            int leftApplyButton = LeftMapOffset + Simulator.WorldWidth * ViewScale - widthCreateButton - 10;
+            int topApplyButton = 10 + TopMapOffset + Simulator.WorldHeight * ViewScale;
+            buttons[5] = new Button();
+            buttons[5].Position = new Vector2f(leftApplyButton, topApplyButton);
+            buttons[5].Size = new Vector2f(widthApplyButton, heightApplyButton);
+            buttons[5].Text = "Apply";
+            buttons[5].TextSize = (uint)Math.Min(heightApplyButton - 8, widthApplyButton / 4);
+            buttons[5].Renderer.BackgroundColor = Gray;
+            buttons[5].Renderer.TextColor = Color.White;
+            buttons[5].Clicked += Apply_Clicked;
+            gui.Add(buttons[5]);
         }
 
-        public static void SetActionMap()
+        private static void TextInitializer()
         {
-            mapName.Text = "Map of actions.";
-            World.ChoosenMap = TypeOfMap.MapOfActions;
-            Icons.SetMap(TypeOfMap.MapOfActions);
-        }
+            seedText = new TextBox();
+            seedText.Position = new Vector2f(Simulator.WorldWidth * ViewScale + 1 + LeftMapOffset + CharacterSize * 4, TopMapOffset + 2 * (CharacterSize + 5) + 10);
+            seedText.TextSize = CharacterSize;
+            seedText.Size = new Vector2f(Program.CharacterSize * 4, Program.CharacterSize + 10);
+            seedText.Text = $"{RandomSeed}";
+            gui.Add(seedText);
 
-        private static void Win_MouseButton(object sender, MouseButtonEventArgs e)
+            labels[0] = new Label();
+            labels[0].Position = new Vector2f(Simulator.WorldWidth * ViewScale + 1 + LeftMapOffset + 20, TopMapOffset + 2 * (CharacterSize + 5) + 10);
+            labels[0].Text = "Seed: ";
+            labels[0].TextSize = CharacterSize;
+            gui.Add(labels[0]);
+
+            labels[1] = new Label();
+            labels[1].TextSize = CharacterSize * 3 / 5;
+            labels[1].Visible = false;
+            labels[1].MoveToFront();
+            gui.Add(labels[1]);
+
+            labels[2] = new Label();
+            labels[2].Position = new Vector2f(LeftMapOffset + Simulator.WorldWidth * 2 / 5 * ViewScale, TopMapOffset / 2);
+            labels[2].Text = "Map of energy.";
+            labels[2].TextSize = CharacterSize * 3 / 5;
+            gui.Add(labels[2]);
+
+            labels[3] = new Label();
+            labels[3].Position = new Vector2f(LeftMapOffset + Simulator.WorldWidth * 2 / 5 * ViewScale, TopMapOffset + Simulator.WorldHeight * ViewScale + 10);
+            labels[3].Text = "Everything OK.";
+            labels[3].TextSize = CharacterSize * 3 / 5;
+            labels[3].Renderer.BackgroundColor = DarkGreen;
+            gui.Add(labels[3]);
+
+            labels[4] = new Label();
+            labels[4].Position = new Vector2f(width - 100, 5);
+            labels[4].TextSize = CharacterSize * 3 / 5;
+            labels[4].Renderer.TextColor = Color.White;
+            gui.Add(labels[4]);
+
+            labels[5] = new Label();
+            labels[5].Position = new Vector2f(Simulator.WorldWidth * ViewScale + 21 + LeftMapOffset, TopMapOffset);
+            labels[5].Text = "Year:";
+            labels[5].TextSize = CharacterSize;
+            gui.Add(labels[5]);
+
+            labels[6] = new Label();
+            labels[6].Position = new Vector2f(Simulator.WorldWidth * ViewScale + 21 + LeftMapOffset, TopMapOffset + CharacterSize + 5 + 10);
+            labels[6].Text = "Units:";
+            labels[6].TextSize = CharacterSize;
+            gui.Add(labels[6]);
+        }
+        private static void Apply_Clicked(object sender, SignalArgsVector2f e)
         {
-            Icons.ButtonHandler(e.X, e.Y);
-            var unit = World.MouseHandle(e.X, e.Y);
-            if (isOpenMenu)
+            if (UnitTextConfigurator.ChoosenUnit != null)
             {
-                Menu.MouseHandle(e.X, e.Y);
+                int energy = UnitTextConfigurator.GetEnergyInfo();
+                IAction[][] genes = UnitTextConfigurator.GetGenesArray();
+                UnitTextConfigurator.ChoosenUnit.TakeEnergy(energy - UnitTextConfigurator.ChoosenUnit.Energy);
+                UnitTextConfigurator.ChoosenUnit.SetGenes(genes);
             }
-            else if (UnitTextConfigurator.MouseButtonHandle(e.X, e.Y))
-            {
-                ChoosenField = TextField.UnitText;
-                WorldTextConfigurator.EscapeHandle();
-                seedText.Unchoose();
-            }
-            else if (WorldTextConfigurator.MouseHandle(e.X, e.Y))
-            {
-                ChoosenField = TextField.WorldText;
-                UnitTextConfigurator.EscapeHandle();
-                seedText.Unchoose();
-            }
-            else if (seedText.IsHit(e.X, e.Y))
-            {
-                seedText.Choose();
-                ChoosenField = TextField.Seed;
-                UnitTextConfigurator.EscapeHandle();
-                WorldTextConfigurator.EscapeHandle();
-            }
-            else if (createButton.IsHit(e.X, e.Y))
-            {
-                CreateWorld();
-            }
-            else if (unit != null)
-            {
-                UnitTextConfigurator.ChooseUnit(unit);
-                isRunning = false;
-            }
-            else if (unit == null)
-            {
-                UnitTextConfigurator.ClearUnitDescription();
-                UnitTextConfigurator.ResetUnit();
-            }
+            var parameters = WorldTextConfigurator.GetParameters();
+
+            if (parameters.Item1)
+                World.UpdateParameters(parameters.Item2, parameters.Item3, parameters.Item4, parameters.Item5);
+            WorldTextConfigurator.WorldResetText();
         }
 
-        private static void CreateWorld()
+        private static void EnergyMap_Click(object sender, SignalArgsVector2f e)
+        {
+            labels[2].Text = "Map of energy.";
+            ChoosenMap = TypeOfMap.MapOfEnergy;
+            buttons[0].Renderer.Texture = Content.PressedLightning;
+            buttons[1].Renderer.Texture = Content.Sword;
+        }
+
+        private static void ActionMap_Click(object sender, SignalArgsVector2f e)
+        {
+            labels[2].Text = "Map of action.";
+            ChoosenMap = TypeOfMap.MapOfActions;
+            buttons[0].Renderer.Texture = Content.Lightning;
+            buttons[1].Renderer.Texture = Content.PressedSword;
+        }
+
+        private static void Create_Click(object sender, SignalArgsVector2f e)
         {
             int temp;
-            bool fl = GetInt(seedText.GetEnteredText(), out temp);
+            bool fl = GetInt(seedText.Text, out temp);
             RandomSeed = temp;
             var parameters = WorldTextConfigurator.GetParameters();
             if (parameters.Item1 && fl)
@@ -201,6 +284,39 @@ namespace Simulator
                 World.Initialize(RandomSeed);
             }
             WorldTextConfigurator.WorldResetText();
+        }
+
+        private static void Restart_Click(object sender, SignalArgsVector2f e)
+        {
+            isRunning = false;
+            World.Initialize(World.Seed);
+        }
+
+        private static void Menu_Click(object sender, SignalArgsVector2f e)
+        {
+            isRunning = false;
+            ChoosenField = TextField.None;
+            isOpenMenu = true;
+            Menu.Open();
+        }
+        private static void Win_MouseButton(object sender, MouseButtonEventArgs e)
+        {
+            int x = (e.X - LeftMapOffset) / ViewScale;
+            int y = (e.Y - TopMapOffset) / ViewScale;
+            if (x >= 0 && y >= 0 && x < Simulator.WorldWidth && y < Simulator.WorldHeight)
+            {
+                var unit = World.GetUnit(x, y);
+                if (unit != null)
+                {
+                    UnitTextConfigurator.ChooseUnit(unit);
+                    isRunning = false;
+                }
+                else if (unit == null)
+                {
+                    UnitTextConfigurator.ClearUnitDescription();
+                    UnitTextConfigurator.ResetUnit();
+                }
+            }
         }
         private static bool GetInt(string input, out int seed)
         {
@@ -211,12 +327,12 @@ namespace Simulator
                     seed = seed * 10 + int.Parse(input[i].ToString());
                 else
                 {
-                    ErrorHandler.KnockKnock(null, "Error in receiving seed of world. Invalid number.", false);
+                    ErrorHandler.KnockKnock(null, "Error in receiving int from string.", false);
                     seed = RandomSeed;
                     return false;
                 }
             }
-            ErrorHandler.KnockKnock(null, "Successful receiving seed of world.", true);
+            ErrorHandler.KnockKnock(null, "Successful receiving int from string.", true);
             return true;
         }
 
@@ -225,15 +341,15 @@ namespace Simulator
             string text = UnitTextConfigurator.ShowDescription(e.X, e.Y);
             if (text != null)
             {
-                dropDownWindow.FillColor = orange;
-                dropDownWindow.Text = text;
-                dropDownWindow.Coords = new Vector2f(e.X, e.Y);
+                labels[1].Renderer.BackgroundColor = Orange;
+                labels[1].Text = text;
+                labels[1].Position = new Vector2f(e.X, e.Y);
+                labels[1].Visible = true;
+                labels[1].MoveToFront();
             }
             else
-            {
-                dropDownWindow.Text = "";
-                dropDownWindow.FillColor = Color.Black;
-                dropDownWindow.Coords = new Vector2f(0, 0);
+            { 
+                labels[1].Visible = false;
             }
         }
 
@@ -243,89 +359,11 @@ namespace Simulator
                 Menu.Scroll(e.Delta);
         }
 
-        internal static void OpenMenu()
-        {
-            isRunning = false;
-            isOpenMenu = true;
-            ChoosenField = TextField.None;
-            Menu.Open();
-        }
-
-        internal static void Restart()
-        {
-            isRunning = false;
-            World.Initialize(World.Seed);
-        }
-
-        private static void Win_TextEntered(object sender, TextEventArgs e)
-        {
-            if (!isTextEntered)
-                return;
-            if (ChoosenField == TextField.UnitText)
-            {
-                UnitTextConfigurator.UpdateUnitInfo(e.Unicode);
-            }
-            if (ChoosenField == TextField.WorldText)
-            {
-                WorldTextConfigurator.UpdateWorldInfo(e.Unicode);
-            }
-            if (ChoosenField == TextField.Seed)
-            {
-                seedText.UpdateText(e.Unicode);
-            }
-            if (isOpenMenu)
-            {
-                Menu.UpdateExportName(e.Unicode);
-            }
-        }
 
         private static void Win_KeyPressed(object sender, KeyEventArgs e)
         {
-            isTextEntered = false;
-            if (e.Code == Keyboard.Key.Escape)
-            {
-                UnitTextConfigurator.EscapeHandle();
-                WorldTextConfigurator.EscapeHandle();
-                Menu.EscapeHandler();
-                seedText.Unchoose();
-                ChoosenField = TextField.None;
-            }
-            else if (e.Code == Keyboard.Key.Backspace)
-            {
-                if (ChoosenField == TextField.UnitText)
-                    UnitTextConfigurator.BackspaceHandle();
-                if (ChoosenField == TextField.WorldText)
-                    WorldTextConfigurator.BackspaceHandle();
-                if (ChoosenField == TextField.Seed)
-                    seedText.BackspaceHandle();
-                if (isOpenMenu)
-                    Menu.BackspaceHandle();
-            }
-            else if (e.Code == Keyboard.Key.P && !isOpenMenu)
+            if (e.Code == Keyboard.Key.P && !isOpenMenu)
                 isRunning ^= true;
-            else if (e.Code == Keyboard.Key.Enter && ChoosenField != TextField.None)
-            {
-                if (ChoosenField == TextField.UnitText)
-                {
-                    if (UnitTextConfigurator.ChoosenUnit != null)
-                    {
-                        int energy = UnitTextConfigurator.GetEnergyInfo();
-                        IAction[][] genes = UnitTextConfigurator.GetGenesArray();
-                        UnitTextConfigurator.ChoosenUnit.TakeEnergy(energy - UnitTextConfigurator.ChoosenUnit.Energy);
-                        UnitTextConfigurator.ChoosenUnit.SetGenes(genes);
-                    }
-                }
-                else if (ChoosenField == TextField.WorldText)
-                {
-                    var parameters = WorldTextConfigurator.GetParameters();
-
-                    if (parameters.Item1)
-                        World.UpdateParameters(parameters.Item2, parameters.Item3, parameters.Item4, parameters.Item5);
-                    WorldTextConfigurator.WorldResetText();
-                }
-            }
-            else
-                isTextEntered = true;
         }
 
         internal static void CloseMenu()

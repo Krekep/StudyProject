@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Simulator.World;
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Text.Json;
 
 namespace Simulator
 {
@@ -116,7 +116,7 @@ namespace Simulator
                     line = input.ReadLine();
                     direction = line.Trim().Substring("Direction=".Length).Split(' ').Select(Int32.Parse).ToArray();
                     line = input.ReadLine();
-                    genes = UnitTextConfigurator.StringToGenesArray(line.Trim().Substring("Genes=".Length), '|');
+                    genes = StringToGenesArray(line.Trim().Substring("Genes=".Length), '|');
                     fl = fl && (position.Length == 2) && (direction.Length == 2);
                 }
                 catch
@@ -163,6 +163,54 @@ namespace Simulator
         public static string[] GetFilesArray()
         {
             return files;
+        }
+
+        private static IAction[][] StringToGenesArray(string input, char separator)
+        {
+            string[] temp = input.Split(separator);
+            IAction[][] result = new IAction[temp.Length][];
+            for (int i = 0; i < temp.Length; i++)
+            {
+                result[i] = new IAction[temp[i].Length];
+                int seq = 0;
+                bool isParsed = int.TryParse(Reverse(temp[i]), out seq);
+                if (!isParsed)
+                {
+                    Events.ErrorHandler.KnockKnock(null, "Error in applying unit genes. Invalid number.", false);
+                    return null;
+                }
+                for (int j = 0; j < temp[i].Length; j++)
+                {
+                    switch (seq % 10)
+                    {
+                        case (int)ActionType.Wait:
+                            result[i][j] = new Wait();
+                            break;
+                        case (int)ActionType.Move:
+                            result[i][j] = new Move();
+                            break;
+                        case (int)ActionType.Photosyntesis:
+                            result[i][j] = new Photosyntesis();
+                            break;
+                        case (int)ActionType.Attack:
+                            result[i][j] = new Attack();
+                            break;
+                        default:
+                            result[i][j] = new Wait();
+                            break;
+                    }
+                    seq /= 10;
+                }
+            }
+            Events.ErrorHandler.KnockKnock(null, "Successful applying of unit parameters.", true);
+            return result;
+        }
+
+        private static string Reverse(string s)
+        {
+            char[] charArray = s.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
         }
     }
 }

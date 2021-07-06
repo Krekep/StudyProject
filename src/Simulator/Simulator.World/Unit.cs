@@ -1,7 +1,4 @@
-﻿using SFML.Graphics;
-using SFML.System;
-
-using Simulator.World;
+﻿using Simulator.World;
 
 using System;
 using System.Collections.Generic;
@@ -16,12 +13,9 @@ namespace Simulator
         Divide = 1
     }
 
-    public class Unit : Transformable, Drawable
+    public class Unit
     {
-        const int UnitSize = 1;
-
         public int Capacity { get; private set; }
-        RectangleShape shape;
         public int[] Coords { get; private set; }
         public IAction[][] Genes { get; private set; }
         private int[] currentAction;
@@ -42,9 +36,6 @@ namespace Simulator
             LastDirection = lastDirection;
             currentAction = new int[2] { 0, 0 };
             Status = (UnitStatus)status;
-
-
-            shape = new RectangleShape(new Vector2f(UnitSize * Simulator.ViewScale, UnitSize * Simulator.ViewScale));
         }
         public Unit(int energy, int[] position, int[] directions, IAction[][] genes, int capacity, int chlorophyl)
         {
@@ -58,37 +49,11 @@ namespace Simulator
             LastDirection = 4;
             currentAction = new int[2] { 0, 0 };
             Status = UnitStatus.Alive;
-
-
-            shape = new RectangleShape(new Vector2f(UnitSize * Simulator.ViewScale, UnitSize * Simulator.ViewScale));
         }
 
         private bool CheckCell(int x, int y)
         {
             return Storage.CurrentWorld.IsFree(x, y);
-        }
-
-        public void Draw(RenderTarget target, RenderStates states)
-        {
-            states.Transform *= Transform;
-
-            shape.Position = new Vector2f(Coords[0] * UnitSize * Simulator.ViewScale, Coords[1] * UnitSize * Simulator.ViewScale);
-            shape.FillColor = ChooseColor();
-
-            target.Draw(shape, states);
-        }
-
-        private Color ChooseColor()
-        {
-            switch (Storage.CurrentWorld.ChoosenMap)
-            {
-                case TypeOfMap.MapOfEnergy:
-                    return new Color(255, (byte)((Energy + .0) / Simulator.EnergyLimit * 255), 0);
-                case TypeOfMap.MapOfActions:
-                    return GetCurrentAction().ActionColor();
-                default:
-                    return Color.Black;
-            }
         }
 
         public bool Move(int x, int y)

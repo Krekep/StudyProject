@@ -2,19 +2,65 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <StartupObject></StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SFML.Net" Version="2.5.0" />
+    <Compile Remove="tgui\**" />
+    <EmbeddedResource Remove="tgui\**" />
+    <None Remove="tgui\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SFML.AdditionObjects\SFML.AdditionObjects.csproj" />
+    <PackageReference Include="TGUI.Net.win-x64" Version="0.8.8.17" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Simulator.Events\Simulator.Events.csproj" />
     <ProjectReference Include="..\Simulator.ResourseHandlers\Simulator.ResourseLoaders.csproj" />
     <ProjectReference Include="..\Simulator.WorkWithFile\Simulator.WorkWithFile.csproj" />
     <ProjectReference Include="..\Simulator.World\Simulator.World.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="C:\Users\pavel\.nuget\packages\tgui.net.win-x64\0.8.8.17\build\csfml-audio.dll" Link="tgui\csfml-audio.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="C:\Users\pavel\.nuget\packages\tgui.net.win-x64\0.8.8.17\build\csfml-window.dll" Link="tgui\csfml-window.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="C:\Users\pavel\.nuget\packages\tgui.net.win-x64\0.8.8.17\build\csfml-system.dll" Link="tgui\csfml-system.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="C:\Users\pavel\.nuget\packages\tgui.net.win-x64\0.8.8.17\build\csfml-graphics.dll" Link="tgui\csfml-graphics.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="C:\Users\pavel\.nuget\packages\tgui.net.win-x64\0.8.8.17\build\ctgui-0.8.dll" Link="tgui\ctgui-0.8.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="C:\Users\pavel\.nuget\packages\tgui.net.win-x64\0.8.8.17\build\sfml-window-2.dll" Link="tgui\sfml-window-2.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="C:\Users\pavel\.nuget\packages\tgui.net.win-x64\0.8.8.17\build\sfml-audio-2.dll" Link="tgui\sfml-audio-2.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="C:\Users\pavel\.nuget\packages\tgui.net.win-x64\0.8.8.17\build\sfml-system-2.dll" Link="tgui\sfml-system-2.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="C:\Users\pavel\.nuget\packages\tgui.net.win-x64\0.8.8.17\build\sfml-graphics-2.dll" Link="tgui\sfml-graphics-2.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="C:\Users\pavel\.nuget\packages\tgui.net.win-x64\0.8.8.17\build\tgui.dll" Link="tgui\tgui.dll" />
   </ItemGroup>
 
 </Project>
