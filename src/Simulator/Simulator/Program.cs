@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 
 using SFML.Graphics;
 using SFML.System;
@@ -9,6 +7,7 @@ using SFML.Window;
 using TGUI;
 
 using Simulator.Events;
+using Simulator.World;
 
 namespace Simulator
 {
@@ -31,7 +30,6 @@ namespace Simulator
     {
         static RenderWindow win;
         static Gui gui;
-        public static int RandomSeed { get; set; }
         static bool isRunning = false;
         private static bool isOpenMenu;
 
@@ -48,13 +46,14 @@ namespace Simulator
         public static Color DarkGreen = new Color(0, 47, 31);
         public static Color DarkRed = new Color(104, 28, 35);
         public static Color Gray = new Color(64, 64, 64);
+        public static Color DarkGray = new Color(255, 255, 255);
 
-        public const int ViewScale = 5;
+        public const int ViewScale = 6;
         public const int LeftMapOffset = 10;
         public const int TopMapOffset = 70;
         public const int CharacterSize = 25;
-        private const int width = 1366;
-        private const int height = 768;
+        private const int width = 1600;
+        private const int height = 900;
 
         static TextBox seedText;
 
@@ -64,11 +63,11 @@ namespace Simulator
         public static RenderWindow Window { get { return win; } }
         public static Gui MainGui { get { return gui; } }
 
-        public static Simulator World { get; set; }
+        public static Swamp World { get; set; }
 
         static void Main(string[] args)
         {
-            win = new RenderWindow(new VideoMode(width, height), "Evolution Simulator");
+            win = new RenderWindow(new VideoMode(width, height), "Evolution Swamp");
             gui = new Gui(win);
 
             Initialize();
@@ -117,16 +116,13 @@ namespace Simulator
 
         private static void Initialize()
         {
-            RandomSeed = DateTime.Now.Millisecond;
             ChoosenField = TextField.None;
             ChoosenMap = TypeOfMap.MapOfEnergy;
+            World = new Swamp();
+            World.Initialize(DateTime.Now.Millisecond);
+            WorldTextConfigurator.WorldResetText();
             ButtonInitalizer();
             TextInitializer();
-
-
-            World = new Simulator();
-            World.Initialize(RandomSeed);
-            WorldTextConfigurator.WorldResetText();
         }
 
         private static void ButtonInitalizer()
@@ -148,7 +144,7 @@ namespace Simulator
 
             int widthCreateButton = (TopMapOffset - 10) * 2;
             int heightCreateButton = TopMapOffset - 15;
-            int leftCreateButton = LeftMapOffset + Simulator.WorldWidth * ViewScale - widthCreateButton - 10;
+            int leftCreateButton = LeftMapOffset + Swamp.WorldWidth * ViewScale - widthCreateButton - 10;
             int topCreateButton = 10;
             buttons[2] = new Button();
             buttons[2].Position = new Vector2f(leftCreateButton, topCreateButton);
@@ -160,14 +156,14 @@ namespace Simulator
             gui.Add(buttons[2]);
 
             buttons[3] = new Button();
-            buttons[3].Position = new Vector2f(LeftMapOffset + Simulator.WorldWidth * ViewScale + 10, 10);
+            buttons[3].Position = new Vector2f(LeftMapOffset + Swamp.WorldWidth * ViewScale + 10, 10);
             buttons[3].Size = new Vector2f(TopMapOffset - 15, TopMapOffset - 15);
             buttons[3].Renderer.Texture = Content.RestartButton;
             buttons[3].Clicked += Restart_Click;
             gui.Add(buttons[3]);
 
             buttons[4] = new Button();
-            buttons[4].Position = new Vector2f(LeftMapOffset + Simulator.WorldWidth * ViewScale + TopMapOffset + 10, 10);
+            buttons[4].Position = new Vector2f(LeftMapOffset + Swamp.WorldWidth * ViewScale + TopMapOffset + 10, 10);
             buttons[4].Size = new Vector2f(TopMapOffset - 15, TopMapOffset - 15);
             buttons[4].Renderer.Texture = Content.MenuButton;
             buttons[4].Clicked += Menu_Click;
@@ -175,8 +171,8 @@ namespace Simulator
 
             int widthApplyButton = (TopMapOffset - 10) * 2;
             int heightApplyButton = TopMapOffset - 15;
-            int leftApplyButton = LeftMapOffset + Simulator.WorldWidth * ViewScale - widthCreateButton - 10;
-            int topApplyButton = 10 + TopMapOffset + Simulator.WorldHeight * ViewScale;
+            int leftApplyButton = LeftMapOffset + Swamp.WorldWidth * ViewScale - widthCreateButton - 10;
+            int topApplyButton = 10 + TopMapOffset + Swamp.WorldHeight * ViewScale;
             buttons[5] = new Button();
             buttons[5].Position = new Vector2f(leftApplyButton, topApplyButton);
             buttons[5].Size = new Vector2f(widthApplyButton, heightApplyButton);
@@ -191,14 +187,14 @@ namespace Simulator
         private static void TextInitializer()
         {
             seedText = new TextBox();
-            seedText.Position = new Vector2f(Simulator.WorldWidth * ViewScale + 1 + LeftMapOffset + CharacterSize * 4, TopMapOffset + 2 * (CharacterSize + 5) + 10);
+            seedText.Position = new Vector2f(Swamp.WorldWidth * ViewScale + 1 + LeftMapOffset + CharacterSize * 4, TopMapOffset + 2 * (CharacterSize + 5) + 10);
             seedText.TextSize = CharacterSize;
             seedText.Size = new Vector2f(Program.CharacterSize * 4, Program.CharacterSize + 10);
-            seedText.Text = $"{RandomSeed}";
+            seedText.Text = $"{World.Seed}";
             gui.Add(seedText);
 
             labels[0] = new Label();
-            labels[0].Position = new Vector2f(Simulator.WorldWidth * ViewScale + 1 + LeftMapOffset + 20, TopMapOffset + 2 * (CharacterSize + 5) + 10);
+            labels[0].Position = new Vector2f(Swamp.WorldWidth * ViewScale + 1 + LeftMapOffset + 20, TopMapOffset + 2 * (CharacterSize + 5) + 10);
             labels[0].Text = "Seed: ";
             labels[0].TextSize = CharacterSize;
             gui.Add(labels[0]);
@@ -210,13 +206,13 @@ namespace Simulator
             gui.Add(labels[1]);
 
             labels[2] = new Label();
-            labels[2].Position = new Vector2f(LeftMapOffset + Simulator.WorldWidth * 2 / 5 * ViewScale, TopMapOffset / 2);
+            labels[2].Position = new Vector2f(LeftMapOffset + Swamp.WorldWidth * 2 / 5 * ViewScale, TopMapOffset / 2);
             labels[2].Text = "Map of energy.";
             labels[2].TextSize = CharacterSize * 3 / 5;
             gui.Add(labels[2]);
 
             labels[3] = new Label();
-            labels[3].Position = new Vector2f(LeftMapOffset + Simulator.WorldWidth * 2 / 5 * ViewScale, TopMapOffset + Simulator.WorldHeight * ViewScale + 10);
+            labels[3].Position = new Vector2f(LeftMapOffset + Swamp.WorldWidth * 2 / 5 * ViewScale, TopMapOffset + Swamp.WorldHeight * ViewScale + 10);
             labels[3].Text = "Everything OK.";
             labels[3].TextSize = CharacterSize * 3 / 5;
             labels[3].Renderer.BackgroundColor = DarkGreen;
@@ -229,13 +225,13 @@ namespace Simulator
             gui.Add(labels[4]);
 
             labels[5] = new Label();
-            labels[5].Position = new Vector2f(Simulator.WorldWidth * ViewScale + 21 + LeftMapOffset, TopMapOffset);
+            labels[5].Position = new Vector2f(Swamp.WorldWidth * ViewScale + 21 + LeftMapOffset, TopMapOffset);
             labels[5].Text = "Year:";
             labels[5].TextSize = CharacterSize;
             gui.Add(labels[5]);
 
             labels[6] = new Label();
-            labels[6].Position = new Vector2f(Simulator.WorldWidth * ViewScale + 21 + LeftMapOffset, TopMapOffset + CharacterSize + 5 + 10);
+            labels[6].Position = new Vector2f(Swamp.WorldWidth * ViewScale + 21 + LeftMapOffset, TopMapOffset + CharacterSize + 5 + 10);
             labels[6].Text = "Units:";
             labels[6].TextSize = CharacterSize;
             gui.Add(labels[6]);
@@ -276,12 +272,11 @@ namespace Simulator
         {
             int temp;
             bool fl = GetInt(seedText.Text, out temp);
-            RandomSeed = temp;
             var parameters = WorldTextConfigurator.GetParameters();
             if (parameters.Item1 && fl)
             {
                 World.UpdateParameters(parameters.Item2, parameters.Item3, parameters.Item4, parameters.Item5);
-                World.Initialize(RandomSeed);
+                World.Initialize(temp);
             }
             WorldTextConfigurator.WorldResetText();
         }
@@ -303,7 +298,7 @@ namespace Simulator
         {
             int x = (e.X - LeftMapOffset) / ViewScale;
             int y = (e.Y - TopMapOffset) / ViewScale;
-            if (x >= 0 && y >= 0 && x < Simulator.WorldWidth && y < Simulator.WorldHeight)
+            if (x >= 0 && y >= 0 && x < Swamp.WorldWidth && y < Swamp.WorldHeight)
             {
                 var unit = World.GetUnit(x, y);
                 if (unit != null)
@@ -328,7 +323,7 @@ namespace Simulator
                 else
                 {
                     ErrorHandler.KnockKnock(null, "Error in receiving int from string.", false);
-                    seed = RandomSeed;
+                    seed = World.Seed;
                     return false;
                 }
             }

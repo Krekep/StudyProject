@@ -1,11 +1,7 @@
 ﻿using SFML.Graphics;
 using SFML.System;
-
 using Simulator.World;
-
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 using TGUI;
 
@@ -14,10 +10,9 @@ namespace Simulator
     public static class WorldTextConfigurator
     {
         public const int WorldTextLeftBound = Program.LeftMapOffset + 20;
-        public const int WorldTextTopBound = Program.TopMapOffset + Simulator.WorldHeight * Program.ViewScale + + 10;
+        public const int WorldTextTopBound = Program.TopMapOffset + Swamp.WorldHeight * Program.ViewScale + + 10;
         public const int WorldTextHeight = (Program.CharacterSize + 5) * AmountWorldInfo;
         public const int WorldTextWidth = 100;
-        private static int choosenID;
 
         /// <summary>
         /// Unit text blocks: 0 - ground heat, 1 - sun heat, cell fall chance, environment density
@@ -27,7 +22,6 @@ namespace Simulator
 
         static WorldTextConfigurator()
         {
-            choosenID = -1;
             worldDescription = new Dictionary<int, (Label, TextBox)>(AmountWorldInfo);
             ConfigureWorldDescription();
         }

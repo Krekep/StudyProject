@@ -1,10 +1,5 @@
 ﻿using SFML.Graphics;
-
-using Simulator.World;
-
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Simulator.World
 {
@@ -27,7 +22,7 @@ namespace Simulator.World
 
         public int Value()
         {
-            return Simulator.WaitValue * 4;
+            return Swamp.WaitValue * 4;
         }
     }
 }

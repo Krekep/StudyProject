@@ -1,9 +1,6 @@
 ﻿using SFML.Graphics;
 using SFML.System;
-
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 using TGUI;
 
@@ -100,14 +97,12 @@ namespace Simulator
 
         private static void ImportButton_Click(object sender, SignalArgsVector2f e)
         {
-            for (int i = 0; i < AmountOfButtons; i++)
-            {
-                if (e.Value.Y > importTopSide[i])
-                {
-                    string fileName = importName[i].Text;
-                    WorldImporter.Import(fileName, Program.World);
-                }
-            }
+            var y = ((Button)sender).Position.Y;
+            int i = 0;
+            while (i < AmountOfButtons && y > importTopSide[i])
+                i += 1;
+            string fileName = importName[i].Text;
+            WorldImporter.Import(fileName, Program.World);
         }
 
         public static void Open()

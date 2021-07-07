@@ -1,10 +1,8 @@
 ﻿using SFML.Graphics;
 using SFML.System;
-using TGUI;
+using Simulator.World;
 
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Simulator
 {
@@ -12,8 +10,8 @@ namespace Simulator
     {
         private const int Left = 0 * Program.ViewScale + Program.LeftMapOffset;
         private const int Top = 0 * Program.ViewScale + Program.TopMapOffset;
-        private const int Bottom = Simulator.WorldHeight * Program.ViewScale + 1 + Program.TopMapOffset;
-        private const int Right = Simulator.WorldWidth * Program.ViewScale + 1 + Program.LeftMapOffset;
+        private const int Bottom = Swamp.WorldHeight * Program.ViewScale + 1 + Program.TopMapOffset;
+        private const int Right = Swamp.WorldWidth * Program.ViewScale + 1 + Program.LeftMapOffset;
 
         private static Vertex[] bottomLine = new Vertex[2] { new Vertex(new Vector2f(Left, Bottom)),
                                                       new Vertex(new Vector2f(Right, Bottom))};
@@ -25,16 +23,35 @@ namespace Simulator
                                                      new Vertex(new Vector2f(Right, Bottom))};
 
         private static RectangleShape unitShape = new RectangleShape(new Vector2f(Program.ViewScale, Program.ViewScale));
-
+        private static List<Unit> relatives = new List<Unit>(500);
         public static void Draw()
         {
             List<Unit> temp = Program.World.Units;
+            List<Unit> relatives = new List<Unit>(500);
             Program.Window.Draw(rightLine, PrimitiveType.Lines);
             Program.Window.Draw(topLine, PrimitiveType.Lines);
             Program.Window.Draw(leftLine, PrimitiveType.Lines);
             Program.Window.Draw(bottomLine, PrimitiveType.Lines);
+            unitShape.OutlineThickness = 0;
             foreach (Unit unit in temp)
             {
+                if (UnitTextConfigurator.ChoosenUnit != null && unit.Parent == UnitTextConfigurator.ChoosenUnit.Parent)
+                {
+                    relatives.Add(unit);
+                    continue;
+                }
+                unitShape.Position = new Vector2f(Program.LeftMapOffset + unit.Coords[0] * Program.ViewScale, Program.TopMapOffset + unit.Coords[1] * Program.ViewScale);
+                unitShape.FillColor = ChooseColor(unit);
+
+                Program.Window.Draw(unitShape);
+            }
+
+            foreach (Unit unit in relatives)
+            {
+                unitShape.OutlineColor = Color.White;
+                unitShape.OutlineThickness = 1;
+                if (UnitTextConfigurator.ChoosenUnit == unit)
+                    unitShape.OutlineColor = Color.Green;
                 unitShape.Position = new Vector2f(Program.LeftMapOffset + unit.Coords[0] * Program.ViewScale, Program.TopMapOffset + unit.Coords[1] * Program.ViewScale);
                 unitShape.FillColor = ChooseColor(unit);
 
@@ -48,14 +65,14 @@ namespace Simulator
             {
                 case TypeOfMap.MapOfEnergy:
                     {
-                        if (unit.Status == UnitStatus.Dead)
+                        if (unit.Status == UnitStatus.Corpse)
                             return Program.Gray;
-                        return new Color(255, (byte)((unit.Energy + .0) / Simulator.EnergyLimit * 255), 0);
+                        return Storage.EnergyColors[unit.Energy * 255 / Swamp.EnergyLimit];
                     }
                 case TypeOfMap.MapOfActions:
                     {
-                        if (unit.Status == UnitStatus.Dead)
-                            return Color.Black;
+                        if (unit.Status == UnitStatus.Corpse)
+                            return Program.DarkGray;
                         return unit.GetCurrentAction().ActionColor();
                     }
                 default:

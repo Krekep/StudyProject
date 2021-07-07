@@ -1,14 +1,11 @@
-﻿using Simulator.World;
+﻿using System;
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Simulator
+namespace Simulator.World
 {
     public enum UnitStatus : int
     { 
-        Dead = -1,
+        Dead = -2,
+        Corpse = -1,
         Alive = 0,
         Divide = 1
     }
@@ -20,11 +17,17 @@ namespace Simulator
         public IAction[][] Genes { get; private set; }
         private int[] currentAction;
         public int LastDirection { get; private set; }
-        public int[] Direction { get; private set; }  // unit's favorite direction (x, y) - (+/-1, +/-1)
+        /// <summary>
+        /// Unit's favorite direction (x, y) - (+/-1, +/-1)
+        /// </summary>
+        public int[] Direction { get; private set; }
         public int Energy { get; private set; }
         public UnitStatus Status { get; private set; }
         public int Chlorophyl { get; private set; }
-        public Unit(int energy, int lastDirection, int capacity, int chlorophyl, int status, int[] position, int[] directions, IAction[][] genes)
+        public int AttackPower { get; private set; }
+        public int Parent { get; set; }
+
+        public Unit(int energy, int lastDirection, int capacity, int chlorophyl, int attackPower, int status, int[] position, int[] directions, IAction[][] genes, int parent)
         {
             this.Energy = energy;
             this.Coords = position;
@@ -32,12 +35,14 @@ namespace Simulator
             this.Genes = genes;
             this.Capacity = capacity;
             this.Chlorophyl = chlorophyl;
+            this.AttackPower = attackPower;
+            this.Parent = parent;
 
             LastDirection = lastDirection;
             currentAction = new int[2] { 0, 0 };
             Status = (UnitStatus)status;
         }
-        public Unit(int energy, int[] position, int[] directions, IAction[][] genes, int capacity, int chlorophyl)
+        public Unit(int energy, int[] position, int[] directions, IAction[][] genes, int capacity, int chlorophyl, int attackPower, int parent)
         {
             this.Energy = energy;
             this.Coords = position;
@@ -45,6 +50,8 @@ namespace Simulator
             this.Genes = genes;
             this.Capacity = capacity;
             this.Chlorophyl = chlorophyl;
+            this.AttackPower = attackPower;
+            this.Parent = parent;
 
             LastDirection = 4;
             currentAction = new int[2] { 0, 0 };
@@ -76,9 +83,13 @@ namespace Simulator
             var unit = Storage.CurrentWorld.GetUnit(targetPosition[0], targetPosition[1]);
             if (unit != null && LastDirection != 4)
             {
-                int temp = -Math.Min(this.Energy / 6, unit.Energy);
+                int temp = -Math.Min(this.Energy / (Swamp.AttackLimit * 2 - AttackPower), unit.Energy);
+                if (unit.Status == UnitStatus.Corpse)
+                {
+                    temp = unit.Energy / AttackPower;
+                }
                 unit.TakeEnergy(temp);
-                this.TakeEnergy(-temp);
+                this.TakeEnergy(-temp * 7 / 10);
                 return true;
             }
             return false;
@@ -87,12 +98,15 @@ namespace Simulator
         public void TakeEnergy(int energy)
         {
             Energy += energy;
+            // move below code to Swamp.RecountEnergy method ???
             if (Energy <= 0)
             {
-                Energy = 0;
-                Status = UnitStatus.Dead;
+                if (Energy <= Swamp.DeathLimit)
+                    Status = UnitStatus.Dead;
+                else
+                    Status = UnitStatus.Corpse;
             }
-            if (Energy > Simulator.EnergyLimit)
+            if (Energy > Swamp.EnergyLimit)
             {
                 Status = UnitStatus.Divide;
             }
@@ -105,15 +119,17 @@ namespace Simulator
             {
                 Storage.CurrentWorld.AddUnit(child);
                 Energy /= 2;
-                Energy -= Simulator.EnergyLimit / 100;
+                Energy -= Swamp.EnergyLimit / 100;
             }
             else
-                Energy = Simulator.EnergyLimit;
+                Energy = Swamp.EnergyLimit;
             Status = UnitStatus.Alive;
         }
 
         public void Process()
         {
+            if (Status == UnitStatus.Corpse)
+                return;
             var temp = Genes[currentAction[0]];
             temp[currentAction[1]].Process(this);
             currentAction[1] += 1;

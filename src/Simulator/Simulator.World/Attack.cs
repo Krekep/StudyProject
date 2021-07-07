@@ -1,9 +1,5 @@
 ﻿using SFML.Graphics;
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace Simulator.World
 {
     public class Attack : IAction
@@ -17,7 +13,7 @@ namespace Simulator.World
         {
             for (int i = 0; i < 5; i++)
             {
-                int t = Simulator.Random.Next(101);
+                int t = Swamp.Random.Next(101);
                 if (t < 50)
                 {
                     if (unit.Attack(unit.LastDirection / 3 - 1, unit.LastDirection % 3 - 1))
@@ -31,7 +27,7 @@ namespace Simulator.World
                         int y = 0;
                         if (unit.Direction[0] != 0 && unit.Direction[1] != 0)
                         {
-                            if (Simulator.Random.Next(0, 2) == 0)
+                            if (Swamp.Random.Next(0, 2) == 0)
                             {
                                 x = (unit.Direction[0] - deep * unit.Direction[0]);
                                 y = unit.Direction[1];
@@ -44,13 +40,13 @@ namespace Simulator.World
                         }
                         else if (unit.Direction[0] == 0 && unit.Direction[1] == 0)
                         {
-                            x = Simulator.Random.Next(-1, 2);
-                            y = Simulator.Random.Next(-1, 2);
+                            x = Swamp.Random.Next(-1, 2);
+                            y = Swamp.Random.Next(-1, 2);
                         }
                         else
                         {
-                            x = unit.Direction[0] + unit.Direction[0] * deep * (Simulator.Random.Next(0, 2) == 0 ? -1 : 1);
-                            y = unit.Direction[1] + unit.Direction[1] * deep * (Simulator.Random.Next(0, 2) == 0 ? -1 : 1);
+                            x = unit.Direction[0] + unit.Direction[0] * deep * (Swamp.Random.Next(0, 2) == 0 ? -1 : 1);
+                            y = unit.Direction[1] + unit.Direction[1] * deep * (Swamp.Random.Next(0, 2) == 0 ? -1 : 1);
                         }
                         if (unit.Attack(x, y))
                             return;
@@ -58,7 +54,7 @@ namespace Simulator.World
                 }
                 else
                 {
-                    int direction = Simulator.Random.Next(9);
+                    int direction = Swamp.Random.Next(9);
                     if (unit.Attack(direction / 3 - 1, direction % 3 - 1))
                         return;
                 }
@@ -72,7 +68,7 @@ namespace Simulator.World
 
         public int Value()
         {
-            return Simulator.WaitValue * 5;
+            return Swamp.WaitValue * 5;
         }
     }
 }

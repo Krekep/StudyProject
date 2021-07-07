@@ -29,7 +29,7 @@ namespace Simulator
                 files[i] = files[i].Substring(Content.PathToSaves.Length, files[i].Length - Content.PathToSaves.Length - Content.FileExtension.Length);
             }
         }
-        public static void Import(string fileName, Simulator world)
+        public static void Import(string fileName, Swamp world)
         {
             using (StreamReader input = new StreamReader(Content.PathToSaves + fileName + Content.FileExtension))
             {
@@ -38,13 +38,13 @@ namespace Simulator
                 {
                     if (!ReadState(input))
                     {
-                        Events.ErrorHandler.KnockKnock(null, "World loading error. Invalid save.", false);
+                        Events.ErrorHandler.KnockKnock(null, "Swamp loading error. Invalid save.", false);
                         return;
                     }
                 }
                 else
                 {
-                    Events.ErrorHandler.KnockKnock(null, "World loading error. Invalid save.", false);
+                    Events.ErrorHandler.KnockKnock(null, "Swamp loading error. Invalid save.", false);
                     return;
                 }
                 line = input.ReadLine();
@@ -52,13 +52,13 @@ namespace Simulator
                 {
                     if (!ReadParams(input))
                     {
-                        Events.ErrorHandler.KnockKnock(null, "World loading error. Invalid save.", false);
+                        Events.ErrorHandler.KnockKnock(null, "Swamp loading error. Invalid save.", false);
                         return;
                     }
                 }
                 else
                 {
-                    Events.ErrorHandler.KnockKnock(null, "World loading error. Invalid save.", false);
+                    Events.ErrorHandler.KnockKnock(null, "Swamp loading error. Invalid save.", false);
                     return;
                 }
                 line = input.ReadLine();
@@ -66,17 +66,16 @@ namespace Simulator
                 {
                     if (!ReadUnits(input))
                     {
-                        Events.ErrorHandler.KnockKnock(null, "World loading error. Invalid save.", false);
+                        Events.ErrorHandler.KnockKnock(null, "Swamp loading error. Invalid save.", false);
                         return;
                     }
                 }
                 else
                 {
-                    Events.ErrorHandler.KnockKnock(null, "World loading error. Invalid save.", false);
+                    Events.ErrorHandler.KnockKnock(null, "Swamp loading error. Invalid save.", false);
                     return;
                 }
             }
-
             world.Import(seed, timer, groundPower, sunPower, envDensity, dropChance, units);
         }
 
@@ -89,6 +88,8 @@ namespace Simulator
             int energy = 0;
             int lastDirection = 0;
             int chlorophyl = 0;
+            int attackPower = 0;
+            int parent = 0;
             int capacity = 0;
             int status = 0;
             int[] position = new int[2];
@@ -98,19 +99,23 @@ namespace Simulator
 
             while (line != null && line[1] == '#' && fl)
             {
-                fl = false;
-                line = input.ReadLine();
-                fl = fl || int.TryParse(line.Trim().Substring("Energy=".Length), out energy);
-                line = input.ReadLine();
-                fl = fl && int.TryParse(line.Trim().Substring("LastDirection=".Length), out lastDirection);
-                line = input.ReadLine();
-                fl = fl && int.TryParse(line.Trim().Substring("Chlorophyl=".Length), out chlorophyl);
-                line = input.ReadLine();
-                fl = fl && int.TryParse(line.Trim().Substring("Capacity=".Length), out capacity);
-                line = input.ReadLine();
-                fl = fl && int.TryParse(line.Trim().Substring("Status=".Length), out status);
                 try
                 {
+                    fl = false;
+                    line = input.ReadLine();
+                    fl = fl || int.TryParse(line.Trim().Substring("Energy=".Length), out energy);
+                    line = input.ReadLine();
+                    fl = fl && int.TryParse(line.Trim().Substring("LastDirection=".Length), out lastDirection);
+                    line = input.ReadLine();
+                    fl = fl && int.TryParse(line.Trim().Substring("Chlorophyl=".Length), out chlorophyl);
+                    line = input.ReadLine();
+                    fl = fl && int.TryParse(line.Trim().Substring("AttackPower=".Length), out attackPower);
+                    line = input.ReadLine();
+                    fl = fl && int.TryParse(line.Trim().Substring("Capacity=".Length), out capacity);
+                    line = input.ReadLine();
+                    fl = fl && int.TryParse(line.Trim().Substring("Parent=".Length), out parent);
+                    line = input.ReadLine();
+                    fl = fl && int.TryParse(line.Trim().Substring("Status=".Length), out status);
                     line = input.ReadLine();
                     position = line.Trim().Substring("Position=".Length).Split(' ').Select(Int32.Parse).ToArray();
                     line = input.ReadLine();
@@ -123,7 +128,7 @@ namespace Simulator
                 {
                     fl = false;
                 }
-                units.Add(new Unit(energy, lastDirection, capacity, chlorophyl, status, position, direction, genes));
+                units.Add(new Unit(energy, lastDirection, capacity, chlorophyl, attackPower, status, position, direction, genes, parent));
                 line = input.ReadLine();
             }
             return fl;

@@ -1,9 +1,5 @@
 ﻿using SFML.Graphics;
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace Simulator.World
 {
     public class Wait : IAction
@@ -25,7 +21,7 @@ namespace Simulator.World
 
         public int Value()
         {
-            return Simulator.WaitValue;
+            return Swamp.WaitValue;
         }
     }
 }

@@ -1,17 +1,23 @@
-﻿using Simulator.World;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace Simulator
+namespace Simulator.World
 {
-    public class Simulator
+    public class Swamp
     {
         public const int WorldHeight = 100;
         public const int WorldWidth = 200;
         public const int EnergyLimit = 1500;
+        public const int DeathLimit = -300;
         public const int EnergyDegradation = -1;
-        public const int WaitValue = 100;  // based point for other actions value
+        /// <summary>
+        /// Based point for other actions value
+        /// </summary>
+        public const int WaitValue = 100;
+        public const int AttackLimit = 20;
+        public const int ChlorophylLimit = 20;
+        public const int AttackValue = 100;
+        public const int ChlorophylValue = 75;
 
         // Changeable parameters
         public int GroundPower { get; private set; }
@@ -19,7 +25,7 @@ namespace Simulator
         public double EnvDensity { get; private set; }
         public double DropChance { get; private set; }
 
-        // World addition info
+        // Swamp addition info
         public int Seed { get; private set; }
         public int Timer { get; private set; }
 
@@ -47,7 +53,7 @@ namespace Simulator
 
             for (int i = 0; i < 500; i++)
             {
-                Unit unit = Creator.CreateUnit(2000, this);
+                Unit unit = Creator.CreateUnit(5000, i);
                 Units.Add(unit);
                 map[unit.Coords[0], unit.Coords[1]] = unit;
             }
@@ -136,7 +142,20 @@ namespace Simulator
         private void RecountEnergy()
         {
             foreach (Unit unit in Units)
-                unit.TakeEnergy((int)(GroundPower * Math.Pow(EnvDensity, WorldHeight - unit.Coords[1])));
+            {
+                int ground = (int)(GroundPower * Math.Pow(EnvDensity, WorldHeight - unit.Coords[1]));
+                int sun = (int)(SunPower * Math.Pow(EnvDensity, unit.Coords[1]));
+                if (unit.Status != UnitStatus.Corpse)
+                {
+                    unit.TakeEnergy(sun);
+                    unit.TakeEnergy(ground);
+                }
+                else
+                {
+                    unit.TakeEnergy(-sun);
+                    unit.TakeEnergy(-ground);
+                }
+            }
             foreach (Unit unit in Units)
                 unit.TakeEnergy(EnergyDegradation);
             //foreach (Unit unit in units)

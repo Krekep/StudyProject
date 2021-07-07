@@ -5,7 +5,6 @@ using Simulator.World;
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using TGUI;
 
@@ -13,24 +12,23 @@ namespace Simulator
 {
     public static class UnitTextConfigurator
     {
-        public const int UnitTextLeftBound = Program.LeftMapOffset + Simulator.WorldWidth * Program.ViewScale + 20;
+        public const int UnitTextLeftBound = Program.LeftMapOffset + Swamp.WorldWidth * Program.ViewScale + 20;
         public const int UnitTextTopBound = Program.TopMapOffset + (Program.CharacterSize + 5) * 3 + 10;
         public const int UnitTextHeight = (Program.CharacterSize + 20) * AmountUnitInfo;
         public const int UnitTextWidth = 100;
 
-        private static int choosenID;
-
         /// <summary>
-        /// Unit text blocks: 0 - unit energy, 1 - unit genes as integer sequence
+        /// Unit text blocks: 0 - unit energy, 1 - unit genes as integer sequence, 2 - chlorophyl,
+        /// 3 - last direction, 4 - favorite direction, 5 - capacity, 6 - coords,
+        /// 7 - attack power, 8 - parent
         /// </summary>
         static Dictionary<int, (Label, TextBox)> unitDescription;
-        public const int AmountUnitInfo = 2;
+        public const int AmountUnitInfo = 9;
 
         public static Unit ChoosenUnit { get; private set; }
 
         static UnitTextConfigurator()
         {
-            choosenID = -1;
             ChoosenUnit = null;
             unitDescription = new Dictionary<int, (Label, TextBox)>(AmountUnitInfo);
             ConfigureUnitDescription();
@@ -55,14 +53,105 @@ namespace Simulator
             textBoxTemp = new TextBox();
             tempLabel.Text = "Genes: ";
             tempLabel.TextSize = Program.CharacterSize;
-            tempLabel.Position = new Vector2f(UnitTextLeftBound, UnitTextTopBound + Program.CharacterSize + 7);
-            textBoxTemp.Position = new Vector2f(UnitTextLeftBound + tempLabel.Size.X, UnitTextTopBound + Program.CharacterSize + 7);
+            tempLabel.Position = new Vector2f(UnitTextLeftBound, UnitTextTopBound + Program.CharacterSize + 10);
+            textBoxTemp.Position = new Vector2f(UnitTextLeftBound + tempLabel.Size.X, UnitTextTopBound + Program.CharacterSize + 10);
             textBoxTemp.TextSize = Program.CharacterSize;
             textBoxTemp.Size = new Vector2f(Program.CharacterSize * 4, Program.CharacterSize + 10);
             //textBoxTemp.Renderer.BackgroundColor = Color.Black;
             Program.MainGui.Add(tempLabel);
             Program.MainGui.Add(textBoxTemp);
             unitDescription[1] = (tempLabel, textBoxTemp);
+
+            tempLabel = new Label();
+            textBoxTemp = new TextBox();
+            tempLabel.Text = "Chlorophyl: ";
+            tempLabel.TextSize = Program.CharacterSize;
+            tempLabel.Position = new Vector2f(UnitTextLeftBound, UnitTextTopBound + (Program.CharacterSize + 10) * 2);
+            textBoxTemp.Position = new Vector2f(UnitTextLeftBound + tempLabel.Size.X, UnitTextTopBound + (Program.CharacterSize + 10) * 2);
+            textBoxTemp.TextSize = Program.CharacterSize;
+            textBoxTemp.Size = new Vector2f(Program.CharacterSize * 4, Program.CharacterSize + 10);
+            textBoxTemp.Renderer.BackgroundColor = Color.Black;
+            Program.MainGui.Add(tempLabel);
+            Program.MainGui.Add(textBoxTemp);
+            unitDescription[2] = (tempLabel, textBoxTemp);
+
+            tempLabel = new Label();
+            textBoxTemp = new TextBox();
+            tempLabel.Text = "Last Direction: ";
+            tempLabel.TextSize = Program.CharacterSize;
+            tempLabel.Position = new Vector2f(UnitTextLeftBound, UnitTextTopBound + (Program.CharacterSize + 10) * 3);
+            textBoxTemp.Position = new Vector2f(UnitTextLeftBound + tempLabel.Size.X, UnitTextTopBound + (Program.CharacterSize + 10) * 3);
+            textBoxTemp.TextSize = Program.CharacterSize;
+            textBoxTemp.Size = new Vector2f(Program.CharacterSize * 4, Program.CharacterSize + 10);
+            textBoxTemp.Renderer.BackgroundColor = Color.Black;
+            Program.MainGui.Add(tempLabel);
+            Program.MainGui.Add(textBoxTemp);
+            unitDescription[3] = (tempLabel, textBoxTemp);
+
+            tempLabel = new Label();
+            textBoxTemp = new TextBox();
+            tempLabel.Text = "Favorite Direction: ";
+            tempLabel.TextSize = Program.CharacterSize;
+            tempLabel.Position = new Vector2f(UnitTextLeftBound, UnitTextTopBound + (Program.CharacterSize + 10) * 4);
+            textBoxTemp.Position = new Vector2f(UnitTextLeftBound + tempLabel.Size.X, UnitTextTopBound + (Program.CharacterSize + 10) * 4);
+            textBoxTemp.TextSize = Program.CharacterSize;
+            textBoxTemp.Size = new Vector2f(Program.CharacterSize * 4, Program.CharacterSize + 10);
+            textBoxTemp.Renderer.BackgroundColor = Color.Black;
+            Program.MainGui.Add(tempLabel);
+            Program.MainGui.Add(textBoxTemp);
+            unitDescription[4] = (tempLabel, textBoxTemp);
+
+            tempLabel = new Label();
+            textBoxTemp = new TextBox();
+            tempLabel.Text = "Capacity: ";
+            tempLabel.TextSize = Program.CharacterSize;
+            tempLabel.Position = new Vector2f(UnitTextLeftBound, UnitTextTopBound + (Program.CharacterSize + 10) * 5);
+            textBoxTemp.Position = new Vector2f(UnitTextLeftBound + tempLabel.Size.X, UnitTextTopBound + (Program.CharacterSize + 10) * 5);
+            textBoxTemp.TextSize = Program.CharacterSize;
+            textBoxTemp.Size = new Vector2f(Program.CharacterSize * 4, Program.CharacterSize + 10);
+            textBoxTemp.Renderer.BackgroundColor = Color.Black;
+            Program.MainGui.Add(tempLabel);
+            Program.MainGui.Add(textBoxTemp);
+            unitDescription[5] = (tempLabel, textBoxTemp);
+
+            tempLabel = new Label();
+            textBoxTemp = new TextBox();
+            tempLabel.Text = "Coords: ";
+            tempLabel.TextSize = Program.CharacterSize;
+            tempLabel.Position = new Vector2f(UnitTextLeftBound, UnitTextTopBound + (Program.CharacterSize + 10) * 6);
+            textBoxTemp.Position = new Vector2f(UnitTextLeftBound + tempLabel.Size.X, UnitTextTopBound + (Program.CharacterSize + 10) * 6);
+            textBoxTemp.TextSize = Program.CharacterSize;
+            textBoxTemp.Size = new Vector2f(Program.CharacterSize * 8, Program.CharacterSize + 10);
+            textBoxTemp.Renderer.BackgroundColor = Color.Black;
+            Program.MainGui.Add(tempLabel);
+            Program.MainGui.Add(textBoxTemp);
+            unitDescription[6] = (tempLabel, textBoxTemp);
+
+            tempLabel = new Label();
+            textBoxTemp = new TextBox();
+            tempLabel.Text = "AttackPower: ";
+            tempLabel.TextSize = Program.CharacterSize;
+            tempLabel.Position = new Vector2f(UnitTextLeftBound, UnitTextTopBound + (Program.CharacterSize + 10) * 7);
+            textBoxTemp.Position = new Vector2f(UnitTextLeftBound + tempLabel.Size.X, UnitTextTopBound + (Program.CharacterSize + 10) * 7);
+            textBoxTemp.TextSize = Program.CharacterSize;
+            textBoxTemp.Size = new Vector2f(Program.CharacterSize * 8, Program.CharacterSize + 10);
+            textBoxTemp.Renderer.BackgroundColor = Color.Black;
+            Program.MainGui.Add(tempLabel);
+            Program.MainGui.Add(textBoxTemp);
+            unitDescription[7] = (tempLabel, textBoxTemp);
+
+            tempLabel = new Label();
+            textBoxTemp = new TextBox();
+            tempLabel.Text = "Parent: ";
+            tempLabel.TextSize = Program.CharacterSize;
+            tempLabel.Position = new Vector2f(UnitTextLeftBound, UnitTextTopBound + (Program.CharacterSize + 10) * 8);
+            textBoxTemp.Position = new Vector2f(UnitTextLeftBound + tempLabel.Size.X, UnitTextTopBound + (Program.CharacterSize + 10) * 8);
+            textBoxTemp.TextSize = Program.CharacterSize;
+            textBoxTemp.Size = new Vector2f(Program.CharacterSize * 8, Program.CharacterSize + 10);
+            textBoxTemp.Renderer.BackgroundColor = Color.Black;
+            Program.MainGui.Add(tempLabel);
+            Program.MainGui.Add(textBoxTemp);
+            unitDescription[8] = (tempLabel, textBoxTemp);
         }
 
         public static void ChooseUnit(Unit unit)
@@ -71,6 +160,13 @@ namespace Simulator
             unitDescription[0].Item2.Text = unit.Energy.ToString();
             unitDescription[1].Item2.Text = GetStringGenes(ChoosenUnit);
             unitDescription[1].Item2.Size = new Vector2f(unitDescription[1].Item2.Text.Length * Program.CharacterSize, Program.CharacterSize + 10);
+            unitDescription[2].Item2.Text = unit.Chlorophyl.ToString();
+            unitDescription[3].Item2.Text = unit.LastDirection.ToString();
+            unitDescription[4].Item2.Text = $"[{unit.Direction[0]},{unit.Direction[1]}]";
+            unitDescription[5].Item2.Text = unit.Capacity.ToString();
+            unitDescription[6].Item2.Text = $"[{unit.Coords[0]},{unit.Coords[1]}]";
+            unitDescription[7].Item2.Text = unit.AttackPower.ToString();
+            unitDescription[8].Item2.Text = unit.Parent.ToString();
         }
 
         private static string GetStringGenes(Unit unit)
@@ -230,6 +326,13 @@ namespace Simulator
                     }
                     unitDescription[0].Item2.Text = $"{ChoosenUnit.Energy}";
                     unitDescription[1].Item2.Text = GetStringGenes(ChoosenUnit);
+                    unitDescription[2].Item2.Text = ChoosenUnit.Chlorophyl.ToString();
+                    unitDescription[3].Item2.Text = ChoosenUnit.LastDirection.ToString();
+                    unitDescription[4].Item2.Text = $"[{ChoosenUnit.Direction[0]},{ChoosenUnit.Direction[1]}]";
+                    unitDescription[5].Item2.Text = ChoosenUnit.Capacity.ToString();
+                    unitDescription[6].Item2.Text = $"[{ChoosenUnit.Coords[0]},{ChoosenUnit.Coords[1]}]";
+                    unitDescription[7].Item2.Text = ChoosenUnit.AttackPower.ToString();
+                    unitDescription[8].Item2.Text = ChoosenUnit.Parent.ToString();
                 }
                 else
                 {

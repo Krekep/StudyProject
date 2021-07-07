@@ -1,6 +1,8 @@
 ﻿using System.IO;
 using System.Text;
 
+using Simulator.World;
+
 namespace Simulator
 {
     public static class WorldExporter
@@ -10,11 +12,11 @@ namespace Simulator
             
         }
 
-        public static void Export(string name, Simulator world)
+        public static void Export(string name, Swamp world)
         {
             if (name.Equals(""))
             {
-                Events.ErrorHandler.KnockKnock(null, "World saving error. Empty name.", false);
+                Events.ErrorHandler.KnockKnock(null, "Swamp saving error. Empty name.", false);
                 return;
             }
             using (StreamWriter output = new StreamWriter(Content.PathToSaves + name + Content.FileExtension))
@@ -27,7 +29,7 @@ namespace Simulator
             Events.ErrorHandler.KnockKnock(null, "Success world saving.", true);
         }
 
-        private static string PackState(Simulator world)
+        private static string PackState(Swamp world)
         {
             string result = $"#State:\n" +
                 $"\tSeed={world.Seed}\n" +
@@ -35,7 +37,7 @@ namespace Simulator
             return result;
         }
 
-        private static string PackParams(Simulator world)
+        private static string PackParams(Swamp world)
         {
             string result = $"#Params:\n" +
                 $"\tGroundPower={world.GroundPower}\n" +
@@ -45,7 +47,7 @@ namespace Simulator
             return result;
         }
 
-        private static string PackUnits(Simulator world)
+        private static string PackUnits(Swamp world)
         {
             StringBuilder result = new StringBuilder($"#Units:\n", 10000);
             int i = 0;
@@ -55,7 +57,9 @@ namespace Simulator
                 string temp = $"\tEnergy={unit.Energy}\n" +
                     $"\tLastDirection={unit.LastDirection}\n" +
                     $"\tChlorophyl={unit.Chlorophyl}\n" +
+                    $"\tAttackPower={unit.AttackPower}\n" +
                     $"\tCapacity={unit.Capacity}\n" +
+                    $"\tParent={unit.Parent}\n" +
                     $"\tStatus={(int)unit.Status}\n" +
                     $"\tPosition={unit.Coords[0]} {unit.Coords[1]}\n" +
                     $"\tDirection={unit.Direction[0]} {unit.Direction[1]}\n" +

@@ -1,26 +1,23 @@
-﻿using Simulator.World;
+﻿using System.Linq;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace Simulator
+namespace Simulator.World
 {
     static class Creator
     {
 
-        public static Unit CreateUnit(int capacity, Simulator world)
+        public static Unit CreateUnit(int capacity, int number)
         {
-            int x = Simulator.Random.Next(Simulator.WorldWidth);
-            int y = Simulator.Random.Next(Simulator.WorldHeight);
-            int energy = Simulator.EnergyLimit / 2;
-            int amountOfBlocks = Simulator.Random.Next(1, Storage.AmountBlocks);
+            int x = Swamp.Random.Next(Swamp.WorldWidth);
+            int y = Swamp.Random.Next(Swamp.WorldHeight);
+            int energy = Swamp.EnergyLimit / 2;
+            int amountOfBlocks = Swamp.Random.Next(1, Storage.AmountBlocks);
             int[] dir = FillDirection();
             IAction[][] genes = FillGenes(amountOfBlocks, ref capacity);
             int chlorophyl = FillChlorophyl(ref capacity);
+            int attackPower = FillAttackPower(ref capacity);
 
-            Unit unit = new Unit(energy, new int[] { x, y }, dir,  genes, capacity, chlorophyl);
+            Unit unit = new Unit(energy, new int[] { x, y }, dir,  genes, capacity, chlorophyl, attackPower, number);
 
             return unit;
         }
@@ -44,35 +41,38 @@ namespace Simulator
                 return null;
             int energy = parent.Energy / 2;
             int[] dir = parent.Direction.Clone() as int[];
-            if (Simulator.Random.Next(10) < 2)
+            if (Swamp.Random.Next(10) < 2)
                 dir = MutateDirection(dir);
             int capacity = parent.Capacity;
             IAction[][] genes = parent.Genes.Select(t => t.ToArray()).ToArray();
-            if (Simulator.Random.Next(10) < 3)
+            if (Swamp.Random.Next(10) < 3)
                 genes = MutateGenes(genes, ref capacity);
             int chlorophyl = parent.Chlorophyl;
-            if (Simulator.Random.Next(10) < 2)
-                MutateChlorophyl(ref chlorophyl, ref capacity);
-            Unit child = new Unit(energy, new int[] { x, y }, dir, genes, capacity, chlorophyl);
+            int attackPower = parent.AttackPower;
+            if (Swamp.Random.Next(10) < 2)
+                MutateChlorophyl(ref chlorophyl, ref capacity, attackPower);
+            if (Swamp.Random.Next(10) < 2)
+                MutateAttackPower(ref attackPower, ref capacity, chlorophyl);
+            Unit child = new Unit(energy, new int[] { x, y }, dir, genes, capacity, chlorophyl, attackPower, parent.Parent);
             return child;
         }
 
         private static IAction[][] MutateGenes(IAction[][] genes, ref int capacity)
         {
-            if (Simulator.Random.Next(2) == 0)
+            if (Swamp.Random.Next(2) == 0)
             {
-                int oldBlock = Simulator.Random.Next(genes.Length);
-                int newBlock = Simulator.Random.Next(Storage.AmountBlocks);
-                capacity += Storage.CalculateValue(genes[oldBlock]);
-                if (capacity - Storage.ValuesOfBlocks[newBlock] >= 0)
+                int oldBlock = Swamp.Random.Next(genes.Length);
+                int newBlock = Swamp.Random.Next(Storage.AmountBlocks);
+                if (capacity + Storage.CalculateValue(genes[oldBlock]) - Storage.ValuesOfBlocks[newBlock] >= 0)
                 {
+                    capacity += Storage.CalculateValue(genes[oldBlock]);
                     capacity -= Storage.ValuesOfBlocks[newBlock];
                     genes[oldBlock] = Storage.GenesBlocks[newBlock];
                 }
             }
             else
             {
-                int newBlock = Simulator.Random.Next(Storage.AmountBlocks);
+                int newBlock = Swamp.Random.Next(Storage.AmountBlocks);
                 if (capacity - Storage.ValuesOfBlocks[newBlock] >= 0)
                 {
                     capacity -= Storage.ValuesOfBlocks[newBlock];
@@ -86,46 +86,71 @@ namespace Simulator
             return genes;
         }
 
-        private static void MutateChlorophyl(ref int chlorophyl, ref int capacity)
+        private static void MutateChlorophyl(ref int chlorophyl, ref int capacity, int attackPower)
         {
-            if (Simulator.Random.Next(2) == 0 && capacity >= 75)
+            if (Swamp.Random.Next(2) == 0 && capacity >= Swamp.ChlorophylValue && attackPower < Swamp.ChlorophylLimit / chlorophyl)
             {
-                capacity -= 75;
+                capacity -= Swamp.ChlorophylValue;
                 chlorophyl += 1;
             }
             else if (chlorophyl > 1)
             {
-                capacity += 75;
+                capacity += Swamp.ChlorophylValue;
                 chlorophyl -= 1;
+            }
+        }
+
+        private static void MutateAttackPower(ref int attackPower, ref int capacity, int chlorophyl)
+        {
+            if (Swamp.Random.Next(2) == 0 && capacity >= Swamp.AttackValue && attackPower < Swamp.AttackLimit / chlorophyl)
+            {
+                capacity -= Swamp.AttackValue;
+                attackPower += 1;
+            }
+            else if (attackPower > 1)
+            {
+                capacity += Swamp.AttackValue;
+                attackPower -= 1;
             }
         }
 
         private static int[] MutateDirection(int[] direction)
         {
             int[] delta = new int[2];
-            delta[0] = Simulator.Random.Next(0, 2);
-            delta[1] = Simulator.Random.Next(0, 2);
+            delta[0] = Swamp.Random.Next(0, 2);
+            delta[1] = Swamp.Random.Next(0, 2);
             if (direction[0] > 0)
                 direction[0] -= delta[0];
             else if (direction[0] < 0)
                 direction[0] += delta[0];
             else
-                direction[0] = Simulator.Random.Next(0, 2) == 0 ? -1 : 1;
+                direction[0] = Swamp.Random.Next(0, 2) == 0 ? -1 : 1;
             if (direction[1] > 0)
                 direction[1] -= delta[1];
             else if (direction[1] < 0)
                 direction[1] += delta[1];
             else
-                direction[1] = Simulator.Random.Next(0, 2) == 0 ? -1 : 1;
+                direction[1] = Swamp.Random.Next(0, 2) == 0 ? -1 : 1;
             return direction;
         }
 
         private static int FillChlorophyl(ref int capacity)
         {
             int i = 1;
-            while (Simulator.Random.Next(2) < 1 && capacity > 75 * i)
+            while (Swamp.Random.Next(2) < 1 && capacity > 50 * i)
             {
-                capacity -= (75 * i);
+                capacity -= 50;
+                i += 1;
+            }
+            return i;
+        }
+
+        private static int FillAttackPower(ref int capacity)
+        {
+            int i = 1;
+            while (Swamp.Random.Next(2) < 1 && capacity > 75 * i)
+            {
+                capacity -= 75;
                 i += 1;
             }
             return i;
@@ -134,8 +159,8 @@ namespace Simulator
         private static int[] FillDirection()
         {
             int[] dir = new int[2];
-            dir[0] = Simulator.Random.Next(-1, 2);
-            dir[1] = Simulator.Random.Next(-1, 2);
+            dir[0] = Swamp.Random.Next(-1, 2);
+            dir[1] = Swamp.Random.Next(-1, 2);
             return dir;
         }
 
@@ -143,9 +168,9 @@ namespace Simulator
         {
             IAction[][] result = new IAction[amountOfBlocks][];
             int i = 0;
-            while (i < amountOfBlocks && capacity > (amountOfBlocks - i) * Simulator.WaitValue && capacity > 0)
+            while (i < amountOfBlocks && capacity > (amountOfBlocks - i) * Swamp.WaitValue && capacity > 0)
             {
-                int t = Simulator.Random.Next(Storage.AmountBlocks);
+                int t = Swamp.Random.Next(Storage.AmountBlocks);
                 if (capacity - Storage.ValuesOfBlocks[t] < 0)
                 {
                     result[i] = Storage.GenesBlocks[0];

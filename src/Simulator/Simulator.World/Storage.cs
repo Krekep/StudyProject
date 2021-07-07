@@ -1,22 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SFML.Graphics;
 
 namespace Simulator.World
 {
-    internal class Storage
+    public class Storage
     {
-        internal static IAction[][] GenesBlocks;
-        internal static int[] ValuesOfBlocks;
-        internal const int AmountBlocks = 10;
-        internal static Simulator CurrentWorld { get; set; }
-
-        static int[] directions;
+        public static IAction[][] GenesBlocks;
+        public static int[] ValuesOfBlocks;
+        public const int AmountBlocks = 10;
+        public static Swamp CurrentWorld { get; set; }
+        public static Color[] EnergyColors = new Color[256];
         static Storage()
         {
-            directions = new int[9] { 0, 1, 2,
-                                      3, 4, 5,
-                                      6, 7, 8 };
+            for (byte i = 0; i < 255; i++)
+                EnergyColors[i] = new Color(255, i, 0);
+            EnergyColors[255] = new Color(255, 255, 0);
+
             GenesBlocks = new IAction[AmountBlocks][];
             ValuesOfBlocks = new int[AmountBlocks];
 
@@ -34,7 +32,7 @@ namespace Simulator.World
             for (int i = 0; i < AmountBlocks; i++)
                 ValuesOfBlocks[i] = CalculateValue(GenesBlocks[i]);
         }
-        internal static int CalculateValue(IAction[] block)
+        public static int CalculateValue(IAction[] block)
         {
             int result = 0;
             foreach (IAction action in block)
