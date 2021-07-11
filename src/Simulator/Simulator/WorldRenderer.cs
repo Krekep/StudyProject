@@ -23,40 +23,60 @@ namespace Simulator
                                                      new Vertex(new Vector2f(Right, Bottom))};
 
         private static RectangleShape unitShape = new RectangleShape(new Vector2f(Program.ViewScale, Program.ViewScale));
-        private static List<Unit> relatives = new List<Unit>(500);
+        private static VertexArray vertexArray;
+
+        private static Vertex leftTop;
+        private static Vertex leftBottom;
+        private static Vertex rightTop;
+        private static Vertex rightBottom;
         public static void Draw()
         {
             List<Unit> temp = Program.World.Units;
-            List<Unit> relatives = new List<Unit>(500);
-            Program.Window.Draw(rightLine, PrimitiveType.Lines);
-            Program.Window.Draw(topLine, PrimitiveType.Lines);
-            Program.Window.Draw(leftLine, PrimitiveType.Lines);
-            Program.Window.Draw(bottomLine, PrimitiveType.Lines);
+            vertexArray = new VertexArray(PrimitiveType.Quads, (uint)temp.Count * 4);
             unitShape.OutlineThickness = 0;
-            foreach (Unit unit in temp)
+            for (uint i = 0; i < temp.Count; i++)
             {
+                var unit = temp[(int)i];
+                leftTop = new Vertex(new Vector2f(Program.LeftMapOffset + unit.Coords[0] * Program.ViewScale, Program.TopMapOffset + unit.Coords[1] * Program.ViewScale));
+                leftBottom = new Vertex(new Vector2f(Program.LeftMapOffset + unit.Coords[0] * Program.ViewScale, Program.TopMapOffset + unit.Coords[1] * Program.ViewScale + Program.ViewScale));
+                rightTop = new Vertex(new Vector2f(Program.LeftMapOffset + unit.Coords[0] * Program.ViewScale + Program.ViewScale, Program.TopMapOffset + unit.Coords[1] * Program.ViewScale));
+                rightBottom = new Vertex(new Vector2f(Program.LeftMapOffset + unit.Coords[0] * Program.ViewScale + Program.ViewScale, Program.TopMapOffset + unit.Coords[1] * Program.ViewScale + Program.ViewScale));
                 if (UnitTextConfigurator.ChoosenUnit != null && unit.Parent == UnitTextConfigurator.ChoosenUnit.Parent)
                 {
-                    relatives.Add(unit);
-                    continue;
+                    if (UnitTextConfigurator.ChoosenUnit == unit)
+                    {
+                        leftTop.Color = Color.Green;
+                        leftBottom.Color = Color.Green;
+                        rightTop.Color = Color.Green;
+                        rightBottom.Color = Color.Green;
+                    }
+                    else 
+                    {
+                        leftTop.Color = Color.White;
+                        leftBottom.Color = Color.White;
+                        rightTop.Color = Color.White;
+                        rightBottom.Color = Color.White;
+                    }
                 }
-                unitShape.Position = new Vector2f(Program.LeftMapOffset + unit.Coords[0] * Program.ViewScale, Program.TopMapOffset + unit.Coords[1] * Program.ViewScale);
-                unitShape.FillColor = ChooseColor(unit);
-
-                Program.Window.Draw(unitShape);
+                else
+                {
+                    leftTop.Color = ChooseColor(unit);
+                    leftBottom.Color = ChooseColor(unit);
+                    rightTop.Color = ChooseColor(unit);
+                    rightBottom.Color = ChooseColor(unit);
+                }
+                uint t = i << 2;
+                vertexArray[t] = leftTop;
+                vertexArray[t + 1] = leftBottom;
+                vertexArray[t + 2] = rightBottom;
+                vertexArray[t + 3] = rightTop;
             }
-
-            foreach (Unit unit in relatives)
-            {
-                unitShape.OutlineColor = Color.White;
-                unitShape.OutlineThickness = 1;
-                if (UnitTextConfigurator.ChoosenUnit == unit)
-                    unitShape.OutlineColor = Color.Green;
-                unitShape.Position = new Vector2f(Program.LeftMapOffset + unit.Coords[0] * Program.ViewScale, Program.TopMapOffset + unit.Coords[1] * Program.ViewScale);
-                unitShape.FillColor = ChooseColor(unit);
-
-                Program.Window.Draw(unitShape);
-            }
+            Program.Window.Draw(vertexArray);
+            Program.Window.Draw(bottomLine, PrimitiveType.Lines);
+            Program.Window.Draw(topLine, PrimitiveType.Lines);
+            Program.Window.Draw(leftLine, PrimitiveType.Lines);
+            Program.Window.Draw(rightLine, PrimitiveType.Lines);
+            vertexArray.Dispose();
         }
 
         private static Color ChooseColor(Unit unit)
