@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Simulator.Events;
+
+using System;
+using System.Threading;
 
 namespace Simulator.World
 {
@@ -25,8 +28,10 @@ namespace Simulator.World
         public UnitStatus Status { get; private set; }
         public int Chlorophyl { get; private set; }
         public int AttackPower { get; private set; }
-        public int Parent { get; set; }
+        public int Parent { get; private set; }
 
+
+        private volatile int isUsing;
         public Unit(int energy, int lastDirection, int capacity, int chlorophyl, int attackPower, int status, int[] position, int[] directions, IAction[][] genes, int parent)
         {
             this.Energy = energy;
@@ -37,6 +42,7 @@ namespace Simulator.World
             this.Chlorophyl = chlorophyl;
             this.AttackPower = attackPower;
             this.Parent = parent;
+            isUsing = 0;
 
             LastDirection = lastDirection;
             currentAction = new int[2] { 0, 0 };
@@ -52,6 +58,7 @@ namespace Simulator.World
             this.Chlorophyl = chlorophyl;
             this.AttackPower = attackPower;
             this.Parent = parent;
+            isUsing = 0;
 
             LastDirection = 4;
             currentAction = new int[2] { 0, 0 };
@@ -69,7 +76,7 @@ namespace Simulator.World
             LastDirection = (x + 1) * 3 + (y + 1);
             if (CheckCell(newPosition[0], newPosition[1]))
             {
-                Storage.CurrentWorld.MoveUnit(this, Coords, newPosition);
+                MoveEvent.KnockKnock(this, Coords, newPosition);
                 Coords[0] = newPosition[0];
                 Coords[1] = newPosition[1];
                 return true;
@@ -86,7 +93,7 @@ namespace Simulator.World
                 int temp = -Math.Min(this.Energy / (Swamp.AttackLimit * 2 - AttackPower), unit.Energy);
                 if (unit.Status == UnitStatus.Corpse)
                 {
-                    temp = unit.Energy / AttackPower;
+                    temp = unit.Energy / (Swamp.AttackLimit + 1 - AttackPower);
                 }
                 unit.TakeEnergy(temp);
                 this.TakeEnergy(-temp * 7 / 10);
@@ -98,7 +105,6 @@ namespace Simulator.World
         public void TakeEnergy(int energy)
         {
             Energy += energy;
-            // move below code to Swamp.RecountEnergy method ???
             if (Energy <= 0)
             {
                 if (Energy <= Swamp.DeathLimit)
@@ -117,7 +123,7 @@ namespace Simulator.World
             Unit child = Creator.CreateChild(this);
             if (child != null)
             {
-                Storage.CurrentWorld.AddUnit(child);
+                DivideEvent.KnockKnock(child, child.Coords);
                 Energy /= 2;
                 Energy -= Swamp.EnergyLimit / 100;
             }
@@ -151,6 +157,17 @@ namespace Simulator.World
         public void SetGenes(IAction[][] genes)
         {
             Genes = genes;
+        }
+
+        internal void Lock()
+        {
+            while (Interlocked.CompareExchange(ref isUsing, 1, 0) == 1)
+            { Thread.Sleep(0); }
+        }
+
+        internal void Unlock()
+        {
+            isUsing = 0;
         }
     }
 }

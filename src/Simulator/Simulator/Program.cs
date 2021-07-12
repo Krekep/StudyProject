@@ -8,6 +8,7 @@ using TGUI;
 
 using Simulator.Events;
 using Simulator.World;
+using System.Threading;
 
 namespace Simulator
 {

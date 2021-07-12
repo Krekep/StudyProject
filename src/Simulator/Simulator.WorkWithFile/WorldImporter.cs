@@ -1,4 +1,5 @@
-﻿using Simulator.World;
+﻿using Simulator.Events;
+using Simulator.World;
 
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace Simulator
         private static double envDensity;
         private static double dropChance;
 
-        private static List<Unit> units;
+        private static HashSet<Unit> units;
 
         static WorldImporter()
         {
@@ -77,6 +78,7 @@ namespace Simulator
                 }
             }
             world.Import(seed, timer, groundPower, sunPower, envDensity, dropChance, units);
+            ImportEvent.KnockKnock(null);
         }
 
         private static bool ReadUnits(StreamReader input)
@@ -84,7 +86,7 @@ namespace Simulator
             string line = input.ReadLine();
             bool fl = true;
 
-            units = new List<Unit>();
+            units = new HashSet<Unit>();
             int energy = 0;
             int lastDirection = 0;
             int chlorophyl = 0;

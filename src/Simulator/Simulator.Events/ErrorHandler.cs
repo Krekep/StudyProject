@@ -21,7 +21,7 @@ namespace Simulator.Events
             ErrorEventArgs args = new ErrorEventArgs();
             args.Message = message;
             args.IsSuccess = success;
-            EventHandler<ErrorEventArgs> handler = Notify;
+            //EventHandler<ErrorEventArgs> handler = Notify;
             Notify(sender, args);
         }
     }

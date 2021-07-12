@@ -20,10 +20,10 @@ namespace Simulator
         /// <summary>
         /// Unit text blocks: 0 - unit energy, 1 - unit genes as integer sequence, 2 - chlorophyl,
         /// 3 - last direction, 4 - favorite direction, 5 - capacity, 6 - coords,
-        /// 7 - attack power, 8 - parent
+        /// 7 - attack power, 8 - parent, 9 - current action
         /// </summary>
         static Dictionary<int, (Label, TextBox)> unitDescription;
-        public const int AmountUnitInfo = 9;
+        public const int AmountUnitInfo = 10;
 
         public static Unit ChoosenUnit { get; private set; }
 
@@ -152,6 +152,19 @@ namespace Simulator
             Program.MainGui.Add(tempLabel);
             Program.MainGui.Add(textBoxTemp);
             unitDescription[8] = (tempLabel, textBoxTemp);
+
+            tempLabel = new Label();
+            textBoxTemp = new TextBox();
+            tempLabel.Text = "Current action: ";
+            tempLabel.TextSize = Program.CharacterSize;
+            tempLabel.Position = new Vector2f(UnitTextLeftBound, UnitTextTopBound + (Program.CharacterSize + 10) * 9);
+            textBoxTemp.Position = new Vector2f(UnitTextLeftBound + tempLabel.Size.X, UnitTextTopBound + (Program.CharacterSize + 10) * 9);
+            textBoxTemp.TextSize = Program.CharacterSize;
+            textBoxTemp.Size = new Vector2f(Program.CharacterSize * 8, Program.CharacterSize + 10);
+            textBoxTemp.Renderer.BackgroundColor = Color.Black;
+            Program.MainGui.Add(tempLabel);
+            Program.MainGui.Add(textBoxTemp);
+            unitDescription[9] = (tempLabel, textBoxTemp);
         }
 
         public static void ChooseUnit(Unit unit)
@@ -167,6 +180,7 @@ namespace Simulator
             unitDescription[6].Item2.Text = $"[{unit.Coords[0]},{unit.Coords[1]}]";
             unitDescription[7].Item2.Text = unit.AttackPower.ToString();
             unitDescription[8].Item2.Text = unit.Parent.ToString();
+            unitDescription[9].Item2.Text = unit.GetCurrentAction().Type().ToString();
         }
 
         private static string GetStringGenes(Unit unit)
@@ -333,6 +347,7 @@ namespace Simulator
                     unitDescription[6].Item2.Text = $"[{ChoosenUnit.Coords[0]},{ChoosenUnit.Coords[1]}]";
                     unitDescription[7].Item2.Text = ChoosenUnit.AttackPower.ToString();
                     unitDescription[8].Item2.Text = ChoosenUnit.Parent.ToString();
+                    unitDescription[9].Item2.Text = ChoosenUnit.GetCurrentAction().Type().ToString();
                 }
                 else
                 {

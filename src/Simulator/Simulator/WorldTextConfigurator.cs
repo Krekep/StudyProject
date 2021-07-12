@@ -1,5 +1,7 @@
 ﻿using SFML.Graphics;
 using SFML.System;
+
+using Simulator.Events;
 using Simulator.World;
 using System.Collections.Generic;
 
@@ -15,7 +17,7 @@ namespace Simulator
         public const int WorldTextWidth = 100;
 
         /// <summary>
-        /// Unit text blocks: 0 - ground heat, 1 - sun heat, cell fall chance, environment density
+        /// Unit text blocks: 0 - ground heat, 1 - sun heat, 2 - cell fall chance, 3 - environment density
         /// </summary>
         static Dictionary<int, (Label, TextBox)> worldDescription;
         public const int AmountWorldInfo = 4;
@@ -24,6 +26,15 @@ namespace Simulator
         {
             worldDescription = new Dictionary<int, (Label, TextBox)>(AmountWorldInfo);
             ConfigureWorldDescription();
+            ImportEvent.Notify += ImportEvent_Notify;
+        }
+
+        private static void ImportEvent_Notify(object sender, ImportEventArgs e)
+        {
+            worldDescription[0].Item2.Text = $"{Program.World.GroundPower}";
+            worldDescription[1].Item2.Text = $"{Program.World.SunPower}";
+            worldDescription[2].Item2.Text = $"{(int)Program.World.DropChance * 100}";
+            worldDescription[3].Item2.Text = $"{(int)Program.World.EnvDensity * 100}";
         }
 
         private static void ConfigureWorldDescription()

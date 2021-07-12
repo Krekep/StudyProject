@@ -31,12 +31,12 @@ namespace Simulator
         private static Vertex rightBottom;
         public static void Draw()
         {
-            List<Unit> temp = Program.World.Units;
+            HashSet<Unit> temp = Program.World.Units;
             vertexArray = new VertexArray(PrimitiveType.Quads, (uint)temp.Count * 4);
             unitShape.OutlineThickness = 0;
-            for (uint i = 0; i < temp.Count; i++)
+            uint i = 0;
+            foreach (Unit unit in temp)
             {
-                var unit = temp[(int)i];
                 leftTop = new Vertex(new Vector2f(Program.LeftMapOffset + unit.Coords[0] * Program.ViewScale, Program.TopMapOffset + unit.Coords[1] * Program.ViewScale));
                 leftBottom = new Vertex(new Vector2f(Program.LeftMapOffset + unit.Coords[0] * Program.ViewScale, Program.TopMapOffset + unit.Coords[1] * Program.ViewScale + Program.ViewScale));
                 rightTop = new Vertex(new Vector2f(Program.LeftMapOffset + unit.Coords[0] * Program.ViewScale + Program.ViewScale, Program.TopMapOffset + unit.Coords[1] * Program.ViewScale));
@@ -70,6 +70,7 @@ namespace Simulator
                 vertexArray[t + 1] = leftBottom;
                 vertexArray[t + 2] = rightBottom;
                 vertexArray[t + 3] = rightTop;
+                i++;
             }
             Program.Window.Draw(vertexArray);
             Program.Window.Draw(bottomLine, PrimitiveType.Lines);

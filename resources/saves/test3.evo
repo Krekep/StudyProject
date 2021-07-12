@@ -801,7 +801,7 @@
 	Genes=11|3
 	#72:
 	Energy=500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=3
 	AttackPower=2
 	Capacity=325
@@ -2110,7 +2110,7 @@
 	Genes=30|31|3|3|33|3|11|22
 	#191:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=3
 	AttackPower=1
 	Capacity=1000
@@ -2781,7 +2781,7 @@
 	Genes=22|22
 	#252:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=3
 	Capacity=1150
@@ -4805,7 +4805,7 @@
 	Genes=22|31
 	#436:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=4
 	AttackPower=2
 	Capacity=2125
@@ -5388,7 +5388,7 @@
 	Genes=3|21|33|3
 	#489:
 	Energy=1437
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=2
 	Capacity=3625
@@ -6499,7 +6499,7 @@
 	Genes=22
 	#590:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=4
 	AttackPower=2
 	Capacity=2125
@@ -6653,7 +6653,7 @@
 	Genes=22|31
 	#604:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=3225
@@ -6686,7 +6686,7 @@
 	Genes=1|21|33|11|31|21|3
 	#607:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=4
 	Capacity=2050
@@ -7577,7 +7577,7 @@
 	Genes=11|1|22
 	#688:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=400
@@ -8897,7 +8897,7 @@
 	Genes=1|21|33|11|31|21|3
 	#808:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=3
 	AttackPower=3
 	Capacity=2100
@@ -9227,7 +9227,7 @@
 	Genes=22|22|0|1|11
 	#838:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=1350
@@ -9249,7 +9249,7 @@
 	Genes=22|22|0|22
 	#840:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=2
 	AttackPower=1
 	Capacity=50
@@ -10283,7 +10283,7 @@
 	Genes=22|22|30|2|11
 	#934:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2425
@@ -11009,7 +11009,7 @@
 	Genes=30|22
 	#1000:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=4
 	AttackPower=3
 	Capacity=4525
@@ -11141,7 +11141,7 @@
 	Genes=0|21|11|22|30|2
 	#1012:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=6
 	AttackPower=1
 	Capacity=3100
@@ -11394,7 +11394,7 @@
 	Genes=21
 	#1035:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=5
 	AttackPower=2
 	Capacity=2050
@@ -12021,7 +12021,7 @@
 	Genes=3|3|1|21|2|1|33|3
 	#1092:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=5
 	AttackPower=2
 	Capacity=1250
@@ -12043,7 +12043,7 @@
 	Genes=2
 	#1094:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=4
 	AttackPower=1
 	Capacity=1025
@@ -12384,7 +12384,7 @@
 	Genes=22|3|31
 	#1125:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=0
@@ -12527,7 +12527,7 @@
 	Genes=0|11|1|22|2
 	#1138:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=6
 	AttackPower=2
 	Capacity=2175
@@ -13495,7 +13495,7 @@
 	Genes=11|1|1|11|21|3
 	#1226:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=4
 	AttackPower=2
 	Capacity=2125
@@ -13528,7 +13528,7 @@
 	Genes=22
 	#1229:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=2
 	Capacity=225
@@ -14496,7 +14496,7 @@
 	Genes=22|22|31
 	#1317:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2425
@@ -14837,7 +14837,7 @@
 	Genes=2|21|2|33|11|2|1
 	#1348:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2225
@@ -15255,7 +15255,7 @@
 	Genes=22|3|31|0
 	#1386:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=6
 	AttackPower=2
 	Capacity=1200
@@ -15508,7 +15508,7 @@
 	Genes=0|21|11|22|30|2
 	#1409:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2425
@@ -15926,7 +15926,7 @@
 	Genes=21|31|22|2
 	#1447:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=825
@@ -16025,7 +16025,7 @@
 	Genes=22|2|2
 	#1456:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=6
 	AttackPower=2
 	Capacity=3000
@@ -16597,7 +16597,7 @@
 	Genes=0|0|11|22|21|1|2|21
 	#1508:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=5
 	AttackPower=3
 	Capacity=325
@@ -16630,7 +16630,7 @@
 	Genes=11|3|0|31|0|30|21|2|11
 	#1511:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=2125
@@ -16828,7 +16828,7 @@
 	Genes=21|21|3|30|30|2|11|3
 	#1529:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=10
 	AttackPower=1
 	Capacity=2275
@@ -17290,7 +17290,7 @@
 	Genes=22|2
 	#1571:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=2150
@@ -17301,7 +17301,7 @@
 	Genes=22|21|0|1|22
 	#1572:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=6
 	AttackPower=1
 	Capacity=2500
@@ -17433,7 +17433,7 @@
 	Genes=30|0|2|33|31|3
 	#1584:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=4
 	AttackPower=2
 	Capacity=2125
@@ -17697,7 +17697,7 @@
 	Genes=21|31|22|2
 	#1608:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2225
@@ -17906,7 +17906,7 @@
 	Genes=30|22
 	#1627:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=1625
@@ -18247,7 +18247,7 @@
 	Genes=0|11|1|22|2
 	#1658:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=2250
@@ -18434,7 +18434,7 @@
 	Genes=2
 	#1675:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=5
 	AttackPower=4
 	Capacity=525
@@ -18632,7 +18632,7 @@
 	Genes=30|21|3|1|21|11|22
 	#1693:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=5
 	AttackPower=1
 	Capacity=2850
@@ -19875,7 +19875,7 @@
 	Genes=21|30|22|31|3|30|2|0
 	#1806:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=2150
@@ -20238,7 +20238,7 @@
 	Genes=22|21|2
 	#1839:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2225
@@ -20392,7 +20392,7 @@
 	Genes=3|11|1|30
 	#1853:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=3700
@@ -20557,7 +20557,7 @@
 	Genes=30|0|2|33|31|3|33
 	#1868:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=2125
@@ -21162,7 +21162,7 @@
 	Genes=33|2|30|2|0|21|33|2|1|0
 	#1923:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=1725
@@ -21217,7 +21217,7 @@
 	Genes=11|3|0|31|0|30|21|2|11
 	#1928:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=4
 	AttackPower=1
 	Capacity=1025
@@ -21228,7 +21228,7 @@
 	Genes=11|3|0|31|0|30|21|2|11
 	#1929:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=2125
@@ -21459,7 +21459,7 @@
 	Genes=1|21|33|11|31|21|3|11
 	#1950:
 	Energy=1492
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=3
 	AttackPower=3
 	Capacity=1500
@@ -21580,7 +21580,7 @@
 	Genes=33|33
 	#1961:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2225
@@ -21822,7 +21822,7 @@
 	Genes=0|21|21|0|22|31
 	#1983:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=4
 	AttackPower=2
 	Capacity=1775
@@ -21833,7 +21833,7 @@
 	Genes=0|31|21|0|22|31
 	#1984:
 	Energy=1491
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=5
 	AttackPower=1
 	Capacity=825
@@ -22218,7 +22218,7 @@
 	Genes=22|31|22
 	#2019:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=2225
@@ -22328,7 +22328,7 @@
 	Genes=21|21|1|21|1
 	#2029:
 	Energy=1479
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=5
 	AttackPower=1
 	Capacity=725
@@ -22823,7 +22823,7 @@
 	Genes=22|21|2|21|31|3
 	#2074:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=2125
@@ -22955,7 +22955,7 @@
 	Genes=22|22|0|1|22|22
 	#2086:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=2250
@@ -23010,7 +23010,7 @@
 	Genes=0|0|33|22|31|11
 	#2091:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=1450
@@ -23043,7 +23043,7 @@
 	Genes=22|22|0|22|21|22|31|0
 	#2094:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=5
 	AttackPower=2
 	Capacity=2275
@@ -23428,7 +23428,7 @@
 	Genes=22|1|22|31
 	#2129:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2225
@@ -23626,7 +23626,7 @@
 	Genes=30|21|22|22|31|3|33|0
 	#2147:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=125
@@ -24033,7 +24033,7 @@
 	Genes=3|33|22|22|33|0|21
 	#2184:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=2
 	AttackPower=2
 	Capacity=1475
@@ -24187,7 +24187,7 @@
 	Genes=0
 	#2198:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=6
 	AttackPower=2
 	Capacity=1800
@@ -24297,7 +24297,7 @@
 	Genes=11
 	#2208:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=2
 	AttackPower=5
 	Capacity=2950
@@ -24319,7 +24319,7 @@
 	Genes=3|31|33|31|33|11
 	#2210:
 	Energy=1471
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=400
@@ -24363,7 +24363,7 @@
 	Genes=22|33
 	#2214:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=3375
@@ -24495,7 +24495,7 @@
 	Genes=30|31|2|21|30|33|22|1|0
 	#2226:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=4
 	AttackPower=2
 	Capacity=1225
@@ -25144,7 +25144,7 @@
 	Genes=0|11|1|22
 	#2285:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=2
 	AttackPower=4
 	Capacity=3075
@@ -25155,7 +25155,7 @@
 	Genes=3|31|11
 	#2286:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=1525
@@ -25496,7 +25496,7 @@
 	Genes=11|3|0|31|0|2|21|22
 	#2317:
 	Energy=1470
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=125
@@ -26684,7 +26684,7 @@
 	Genes=31|0|31|30|0|33
 	#2425:
 	Energy=1497
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=2
 	Capacity=4125
@@ -27080,7 +27080,7 @@
 	Genes=21|30|21|2|31|30
 	#2461:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=4
 	AttackPower=2
 	Capacity=2575
@@ -27344,7 +27344,7 @@
 	Genes=1|30|22|3|31|11|11|11
 	#2485:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=4
 	AttackPower=3
 	Capacity=1175
@@ -28378,7 +28378,7 @@
 	Genes=22|2|2
 	#2579:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=2
 	AttackPower=1
 	Capacity=2375
@@ -28400,7 +28400,7 @@
 	Genes=22|22
 	#2581:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=10
 	AttackPower=1
 	Capacity=1275
@@ -28587,7 +28587,7 @@
 	Genes=33|11|30|2|0|21|33|2|1
 	#2598:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=125
@@ -28730,7 +28730,7 @@
 	Genes=1|21|33|11|31|21|3|11
 	#2611:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=3
 	AttackPower=1
 	Capacity=2700
@@ -28785,7 +28785,7 @@
 	Genes=1
 	#2616:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2225
@@ -29335,7 +29335,7 @@
 	Genes=31|3|21|33|30|0
 	#2666:
 	Energy=1468
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=3
 	AttackPower=2
 	Capacity=1825
@@ -29599,7 +29599,7 @@
 	Genes=22|1|22|31
 	#2690:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=3
 	AttackPower=1
 	Capacity=175
@@ -29610,7 +29610,7 @@
 	Genes=33|11|30|2|0|21|33|2|1
 	#2691:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=6
 	AttackPower=2
 	Capacity=2400
@@ -29775,7 +29775,7 @@
 	Genes=22|2|2|0
 	#2706:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=3050
@@ -30402,7 +30402,7 @@
 	Genes=22|11|22|21
 	#2763:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2025
@@ -30875,7 +30875,7 @@
 	Genes=22|3|31
 	#2806:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=5
 	AttackPower=1
 	Capacity=950
@@ -32019,7 +32019,7 @@
 	Genes=11|22|22|11|21|0|31|31|11
 	#2910:
 	Energy=1497
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=5
 	AttackPower=3
 	Capacity=425
@@ -32118,7 +32118,7 @@
 	Genes=22|1|22|31|21
 	#2919:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=5
 	AttackPower=2
 	Capacity=2250
@@ -32129,7 +32129,7 @@
 	Genes=0|21|11|22|30
 	#2920:
 	Energy=1494
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=4
 	AttackPower=3
 	Capacity=1275
@@ -32305,7 +32305,7 @@
 	Genes=21|22
 	#2936:
 	Energy=1469
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=6
 	AttackPower=3
 	Capacity=2900
@@ -32536,7 +32536,7 @@
 	Genes=0|2|21|1|30|11|33|0
 	#2957:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=1025
@@ -32778,7 +32778,7 @@
 	Genes=30|0|2|33|31|31
 	#2979:
 	Energy=1481
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=2400
@@ -33064,7 +33064,7 @@
 	Genes=2
 	#3005:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=3
 	AttackPower=2
 	Capacity=2200
@@ -33350,7 +33350,7 @@
 	Genes=21|2|3|30|30|2|11|3
 	#3031:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=3050
@@ -33405,7 +33405,7 @@
 	Genes=30|2|2
 	#3036:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=1325
@@ -33922,7 +33922,7 @@
 	Genes=30|2|30
 	#3083:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=2350
@@ -33933,7 +33933,7 @@
 	Genes=22|1|30|31
 	#3084:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=2
 	Capacity=2050
@@ -34461,7 +34461,7 @@
 	Genes=11|33|33
 	#3132:
 	Energy=1474
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=400
@@ -34615,7 +34615,7 @@
 	Genes=22|22|0|1|22|30
 	#3146:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2025
@@ -34681,7 +34681,7 @@
 	Genes=33|30
 	#3152:
 	Energy=103
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=3
 	Capacity=1150
@@ -34967,7 +34967,7 @@
 	Genes=22|1|22|31|33
 	#3178:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2225
@@ -35176,7 +35176,7 @@
 	Genes=33|11|30|2|0|21|33|2|1
 	#3197:
 	Energy=1466
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=5
 	AttackPower=3
 	Capacity=1700
@@ -35363,7 +35363,7 @@
 	Genes=22|1|22|31|21
 	#3214:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=2175
@@ -35693,7 +35693,7 @@
 	Genes=33|11|30|2|0|21|33|2|1
 	#3244:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=2450
@@ -35847,7 +35847,7 @@
 	Genes=11|2|31
 	#3258:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=10
 	AttackPower=1
 	Capacity=1675
@@ -36287,7 +36287,7 @@
 	Genes=0|33|1|0|21|3|30|30|30|0
 	#3298:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2025
@@ -36496,7 +36496,7 @@
 	Genes=0|33|1|0|21|3|30|33|30
 	#3317:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=2150
@@ -36562,7 +36562,7 @@
 	Genes=33|11|30|2|0|21|33|2|1
 	#3323:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2125
@@ -36650,7 +36650,7 @@
 	Genes=11|22|21|11|33|0|3|22
 	#3331:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2325
@@ -36749,7 +36749,7 @@
 	Genes=33|30|22|31|2|31|22|0
 	#3340:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=10
 	AttackPower=1
 	Capacity=1875
@@ -36760,7 +36760,7 @@
 	Genes=0|0|11|22|21|1|2
 	#3341:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=1550
@@ -37420,7 +37420,7 @@
 	Genes=22|2
 	#3401:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=2225
@@ -37849,7 +37849,7 @@
 	Genes=21|30|21|2|31|30|3
 	#3440:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=5
 	AttackPower=3
 	Capacity=2450
@@ -38146,7 +38146,7 @@
 	Genes=0|2
 	#3467:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=2850
@@ -38663,7 +38663,7 @@
 	Genes=11|22|21|11|33|0|3|22
 	#3514:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=2
 	AttackPower=3
 	Capacity=1975
@@ -39488,7 +39488,7 @@
 	Genes=33|11|30|2|0|21|33|2|1
 	#3589:
 	Energy=538
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=5
 	AttackPower=3
 	Capacity=325
@@ -39653,7 +39653,7 @@
 	Genes=22|30|22|31
 	#3604:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=1850
@@ -40841,7 +40841,7 @@
 	Genes=21|33|33|21|11|3|21
 	#3712:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=2
 	AttackPower=1
 	Capacity=3350
@@ -40896,7 +40896,7 @@
 	Genes=31
 	#3717:
 	Energy=206
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=3
 	AttackPower=1
 	Capacity=3500
@@ -41743,7 +41743,7 @@
 	Genes=31|22|22|33
 	#3794:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=1850
@@ -42799,7 +42799,7 @@
 	Genes=31|1|22|31
 	#3890:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=2125
@@ -42843,7 +42843,7 @@
 	Genes=33|11|30|2|0|21|33|2|1
 	#3894:
 	Energy=1118
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=10
 	AttackPower=1
 	Capacity=1875
@@ -42909,7 +42909,7 @@
 	Genes=22|22|21|11
 	#3900:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=1625
@@ -43030,7 +43030,7 @@
 	Genes=21|22|30
 	#3911:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=6
 	AttackPower=2
 	Capacity=2400
@@ -43052,7 +43052,7 @@
 	Genes=22|30|22|31
 	#3913:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=2
 	Capacity=650
@@ -43118,7 +43118,7 @@
 	Genes=0|0|11|22|21|30|2|21
 	#3919:
 	Energy=1483
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=4
 	AttackPower=2
 	Capacity=625
@@ -43151,7 +43151,7 @@
 	Genes=22|1|3
 	#3922:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=2150
@@ -43162,7 +43162,7 @@
 	Genes=22|1|22|31
 	#3923:
 	Energy=1495
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=2525
@@ -43690,7 +43690,7 @@
 	Genes=22|21|2|0|1
 	#3971:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2125
@@ -43910,7 +43910,7 @@
 	Genes=21|33|30|1|30|3|21|3
 	#3991:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=4
 	AttackPower=1
 	Capacity=2225
@@ -43954,7 +43954,7 @@
 	Genes=22|30
 	#3995:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=11
 	AttackPower=1
 	Capacity=1500
@@ -43976,7 +43976,7 @@
 	Genes=31|1|22|31|0
 	#3997:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=2150
@@ -44207,7 +44207,7 @@
 	Genes=3|33|22|22|33|0|21
 	#4018:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=0
@@ -44603,7 +44603,7 @@
 	Genes=0|0|33|22|31|11
 	#4054:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=3050
@@ -44647,7 +44647,7 @@
 	Genes=22|22|0|1|22|22|0
 	#4058:
 	Energy=1495
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=1250
@@ -44691,7 +44691,7 @@
 	Genes=33|0|31|22|31|2|33|0|0
 	#4062:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=400
@@ -44790,7 +44790,7 @@
 	Genes=22|1|22|31|22|0
 	#4071:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=4
 	AttackPower=2
 	Capacity=175
@@ -45076,7 +45076,7 @@
 	Genes=1|22|0|21|30
 	#4097:
 	Energy=1481
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=0
@@ -45285,7 +45285,7 @@
 	Genes=21|21|2|21
 	#4116:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=2225
@@ -45307,7 +45307,7 @@
 	Genes=21|22|22|2|3|30|2|0
 	#4118:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=4
 	AttackPower=1
 	Capacity=2675
@@ -45406,7 +45406,7 @@
 	Genes=2|3
 	#4127:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=925
@@ -45604,7 +45604,7 @@
 	Genes=3|0|3|11
 	#4145:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=675
@@ -45747,7 +45747,7 @@
 	Genes=11|33|33
 	#4158:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=10
 	AttackPower=1
 	Capacity=1275
@@ -45769,7 +45769,7 @@
 	Genes=22|33
 	#4160:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=2250
@@ -45791,7 +45791,7 @@
 	Genes=22|11|30|2|0|21|33|2|1
 	#4162:
 	Energy=7
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=4
 	AttackPower=2
 	Capacity=250
@@ -45835,7 +45835,7 @@
 	Genes=22|22
 	#4166:
 	Energy=1495
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=1625
@@ -46242,7 +46242,7 @@
 	Genes=30|0|2|2
 	#4203:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=2150
@@ -46814,7 +46814,7 @@
 	Genes=0|0|11|22|21|1|2
 	#4255:
 	Energy=795
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=500
@@ -46836,7 +46836,7 @@
 	Genes=30|30|22|31|3|30|2|0|0
 	#4257:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2225
@@ -47287,7 +47287,7 @@
 	Genes=3|21|21|2
 	#4298:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=2
 	Capacity=2050
@@ -47474,7 +47474,7 @@
 	Genes=21|21|3|30|30|2|11|3
 	#4315:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=400
@@ -47595,7 +47595,7 @@
 	Genes=21|30|22|31|3|30|2|0|0|1
 	#4326:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2425
@@ -47639,7 +47639,7 @@
 	Genes=0|3
 	#4330:
 	Energy=899
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=6
 	AttackPower=3
 	Capacity=2300
@@ -47991,7 +47991,7 @@
 	Genes=3|33
 	#4362:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=1675
@@ -48079,7 +48079,7 @@
 	Genes=0|11|1|22
 	#4370:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=4
 	AttackPower=2
 	Capacity=2025
@@ -48211,7 +48211,7 @@
 	Genes=22|1|22|31
 	#4382:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=2225
@@ -48959,7 +48959,7 @@
 	Genes=21|21|2
 	#4450:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2125
@@ -49003,7 +49003,7 @@
 	Genes=0|0|2
 	#4454:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=2075
@@ -49102,7 +49102,7 @@
 	Genes=0|22|33|21|30
 	#4463:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=6
 	AttackPower=3
 	Capacity=2900
@@ -49135,7 +49135,7 @@
 	Genes=33|11|30|2|0|21|33|2|1
 	#4466:
 	Energy=476
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=6
 	AttackPower=1
 	Capacity=1200
@@ -49476,7 +49476,7 @@
 	Genes=22|22|0|1|22|22
 	#4497:
 	Energy=1476
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=5
 	AttackPower=2
 	Capacity=325
@@ -49696,7 +49696,7 @@
 	Genes=33|0|3
 	#4517:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=5
 	AttackPower=3
 	Capacity=2450
@@ -49751,7 +49751,7 @@
 	Genes=22|3
 	#4522:
 	Energy=107
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=950
@@ -49773,7 +49773,7 @@
 	Genes=21|30|22|31|21|30|2|0|0
 	#4524:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=1875
@@ -50048,7 +50048,7 @@
 	Genes=21|30|22|31|3|30|2|0
 	#4549:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=2075
@@ -50422,7 +50422,7 @@
 	Genes=33|11|3|2|0|21|33|2|1
 	#4583:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=1425
@@ -50521,7 +50521,7 @@
 	Genes=31|31|31|30|0|33
 	#4592:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=2525
@@ -50532,7 +50532,7 @@
 	Genes=0|0|11|22|31
 	#4593:
 	Energy=1494
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2700
@@ -50576,7 +50576,7 @@
 	Genes=22|31|22|31
 	#4597:
 	Energy=1488
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=2
 	AttackPower=1
 	Capacity=50
@@ -50741,7 +50741,7 @@
 	Genes=22|2
 	#4612:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=2
 	Capacity=1900
@@ -50928,7 +50928,7 @@
 	Genes=31|0|33|22|31|3|2
 	#4629:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=3575
@@ -51302,7 +51302,7 @@
 	Genes=2
 	#4663:
 	Energy=-70
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=3
 	AttackPower=3
 	Capacity=825
@@ -51390,7 +51390,7 @@
 	Genes=30|30
 	#4671:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2225
@@ -51478,7 +51478,7 @@
 	Genes=0|0|11|22|21|1|2
 	#4679:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=6
 	AttackPower=2
 	Capacity=2400
@@ -51511,7 +51511,7 @@
 	Genes=22|21|2|33
 	#4682:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=1275
@@ -51786,7 +51786,7 @@
 	Genes=1|30|22|3|31|22|11|22
 	#4707:
 	Energy=1457
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=0
@@ -52325,7 +52325,7 @@
 	Genes=0|3|11|22|21|1|31
 	#4756:
 	Energy=185
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=2
 	Capacity=1725
@@ -52380,7 +52380,7 @@
 	Genes=22|31|30
 	#4761:
 	Energy=1320
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=6
 	AttackPower=1
 	Capacity=1600
@@ -52611,7 +52611,7 @@
 	Genes=21|30|11|3|3
 	#4782:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=10
 	AttackPower=1
 	Capacity=775
@@ -53051,7 +53051,7 @@
 	Genes=22|31
 	#4822:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=6
 	AttackPower=2
 	Capacity=3025
@@ -53755,7 +53755,7 @@
 	Genes=3|33|22|22|33|0|21
 	#4886:
 	Energy=576
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=2
 	AttackPower=3
 	Capacity=225
@@ -53986,7 +53986,7 @@
 	Genes=21|30|22|31|3|30|2|0|1
 	#4907:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=2
 	Capacity=100
@@ -54173,7 +54173,7 @@
 	Genes=22|22
 	#4924:
 	Energy=1016
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=2350
@@ -54514,7 +54514,7 @@
 	Genes=21|11|21|2|31|30
 	#4955:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=3
 	AttackPower=3
 	Capacity=725
@@ -54558,7 +54558,7 @@
 	Genes=3|0|3
 	#4959:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=0
@@ -54723,7 +54723,7 @@
 	Genes=33|33|33|31
 	#4974:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2225
@@ -54888,7 +54888,7 @@
 	Genes=22|21|2|22
 	#4989:
 	Energy=764
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=1500
@@ -55009,7 +55009,7 @@
 	Genes=30|21|22|22|31|3|33|0
 	#5000:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=6
 	AttackPower=2
 	Capacity=2800
@@ -55053,7 +55053,7 @@
 	Genes=2|3
 	#5004:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=1625
@@ -55130,7 +55130,7 @@
 	Genes=21|30|22|31|3|30|2|0
 	#5011:
 	Energy=1253
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=2
 	Capacity=2725
@@ -56054,7 +56054,7 @@
 	Genes=3|2|22
 	#5095:
 	Energy=87
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=5
 	AttackPower=3
 	Capacity=125
@@ -56219,7 +56219,7 @@
 	Genes=0|31
 	#5110:
 	Energy=493
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=3
 	Capacity=3650
@@ -56329,7 +56329,7 @@
 	Genes=21|30|33|31|3|30|2|0
 	#5120:
 	Energy=319
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=3275
@@ -56373,7 +56373,7 @@
 	Genes=22|22|0|1|22
 	#5124:
 	Energy=301
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=1650
@@ -56659,7 +56659,7 @@
 	Genes=21|2|2|0|3|3|31|0|31|22
 	#5150:
 	Energy=517
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=11
 	AttackPower=1
 	Capacity=1800
@@ -56747,7 +56747,7 @@
 	Genes=22|21
 	#5158:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=2
 	Capacity=2275
@@ -56813,7 +56813,7 @@
 	Genes=22|31|33|31
 	#5164:
 	Energy=830
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=1825
@@ -57121,7 +57121,7 @@
 	Genes=30|0|0|0|31|33|30
 	#5192:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=650
@@ -58155,7 +58155,7 @@
 	Genes=22|1|22
 	#5286:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2225
@@ -58727,7 +58727,7 @@
 	Genes=22|1|22|31|22|0|3
 	#5338:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2225
@@ -59288,7 +59288,7 @@
 	Genes=33|31
 	#5389:
 	Energy=1201
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=2
 	Capacity=1875
@@ -59431,7 +59431,7 @@
 	Genes=33|31
 	#5402:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=10
 	AttackPower=1
 	Capacity=875
@@ -59673,7 +59673,7 @@
 	Genes=11|33
 	#5424:
 	Energy=435
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=2775
@@ -59717,7 +59717,7 @@
 	Genes=0|0|11|22|30
 	#5428:
 	Energy=696
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=925
@@ -60828,7 +60828,7 @@
 	Genes=22|31
 	#5529:
 	Energy=358
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=2
 	Capacity=725
@@ -60883,7 +60883,7 @@
 	Genes=0|0|11|22|21|1|2
 	#5534:
 	Energy=434
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=2350
@@ -61642,7 +61642,7 @@
 	Genes=21|30|21|2|31|30|31
 	#5603:
 	Energy=1465
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=2
 	AttackPower=1
 	Capacity=50
@@ -62126,7 +62126,7 @@
 	Genes=0|0|11|22|31|21|22|2
 	#5647:
 	Energy=840
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=1825
@@ -62698,7 +62698,7 @@
 	Genes=30|21|22|22|31|3|33|0
 	#5699:
 	Energy=791
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=1825
@@ -62962,7 +62962,7 @@
 	Genes=3|21|2|22|33
 	#5723:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=2725
@@ -63391,7 +63391,7 @@
 	Genes=33
 	#5762:
 	Energy=1497
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=500
@@ -64029,7 +64029,7 @@
 	Genes=31
 	#5820:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=6
 	AttackPower=1
 	Capacity=2200
@@ -64051,7 +64051,7 @@
 	Genes=33|0|33|11
 	#5822:
 	Energy=397
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=10
 	AttackPower=1
 	Capacity=3300
@@ -64711,7 +64711,7 @@
 	Genes=1|31
 	#5882:
 	Energy=897
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=2
 	AttackPower=1
 	Capacity=50
@@ -64898,7 +64898,7 @@
 	Genes=21|30|22|31|3|30|2|0|1
 	#5899:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=975
@@ -64953,7 +64953,7 @@
 	Genes=0|0|11|22|31|3
 	#5904:
 	Energy=856
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=6
 	AttackPower=2
 	Capacity=1000
@@ -65129,7 +65129,7 @@
 	Genes=21|30|11|3|21
 	#5920:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=2150
@@ -65294,7 +65294,7 @@
 	Genes=22|21|31|21|31|3
 	#5935:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=10
 	AttackPower=1
 	Capacity=775
@@ -65338,7 +65338,7 @@
 	Genes=2|30|3|1|33|21|33|3
 	#5939:
 	Energy=357
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=1125
@@ -65525,7 +65525,7 @@
 	Genes=22|3|22
 	#5956:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=5
 	AttackPower=2
 	Capacity=2450
@@ -65591,7 +65591,7 @@
 	Genes=21|2|2|0|3|3|31|0|1
 	#5962:
 	Energy=1478
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=6
 	AttackPower=2
 	Capacity=1700
@@ -66042,7 +66042,7 @@
 	Genes=21|30|22|31|3|30|2|0|0
 	#6003:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=6
 	AttackPower=2
 	Capacity=2825
@@ -66119,7 +66119,7 @@
 	Genes=3|31
 	#6010:
 	Energy=1490
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=2
 	AttackPower=1
 	Capacity=2375
@@ -66273,7 +66273,7 @@
 	Genes=30|0|2|3|31|31
 	#6024:
 	Energy=80
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=250
@@ -66647,7 +66647,7 @@
 	Genes=3|31
 	#6058:
 	Energy=1039
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=2
 	AttackPower=3
 	Capacity=500
@@ -66812,7 +66812,7 @@
 	Genes=1|21|33|11|2|21|3
 	#6073:
 	Energy=496
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=6
 	AttackPower=1
 	Capacity=2775
@@ -67263,7 +67263,7 @@
 	Genes=3|31|33|31|33|11
 	#6114:
 	Energy=396
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=2075
@@ -67483,7 +67483,7 @@
 	Genes=0|0|11|22|21|1|2|21
 	#6134:
 	Energy=129
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=1325
@@ -69034,7 +69034,7 @@
 	Genes=21|30|21|2|1|30
 	#6275:
 	Energy=635
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=2
 	AttackPower=3
 	Capacity=1325
@@ -69221,7 +69221,7 @@
 	Genes=21|33|33|21|2|3|21
 	#6292:
 	Energy=466
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=3
 	Capacity=3550
@@ -69716,7 +69716,7 @@
 	Genes=22|22|0|1|2|22|0
 	#6337:
 	Energy=-1
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=5
 	AttackPower=2
 	Capacity=375
@@ -69749,7 +69749,7 @@
 	Genes=11|30|33|31
 	#6340:
 	Energy=439
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=10
 	AttackPower=1
 	Capacity=775
@@ -69892,7 +69892,7 @@
 	Genes=21|30|22|31|3|30|2|0
 	#6353:
 	Energy=369
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=2075
@@ -70420,7 +70420,7 @@
 	Genes=21|33|30|1|30|3|33|3
 	#6401:
 	Energy=460
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=2275
@@ -70783,7 +70783,7 @@
 	Genes=1|21|33|11|31|21|3|3
 	#6434:
 	Energy=5
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=2250
@@ -71267,7 +71267,7 @@
 	Genes=22|1|22|31
 	#6478:
 	Energy=331
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=3275
@@ -71641,7 +71641,7 @@
 	Genes=0|3|11|22|21|1|31|30|0
 	#6512:
 	Energy=986
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=3
 	Capacity=3650
@@ -71773,7 +71773,7 @@
 	Genes=22|11|0|1|22|0
 	#6524:
 	Energy=93
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=6
 	AttackPower=2
 	Capacity=2100
@@ -71960,7 +71960,7 @@
 	Genes=22|1|22|31|22|22
 	#6541:
 	Energy=1002
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=775
@@ -72070,7 +72070,7 @@
 	Genes=22|2|30
 	#6551:
 	Energy=43
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=10
 	AttackPower=2
 	Capacity=1475
@@ -72301,7 +72301,7 @@
 	Genes=1|31|33|0|31|21|3
 	#6572:
 	Energy=979
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=325
@@ -72620,7 +72620,7 @@
 	Genes=22|1|22|31|22
 	#6601:
 	Energy=1422
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=125
@@ -73049,7 +73049,7 @@
 	Genes=1|21|33|0|31|21|3
 	#6640:
 	Energy=561
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=2150
@@ -73181,7 +73181,7 @@
 	Genes=3|31|33
 	#6652:
 	Energy=1436
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=300
@@ -73786,7 +73786,7 @@
 	Genes=22|11
 	#6707:
 	Energy=873
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=4
 	AttackPower=3
 	Capacity=2775
@@ -74369,7 +74369,7 @@
 	Genes=3|33
 	#6760:
 	Energy=912
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=3275
@@ -74446,7 +74446,7 @@
 	Genes=11|0|33|2|3
 	#6767:
 	Energy=536
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=2
 	Capacity=150
@@ -74677,7 +74677,7 @@
 	Genes=22|3|22
 	#6788:
 	Energy=1308
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=2
 	Capacity=750
@@ -74732,7 +74732,7 @@
 	Genes=22|31|22|31|31
 	#6793:
 	Energy=830
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=450
@@ -74776,7 +74776,7 @@
 	Genes=22
 	#6797:
 	Energy=765
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=2
 	AttackPower=1
 	Capacity=1275
@@ -75161,7 +75161,7 @@
 	Genes=22|31
 	#6832:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=2475
@@ -75337,7 +75337,7 @@
 	Genes=3|11|22
 	#6848:
 	Energy=666
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=325
@@ -75656,7 +75656,7 @@
 	Genes=21|30|22|31|31|30|2|0
 	#6877:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=10
 	AttackPower=1
 	Capacity=1875
@@ -75964,7 +75964,7 @@
 	Genes=22|22|0|1|33|30
 	#6905:
 	Energy=931
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=1850
@@ -76074,7 +76074,7 @@
 	Genes=22|31|22|31|31
 	#6915:
 	Energy=988
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=5
 	AttackPower=3
 	Capacity=1850
@@ -76118,7 +76118,7 @@
 	Genes=3|3|33|31
 	#6919:
 	Energy=-7
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=2825
@@ -76426,7 +76426,7 @@
 	Genes=22
 	#6947:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=2
 	Capacity=3300
@@ -76448,7 +76448,7 @@
 	Genes=22|2|2|2
 	#6949:
 	Energy=1110
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=2
 	AttackPower=4
 	Capacity=1325
@@ -76536,7 +76536,7 @@
 	Genes=22|1|22|2
 	#6957:
 	Energy=405
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2425
@@ -76547,7 +76547,7 @@
 	Genes=22|31|22
 	#6958:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=10
 	AttackPower=1
 	Capacity=1375
@@ -77064,7 +77064,7 @@
 	Genes=22|1|22|11
 	#7005:
 	Energy=539
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=6
 	AttackPower=2
 	Capacity=800
@@ -77097,7 +77097,7 @@
 	Genes=33|31
 	#7008:
 	Energy=1471
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=2
 	AttackPower=2
 	Capacity=600
@@ -77130,7 +77130,7 @@
 	Genes=11|33|33|31
 	#7011:
 	Energy=104
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=6
 	AttackPower=1
 	Capacity=1900
@@ -77152,7 +77152,7 @@
 	Genes=22|3|2|3|2
 	#7013:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=11
 	AttackPower=1
 	Capacity=700
@@ -77658,7 +77658,7 @@
 	Genes=22|22|0|1|2|22|0
 	#7059:
 	Energy=880
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=4
 	AttackPower=1
 	Capacity=3075
@@ -77878,7 +77878,7 @@
 	Genes=22|1|22|30
 	#7079:
 	Energy=373
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=1425
@@ -78318,7 +78318,7 @@
 	Genes=0|3|11|22|21|1|31
 	#7119:
 	Energy=1266
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=1625
@@ -78538,7 +78538,7 @@
 	Genes=22|31|3
 	#7139:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=6
 	AttackPower=1
 	Capacity=2200
@@ -78967,7 +78967,7 @@
 	Genes=22|3
 	#7178:
 	Energy=1424
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=11
 	AttackPower=1
 	Capacity=1500
@@ -79297,7 +79297,7 @@
 	Genes=0|3|11|22|21|1|31
 	#7208:
 	Energy=145
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=10
 	AttackPower=1
 	Capacity=775
@@ -79451,7 +79451,7 @@
 	Genes=3|31
 	#7222:
 	Energy=539
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=2
 	Capacity=2050
@@ -79572,7 +79572,7 @@
 	Genes=22|1|22|31|22
 	#7233:
 	Energy=331
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=2275
@@ -80298,7 +80298,7 @@
 	Genes=22|1|22|31|22|22
 	#7299:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=200
@@ -80309,7 +80309,7 @@
 	Genes=30|31|2|21|30|33|22|0|0
 	#7300:
 	Energy=501
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=2775
@@ -80562,7 +80562,7 @@
 	Genes=22|2|22
 	#7323:
 	Energy=40
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=5
 	AttackPower=3
 	Capacity=1150
@@ -80727,7 +80727,7 @@
 	Genes=30|30|22|31|3|30|2|0|0
 	#7338:
 	Energy=1219
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=3
 	Capacity=2625
@@ -81233,7 +81233,7 @@
 	Genes=31|33|0
 	#7384:
 	Energy=888
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=1450
@@ -81354,7 +81354,7 @@
 	Genes=31|33
 	#7395:
 	Energy=770
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=375
@@ -81519,7 +81519,7 @@
 	Genes=31
 	#7410:
 	Energy=1072
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=3350
@@ -81640,7 +81640,7 @@
 	Genes=21|33|30|1|30|3|33|3
 	#7421:
 	Energy=798
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=11
 	AttackPower=1
 	Capacity=700
@@ -81651,7 +81651,7 @@
 	Genes=0|0|3|22|21|30|2|21
 	#7422:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=2
 	Capacity=1450
@@ -82146,7 +82146,7 @@
 	Genes=22|1|22|31|21
 	#7467:
 	Energy=338
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=3275
@@ -82322,7 +82322,7 @@
 	Genes=22|21|3|1|22|31|21
 	#7483:
 	Energy=658
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=6
 	AttackPower=1
 	Capacity=1200
@@ -82465,7 +82465,7 @@
 	Genes=11|2|33|30|31|30|3
 	#7496:
 	Energy=-7
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=2800
@@ -82685,7 +82685,7 @@
 	Genes=11|33|33
 	#7516:
 	Energy=393
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=1525
@@ -82938,7 +82938,7 @@
 	Genes=3|11|22|21
 	#7539:
 	Energy=428
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2025
@@ -83367,7 +83367,7 @@
 	Genes=3|33|11
 	#7578:
 	Energy=286
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=3275
@@ -83565,7 +83565,7 @@
 	Genes=22|1|22|31|21
 	#7596:
 	Energy=590
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=2150
@@ -83631,7 +83631,7 @@
 	Genes=22|3|22
 	#7602:
 	Energy=1057
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=2
 	AttackPower=2
 	Capacity=1200
@@ -84192,7 +84192,7 @@
 	Genes=33|1|3
 	#7653:
 	Energy=849
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=2
 	AttackPower=5
 	Capacity=2975
@@ -84291,7 +84291,7 @@
 	Genes=3|3|33
 	#7662:
 	Energy=1500
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=1425
@@ -84412,7 +84412,7 @@
 	Genes=22|1|22|31|31
 	#7673:
 	Energy=962
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=10
 	AttackPower=1
 	Capacity=1575
@@ -84841,7 +84841,7 @@
 	Genes=22|22|0|1|22|22|21
 	#7712:
 	Energy=596
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=2
 	Capacity=3250
@@ -84863,7 +84863,7 @@
 	Genes=3|31|33|31|33|11
 	#7714:
 	Energy=1486
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=575
@@ -85083,7 +85083,7 @@
 	Genes=31|0|11|3|33
 	#7734:
 	Energy=54
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=4
 	Capacity=4050
@@ -85226,7 +85226,7 @@
 	Genes=22|1|22|11|21|22
 	#7747:
 	Energy=1158
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=2
 	Capacity=2425
@@ -85358,7 +85358,7 @@
 	Genes=22|2|22
 	#7759:
 	Energy=695
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=5
 	AttackPower=2
 	Capacity=2250
@@ -85941,7 +85941,7 @@
 	Genes=3|31
 	#7812:
 	Energy=280
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=4
 	AttackPower=1
 	Capacity=3125
@@ -86029,7 +86029,7 @@
 	Genes=0|0|11|22|21|1|2
 	#7820:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=3
 	AttackPower=3
 	Capacity=2225
@@ -86766,7 +86766,7 @@
 	Genes=2|3|11|22|11|1|31
 	#7887:
 	Energy=1319
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2325
@@ -87008,7 +87008,7 @@
 	Genes=3
 	#7909:
 	Energy=925
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=1825
@@ -87250,7 +87250,7 @@
 	Genes=33|33|31|33|21
 	#7931:
 	Energy=1409
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=2
 	AttackPower=3
 	Capacity=925
@@ -87415,7 +87415,7 @@
 	Genes=33|11|3|2|0|21|33|2|1
 	#7946:
 	Energy=753
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=2
 	Capacity=3650
@@ -87613,7 +87613,7 @@
 	Genes=22|1|22|31|22
 	#7964:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=2
 	Capacity=2275
@@ -87734,7 +87734,7 @@
 	Genes=33|31
 	#7975:
 	Energy=429
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=2050
@@ -87778,7 +87778,7 @@
 	Genes=22|2|22
 	#7979:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=5
 	AttackPower=1
 	Capacity=2375
@@ -88328,7 +88328,7 @@
 	Genes=21|30|22|31|3|30|2|0
 	#8029:
 	Energy=1367
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=825
@@ -88636,7 +88636,7 @@
 	Genes=22|21|3|31
 	#8057:
 	Energy=1143
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=10
 	AttackPower=1
 	Capacity=1900
@@ -90484,7 +90484,7 @@
 	Genes=3|31
 	#8225:
 	Energy=1458
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=1925
@@ -90924,7 +90924,7 @@
 	Genes=22|22|0|1|22|22
 	#8265:
 	Energy=257
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=1750
@@ -91232,7 +91232,7 @@
 	Genes=22|21|2|22|30
 	#8293:
 	Energy=744
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=3
 	Capacity=2175
@@ -91375,7 +91375,7 @@
 	Genes=22|3|22|31|22|33
 	#8306:
 	Energy=521
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=2
 	AttackPower=2
 	Capacity=2200
@@ -91452,7 +91452,7 @@
 	Genes=33|1
 	#8313:
 	Energy=76
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=2750
@@ -92475,7 +92475,7 @@
 	Genes=33
 	#8406:
 	Energy=817
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=4
 	AttackPower=2
 	Capacity=2875
@@ -92530,7 +92530,7 @@
 	Genes=3|21|2|31|2
 	#8411:
 	Energy=568
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=10
 	AttackPower=2
 	Capacity=2225
@@ -92563,7 +92563,7 @@
 	Genes=22|22|0|1|22|22|0
 	#8414:
 	Energy=894
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=2
 	Capacity=725
@@ -92662,7 +92662,7 @@
 	Genes=30|0|2|33|31|31|33|0
 	#8423:
 	Energy=1007
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=3550
@@ -92783,7 +92783,7 @@
 	Genes=3|31|33|3|0
 	#8434:
 	Energy=1462
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=2
 	AttackPower=1
 	Capacity=125
@@ -93179,7 +93179,7 @@
 	Genes=11|30|33|2|33
 	#8470:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=375
@@ -93432,7 +93432,7 @@
 	Genes=2|22
 	#8493:
 	Energy=956
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=2
 	Capacity=3250
@@ -93839,7 +93839,7 @@
 	Genes=3|3|31|31
 	#8530:
 	Energy=1093
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=5
 	AttackPower=1
 	Capacity=375
@@ -93883,7 +93883,7 @@
 	Genes=30|0|21|33|31|31|30
 	#8534:
 	Energy=740
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=2775
@@ -93916,7 +93916,7 @@
 	Genes=22|22|0|1|33|30|33
 	#8537:
 	Energy=996
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=2
 	Capacity=2450
@@ -93927,7 +93927,7 @@
 	Genes=3|31|31|21
 	#8538:
 	Energy=1291
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=6
 	AttackPower=1
 	Capacity=3025
@@ -93960,7 +93960,7 @@
 	Genes=3|21|2|22
 	#8541:
 	Energy=603
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=3000
@@ -93993,7 +93993,7 @@
 	Genes=22|2|22|31
 	#8544:
 	Energy=814
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=3
 	AttackPower=2
 	Capacity=450
@@ -94213,7 +94213,7 @@
 	Genes=3|31
 	#8564:
 	Energy=360
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=2
 	Capacity=2375
@@ -94653,7 +94653,7 @@
 	Genes=30|0|21|33|31|31
 	#8604:
 	Energy=1081
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=1325
@@ -94774,7 +94774,7 @@
 	Genes=3|31|33|33|33|11
 	#8615:
 	Energy=879
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=0
@@ -95357,7 +95357,7 @@
 	Genes=33|31
 	#8668:
 	Energy=1024
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=10
 	AttackPower=1
 	Capacity=1800
@@ -95654,7 +95654,7 @@
 	Genes=33|33|3
 	#8695:
 	Energy=792
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=175
@@ -95698,7 +95698,7 @@
 	Genes=3|31|31|3
 	#8699:
 	Energy=784
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=800
@@ -96325,7 +96325,7 @@
 	Genes=33|31
 	#8756:
 	Energy=555
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=3
 	Capacity=2975
@@ -96501,7 +96501,7 @@
 	Genes=3|3|31|31|33
 	#8772:
 	Energy=759
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=6
 	AttackPower=2
 	Capacity=2300
@@ -96809,7 +96809,7 @@
 	Genes=22|31
 	#8800:
 	Energy=330
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=1150
@@ -97590,7 +97590,7 @@
 	Genes=2|33|33|2|1|33|3|0|1
 	#8871:
 	Energy=894
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=450
@@ -97887,7 +97887,7 @@
 	Genes=33|0
 	#8898:
 	Energy=1335
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=1500
@@ -98228,7 +98228,7 @@
 	Genes=31|33
 	#8929:
 	Energy=973
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=3
 	Capacity=2175
@@ -98701,7 +98701,7 @@
 	Genes=1|0|11|22|21|1|2
 	#8972:
 	Energy=1463
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=3
 	AttackPower=4
 	Capacity=325
@@ -98833,7 +98833,7 @@
 	Genes=3|33|30
 	#8984:
 	Energy=707
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=4050
@@ -98899,7 +98899,7 @@
 	Genes=22|3|22|11|11
 	#8990:
 	Energy=867
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=3575
@@ -99020,7 +99020,7 @@
 	Genes=3|21|2|22
 	#9001:
 	Energy=962
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=1550
@@ -99482,7 +99482,7 @@
 	Genes=33
 	#9043:
 	Energy=238
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=1350
@@ -99559,7 +99559,7 @@
 	Genes=3|31|33|31|33|11
 	#9050:
 	Energy=818
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=775
@@ -100021,7 +100021,7 @@
 	Genes=22|21|2|22|30
 	#9092:
 	Energy=145
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=2
 	Capacity=700
@@ -100813,7 +100813,7 @@
 	Genes=0|0|0|33|31|31
 	#9164:
 	Energy=860
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=1000
@@ -101099,7 +101099,7 @@
 	Genes=22|22|0|1|22|22
 	#9190:
 	Energy=762
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=2175
@@ -101198,7 +101198,7 @@
 	Genes=22|31|22|0
 	#9199:
 	Energy=579
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=10
 	AttackPower=1
 	Capacity=2300
@@ -101231,7 +101231,7 @@
 	Genes=22|21|2|21|33|31
 	#9202:
 	Energy=809
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=2
 	AttackPower=1
 	Capacity=300
@@ -101363,7 +101363,7 @@
 	Genes=3|21|2|22
 	#9214:
 	Energy=1371
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=2
 	Capacity=2050
@@ -101649,7 +101649,7 @@
 	Genes=33|3|33|21|3|33
 	#9240:
 	Energy=1443
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=2
 	AttackPower=3
 	Capacity=3575
@@ -102045,7 +102045,7 @@
 	Genes=30|33|22
 	#9276:
 	Energy=1222
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=6
 	AttackPower=2
 	Capacity=3700
@@ -102815,7 +102815,7 @@
 	Genes=33
 	#9346:
 	Energy=1485
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=1550
@@ -103332,7 +103332,7 @@
 	Genes=3|3|33
 	#9393:
 	Energy=1050
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2125
@@ -103409,7 +103409,7 @@
 	Genes=21|33|30|1|30|11|21|3|11
 	#9400:
 	Energy=544
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=2
 	AttackPower=5
 	Capacity=2225
@@ -103420,7 +103420,7 @@
 	Genes=11|33|33
 	#9401:
 	Energy=734
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=4
 	Capacity=475
@@ -103662,7 +103662,7 @@
 	Genes=33|3|30|21|3|33
 	#9423:
 	Energy=1189
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=6
 	AttackPower=2
 	Capacity=200
@@ -103706,7 +103706,7 @@
 	Genes=33|33|3
 	#9427:
 	Energy=1344
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=1325
@@ -104168,7 +104168,7 @@
 	Genes=3|31|31|3
 	#9469:
 	Energy=884
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=3
 	Capacity=3650
@@ -104729,7 +104729,7 @@
 	Genes=31|21|2|0|3
 	#9520:
 	Energy=847
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=3
 	Capacity=2175
@@ -104960,7 +104960,7 @@
 	Genes=22|3|22
 	#9541:
 	Energy=1317
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=3575
@@ -105862,7 +105862,7 @@
 	Genes=3
 	#9623:
 	Energy=493
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=4
 	Capacity=4050
@@ -106313,7 +106313,7 @@
 	Genes=1|11|21|11|21|22|31
 	#9664:
 	Energy=316
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=3
 	AttackPower=1
 	Capacity=100
@@ -106401,7 +106401,7 @@
 	Genes=33|31
 	#9672:
 	Energy=818
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=6
 	AttackPower=1
 	Capacity=1350
@@ -106786,7 +106786,7 @@
 	Genes=3
 	#9707:
 	Energy=1049
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=6
 	AttackPower=1
 	Capacity=2200
@@ -107380,7 +107380,7 @@
 	Genes=30|3|0
 	#9761:
 	Energy=1274
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=2325
@@ -107853,7 +107853,7 @@
 	Genes=33|31
 	#9804:
 	Energy=689
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=3650
@@ -108282,7 +108282,7 @@
 	Genes=33|30|31
 	#9843:
 	Energy=1461
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=3125
@@ -108315,7 +108315,7 @@
 	Genes=22|22|22|31|22|0
 	#9846:
 	Energy=1061
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=2
 	AttackPower=2
 	Capacity=1200
@@ -108348,7 +108348,7 @@
 	Genes=33|0|33|11
 	#9849:
 	Energy=1112
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=3
 	AttackPower=1
 	Capacity=1225
@@ -108579,7 +108579,7 @@
 	Genes=1|22|33|21|30|3
 	#9870:
 	Energy=678
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=10
 	AttackPower=1
 	Capacity=1800
@@ -108601,7 +108601,7 @@
 	Genes=3|3|3|31|0
 	#9872:
 	Energy=1306
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=4
 	AttackPower=2
 	Capacity=2875
@@ -108953,7 +108953,7 @@
 	Genes=22|3
 	#9904:
 	Energy=1299
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=6
 	AttackPower=1
 	Capacity=2825
@@ -109239,7 +109239,7 @@
 	Genes=3|31|3
 	#9930:
 	Energy=930
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=1950
@@ -110427,7 +110427,7 @@
 	Genes=31
 	#10038:
 	Energy=375
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=3
 	AttackPower=1
 	Capacity=2450
@@ -110856,7 +110856,7 @@
 	Genes=30|33|30|1|30|3|33|3
 	#10077:
 	Energy=673
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=375
@@ -110944,7 +110944,7 @@
 	Genes=21|1|22|31|3|0|3
 	#10085:
 	Energy=840
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=3000
@@ -111263,7 +111263,7 @@
 	Genes=21|30|22|31|3|30|2|0|1
 	#10114:
 	Energy=254
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=3
 	AttackPower=1
 	Capacity=225
@@ -111373,7 +111373,7 @@
 	Genes=30|33
 	#10124:
 	Energy=972
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=2
 	AttackPower=2
 	Capacity=2775
@@ -112044,7 +112044,7 @@
 	Genes=3|0|33|31|33|11|11
 	#10185:
 	Energy=727
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=2025
@@ -112352,7 +112352,7 @@
 	Genes=22|2
 	#10213:
 	Energy=1500
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=2
 	Capacity=1950
@@ -112660,7 +112660,7 @@
 	Genes=22|31|22
 	#10241:
 	Energy=1214
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=2
 	Capacity=575
@@ -112726,7 +112726,7 @@
 	Genes=33|3|33|21|3|30|21|0
 	#10247:
 	Energy=1137
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=0
@@ -113232,7 +113232,7 @@
 	Genes=3|21|2|22
 	#10293:
 	Energy=682
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=2
 	AttackPower=3
 	Capacity=500
@@ -113243,7 +113243,7 @@
 	Genes=3|31|33|31|33|11
 	#10294:
 	Energy=1290
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=3
 	Capacity=2175
@@ -113452,7 +113452,7 @@
 	Genes=22|1|22|31|22|30
 	#10313:
 	Energy=1261
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=1475
@@ -113595,7 +113595,7 @@
 	Genes=22|33
 	#10326:
 	Energy=833
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=3
 	AttackPower=5
 	Capacity=2350
@@ -113925,7 +113925,7 @@
 	Genes=3|33
 	#10356:
 	Energy=903
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=4125
@@ -113958,7 +113958,7 @@
 	Genes=22|1|31|31|33
 	#10359:
 	Energy=611
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=3
 	AttackPower=1
 	Capacity=600
@@ -114079,7 +114079,7 @@
 	Genes=3
 	#10370:
 	Energy=916
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=1
 	Capacity=550
@@ -114662,7 +114662,7 @@
 	Genes=2|22|33|21|30|3
 	#10423:
 	Energy=988
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=8
 	AttackPower=2
 	Capacity=150
@@ -114717,7 +114717,7 @@
 	Genes=22|1|22|31|22|33
 	#10428:
 	Energy=1178
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=2225
@@ -114805,7 +114805,7 @@
 	Genes=3|31|33|2
 	#10436:
 	Energy=544
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=7
 	AttackPower=1
 	Capacity=925
@@ -115157,7 +115157,7 @@
 	Genes=3
 	#10468:
 	Energy=1119
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=3225
@@ -115883,7 +115883,7 @@
 	Genes=33|3
 	#10534:
 	Energy=1299
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=3
 	AttackPower=3
 	Capacity=225
@@ -116400,7 +116400,7 @@
 	Genes=22|3|22
 	#10581:
 	Energy=646
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=3575
@@ -117181,7 +117181,7 @@
 	Genes=22|30|33
 	#10652:
 	Energy=769
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=7
 	AttackPower=2
 	Capacity=1175
@@ -117852,7 +117852,7 @@
 	Genes=3|3|0|31
 	#10713:
 	Energy=1342
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=2
 	Capacity=675
@@ -118512,7 +118512,7 @@
 	Genes=3|3|1|3|3
 	#10773:
 	Energy=702
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=2
 	AttackPower=2
 	Capacity=600
@@ -118919,7 +118919,7 @@
 	Genes=0|2|33
 	#10810:
 	Energy=979
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=10
 	AttackPower=2
 	Capacity=1475
@@ -119425,7 +119425,7 @@
 	Genes=3|31|33|3|11
 	#10856:
 	Energy=512
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=1
 	Capacity=1400
@@ -119667,7 +119667,7 @@
 	Genes=2|33|33|2|1|33|3|0|1
 	#10878:
 	Energy=812
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=3
 	Capacity=400
@@ -120239,7 +120239,7 @@
 	Genes=3|31|33
 	#10930:
 	Energy=937
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=10
 	AttackPower=2
 	Capacity=3500
@@ -120338,7 +120338,7 @@
 	Genes=33|31
 	#10939:
 	Energy=1059
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=2
 	AttackPower=1
 	Capacity=2275
@@ -120811,7 +120811,7 @@
 	Genes=3|3|33|1|3
 	#10982:
 	Energy=428
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=6
 	AttackPower=1
 	Capacity=2100
@@ -121779,7 +121779,7 @@
 	Genes=3|33|30|31
 	#11070:
 	Energy=311
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=2
 	AttackPower=1
 	Capacity=1775
@@ -122318,7 +122318,7 @@
 	Genes=30|0|2|33|31|31|2
 	#11119:
 	Energy=366
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=3
 	AttackPower=1
 	Capacity=3800
@@ -122395,7 +122395,7 @@
 	Genes=3|3
 	#11126:
 	Energy=787
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=2
 	Capacity=2475
@@ -122582,7 +122582,7 @@
 	Genes=3|3|33
 	#11143:
 	Energy=563
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=1
 	AttackPower=3
 	Capacity=2375
@@ -122857,7 +122857,7 @@
 	Genes=33|31
 	#11168:
 	Energy=792
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=4
 	AttackPower=2
 	Capacity=2875
@@ -123242,7 +123242,7 @@
 	Genes=21|33|30|1|30|3|3|3
 	#11203:
 	Energy=776
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=2
 	Capacity=3075
@@ -123286,7 +123286,7 @@
 	Genes=0|3|0|22|21|1|31
 	#11207:
 	Energy=800
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=4
 	Capacity=3150
@@ -123374,7 +123374,7 @@
 	Genes=3|21|2|22|33|30
 	#11215:
 	Energy=779
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=4
 	AttackPower=4
 	Capacity=2375
@@ -123935,7 +123935,7 @@
 	Genes=2|3
 	#11266:
 	Energy=683
-	LastDirection=-2
+	LastDirection=2
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=250
@@ -124111,7 +124111,7 @@
 	Genes=11|30|33|31|1
 	#11282:
 	Energy=768
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=3
 	AttackPower=1
 	Capacity=225
@@ -124287,7 +124287,7 @@
 	Genes=3|3
 	#11298:
 	Energy=734
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=1
 	AttackPower=2
 	Capacity=3500
@@ -124903,7 +124903,7 @@
 	Genes=30|3|2
 	#11354:
 	Energy=771
-	LastDirection=10
+	LastDirection=8
 	Chlorophyl=9
 	AttackPower=1
 	Capacity=3075
