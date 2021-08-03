@@ -12,6 +12,7 @@ namespace Simulator.World
     public interface IAction
     {
         void Process(Unit unit);
+        void Process(int unitNumber);
         int Value();
         Color ActionColor();
         ActionType Type();

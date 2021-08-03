@@ -92,7 +92,7 @@ namespace Simulator
                     //World.UpdateByThreads();
                     World.Update();
                     labels[5].Text = $"Year: {World.Timer}";
-                    labels[6].Text = $"Units: {World.Units.Count}";
+                    labels[6].Text = $"Units: {World.Units.UnitsNumbers.Count}";
                 }
 
                 UnitTextConfigurator.ChoosenUnitUpdateInfo(isRunning);
@@ -240,12 +240,12 @@ namespace Simulator
         }
         private static void Apply_Clicked(object sender, SignalArgsVector2f e)
         {
-            if (UnitTextConfigurator.ChoosenUnit != null)
+            if (UnitTextConfigurator.ChoosenUnit != -1)
             {
                 int energy = UnitTextConfigurator.GetEnergyInfo();
                 IAction[][] genes = UnitTextConfigurator.GetGenesArray();
-                UnitTextConfigurator.ChoosenUnit.TakeEnergy(energy - UnitTextConfigurator.ChoosenUnit.Energy);
-                UnitTextConfigurator.ChoosenUnit.SetGenes(genes);
+                World.Units.TakeEnergy(UnitTextConfigurator.ChoosenUnit, energy - World.Units.UnitsEnergy[UnitTextConfigurator.ChoosenUnit]);
+                //UnitTextConfigurator.ChoosenUnit.SetGenes(genes);
             }
             var parameters = WorldTextConfigurator.GetParameters();
 
@@ -303,12 +303,12 @@ namespace Simulator
             if (x >= 0 && y >= 0 && x < Swamp.WorldWidth && y < Swamp.WorldHeight)
             {
                 var unit = World.GetUnit(x, y);
-                if (unit != null)
+                if (unit != -1)
                 {
                     UnitTextConfigurator.ChooseUnit(unit);
                     isRunning = false;
                 }
-                else if (unit == null)
+                else if (unit == -1)
                 {
                     UnitTextConfigurator.ClearUnitDescription();
                     UnitTextConfigurator.ResetUnit();

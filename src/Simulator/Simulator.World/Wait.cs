@@ -14,6 +14,11 @@ namespace Simulator.World
             
         }
 
+        public void Process(int unitNumber)
+        {
+            
+        }
+
         public ActionType Type()
         {
             return ActionType.Wait;

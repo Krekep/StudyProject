@@ -51,22 +51,22 @@ namespace Simulator
         {
             StringBuilder result = new StringBuilder($"#Units:\n", 10000);
             int i = 0;
-            foreach (Unit unit in world.Units)
-            {
-                result.Append($"\t#{i}:\n");
-                string temp = $"\tEnergy={unit.Energy}\n" +
-                    $"\tLastDirection={unit.LastDirection}\n" +
-                    $"\tChlorophyl={unit.Chlorophyl}\n" +
-                    $"\tAttackPower={unit.AttackPower}\n" +
-                    $"\tCapacity={unit.Capacity}\n" +
-                    $"\tParent={unit.Parent}\n" +
-                    $"\tStatus={(int)unit.Status}\n" +
-                    $"\tPosition={unit.Coords[0]} {unit.Coords[1]}\n" +
-                    $"\tDirection={unit.Direction[0]} {unit.Direction[1]}\n" +
-                    $"\tGenes={GetStringGenes(unit)}\n";
-                result.Append(temp);
-                i++;
-            }
+            //foreach (Unit unit in world.Units)
+            //{
+            //    result.Append($"\t#{i}:\n");
+            //    string temp = $"\tEnergy={unit.Energy}\n" +
+            //        $"\tLastDirection={unit.LastDirection}\n" +
+            //        $"\tChlorophyl={unit.Chlorophyl}\n" +
+            //        $"\tAttackPower={unit.AttackPower}\n" +
+            //        $"\tCapacity={unit.Capacity}\n" +
+            //        $"\tParent={unit.Parent}\n" +
+            //        $"\tStatus={(int)unit.Status}\n" +
+            //        $"\tPosition={unit.Coords[0]} {unit.Coords[1]}\n" +
+            //        $"\tDirection={unit.Direction[0]} {unit.Direction[1]}\n" +
+            //        $"\tGenes={GetStringGenes(unit)}\n";
+            //    result.Append(temp);
+            //    i++;
+            //}
             return result.ToString();
         }
 

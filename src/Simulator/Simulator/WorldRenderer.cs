@@ -31,17 +31,17 @@ namespace Simulator
         private static Vertex rightBottom;
         public static void Draw()
         {
-            HashSet<Unit> temp = Program.World.Units;
-            vertexArray = new VertexArray(PrimitiveType.Quads, (uint)temp.Count * 4);
+            var unitsData = Program.World.Units;
+            vertexArray = new VertexArray(PrimitiveType.Quads, (uint)unitsData.UnitsNumbers.Count * 4);
             unitShape.OutlineThickness = 0;
             uint i = 0;
-            foreach (Unit unit in temp)
+            foreach (int unit in unitsData.UnitsNumbers)
             {
-                leftTop = new Vertex(new Vector2f(Program.LeftMapOffset + unit.Coords[0] * Program.ViewScale, Program.TopMapOffset + unit.Coords[1] * Program.ViewScale));
-                leftBottom = new Vertex(new Vector2f(Program.LeftMapOffset + unit.Coords[0] * Program.ViewScale, Program.TopMapOffset + unit.Coords[1] * Program.ViewScale + Program.ViewScale));
-                rightTop = new Vertex(new Vector2f(Program.LeftMapOffset + unit.Coords[0] * Program.ViewScale + Program.ViewScale, Program.TopMapOffset + unit.Coords[1] * Program.ViewScale));
-                rightBottom = new Vertex(new Vector2f(Program.LeftMapOffset + unit.Coords[0] * Program.ViewScale + Program.ViewScale, Program.TopMapOffset + unit.Coords[1] * Program.ViewScale + Program.ViewScale));
-                if (UnitTextConfigurator.ChoosenUnit != null && unit.Parent == UnitTextConfigurator.ChoosenUnit.Parent)
+                leftTop = new Vertex(new Vector2f(Program.LeftMapOffset + unitsData.UnitsCoords[unit][0] * Program.ViewScale, Program.TopMapOffset + unitsData.UnitsCoords[unit][1] * Program.ViewScale));
+                leftBottom = new Vertex(new Vector2f(Program.LeftMapOffset + unitsData.UnitsCoords[unit][0] * Program.ViewScale, Program.TopMapOffset + unitsData.UnitsCoords[unit][1] * Program.ViewScale + Program.ViewScale));
+                rightTop = new Vertex(new Vector2f(Program.LeftMapOffset + unitsData.UnitsCoords[unit][0] * Program.ViewScale + Program.ViewScale, Program.TopMapOffset + unitsData.UnitsCoords[unit][1] * Program.ViewScale));
+                rightBottom = new Vertex(new Vector2f(Program.LeftMapOffset + unitsData.UnitsCoords[unit][0] * Program.ViewScale + Program.ViewScale, Program.TopMapOffset + unitsData.UnitsCoords[unit][1] * Program.ViewScale + Program.ViewScale));
+                if (UnitTextConfigurator.ChoosenUnit != -1 && unitsData.UnitsParent[unit] == unitsData.UnitsParent[UnitTextConfigurator.ChoosenUnit])
                 {
                     if (UnitTextConfigurator.ChoosenUnit == unit)
                     {
@@ -95,6 +95,28 @@ namespace Simulator
                         if (unit.Status == UnitStatus.Corpse)
                             return Program.DarkGray;
                         return unit.GetCurrentAction().ActionColor();
+                    }
+                default:
+                    return Color.Black;
+            }
+        }
+
+        private static Color ChooseColor(int unit)
+        {
+            var unitsData = Program.World.Units;
+            switch (Program.ChoosenMap)
+            {
+                case TypeOfMap.MapOfEnergy:
+                    {
+                        if (unitsData.UnitsStatus[unit] == UnitStatus.Corpse)
+                            return Program.Gray;
+                        return Storage.EnergyColors[unitsData.UnitsEnergy[unit] * 255 / Swamp.EnergyLimit];
+                    }
+                case TypeOfMap.MapOfActions:
+                    {
+                        if (unitsData.UnitsStatus[unit] == UnitStatus.Corpse)
+                            return Program.DarkGray;
+                        return unitsData.GetCurrentAction(unit).ActionColor();
                     }
                 default:
                     return Color.Black;

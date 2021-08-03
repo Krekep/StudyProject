@@ -1,6 +1,7 @@
 ﻿using SFML.Graphics;
 using SFML.System;
 
+using Simulator.Events;
 using Simulator.World;
 
 using System;
@@ -25,11 +26,13 @@ namespace Simulator
         static Dictionary<int, (Label, TextBox)> unitDescription;
         public const int AmountUnitInfo = 10;
 
-        public static Unit ChoosenUnit { get; private set; }
+        // public static Unit ChoosenUnit { get; private set; }
+        public static int ChoosenUnit { get; private set; }
 
         static UnitTextConfigurator()
         {
-            ChoosenUnit = null;
+            DeathEvent.Notify += UnchooseUnit;
+            ChoosenUnit = -1;
             unitDescription = new Dictionary<int, (Label, TextBox)>(AmountUnitInfo);
             ConfigureUnitDescription();
         }
@@ -167,20 +170,20 @@ namespace Simulator
             unitDescription[9] = (tempLabel, textBoxTemp);
         }
 
-        public static void ChooseUnit(Unit unit)
+        public static void ChooseUnit(int unit)
         {
             ChoosenUnit = unit;
-            unitDescription[0].Item2.Text = unit.Energy.ToString();
-            unitDescription[1].Item2.Text = GetStringGenes(ChoosenUnit);
+            unitDescription[0].Item2.Text = Program.World.Units.UnitsEnergy[unit].ToString();
+            unitDescription[1].Item2.Text = GetStringGenes(Program.World.Units.UnitsGenes[unit]);
             unitDescription[1].Item2.Size = new Vector2f(unitDescription[1].Item2.Text.Length * Program.CharacterSize, Program.CharacterSize + 10);
-            unitDescription[2].Item2.Text = unit.Chlorophyl.ToString();
-            unitDescription[3].Item2.Text = unit.LastDirection.ToString();
-            unitDescription[4].Item2.Text = $"[{unit.Direction[0]},{unit.Direction[1]}]";
-            unitDescription[5].Item2.Text = unit.Capacity.ToString();
-            unitDescription[6].Item2.Text = $"[{unit.Coords[0]},{unit.Coords[1]}]";
-            unitDescription[7].Item2.Text = unit.AttackPower.ToString();
-            unitDescription[8].Item2.Text = unit.Parent.ToString();
-            unitDescription[9].Item2.Text = unit.GetCurrentAction().Type().ToString();
+            unitDescription[2].Item2.Text = Program.World.Units.UnitsChlorophyl[unit].ToString();
+            unitDescription[3].Item2.Text = Program.World.Units.UnitsLastDirection[unit].ToString();
+            unitDescription[4].Item2.Text = $"[{Program.World.Units.UnitsDirection[unit][0]}, {Program.World.Units.UnitsDirection[unit][1]}]";
+            unitDescription[5].Item2.Text = Program.World.Units.UnitsCapacity[unit].ToString();
+            unitDescription[6].Item2.Text = $"[{Program.World.Units.UnitsCoords[unit][0]}, {Program.World.Units.UnitsCoords[unit][1]}]";
+            unitDescription[7].Item2.Text = Program.World.Units.UnitsAttackPower[unit].ToString();
+            unitDescription[8].Item2.Text = Program.World.Units.UnitsParent[unit].ToString();
+            unitDescription[9].Item2.Text = Program.World.Units.GetCurrentAction(unit).Type().ToString();
         }
 
         private static string GetStringGenes(Unit unit)
@@ -196,6 +199,20 @@ namespace Simulator
             for (int j = 0; j < temp[temp.Length - 1].Length; j++)
                 genes.Append((int)temp[temp.Length - 1][j].Type());
             return genes.ToString();
+        }
+
+        private static string GetStringGenes(IAction[][] genes)
+        {
+            StringBuilder result = new StringBuilder(10);
+            for (int i = 0; i < genes.Length - 1; i++)
+            {
+                for (int j = 0; j < genes[i].Length; j++)
+                    result.Append((int)genes[i][j].Type());
+                result.Append("|");
+            }
+            for (int j = 0; j < genes[genes.Length - 1].Length; j++)
+                result.Append((int)genes[genes.Length - 1][j].Type());
+            return result.ToString();
         }
         public static IAction[][] GetGenesArray()
         {
@@ -319,7 +336,14 @@ namespace Simulator
 
         public static void ResetUnit()
         {
-            ChoosenUnit = null;
+            ChoosenUnit = -1;
+        }
+
+        private static void UnchooseUnit(object sender, DeathEventArgs e)
+        {
+            int unit = (int)sender;
+            if (ChoosenUnit == unit)
+                ChoosenUnit = -1;
         }
 
         public static void UpdateUnitInfo(string text)
@@ -331,27 +355,24 @@ namespace Simulator
         {
             if (isRunning)
             {
-                if (ChoosenUnit != null)
+                if (ChoosenUnit != -1)
                 {
-                    if (ChoosenUnit.Status == UnitStatus.Dead)
+                    if (Program.World.Units.UnitsStatus[ChoosenUnit] == UnitStatus.Dead)
                     {
-                        ChoosenUnit = null;
+                        ChoosenUnit = -1;
+                        ClearUnitDescription();
                         return;
                     }
-                    unitDescription[0].Item2.Text = $"{ChoosenUnit.Energy}";
-                    unitDescription[1].Item2.Text = GetStringGenes(ChoosenUnit);
-                    unitDescription[2].Item2.Text = ChoosenUnit.Chlorophyl.ToString();
-                    unitDescription[3].Item2.Text = ChoosenUnit.LastDirection.ToString();
-                    unitDescription[4].Item2.Text = $"[{ChoosenUnit.Direction[0]},{ChoosenUnit.Direction[1]}]";
-                    unitDescription[5].Item2.Text = ChoosenUnit.Capacity.ToString();
-                    unitDescription[6].Item2.Text = $"[{ChoosenUnit.Coords[0]},{ChoosenUnit.Coords[1]}]";
-                    unitDescription[7].Item2.Text = ChoosenUnit.AttackPower.ToString();
-                    unitDescription[8].Item2.Text = ChoosenUnit.Parent.ToString();
-                    unitDescription[9].Item2.Text = ChoosenUnit.GetCurrentAction().Type().ToString();
-                }
-                else
-                {
-                    ClearUnitDescription();
+                    unitDescription[0].Item2.Text = Program.World.Units.UnitsEnergy[ChoosenUnit].ToString();
+                    unitDescription[1].Item2.Text = GetStringGenes(Program.World.Units.UnitsGenes[ChoosenUnit]);
+                    unitDescription[2].Item2.Text = Program.World.Units.UnitsChlorophyl[ChoosenUnit].ToString();
+                    unitDescription[3].Item2.Text = Program.World.Units.UnitsLastDirection[ChoosenUnit].ToString();
+                    unitDescription[4].Item2.Text = $"[{Program.World.Units.UnitsDirection[ChoosenUnit][0]}, {Program.World.Units.UnitsDirection[ChoosenUnit][1]}]";
+                    unitDescription[5].Item2.Text = Program.World.Units.UnitsCapacity[ChoosenUnit].ToString();
+                    unitDescription[6].Item2.Text = $"[{Program.World.Units.UnitsCoords[ChoosenUnit][0]}, {Program.World.Units.UnitsCoords[ChoosenUnit][1]}]";
+                    unitDescription[7].Item2.Text = Program.World.Units.UnitsAttackPower[ChoosenUnit].ToString();
+                    unitDescription[8].Item2.Text = Program.World.Units.UnitsParent[ChoosenUnit].ToString();
+                    unitDescription[9].Item2.Text = Program.World.Units.GetCurrentAction(ChoosenUnit).Type().ToString();
                 }
             }
         }
@@ -379,7 +400,7 @@ namespace Simulator
                 else
                 {
                     Events.ErrorHandler.KnockKnock(null, "Error in applying unit parameters. Invalid number.", false);
-                    return ChoosenUnit.Energy;
+                    return Program.World.Units.UnitsEnergy[ChoosenUnit];
                 }
             }
             Events.ErrorHandler.KnockKnock(null, "Successful applying of unit parameters.", true);

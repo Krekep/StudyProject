@@ -13,6 +13,7 @@ namespace Simulator.World
 
         public void Process(Unit unit)
         {
+            /*
             int t = PseudoRandom.Next(101);
             if (t < 60)
             {
@@ -64,6 +65,65 @@ namespace Simulator.World
                 int direction = PseudoRandom.Next(9);
                 if (unit.Attack(direction / 3 - 1, direction % 3 - 1))
                     return;
+            }
+            */
+        }
+
+        public void Process(int unitNumber)
+        {
+            int t = PseudoRandom.Next(101);
+            var world = Storage.CurrentWorld;
+            if (t < 60)
+            {
+                world.Units.Attack(unitNumber, world.Units.UnitsLastDirection[unitNumber] / 3 - 1, world.Units.UnitsLastDirection[unitNumber] % 3 - 1);
+            }
+            else if (t < 85)
+            {
+                int[] favDir = world.Units.UnitsDirection[unitNumber];
+                if (world.IsFree(favDir[0], favDir[1]))
+                {
+                    world.Units.Attack(unitNumber, favDir[0], favDir[1]);
+                    return;
+                }
+                int x = 0;
+                int y = 0;
+                if (favDir[0] == 0 && favDir[1] == 0)
+                {
+                    x = PseudoRandom.Next(-1, 2);
+                    y = PseudoRandom.Next(-1, 2);
+                }
+                else if (favDir[0] != 0 && favDir[1] != 0)
+                {
+                    if (PseudoRandom.Next(0, 2) == 0)
+                    {
+                        x = (favDir[0] - favDir[0]);
+                        y = favDir[1];
+                    }
+                    else
+                    {
+                        x = favDir[0];
+                        y = (favDir[1] - favDir[1]);
+                    }
+                }
+                else
+                {
+                    if (favDir[0] == 0)
+                    {
+                        x = (favDir[0] + (PseudoRandom.Next(0, 2) == 0 ? -1 : 1));
+                        y = favDir[1];
+                    }
+                    else
+                    {
+                        x = favDir[0];
+                        y = (favDir[1] + (PseudoRandom.Next(0, 2) == 0 ? -1 : 1));
+                    }
+                }
+                world.Units.Attack(unitNumber, x, y);
+            }
+            else
+            {
+                int direction = PseudoRandom.Next(9);
+                world.Units.Attack(unitNumber, direction / 3 - 1, direction % 3 - 1);
             }
         }
 

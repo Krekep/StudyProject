@@ -24,5 +24,11 @@ namespace Simulator.World
         {
             return Swamp.WaitValue * 4;
         }
+
+        public void Process(int unitNumber)
+        {
+            int energy = (int)(Storage.CurrentWorld.SunPower * Math.Pow(Storage.CurrentWorld.EnvDensity, Storage.CurrentWorld.Units.UnitsCoords[unitNumber][1]) * Storage.CurrentWorld.Units.UnitsChlorophyl[unitNumber]);
+            Storage.CurrentWorld.Units.TakeEnergy(unitNumber, energy);
+        }
     }
 }

@@ -77,7 +77,8 @@ namespace Simulator
                     return;
                 }
             }
-            world.Import(seed, timer, groundPower, sunPower, envDensity, dropChance, units);
+            //world.Import(seed, timer, groundPower, sunPower, envDensity, dropChance, units);
+            world.Import(seed, timer, groundPower, sunPower, envDensity, dropChance);
             ImportEvent.KnockKnock(null);
         }
 

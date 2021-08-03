@@ -83,6 +83,7 @@ namespace Simulator.World
             }
             return false;
         }
+        /*
         public bool Attack(int x, int y)
         {
             int[] targetPosition = new int[] { Coords[0] + x, Coords[1] + y };
@@ -101,7 +102,7 @@ namespace Simulator.World
             }
             return false;
         }
-
+        */
         public void TakeEnergy(int energy)
         {
             Energy += energy;
