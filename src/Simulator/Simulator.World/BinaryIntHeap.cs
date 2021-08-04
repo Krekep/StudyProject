@@ -68,7 +68,9 @@ namespace Simulator.World
 
         internal void Clear()
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < maxSize; i++)
+                data[i] = Int32.MaxValue;
+            sizeOfTree = 0;
         }
 
         internal void RemoveValue(int unit)

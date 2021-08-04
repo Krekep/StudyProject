@@ -89,8 +89,8 @@ namespace Simulator
                 win.DispatchEvents();
                 if (isRunning)
                 {
-                    //World.UpdateByThreads();
-                    World.Update();
+                    World.UpdateByThreads();
+                    //World.Update();
                     labels[5].Text = $"Year: {World.Timer}";
                     labels[6].Text = $"Units: {World.Units.UnitsNumbers.Count}";
                 }

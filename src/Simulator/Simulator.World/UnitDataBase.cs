@@ -119,7 +119,7 @@ namespace Simulator.World
             for (int k = 0; k < units.Count; k++)
             {
                 int i = availableNumbersSupportingHeap.PopMin();
-                var unit = units[i];
+                var unit = units[k];
                 UnitsNumbers.Add(i);
                 availableNumbers.Remove(i);
                 UnitsEnergy[i] = unit.Item1;
@@ -202,7 +202,7 @@ namespace Simulator.World
                 UnitsAttackPower[number] = child.Item4;
                 unitsCurrentAction[number] = child.Item5;
                 UnitsLastDirection[number] = child.Item6;
-                UnitsParent[number] = child.Item7;
+                UnitsParent[number] = UnitsParent[unit];
                 UnitsCoords[number] = child.Item8;
                 UnitsDirection[number] = child.Item9;
                 UnitsGenes[number] = child.Item10;

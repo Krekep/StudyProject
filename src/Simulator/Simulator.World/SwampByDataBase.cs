@@ -51,10 +51,10 @@ namespace Simulator.World
             MoveEvent.Notify += MoveUnit;
             DivideEvent.Notify += AddUnit;
             DeathEvent.Notify += DeleteUnit;
-            GroundPower = 7;
-            SunPower = 5;
-            EnvDensity = 0.85;
-            DropChance = 0.1;
+            GroundPower = 20;
+            SunPower = 15;
+            EnvDensity = 0.8;
+            DropChance = 0.12;
 
             Seed = seed;
             Random = new Random(Seed);
@@ -85,12 +85,26 @@ namespace Simulator.World
                     mapNumbers[i, j] = -1;
             Units = new UnitDataBase(500);
             foreach (int unit in Units.UnitsNumbers)
+            {
                 mapNumbers[Units.UnitsCoords[unit][0], Units.UnitsCoords[unit][1]] = unit;
 
+                bool inChunk = false;
+                for (int j = 0; j < threadCounter; j++)
+                {
+                    if (chunkCoords[j, 0] <= Units.UnitsCoords[unit][1] && Units.UnitsCoords[unit][1] <= chunkCoords[j, 1])
+                    {
+                        chunks[j].Add(unit);
+                        inChunk = true;
+                        break;
+                    }
+                }
+                if (!inChunk)
+                    outOfChunks.Add(unit);
+            }
 
         }
 
-        public void Import(int seed, int timer, int groundPower, int sunPower, double envDensity, double dropChance)
+        public void Import(int seed, int timer, int groundPower, int sunPower, double envDensity, double dropChance, List<(int, int, int, int, int[], int, int, int[], int[], IAction[][], UnitStatus)> units)
         {
             Seed = seed;
             Timer = timer;
@@ -101,11 +115,12 @@ namespace Simulator.World
             EnvDensity = envDensity;
             DropChance = dropChance;
 
-
+            Units.Import(units);
             mapNumbers = new int[WorldWidth, WorldHeight];
             for (int i = 0; i < WorldWidth; i++)
                 for (int j = 0; j < WorldHeight; j++)
                     mapNumbers[i, j] = -1;
+
             foreach (int unit in Units.UnitsNumbers)
                 mapNumbers[Units.UnitsCoords[unit][0], Units.UnitsCoords[unit][1]] = unit;
 
@@ -113,6 +128,22 @@ namespace Simulator.World
             {
                 sunEnergyMap[i] = (int)(SunPower * Math.Pow(EnvDensity, i));
                 groundEnergyMap[i] = (int)(GroundPower * Math.Pow(EnvDensity, WorldHeight - i - 1));
+            }
+
+            for (int i = 0; i < threadCounter; i++)
+            {
+                chunks[i].Clear();
+            }
+            outOfChunks.Clear();
+            foreach (int unit in Units.UnitsNumbers)
+            {
+                if (!InChunk(Units.UnitsCoords[unit][1]))
+                    outOfChunks.Add(unit);
+                else
+                {
+                    int k = Units.UnitsCoords[unit][1] * threadCounter / WorldHeight;
+                    chunks[k].Add(unit);
+                }
             }
             //Storage.CurrentWorld = this;
         }
@@ -138,7 +169,8 @@ namespace Simulator.World
             Timer += 1;
             foreach (int unit in Units.UnitsNumbers)
             {
-                Units.Process(unit);
+                if (Units.UnitsStatus[unit] != UnitStatus.Corpse)
+                    Units.Process(unit);
             }
             RecountEnergy();
             DeleteDeadCells();
@@ -159,7 +191,8 @@ namespace Simulator.World
             Task.WaitAll(tasks);
             foreach (int unit in temp)
             {
-                Units.Process(unit);
+                if (Units.UnitsStatus[unit] != UnitStatus.Corpse)
+                    Units.Process(unit);
             }
 
             //RecountEnergy();
@@ -175,7 +208,8 @@ namespace Simulator.World
             List<int> chunk = new List<int>(chunks[temp]);
             foreach (int unit in chunk)
             {
-                Units.Process(unit);
+                if (Units.UnitsStatus[unit] != UnitStatus.Corpse)
+                    Units.Process(unit);
             }
         }
 
@@ -328,6 +362,12 @@ namespace Simulator.World
             SunPower = sunPower;
             DropChance = dropChance;
             EnvDensity = envDensity;
+
+            for (int i = 0; i < WorldHeight; i++)
+            {
+                sunEnergyMap[i] = (int)(SunPower * Math.Pow(EnvDensity, i));
+                groundEnergyMap[i] = (int)(GroundPower * Math.Pow(EnvDensity, WorldHeight - i - 1));
+            }
         }
 
         private void MoveUnit(object sender, MoveEventArgs e)

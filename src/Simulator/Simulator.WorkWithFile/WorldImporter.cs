@@ -20,7 +20,8 @@ namespace Simulator
         private static double envDensity;
         private static double dropChance;
 
-        private static HashSet<Unit> units;
+        //private static HashSet<Unit> units;
+        private static List<(int, int, int, int, int[], int, int, int[], int[], IAction[][], UnitStatus)> units;
 
         static WorldImporter()
         {
@@ -77,8 +78,7 @@ namespace Simulator
                     return;
                 }
             }
-            //world.Import(seed, timer, groundPower, sunPower, envDensity, dropChance, units);
-            world.Import(seed, timer, groundPower, sunPower, envDensity, dropChance);
+            world.Import(seed, timer, groundPower, sunPower, envDensity, dropChance, units);
             ImportEvent.KnockKnock(null);
         }
 
@@ -87,7 +87,7 @@ namespace Simulator
             string line = input.ReadLine();
             bool fl = true;
 
-            units = new HashSet<Unit>();
+            units = new List<(int, int, int, int, int[], int, int, int[], int[], IAction[][], UnitStatus)>();
             int energy = 0;
             int lastDirection = 0;
             int chlorophyl = 0;
@@ -131,7 +131,7 @@ namespace Simulator
                 {
                     fl = false;
                 }
-                units.Add(new Unit(energy, lastDirection, capacity, chlorophyl, attackPower, status, position, direction, genes, parent));
+                units.Add((energy, capacity, chlorophyl, attackPower, new int[] { 0, 0 }, lastDirection, parent, position, direction, genes, (UnitStatus)status));
                 line = input.ReadLine();
             }
             return fl;
