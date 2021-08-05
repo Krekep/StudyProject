@@ -45,9 +45,11 @@ namespace Simulator.World
             var world = Storage.CurrentWorld;
             for (int i = 0; i < 9; i++)
             {
-                int temp = (8 - world.Units.UnitsLastDirection[parentNumber] + i) % 9;
-                x = world.Units.UnitsCoords[parentNumber][0] + temp / 3 - 1;
-                y = world.Units.UnitsCoords[parentNumber][1] + temp % 3 - 1;
+                int lastDir = world.Units.UnitsLastDirection[parentNumber];
+                int[] coords = world.Units.UnitsCoords[parentNumber];
+                int temp = (8 - lastDir + i) % 9;
+                x = coords[0] + temp / 3 - 1;
+                y = coords[1] + temp % 3 - 1;
                 if (Storage.CurrentWorld.IsFree(x, y))
                 {
                     fl = true;

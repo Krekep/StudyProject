@@ -101,7 +101,8 @@ namespace Simulator
                 fps = 1000 / stopwatch.Elapsed.TotalMilliseconds;
                 labels[4].Text = $"FPS: {(int)fps}";
 
-                WorldRenderer.Draw();
+                //WorldRenderer.Draw();
+                WorldRenderer.DrawByThreads();
                 gui.Draw();
                 win.Display();
             }

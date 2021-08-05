@@ -3,11 +3,16 @@ using SFML.System;
 using Simulator.World;
 
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Simulator
 {
     static class WorldRenderer
     {
+        private static Task[] renderTasks;
+        private static VertexArray[] vertexArrays;
+        private static RectangleShape[] shapes;
+
         private const int Left = 0 * Program.ViewScale + Program.LeftMapOffset;
         private const int Top = 0 * Program.ViewScale + Program.TopMapOffset;
         private const int Bottom = Swamp.WorldHeight * Program.ViewScale + 1 + Program.TopMapOffset;
@@ -29,6 +34,93 @@ namespace Simulator
         private static Vertex leftBottom;
         private static Vertex rightTop;
         private static Vertex rightBottom;
+
+        static WorldRenderer()
+        {
+            renderTasks = new Task[Program.World.Chunks.Count + 1];
+            vertexArrays = new VertexArray[Program.World.Chunks.Count + 1];
+            shapes = new RectangleShape[Program.World.Chunks.Count + 1];
+            for (int i = 0; i < shapes.Length; i++)
+                shapes[i] = new RectangleShape(new Vector2f(Program.ViewScale, Program.ViewScale));
+        }
+
+        public static void DrawByThreads()
+        {
+            for (int i = 0; i < Program.World.Chunks.Count; i++)
+            {
+                int t = i;
+                renderTasks[i] = Task.Run(() => ChooseColorParallel(t));
+            }
+            int x = Program.World.Chunks.Count;
+            renderTasks[x] = Task.Run(() => ChooseColorParallel(x));
+            Task.WaitAll(renderTasks);
+
+            for (int i = 0; i < Program.World.Chunks.Count + 1; i++)
+            {
+                Program.Window.Draw(vertexArrays[i]);
+                vertexArrays[i].Dispose();
+            }
+            Program.Window.Draw(bottomLine, PrimitiveType.Lines);
+            Program.Window.Draw(topLine, PrimitiveType.Lines);
+            Program.Window.Draw(leftLine, PrimitiveType.Lines);
+            Program.Window.Draw(rightLine, PrimitiveType.Lines);
+        }
+
+        private static void ChooseColorParallel(int number)
+        {
+            var chunks = Program.World.Chunks;
+            var unitsData = Program.World.Units;
+            HashSet<int> currChunk;
+            if (number != chunks.Count)
+                currChunk = Program.World.Chunks[number];
+            else
+                currChunk = Program.World.OutOfChunks;
+            vertexArrays[number] = new VertexArray(PrimitiveType.Quads, (uint)currChunk.Count * 4);
+            shapes[number].OutlineThickness = 0;
+            uint i = 0;
+            Vertex leftTop;
+            Vertex leftBottom;
+            Vertex rightTop;
+            Vertex rightBottom;
+            foreach (int unit in currChunk)
+            {
+                leftTop = new Vertex(new Vector2f(Program.LeftMapOffset + unitsData.UnitsCoords[unit][0] * Program.ViewScale, Program.TopMapOffset + unitsData.UnitsCoords[unit][1] * Program.ViewScale));
+                leftBottom = new Vertex(new Vector2f(Program.LeftMapOffset + unitsData.UnitsCoords[unit][0] * Program.ViewScale, Program.TopMapOffset + unitsData.UnitsCoords[unit][1] * Program.ViewScale + Program.ViewScale));
+                rightTop = new Vertex(new Vector2f(Program.LeftMapOffset + unitsData.UnitsCoords[unit][0] * Program.ViewScale + Program.ViewScale, Program.TopMapOffset + unitsData.UnitsCoords[unit][1] * Program.ViewScale));
+                rightBottom = new Vertex(new Vector2f(Program.LeftMapOffset + unitsData.UnitsCoords[unit][0] * Program.ViewScale + Program.ViewScale, Program.TopMapOffset + unitsData.UnitsCoords[unit][1] * Program.ViewScale + Program.ViewScale));
+                if (UnitTextConfigurator.ChoosenUnit != -1 && unitsData.UnitsParent[unit] == unitsData.UnitsParent[UnitTextConfigurator.ChoosenUnit])
+                {
+                    if (UnitTextConfigurator.ChoosenUnit == unit)
+                    {
+                        leftTop.Color = Color.Green;
+                        leftBottom.Color = Color.Green;
+                        rightTop.Color = Color.Green;
+                        rightBottom.Color = Color.Green;
+                    }
+                    else
+                    {
+                        leftTop.Color = Color.White;
+                        leftBottom.Color = Color.White;
+                        rightTop.Color = Color.White;
+                        rightBottom.Color = Color.White;
+                    }
+                }
+                else
+                {
+                    leftTop.Color = ChooseColor(unit);
+                    leftBottom.Color = ChooseColor(unit);
+                    rightTop.Color = ChooseColor(unit);
+                    rightBottom.Color = ChooseColor(unit);
+                }
+                uint t = i << 2;
+                vertexArrays[number][t] = leftTop;
+                vertexArrays[number][t + 1] = leftBottom;
+                vertexArrays[number][t + 2] = rightBottom;
+                vertexArrays[number][t + 3] = rightTop;
+                i++;
+            }
+        }
+
         public static void Draw()
         {
             var unitsData = Program.World.Units;

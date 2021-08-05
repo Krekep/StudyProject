@@ -12,8 +12,8 @@ namespace Simulator.World
         private static int threadCounter = Environment.ProcessorCount - 1;
         private Task[] tasks;
         private int[,] chunkCoords;
-        private List<HashSet<int>> chunks;
-        private HashSet<int> outOfChunks;
+        public List<HashSet<int>> Chunks { get; private set; }
+        public HashSet<int> OutOfChunks { get; private set; }
 
         public const int WorldHeight = 100;
         public const int WorldWidth = 200;
@@ -43,8 +43,8 @@ namespace Simulator.World
         public static Random Random;
         public UnitDataBase Units { get; private set; }
 
-        private int[] sunEnergyMap = new int[WorldHeight];
-        private int[] groundEnergyMap = new int[WorldHeight];
+        public int[] SunEnergyMap { get; private set; }  = new int[WorldHeight];
+        public int[] GroundEnergyMap { get; private set; }  = new int[WorldHeight];
         public void Initialize(int seed)
         {
             Storage.CurrentWorld = this;
@@ -62,21 +62,21 @@ namespace Simulator.World
 
             tasks = new Task[threadCounter];
             chunkCoords = new int[threadCounter, 2];
-            chunks = new List<HashSet<int>>();
-            outOfChunks = new HashSet<int>();
+            Chunks = new List<HashSet<int>>();
+            OutOfChunks = new HashSet<int>();
             for (int i = 0; i < threadCounter; i++)
             {
                 int top = i * (WorldHeight - 1) / threadCounter + 2;
                 int bottom = (i + 1) * (WorldHeight - 1) / threadCounter - 1;
                 chunkCoords[i, 0] = top;
                 chunkCoords[i, 1] = bottom;
-                chunks.Add(new HashSet<int>());
+                Chunks.Add(new HashSet<int>());
             }
 
             for (int i = 0; i < WorldHeight; i++)
             {
-                sunEnergyMap[i] = (int)(SunPower * Math.Pow(EnvDensity, i));
-                groundEnergyMap[i] = (int)(GroundPower * Math.Pow(EnvDensity, WorldHeight - i - 1));
+                SunEnergyMap[i] = (int)(SunPower * Math.Pow(EnvDensity, i));
+                GroundEnergyMap[i] = (int)(GroundPower * Math.Pow(EnvDensity, WorldHeight - i - 1));
             }
 
             mapNumbers = new int[WorldWidth, WorldHeight];
@@ -93,13 +93,13 @@ namespace Simulator.World
                 {
                     if (chunkCoords[j, 0] <= Units.UnitsCoords[unit][1] && Units.UnitsCoords[unit][1] <= chunkCoords[j, 1])
                     {
-                        chunks[j].Add(unit);
+                        Chunks[j].Add(unit);
                         inChunk = true;
                         break;
                     }
                 }
                 if (!inChunk)
-                    outOfChunks.Add(unit);
+                    OutOfChunks.Add(unit);
             }
 
         }
@@ -126,23 +126,23 @@ namespace Simulator.World
 
             for (int i = 0; i < WorldHeight; i++)
             {
-                sunEnergyMap[i] = (int)(SunPower * Math.Pow(EnvDensity, i));
-                groundEnergyMap[i] = (int)(GroundPower * Math.Pow(EnvDensity, WorldHeight - i - 1));
+                SunEnergyMap[i] = (int)(SunPower * Math.Pow(EnvDensity, i));
+                GroundEnergyMap[i] = (int)(GroundPower * Math.Pow(EnvDensity, WorldHeight - i - 1));
             }
 
             for (int i = 0; i < threadCounter; i++)
             {
-                chunks[i].Clear();
+                Chunks[i].Clear();
             }
-            outOfChunks.Clear();
+            OutOfChunks.Clear();
             foreach (int unit in Units.UnitsNumbers)
             {
                 if (!InChunk(Units.UnitsCoords[unit][1]))
-                    outOfChunks.Add(unit);
+                    OutOfChunks.Add(unit);
                 else
                 {
                     int k = Units.UnitsCoords[unit][1] * threadCounter / WorldHeight;
-                    chunks[k].Add(unit);
+                    Chunks[k].Add(unit);
                 }
             }
             //Storage.CurrentWorld = this;
@@ -182,7 +182,7 @@ namespace Simulator.World
         public void UpdateByThreads()
         {
             Timer += 1;
-            List<int> temp = new List<int>(outOfChunks);
+            List<int> temp = new List<int>(OutOfChunks);
             for (int i = 0; i < threadCounter; i++)
             {
                 int t = i;
@@ -205,7 +205,7 @@ namespace Simulator.World
         public void UpdateRows(int number)
         {
             int temp = (int)number;
-            List<int> chunk = new List<int>(chunks[temp]);
+            List<int> chunk = new List<int>(Chunks[temp]);
             foreach (int unit in chunk)
             {
                 if (Units.UnitsStatus[unit] != UnitStatus.Corpse)
@@ -246,8 +246,8 @@ namespace Simulator.World
         {
             foreach (int unit in Units.UnitsNumbers)
             {
-                int ground = groundEnergyMap[Units.UnitsCoords[unit][1]];
-                int sun = sunEnergyMap[Units.UnitsCoords[unit][1]];
+                int ground = GroundEnergyMap[Units.UnitsCoords[unit][1]];
+                int sun = SunEnergyMap[Units.UnitsCoords[unit][1]];
                 if (Units.UnitsStatus[unit] != UnitStatus.Corpse)
                 {
                     Units.TakeEnergy(unit, sun);
@@ -286,7 +286,7 @@ namespace Simulator.World
             HashSet<int> units = null;
             if (number == -1)
             {
-                units = outOfChunks;
+                units = OutOfChunks;
             }
             if (number == threadCounter)
             {
@@ -294,22 +294,18 @@ namespace Simulator.World
             }
             if (0 <= number && number < threadCounter)
             {
-                units = chunks[number];
+                units = Chunks[number];
             }
             foreach (int unit in units)
             {
                 if (Units.UnitsStatus[unit] != UnitStatus.Corpse)
                 {
-                    Units.TakeEnergy(unit, sunEnergyMap[Units.UnitsCoords[unit][1]]);
-                    Units.TakeEnergy(unit, groundEnergyMap[Units.UnitsCoords[unit][1]]);
+                    Units.TakeEnergy(unit, SunEnergyMap[Units.UnitsCoords[unit][1]] + GroundEnergyMap[Units.UnitsCoords[unit][1]] + EnergyDegradation);
                 }
                 else
                 {
-                    Units.TakeEnergy(unit, -sunEnergyMap[Units.UnitsCoords[unit][1]]);
-                    Units.TakeEnergy(unit, -groundEnergyMap[Units.UnitsCoords[unit][1]]);
+                    Units.TakeEnergy(unit, -(SunEnergyMap[Units.UnitsCoords[unit][1]] + GroundEnergyMap[Units.UnitsCoords[unit][1]] + EnergyDegradation));
                 }
-
-                Units.TakeEnergy(unit, EnergyDegradation);
             }
             //foreach (Unit unit in units)
             //    if (!CheckOverpopulation(unit))
@@ -337,7 +333,7 @@ namespace Simulator.World
             else
             {
                 int k = e.Position[1] * threadCounter / WorldHeight;
-                chunks[k].Add(childNumber);
+                Chunks[k].Add(childNumber);
             }
         }
 
@@ -350,7 +346,7 @@ namespace Simulator.World
             else
             {
                 int k = Units.UnitsCoords[unit][1] * threadCounter / WorldHeight;
-                chunks[k].Remove(unit);
+                Chunks[k].Remove(unit);
             }
             Units.Delete(unit);
         }
@@ -365,8 +361,8 @@ namespace Simulator.World
 
             for (int i = 0; i < WorldHeight; i++)
             {
-                sunEnergyMap[i] = (int)(SunPower * Math.Pow(EnvDensity, i));
-                groundEnergyMap[i] = (int)(GroundPower * Math.Pow(EnvDensity, WorldHeight - i - 1));
+                SunEnergyMap[i] = (int)(SunPower * Math.Pow(EnvDensity, i));
+                GroundEnergyMap[i] = (int)(GroundPower * Math.Pow(EnvDensity, WorldHeight - i - 1));
             }
         }
 
@@ -385,7 +381,7 @@ namespace Simulator.World
                 {
                     AddOutOfChunks(unit);
                     int k = ChunkIdx(e.OldPosition[1]);
-                    chunks[k].Remove(unit);
+                    Chunks[k].Remove(unit);
                 }
             }
             else
@@ -393,7 +389,7 @@ namespace Simulator.World
                 if (newInChunk)
                 {
                     int k = ChunkIdx(e.NewPosition[1]);
-                    chunks[k].Add(unit);
+                    Chunks[k].Add(unit);
                     RemoveOutOfChunks(unit);
                 }
             }
@@ -411,16 +407,16 @@ namespace Simulator.World
 
         private void RemoveOutOfChunks(int unit)
         {
-            Monitor.Enter(outOfChunks);
-            outOfChunks.Remove(unit);
-            Monitor.Exit(outOfChunks);
+            Monitor.Enter(OutOfChunks);
+            OutOfChunks.Remove(unit);
+            Monitor.Exit(OutOfChunks);
         }
 
         private void AddOutOfChunks(int unit)
         {
-            Monitor.Enter(outOfChunks);
-            outOfChunks.Add(unit);
-            Monitor.Exit(outOfChunks);
+            Monitor.Enter(OutOfChunks);
+            OutOfChunks.Add(unit);
+            Monitor.Exit(OutOfChunks);
         }
     }
 }

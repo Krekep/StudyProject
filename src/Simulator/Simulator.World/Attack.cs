@@ -73,9 +73,12 @@ namespace Simulator.World
         {
             int t = PseudoRandom.Next(101);
             var world = Storage.CurrentWorld;
+            int x = 0;
+            int y = 0;
             if (t < 60)
             {
-                world.Units.Attack(unitNumber, world.Units.UnitsLastDirection[unitNumber] / 3 - 1, world.Units.UnitsLastDirection[unitNumber] % 3 - 1);
+                x = world.Units.UnitsLastDirection[unitNumber];
+                world.Units.Attack(unitNumber, x / 3 - 1, x % 3 - 1);
             }
             else if (t < 85)
             {
@@ -85,8 +88,6 @@ namespace Simulator.World
                     world.Units.Attack(unitNumber, favDir[0], favDir[1]);
                     return;
                 }
-                int x = 0;
-                int y = 0;
                 if (favDir[0] == 0 && favDir[1] == 0)
                 {
                     x = PseudoRandom.Next(-1, 2);
