@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 
 namespace Simulator.World
@@ -6,18 +7,18 @@ namespace Simulator.World
     static class Creator
     {
 
-        public static Unit CreateUnit(int capacity, int number)
+        public static Unit CreateUnit(int capacity, int number, int size)
         {
-            int x = PseudoRandom.Next(Swamp.WorldWidth);
-            int y = PseudoRandom.Next(Swamp.WorldHeight);
-            int energy = Swamp.EnergyLimit / 2;
+            int x = PseudoRandom.Next(Swamp.WorldWidth - size + 1);
+            int y = PseudoRandom.Next(Swamp.WorldHeight - size + 1);
+            int energy = Swamp.EnergyLimit / 2 * size;
             int amountOfBlocks = PseudoRandom.Next(1, Storage.AmountBlocks);
             int[] dir = FillDirection();
             IAction[][] genes = FillGenes(amountOfBlocks, ref capacity);
             int chlorophyl = FillChlorophyl(ref capacity);
             int attackPower = FillAttackPower(ref capacity, chlorophyl);
-
-            Unit unit = new Unit(energy, new int[] { x, y }, dir,  genes, capacity, chlorophyl, attackPower, number);
+            size = Math.Max(1, Math.Min(size, Swamp.MaxUnitSize));
+            Unit unit = new Unit(size, energy, new int[] { x, y }, dir,  genes, capacity, chlorophyl, attackPower, number);
 
             return unit;
         }
@@ -26,12 +27,14 @@ namespace Simulator.World
         {
             int x = 0, y = 0;
             bool fl = false;
+            int lastDir = parent.LastDirection;
+            int[] parCoords = parent.Coords;
             for (int i = 0; i < 9; i++)
             {
-                int temp = (8 - parent.LastDirection + i) % 9;
-                x = parent.Coords[0] + temp / 3 - 1;
-                y = parent.Coords[1] + temp % 3 - 1;
-                if (Storage.CurrentWorld.IsFree(x, y))
+                int temp = (8 - lastDir + i) % 9;
+                x = parCoords[0] + (temp / 3 - 1 * parent.Size);
+                y = parCoords[1] + (temp % 3 - 1 * parent.Size);
+                if (Storage.CurrentWorld.IsFree(x, y, parent.Size, null))
                 {
                     fl = true;
                     break;
@@ -53,7 +56,7 @@ namespace Simulator.World
                 MutateChlorophyl(ref chlorophyl, ref capacity, attackPower);
             if (PseudoRandom.Next(10) < 2)
                 MutateAttackPower(ref attackPower, ref capacity, chlorophyl);
-            Unit child = new Unit(energy, new int[] { x, y }, dir, genes, capacity, chlorophyl, attackPower, parent.Parent);
+            Unit child = new Unit(parent.Size, energy, new int[] { x, y }, dir, genes, capacity, chlorophyl, attackPower, parent.Parent);
             return child;
         }
 

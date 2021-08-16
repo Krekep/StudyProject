@@ -9,16 +9,14 @@ namespace Simulator.World
 {
     public class Swamp
     {
-        private static int threadCounter = Environment.ProcessorCount - 1;
+        public static readonly int ThreadCounter = Environment.ProcessorCount - 1;
+        //public static readonly int ThreadCounter = 1;
         private Task[] tasks;
-        private int[,] chunkCoords;
-        private List<HashSet<Unit>> chunks;
-        private HashSet<Unit> outOfChunks;
 
-        public const int WorldHeight = 100;
-        public const int WorldWidth = 200;
+        public const int WorldHeight = 200;
+        public const int WorldWidth = 300;
         public const int EnergyLimit = 1500;
-        public const int DeathLimit = -300;
+        public const int DeathLimit = -200;
         public const int EnergyDegradation = -1;
         /// <summary>
         /// Based point for other actions value
@@ -28,6 +26,7 @@ namespace Simulator.World
         public const int ChlorophylLimit = 20;
         public const int AttackValue = 100;
         public const int ChlorophylValue = 75;
+        public const int MaxUnitSize = 3;
 
         // Changeable parameters
         public int GroundPower { get; private set; }
@@ -42,12 +41,14 @@ namespace Simulator.World
         /// <summary>
         /// List of available units
         /// </summary>
-        public HashSet<Unit> Units { get; private set; }
+        public List<Unit> Units { get; private set; }
+        private List<Unit> queueAdd;
+        private List<List<Unit>> delList = new List<List<Unit>>();
 
         private Unit[,] map;
 
-        private int[] sunEnergyMap = new int[WorldHeight];
-        private int[] groundEnergyMap = new int[WorldHeight];
+        public int[] SunEnergyMap { get; private set; } = new int[WorldHeight];
+        public int[] GroundEnergyMap { get; private set; } = new int[WorldHeight];
 
         public void Initialize(int seed)
         {
@@ -63,52 +64,36 @@ namespace Simulator.World
             Seed = seed;
             Timer = 0;
 
-            tasks = new Task[threadCounter];
-            chunkCoords = new int[threadCounter, 2];
-            chunks = new List<HashSet<Unit>>();
-            outOfChunks = new HashSet<Unit>();
-            for (int i = 0; i < threadCounter; i++)
+            tasks = new Task[ThreadCounter];
+            queueAdd = new List<Unit>();
+            for (int i = 0; i < ThreadCounter; i++)
             {
-                int top = i * (WorldHeight - 1) / threadCounter + 2;
-                int bottom = (i + 1) * (WorldHeight - 1) / threadCounter - 1;
-                chunkCoords[i, 0] = top;
-                chunkCoords[i, 1] = bottom;
-                chunks.Add(new HashSet<Unit>());
+                int top = i * (WorldHeight - 1) / ThreadCounter + 2;
+                int bottom = (i + 1) * (WorldHeight - 1) / ThreadCounter - 1;
+                delList.Add(new List<Unit>());
             }
 
             for (int i = 0; i < WorldHeight; i++)
             {
-                sunEnergyMap[i] = (int)(SunPower * Math.Pow(EnvDensity, i));
-                groundEnergyMap[i] = (int)(GroundPower * Math.Pow(EnvDensity, WorldHeight - i - 1));
+                SunEnergyMap[i] = (int)(SunPower * Math.Pow(EnvDensity, i));
+                GroundEnergyMap[i] = (int)(GroundPower * Math.Pow(EnvDensity, WorldHeight - i - 1));
             }
 
             map = new Unit[WorldWidth, WorldHeight];
-            Units = new HashSet<Unit>();
+            Units = new List<Unit>();
 
-            for (int i = 0; i < 500; i++)
-            {
-                Unit unit = Creator.CreateUnit(5000, i);
-                map[unit.Coords[0], unit.Coords[1]] = unit;
-
-                bool inChunk = false;
-                for (int j = 0; j < threadCounter; j++)
+            for (int l = 1; l <= MaxUnitSize; l++)
+                for (int i = 0; i < 500 / MaxUnitSize; i++)
                 {
-                    if (chunkCoords[j, 0] <= unit.Coords[1] && unit.Coords[1] <= chunkCoords[j, 1])
-                    {
-                        chunks[j].Add(unit);
-                        inChunk = true;
-                        break;
-                    }
+                    Unit unit = Creator.CreateUnit(5000, i, l);
+                    if (unit == null)
+                        continue;
+                    map[unit.Coords[0], unit.Coords[1]] = unit;
+                    Units.Add(unit);
                 }
-                if (!inChunk)
-                    outOfChunks.Add(unit);
-            }
-            foreach (HashSet<Unit> chunk in chunks)
-                Units.UnionWith(chunk);
-            Units.UnionWith(outOfChunks);
         }
 
-        public void Import(int seed, int timer, int groundPower, int sunPower, double envDensity, double dropChance, HashSet<Unit> units)
+        public void Import(int seed, int timer, int groundPower, int sunPower, double envDensity, double dropChance, List<Unit> units)
         {
             Seed = seed;
             Timer = timer;
@@ -118,41 +103,33 @@ namespace Simulator.World
             EnvDensity = envDensity;
             DropChance = dropChance;
             Units.Clear();
-            for (int i = 0; i < threadCounter; i++)
-            {
-                chunks[i].Clear();
-            }
-            outOfChunks.Clear();
             Units = units;
             map = new Unit[WorldWidth, WorldHeight];
             foreach (Unit unit in units)
             {
-                map[unit.Coords[0], unit.Coords[1]] = unit;
-                if (!InChunk(unit.Coords[1]))
-                    outOfChunks.Add(unit);
-                else
-                {
-                    int k = unit.Coords[1] * threadCounter / WorldHeight;
-                    chunks[k].Add(unit);
-                }
+                for (int i = 0; i < unit.Size; i++)
+                    for (int j = 0; j < unit.Size; j++)
+                        map[unit.Coords[0] + i, unit.Coords[1] + j] = unit;
             }
 
             for (int i = 0; i < WorldHeight; i++)
             {
-                sunEnergyMap[i] = (int)(SunPower * Math.Pow(EnvDensity, i));
-                groundEnergyMap[i] = (int)(GroundPower * Math.Pow(EnvDensity, WorldHeight - i - 1));
+                SunEnergyMap[i] = (int)(SunPower * Math.Pow(EnvDensity, i));
+                GroundEnergyMap[i] = (int)(GroundPower * Math.Pow(EnvDensity, WorldHeight - i - 1));
             }
 
             //Storage.CurrentWorld = this;
         }
 
-        internal bool IsFree(int x, int y)
+        internal bool IsFree(int x, int y, int area, Unit unit)
         {
-            if (x < 0 || y < 0 || x >= WorldWidth || y >= WorldHeight)
+            if (x < 0 || y < 0 || (x + area - 1) >= WorldWidth || (y + area - 1) >= WorldHeight)
                 return false;
-            if (map[x, y] != null)
-                return false;
-            return true;
+            bool isFree = true;
+            for (int i = 0; i < area; i++)
+                for (int j = 0; j < area; j++)
+                    isFree &= (map[x + i, y + j] == unit || map[x + i, y + j] == null);
+            return isFree;
         }
 
         public Unit GetUnit(int x, int y)
@@ -167,71 +144,81 @@ namespace Simulator.World
             Timer += 1;
             foreach (Unit unit in Units)
                 unit.Process();
-            RecountEnergy();
-            DeleteDeadCells();
-            AddNewCells();
+            RecountEnergyParallel();
+            AddNewCellsParallel();
             DropCells();
-        }
-
-
-        public void UpdateByThreads()
-        {
-            Timer += 1;
-            List<Unit> temp = new List<Unit>(outOfChunks);
-            for (int i = 0; i < threadCounter; i++)
+            for (int i = 0; i < ThreadCounter; i++)
             {
                 int t = i;
-                tasks[i] = Task.Run(() => UpdateRows(t));
+                tasks[i] = Task.Run(() => ClearAddQueue(t));
             }
             Task.WaitAll(tasks);
-            foreach (Unit unit in temp)
-            {
-                unit.Process();
-            }
-
-            //RecountEnergy();
-            RecountEnergyParallel();
+            queueAdd.Clear();
             DeleteDeadCells();
-            AddNewCells();
-            DropCells();
-        }
-
-        public void UpdateRows(int number)
-        {
-            int temp = (int)number;
-            List<Unit> chunk = new List<Unit>(chunks[temp]);
-            foreach (Unit unit in chunk)
-            {
-                unit.Process();
-            }
         }
 
         private void DropCells()
         {
             foreach (Unit unit in Units)
-                if (PseudoRandom.Next(101) / 100.0 < DropChance)
+                if (PseudoRandom.NextDouble() < DropChance)
                     unit.Move(0, 1);
         }
 
-        private void AddNewCells()
+        private void AddNewCellsParallel()
         {
-            List<Unit> addList = new List<Unit>();
-            foreach (Unit unit in Units)
-                if (unit.Status == UnitStatus.Divide)
-                    addList.Add(unit);
-            foreach (Unit unit in addList)
-                unit.Divide();
+            for (int i = 0; i < ThreadCounter; i++)
+            {
+                int t = i;
+                tasks[i] = Task.Run(() => AddNewCells(t));
+            }
         }
+        private void AddNewCells(int number)
+        {
+            int bottom = number * Units.Count / ThreadCounter;
+            int top = (number + 1) * Units.Count / ThreadCounter;
+            for (int i = bottom; i < top; i++)
+            {
+                var unit = Units[i];
+                if (unit.Status == UnitStatus.Divide)
+                    unit.Divide();
+            }
+        }
+
 
         private void DeleteDeadCells()
         {
-            List<Unit> delList = new List<Unit>();
-            foreach (Unit unit in Units)
-                if (unit.Status == UnitStatus.Dead)
-                    delList.Add(unit);
-            foreach (Unit unit in delList)
+            for (int i = 0; i < ThreadCounter; i++)
             {
+                int t = i;
+                tasks[i] = Task.Run(() => ChooseDeadParallel(t));
+            }
+            Task.WaitAll(tasks);
+            for (int i = 0; i < ThreadCounter; i++)
+            {
+                int t = i;
+                tasks[i] = Task.Run(() => DeleteParallel(t));
+            }
+            Task.WaitAll(tasks);
+        }
+
+        private void DeleteParallel(int number)
+        {
+            Monitor.Enter(Units);
+            foreach (Unit unit in delList[number])
                 DeathEvent.KnockKnock(unit, unit.Coords);
+            Monitor.Exit(Units);
+            delList[number].Clear();
+        }
+
+        private void ChooseDeadParallel(int number)
+        {
+            int bottom = number * Units.Count / ThreadCounter;
+            int top = (number + 1) * Units.Count / ThreadCounter;
+            for (int i = bottom; i < top; i++)
+            {
+                var unit = Units[i];
+                if (unit.Status == UnitStatus.Dead)
+                    delList[number].Add(unit);
             }
         }
 
@@ -239,65 +226,33 @@ namespace Simulator.World
         {
             var unit = (Unit)sender;
             Units.Remove(unit);
-            map[e.Position[0], e.Position[1]] = null;
-
-            if (!InChunk(unit.Coords[1]))
-                RemoveOutOfChunks(unit);
-            else
-            {
-                int k = unit.Coords[1] * threadCounter / WorldHeight;
-                chunks[k].Remove(unit);
-            }
+            for (int i = 0; i < unit.Size; i++)
+                for (int j = 0; j < unit.Size; j++)
+                    map[e.Position[0] + i, e.Position[1] + j] = null;
         }
 
         private void RecountEnergyParallel()
         {
-            for (int i = 0; i < threadCounter; i++)
+            for (int i = 0; i < ThreadCounter; i++)
             {
                 int t = i;
                 tasks[i] = Task.Run(() => RecountEnergy(t));
             }
-            RecountEnergy(-1);
             Task.WaitAll(tasks);
         }
 
-        /// <summary>
-        /// Adds energy to each unit, depending on its position. Accepts a number of chunk as a parameter. -1 is outOfChunks, threadCounter is all Units. 
-        /// </summary>
-        /// <param name="units"></param>
         private void RecountEnergy(int number)
         {
-            HashSet<Unit> units = null;
-            if (number == -1)
+            int bottom = number * Units.Count / ThreadCounter;
+            int top = (number + 1) * Units.Count / ThreadCounter;
+            for (int i = bottom; i < top; i++)
             {
-                units = outOfChunks;
-            }
-            if (number == threadCounter)
-            {
-                units = Units;
-            }
-            if (0 <= number && number < threadCounter)
-            {
-                units = chunks[number];
-            }
-            foreach (Unit unit in units)
-            {
+                var unit = Units[i];
                 if (unit.Status != UnitStatus.Corpse)
-                {
-                    unit.TakeEnergy(sunEnergyMap[unit.Coords[1]]);
-                    unit.TakeEnergy(groundEnergyMap[unit.Coords[1]]);
-                }
+                    unit.TakeEnergy((SunEnergyMap[unit.Coords[1]] + GroundEnergyMap[unit.Coords[1] + unit.Size - 1]) * unit.Size + EnergyDegradation);
                 else
-                {
-                    unit.TakeEnergy(-sunEnergyMap[unit.Coords[1]]);
-                    unit.TakeEnergy(-groundEnergyMap[unit.Coords[1]]);
-                }
-
-                unit.TakeEnergy(EnergyDegradation);
+                    unit.TakeEnergy(-(SunEnergyMap[unit.Coords[1]] + GroundEnergyMap[unit.Coords[1] + unit.Size - 1]) * unit.Size + EnergyDegradation);
             }
-            //foreach (Unit unit in units)
-            //    if (!CheckOverpopulation(unit))
-            //        unit.TakeEnergy(-EnergyLimit / 20);
         }
 
         private void RecountEnergy()
@@ -305,45 +260,47 @@ namespace Simulator.World
             foreach (Unit unit in Units)
             {
                 if (unit.Status != UnitStatus.Corpse)
-                {
-                    unit.TakeEnergy(sunEnergyMap[unit.Coords[1]]);
-                    unit.TakeEnergy(groundEnergyMap[unit.Coords[1]]);
-                }
+                    unit.TakeEnergy(SunEnergyMap[unit.Coords[1]] + GroundEnergyMap[unit.Coords[1]] + EnergyDegradation * unit.Size);
                 else
-                {
-                    unit.TakeEnergy(-sunEnergyMap[unit.Coords[1]]);
-                    unit.TakeEnergy(-groundEnergyMap[unit.Coords[1]]);
-                }
-                unit.TakeEnergy(EnergyDegradation);
+                    unit.TakeEnergy(-(SunEnergyMap[unit.Coords[1]] + GroundEnergyMap[unit.Coords[1]]) + EnergyDegradation * unit.Size);
             }
-            //foreach (Unit unit in units)
-            //    if (!CheckOverpopulation(unit))
-            //        unit.TakeEnergy(-EnergyLimit / 20);
         }
 
-        private bool CheckOverpopulation(Unit unit)
+
+        private void ClearAddQueue(int number)
         {
-            for (int i = 0; i < 9; i++)
+            List<Unit> accepted = new List<Unit>();
+            for (int k = number * queueAdd.Count / ThreadCounter; k < (number + 1) * queueAdd.Count / ThreadCounter; k++)
             {
-                if (IsFree(unit.Coords[0] + i / 3 - 1, unit.Coords[1] + i % 3 - 1))
-                    return true;
+                var parent = queueAdd[k];
+                if (parent.Energy > Swamp.EnergyLimit * parent.Size / 50)
+                {
+                    var child = Creator.CreateChild(parent);
+                    if (child != null)
+                    {
+                        accepted.Add(child);
+                        for (int i = 0; i < child.Size; i++)
+                            for (int j = 0; j < child.Size; j++)
+                                map[child.Coords[0] + i, child.Coords[1] + j] = child;
+
+                        parent.TakeEnergy(-parent.Energy / 2 - EnergyLimit / 100);
+                    }
+                    else if (parent.Energy > EnergyLimit)
+                        parent.TakeEnergy(EnergyLimit - parent.Energy);
+                }
             }
-            return false;
+            Monitor.Enter(Units);
+            Units.AddRange(accepted);
+            Monitor.Exit(Units);
         }
 
         private void AddUnit(object sender, DivideEventArgs e)
         {
-            var child = (Unit)sender;
-            Units.Add(child);
-            map[e.Position[0], e.Position[1]] = child;
+            var parent = (Unit)sender;
+            Monitor.Enter(queueAdd);
+            queueAdd.Add(parent);
+            Monitor.Exit(queueAdd);
 
-            if (!InChunk(e.Position[1]))
-                AddOutOfChunks(child);
-            else
-            {
-                int k = e.Position[1] * threadCounter / WorldHeight;
-                chunks[k].Add(child);
-            }
         }
 
         public void UpdateParameters(int groundPower, int sunPower, double dropChance, double envDensity)
@@ -355,62 +312,21 @@ namespace Simulator.World
 
             for (int i = 0; i < WorldHeight; i++)
             {
-                sunEnergyMap[i] = (int)(SunPower * Math.Pow(EnvDensity, i));
-                groundEnergyMap[i] = (int)(GroundPower * Math.Pow(EnvDensity, WorldHeight - i - 1));
+                SunEnergyMap[i] = (int)(SunPower * Math.Pow(EnvDensity, i));
+                GroundEnergyMap[i] = (int)(GroundPower * Math.Pow(EnvDensity, WorldHeight - i - 1));
             }
         }
 
         private void MoveUnit(object sender, MoveEventArgs e)
         {
             var unit = (Unit)sender;
-            map[e.OldPosition[0], e.OldPosition[1]] = null;
-            map[e.NewPosition[0], e.NewPosition[1]] = unit;
 
-
-            bool oldInChunk = InChunk(e.OldPosition[1]);
-            bool newInChunk = InChunk(e.NewPosition[1]);
-            if (oldInChunk)
-            {
-                if (!newInChunk)
-                {
-                    AddOutOfChunks(unit);
-                    int k = ChunkIdx(e.OldPosition[1]);
-                    chunks[k].Remove(unit);
-                }
-            }
-            else
-            {
-                if (newInChunk)
-                {
-                    int k = ChunkIdx(e.NewPosition[1]);
-                    chunks[k].Add(unit);
-                    RemoveOutOfChunks(unit);
-                }
-            }
-        }
-
-        private static int ChunkIdx(int y)
-        {
-            return y * threadCounter / WorldHeight;
-        }
-
-        private static bool InChunk(int y)
-        {
-            return (y % ((WorldHeight - 1) / threadCounter) != 0) && (y % ((WorldHeight - 1) / threadCounter) != 1);
-        }
-
-        private void RemoveOutOfChunks(Unit unit)
-        {
-            Monitor.Enter(outOfChunks);
-            outOfChunks.Remove(unit);
-            Monitor.Exit(outOfChunks);
-        }
-
-        private void AddOutOfChunks(Unit unit)
-        {
-            Monitor.Enter(outOfChunks);
-            outOfChunks.Add(unit);
-            Monitor.Exit(outOfChunks);
+            for (int i = 0; i < unit.Size; i++)
+                for (int j = 0; j < unit.Size; j++)
+                    map[e.OldPosition[0] + i, e.OldPosition[1] + j] = null;
+            for (int i = 0; i < unit.Size; i++)
+                for (int j = 0; j < unit.Size; j++)
+                    map[e.NewPosition[0] + i, e.NewPosition[1] + j] = unit;
         }
     }
 }

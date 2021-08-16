@@ -7,7 +7,8 @@ namespace Simulator.World
         Wait = 0,
         Move = 1,
         Photosyntesis = 2,
-        Attack = 3
+        Attack = 3,
+        Divide = 4
     }
     public interface IAction
     {

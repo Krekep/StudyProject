@@ -9,6 +9,7 @@ using TGUI;
 using Simulator.Events;
 using Simulator.World;
 using System.Threading;
+using Simulator.ResourseLoaders;
 
 namespace Simulator
 {
@@ -43,18 +44,12 @@ namespace Simulator
         /// </summary>
         static Label[] labels = new Label[7];
 
-        public static Color Orange = new Color(255, 128, 0);
-        public static Color DarkGreen = new Color(0, 47, 31);
-        public static Color DarkRed = new Color(104, 28, 35);
-        public static Color Gray = new Color(64, 64, 64);
-        public static Color DarkGray = new Color(255, 255, 255);
-
-        public const int ViewScale = 6;
+        public const int ViewScale = 4;
         public const int LeftMapOffset = 10;
         public const int TopMapOffset = 70;
         public const int CharacterSize = 25;
-        private const int width = 1600;
-        private const int height = 900;
+        private const int width = 1800;
+        private const int height = 1020;
 
         static TextBox seedText;
 
@@ -89,7 +84,6 @@ namespace Simulator
                 win.DispatchEvents();
                 if (isRunning)
                 {
-                    //World.UpdateByThreads();
                     World.Update();
                     labels[5].Text = $"Year: {World.Timer}";
                     labels[6].Text = $"Units: {World.Units.Count}";
@@ -102,6 +96,7 @@ namespace Simulator
                 labels[4].Text = $"FPS: {(int)fps}";
 
                 WorldRenderer.Draw();
+                //WorldRenderer.DrawByThreads();
                 gui.Draw();
                 win.Display();
             }
@@ -111,9 +106,9 @@ namespace Simulator
         {
             labels[3].Text = e.Message;
             if (e.IsSuccess)
-                labels[3].Renderer.BackgroundColor = DarkGreen;
+                labels[3].Renderer.BackgroundColor = MyColors.DarkGreen;
             else
-                labels[3].Renderer.BackgroundColor = DarkRed;
+                labels[3].Renderer.BackgroundColor = MyColors.DarkRed;
         }
 
         private static void Initialize()
@@ -152,7 +147,7 @@ namespace Simulator
             buttons[2].Position = new Vector2f(leftCreateButton, topCreateButton);
             buttons[2].Size = new Vector2f(widthCreateButton, heightCreateButton);
             buttons[2].Text = "Create";
-            buttons[2].Renderer.BackgroundColor = Gray;
+            buttons[2].Renderer.BackgroundColor = MyColors.Gray;
             buttons[2].Renderer.TextColor = Color.White;
             buttons[2].Clicked += Create_Click;
             gui.Add(buttons[2]);
@@ -180,7 +175,7 @@ namespace Simulator
             buttons[5].Size = new Vector2f(widthApplyButton, heightApplyButton);
             buttons[5].Text = "Apply";
             buttons[5].TextSize = (uint)Math.Min(heightApplyButton - 8, widthApplyButton / 4);
-            buttons[5].Renderer.BackgroundColor = Gray;
+            buttons[5].Renderer.BackgroundColor = MyColors.Gray;
             buttons[5].Renderer.TextColor = Color.White;
             buttons[5].Clicked += Apply_Clicked;
             gui.Add(buttons[5]);
@@ -217,7 +212,7 @@ namespace Simulator
             labels[3].Position = new Vector2f(LeftMapOffset + Swamp.WorldWidth * 2 / 5 * ViewScale, TopMapOffset + Swamp.WorldHeight * ViewScale + 10);
             labels[3].Text = "Everything OK.";
             labels[3].TextSize = CharacterSize * 3 / 5;
-            labels[3].Renderer.BackgroundColor = DarkGreen;
+            labels[3].Renderer.BackgroundColor = MyColors.DarkGreen;
             gui.Add(labels[3]);
 
             labels[4] = new Label();
@@ -338,7 +333,7 @@ namespace Simulator
             string text = UnitTextConfigurator.ShowDescription(e.X, e.Y);
             if (text != null)
             {
-                labels[1].Renderer.BackgroundColor = Orange;
+                labels[1].Renderer.BackgroundColor = MyColors.Orange;
                 labels[1].Text = text;
                 labels[1].Position = new Vector2f(e.X, e.Y);
                 labels[1].Visible = true;

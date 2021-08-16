@@ -16,7 +16,7 @@ namespace Simulator.World
         }
         public void Process(Unit unit)
         {
-            int energy = (int)(Storage.CurrentWorld.SunPower * Math.Pow(Storage.CurrentWorld.EnvDensity, unit.Coords[1]) * unit.Chlorophyl);
+            int energy = Storage.CurrentWorld.SunEnergyMap[unit.Coords[1]] * unit.Chlorophyl;
             unit.TakeEnergy(energy);
         }
 

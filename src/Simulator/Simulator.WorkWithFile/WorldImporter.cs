@@ -20,7 +20,7 @@ namespace Simulator
         private static double envDensity;
         private static double dropChance;
 
-        private static HashSet<Unit> units;
+        private static List<Unit> units;
 
         static WorldImporter()
         {
@@ -86,7 +86,7 @@ namespace Simulator
             string line = input.ReadLine();
             bool fl = true;
 
-            units = new HashSet<Unit>();
+            units = new List<Unit>();
             int energy = 0;
             int lastDirection = 0;
             int chlorophyl = 0;
@@ -130,7 +130,8 @@ namespace Simulator
                 {
                     fl = false;
                 }
-                units.Add(new Unit(energy, lastDirection, capacity, chlorophyl, attackPower, status, position, direction, genes, parent));
+                // need to add size param
+                units.Add(new Unit(1, energy, lastDirection, capacity, chlorophyl, attackPower, status, position, direction, genes, parent));
                 line = input.ReadLine();
             }
             return fl;

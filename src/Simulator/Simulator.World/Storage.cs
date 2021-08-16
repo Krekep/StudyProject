@@ -6,7 +6,7 @@ namespace Simulator.World
     {
         public static IAction[][] GenesBlocks;
         public static int[] ValuesOfBlocks;
-        public const int AmountBlocks = 10;
+        public const int AmountBlocks = 11;
         public static Swamp CurrentWorld { get; set; }
         public static Color[] EnergyColors = new Color[256];
         static Storage()
@@ -20,14 +20,15 @@ namespace Simulator.World
 
             GenesBlocks[0] = new IAction[1] { new Wait() };
             GenesBlocks[1] = new IAction[2] { new Move(), new Move() };
-            GenesBlocks[2] = new IAction[1] { new Move() };
-            GenesBlocks[3] = new IAction[1] { new Photosyntesis() };
-            GenesBlocks[4] = new IAction[2] { new Photosyntesis(), new Move() };
-            GenesBlocks[5] = new IAction[2] { new Photosyntesis(), new Photosyntesis() };
-            GenesBlocks[6] = new IAction[2] { new Attack(), new Attack() };
-            GenesBlocks[7] = new IAction[2] { new Attack(), new Move() };
-            GenesBlocks[8] = new IAction[2] { new Attack(), new Wait() };
-            GenesBlocks[9] = new IAction[1] { new Attack() };
+            GenesBlocks[2] = new IAction[2] { new Photosyntesis(), new Move() };
+            GenesBlocks[3] = new IAction[2] { new Photosyntesis(), new Photosyntesis() };
+            GenesBlocks[4] = new IAction[2] { new Attack(), new Attack() };
+            GenesBlocks[5] = new IAction[2] { new Attack(), new Move() };
+            GenesBlocks[6] = new IAction[2] { new Attack(), new Wait() };
+            GenesBlocks[7] = new IAction[2] { new Wait(), new Divide() };
+            GenesBlocks[8] = new IAction[2] { new Move(), new Divide() };
+            GenesBlocks[9] = new IAction[2] { new Attack(), new Divide() };
+            GenesBlocks[10] = new IAction[2] { new Photosyntesis(), new Divide() };
 
             for (int i = 0; i < AmountBlocks; i++)
                 ValuesOfBlocks[i] = CalculateValue(GenesBlocks[i]);
